@@ -1,0 +1,43 @@
+#commentCard{
+  .c-header-top{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .c-items{
+    .item{
+      position: relative;
+      display: flex;
+      .content-maker{
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .item-content{
+        display: inline-block;
+        text-indent: 60px;
+        vertical-align: middle;
+        align-items: center;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .comment-input-con{
+    padding-right: 26px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    textarea{
+      border: none;
+    }
+    .comment-input-button-con{
+      button{
+        background: none;
+        border: none;
+      }
+
+    }
+  }
+}

@@ -7,14 +7,31 @@ class Nav extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div id="nav">
-                <div className="row">
-                    <div className="col-4">left</div>
-                    <div className="col-4">middle</div>
-                    <div className="col-4">right</div>
+                <div className="container">
+                    <div className="row nav-main">
+                        <div className="col-4 nav-left">
+                            <a className="nl-infos-con">
+                            </a>
+                        </div>
+                        <div className="col-4 nav-center">
+                            <div className="input-con">
+                                <input type="text" placeholder=""/>
+                            </div>
+                        </div>
+                        <div className="col-4 nav-right">
+                            <div className="nr-infos-con">
+                                <a className="nr-icon explore-icon"></a>
+                                <a className="nr-icon recent-icon"></a>
+                                <a className="nr-icon self-center-icon"></a>
+                                <a className="nr-iconpub-icon"></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         )
     }
 }

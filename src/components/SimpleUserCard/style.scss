@@ -1,0 +1,39 @@
+@import "~src/assets/css/common.scss";
+#SimpleUserCard{
+  height: inherit;
+  @include commonFlex();
+  .suc-left{
+    height: inherit;
+    @include commonFlex();
+    // 头像
+    .img-con{
+      display: inline-block;
+      height: 36px !important;
+      width: 36px !important;
+      //
+      //.img-bac{
+      //  position: relative;
+      //  border-radius: 50%;
+      //  background: red;
+      //  width: 100%;
+      //  height: 100%;
+      //  padding: 4%;
+      //}
+
+      .img{
+        height: 100%;
+        border-radius: 50%;
+        background: #ffffff;
+      }
+
+    }
+    .infos-con{
+      .left-item{
+        display: block;
+        line-height: 90%;
+      }
+      margin-left: 10%;
+
+    }
+  }
+}

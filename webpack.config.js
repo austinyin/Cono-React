@@ -7,9 +7,11 @@ function resolve(dir) {
 
 
 module.exports = {
-    entry : {
-        main : path.resolve(__dirname,'./src/index.jsx'),
-    },
+    entry: ['babel-polyfill', './src/index.jsx'],
+
+    // entry : {
+    //     main : path.resolve(__dirname,'./src/index.jsx'),
+    // },
     output:{
         path: path.resolve(__dirname,'./public'),
         filename: 'bundle.js',
@@ -20,11 +22,30 @@ module.exports = {
         contentBase: "./public",
         inline:true,
         port:3000,
+        proxy: [
+            {
+                context: '/api',
+                target: 'localhost:8000',
+                changeOrigin: true,
+                secure: false
+            }
+        ]
     },
 
     module: {
         rules: [
-            {test: /\.scss/, use: ['style-loader','css-loader','sass-loader']},
+            {
+                test: /\.scss/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: "sass-loader", options: {
+
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.css$/,
                 use: [
@@ -60,7 +81,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'eslint-loader'
+                loader: 'eslint-loader',
             },
             {test: /\.svg/, loader: 'svg-url-loader'},
 
@@ -71,14 +92,14 @@ module.exports = {
         alias: {
             src: path.resolve('src'),
             fetch: path.resolve('src/fetch'),
-            main: path.resolve('src/Main'),
+            Main: path.resolve('src/Main'),
             reducers: path.resolve('src/reducer'),
             components: path.resolve('src/components'),
             store: path.resolve('src/store'),
             util: path.resolve('src/util'),
             api: path.resolve('src/api'),
             static: path.resolve('src/static'),
-            shared: path.resolve('src/shared')
+            assets: path.resolve('src/assets'),
         }
     },
     plugins: [

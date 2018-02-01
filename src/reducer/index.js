@@ -1,17 +1,8 @@
 import { combineReducers } from 'redux'
+import TweetList from 'Main/Home/reducer'
 
 
-const initialState = {}
-
-function userinfo (state = initialState, action) {
-    switch (action.type) {
-        case 1:
-            return action.data
-        default:
-            return state
-    }
-}
 
 export default combineReducers({
-    userinfo,
+    TweetList,
 })
