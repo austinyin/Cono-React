@@ -28,20 +28,29 @@ class CommentCard extends React.Component {
                 <div className="c-items">
                     <ul>
                         <li className="item author-item">
-                            <a href="" className="content-maker"><span className="">author</span></a>
-                            <span className="item-content">author contet</span>
-                            <a href="" className="delete-item-button-con">
+                            <a href="" className="content-maker"><span className="">{this.props.author.name}</span></a>
+                            <span className="item-content">{this.props.author.text}</span>
+                            <span  className="delete-item-button-con">
                                 <button>x</button>
-                            </a>
+                            </span>
                         </li>
                         <li className="show-more-content"><a href="">more</a></li>
-                        <li className="item common-item">
-                            <a href="" className="content-maker"><span className=" ">author</span></a>
-                            <span className="item-content">author content</span>
-                            <a href="" className="delete-item-button-con">
-                                <button>x</button>
-                            </a>
-                        </li>
+                        {this.props.comments.map((comment) => {
+                            return (
+                                <li className="item common-item" key={comment.id} id={`comment-${comment.id}`}>
+                                    <a href="" className="content-maker"><span className=" ">{comment.user}</span></a>
+                                    <span className="item-content">{comment.text}</span>
+                                    {this.props.author.name === comment.user?
+                                        <a href="" className="delete-item-button-con">
+                                            <button>x</button>
+                                        </a>
+                                        : ""
+                                    }
+
+                                </li>
+                            )
+                        })}
+
                     </ul>
                     <div><a href="">15分钟前</a></div>
                 </div>

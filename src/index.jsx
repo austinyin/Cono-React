@@ -9,6 +9,8 @@ import 'bootstrap/scss/bootstrap.scss'
 
 // Main组件
 import Main from 'src/Main'
+import Account from "src/Account";
+
 
 // redux-saga 环境
 import 'babel-polyfill'
@@ -17,6 +19,7 @@ import 'regenerator-runtime/runtime'
 // 根路由
 const AppRouter = () => (
     <Switch>
+        <Route exact path='/account' component={Account} />
         <Route component={Main}/>
     </Switch>
 

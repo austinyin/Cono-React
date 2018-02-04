@@ -1,49 +1,44 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
-import Nav from 'components/Nav'
 import './style.scss'
 import TweetFullCard from "src/components/TweetFullCard";
 import HomeRightBar from "src/Main/Home/HomeRightBar/HomeRightBar";
 
 import * as TweetListActions from './actions'
+import ScrollHOC from "src/shared/HOC/ScrollHOC";
 
-class Home extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-        this.listUpdate = this.listUpdate.bind(this)
-        this.test = this.test.bind(this)
+class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.listUpdating = false;
         this.state = {
             nowPage: this.props.nowPage,
-            list: [],
-            // childHeight: 0,
-            windowHeight: 0
+            tweetList: this.props.tweetList,
         }
 
     }
 
-    listUpdate(size){
-        if (!this.updating) {
-            this.updating = true
-            getArticleList(this.state.nextPage, size).then(res => {
-                this.setState({
-                    list: this.state.list.concat(res.data.results),
-                })
-                this.props.increase(size/9)
-            }).then(() => {
-                this.setState({
-                    nextPage: this.props.nextPage
-                }, () => {
-                    this.updating = false;
-                    console.log(this.updating)
-                })
-            })
+
+    listUpdate() {
+        this.listUpdating = true;
+        this.props.tweetNextPage()
+    }
+
+
+
+    receiveDistance(distance) {
+        if(this.listUpdating === false && distance > -70) {
+            this.listUpdate()
         }
     }
+
 
     init() {
-
+        for (let i = 0; i < 2; i++) {
+            this.listUpdate();
+        }
     }
 
     componentDidMount() {
@@ -51,35 +46,39 @@ class Home extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('nextProps',nextProps)
+        // 将state 与redux 同步
+        if(this.state.tweetList !== nextProps.tweetList) {
+            this.setState({
+                tweetList: nextProps.tweetList
+            }, () => {
+                this.listUpdating = false;
+            })
+        }
+
     }
 
-    test(){
-        this.props.TweetNextPage();
+    componentWillUnmount() {
+        // 清空列表
+        this.props.tweetListReset();
     }
-
 
 
     render() {
         return (
-            <div id="home">
-                <div className="nav-con">
-                    <Nav/>
-                    <div>
-                        <button onClick={this.test}>testtest</button>
-                    </div>
-                </div>
+            <div id="home" ref="home">
                 <div className="container main">
                     <div className="row">
-                        <div className="main-left-con col-8">
-                            <TweetFullCard/>
+                        <div className="main-left-con col-8" ref="tweetCon">
+                            {this.state.tweetList.map((data) => {
+                                return <TweetFullCard data={data}/>
+                            })}
                         </div>
                         <div className="main-right-con col-4">
                             <HomeRightBar/>
                         </div>
                     </div>
                 </div>
-
+                {this.props.children}
             </div>
 
         )
@@ -88,18 +87,19 @@ class Home extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        nowPage: state.TweetList.nowPage
+        nowPage: state.TweetList.nowPage,
+        tweetList: state.TweetList.tweetList
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        testAction: bindActionCreators(TweetListActions.testAction, dispatch),
-        TweetNextPage: bindActionCreators(TweetListActions.tweetNextPage, dispatch),
+        tweetNextPage: bindActionCreators(TweetListActions.tweetsNextPage, dispatch),
+        tweetListReset: bindActionCreators(TweetListActions.tweetsReset, dispatch),
     }
 }
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Home)
+)(ScrollHOC(Home))

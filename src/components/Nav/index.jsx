@@ -1,9 +1,18 @@
 import React from 'react'
 import './style.scss'
+import Explore from "src/Main/Explore";
+import Link from "react-router-dom/es/Link";
+import {get, post} from "src/shared/js/axiosUtil";
 
 class Nav extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
+    }
+
+    login() {
+        get('http://127.0.0.1:8000/account/login/').then(data => {
+            console.log(data)
+        })
     }
 
     render() {
@@ -22,10 +31,10 @@ class Nav extends React.Component {
                         </div>
                         <div className="col-4 nav-right">
                             <div className="nr-infos-con">
-                                <a className="nr-icon explore-icon"></a>
-                                <a className="nr-icon recent-icon"></a>
-                                <a className="nr-icon self-center-icon"></a>
-                                <a className="nr-iconpub-icon"></a>
+                                <Link to="/explore" className="nr-icon explore-icon"/>
+                                <a className="nr-icon recent-icon"/>
+                                <Link to="/UserCenter" className="nr-icon self-center-icon"/>
+                                <a className="nr-icon pub-icon" onClick={this.login}/>
                             </div>
                         </div>
                     </div>

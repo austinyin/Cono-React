@@ -16,9 +16,8 @@ class TweetFullCard extends React.Component {
                 <header className="full-card-header">
                     <div className="w-100 h-100">
                         <SimpleUserCard
-                            imgUrl={"src/assets/img/avatar/avatar.jpg"}
-                            title={"monkey"}
-                            subtitle={"amazing"}
+                            imgUrl={this.props.data.user.avatar?this.props.data.user.avatar:"src/assets/img/avatar/avatar.jpg"}
+                            title={this.props.data.user.username}
                         />
                     </div>
                 </header>
@@ -40,7 +39,8 @@ class TweetFullCard extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <CommentCard/>
+                <CommentCard author={{name:this.props.data.user.username, text: this.props.data.text}}
+                             comments={this.props.data.comments}/>
 
 
             </section>
