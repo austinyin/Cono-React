@@ -2,7 +2,7 @@ import {call, put, select} from 'redux-saga/effects'
 import {takeEvery} from 'redux-saga'
 
 import * as AccountActionTypes from './constants'
-import {registApi, loginApi, logoutApi} from "./api";
+import {registApi, loginApi, logoutApi, loginCheckApi} from "./api";
 
 
 function* regist(action) {
@@ -42,9 +42,23 @@ function* logout(action) {
 }
 
 
+function* loginCheck(action) {
+    /**
+     * 获得当前页，发送请求，再发出SUCCEEDED action
+     */
+    try {
+        const ret = yield call(loginCheckApi, action.data);
+        yield put({type: AccountActionTypes.LOGIN_CHECK_SUCCEEDED, data: ret});
+    } catch (error) {
+        yield put({type: AccountActionTypes.LOGIN_CHECK_FAILED, error});
+    }
+}
 
 
-// 用户注册登陆登出
+
+/**
+ * 注册,登陆,登出,检测
+ */
 export function* watchRegist() {
     yield* takeEvery(AccountActionTypes.REGIST, regist)
 }
@@ -56,4 +70,10 @@ export function* watchLogin() {
 export function* watchLogout() {
     yield* takeEvery(AccountActionTypes.LOGOUT, logout)
 }
+
+export function* watchLoginCheck() {
+    yield* takeEvery(AccountActionTypes.LOGIN_CHECK, loginCheck)
+}
+
+
 

@@ -1,21 +1,20 @@
-import React from 'react'
-
+import { Component } from 'react';
 import './style.scss'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 
-import LogInOut from "src/components/LogInOut";
 
 import * as AccountActions from "./actions";
 
 import {AccountForm,FormType, LoginForm, RegistForm} from "./constants";
+import LogInOut from "../components/LogInOut";
 
-
-class Account extends React.Component {
+class Account extends Component {
     constructor(props, context) {
         super(props, context);
         this.accountReceiveFunc = this.accountReceiveFunc.bind(this)
         this.accountForm = Object.assign({},AccountForm)
+
     }
 
     accountReceiveFunc(type, form) {
@@ -23,9 +22,7 @@ class Account extends React.Component {
             const loginForm = Object.assign({}, LoginForm);
             loginForm.username = form.loginUsername;
             loginForm.password = form.loginPassword;
-            console.log('a')
             this.props.login(loginForm)
-            console.log('b')
 
         }
         else if(type === FormType.regist) {
@@ -40,13 +37,7 @@ class Account extends React.Component {
             }
             this.props.regist(registForm)
         }
-
-
-
-
     }
-
-
 
     render() {
         return (
@@ -55,7 +46,7 @@ class Account extends React.Component {
                     <div className="account-left col-6">
                     </div>
                     <div className="account-right logInOut-con col-6">
-                        <LogInOut formType={FormType.regist} form={this.accountForm}  accountFunc={this.accountReceiveFunc}/>
+                        <LogInOut formType={FormType.login} form={this.accountForm}  accountFunc={this.accountReceiveFunc}/>
                     </div>
                 </div>
 
@@ -66,9 +57,7 @@ class Account extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return {
-
-    }
+    return {}
 }
 
 

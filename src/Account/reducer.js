@@ -1,9 +1,9 @@
 import * as actionTypes from "./constants";
-import {loginState} from "src/Main/Account/constants";
+import {LoginState} from "./constants";
 
 const initialState = {
     user: {},
-    state: loginState.logout,
+    state: LoginState.logout,
     prompt: ''
 };
 
@@ -14,31 +14,32 @@ export default function Account(state = initialState, action) {
          * 注册
          */
         case actionTypes.REGIST_SUCCEEDED:
-            return Object.assign({}, state, {user: action.data, state: loginState.login});
-        case actionTypes.REGIST_FAILED:
-            return Object.assign({}, state, {prompt: action.error});
+            return Object.assign({}, state, {user: action.data.user, state: LoginState.login});
 
         /**
          * 登陆
          */
         case actionTypes.LOGIN_SUCCEEDED:
-            return Object.assign({}, state, {user: action.data, state: loginState.login});
-        case actionTypes.LOGIN_FAILED:
-            return Object.assign({}, state, {prompt: action.error});
+            console.log('action.data',action.data)
+            return Object.assign({}, state, {user: action.data.user, state: LoginState.login});
 
         /**
          * 登出
          */
         case actionTypes.LOGOUT_SUCCEEDED:
-            return Object.assign({}, state, {state: loginState.logout});
-        case actionTypes.LOGOUT_FAILED:
-            return Object.assign({}, state, {prompt: action.error});
-
-
+            return Object.assign({}, state, {state: LoginState.logout});
 
         /**
-         * 默认
+         * 检测
          */
+        case actionTypes.LOGIN_CHECK_SUCCEEDED:
+            return Object.assign({}, state, {state: LoginState.logout});
+
+        /**
+         * 默认和错误判断
+         */
+        case actionTypes.REGIST_FAILED || actionTypes.LOGIN_FAILED || actionTypes.LOGOUT_FAILED || actionTypes.LOGIN_CHECK_FAILED:
+            return Object.assign({}, state, {prompt: action.error});
 
         default:
             return state

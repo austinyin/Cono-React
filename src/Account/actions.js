@@ -77,6 +77,29 @@ export function logoutFailed(error) {
     }
 }
 
+/**
+ * 登陆检测action
+ */
+export function loginCheck() {
+    return{
+        type: actionTypes.LOGIN_CHECK,
+    }
+}
+
+
+export function loginCheckSucceeded(data) {
+    return{
+        type: actionTypes.LOGIN_CHECK_SUCCEEDED,
+        data
+    }
+}
+
+export function loginCheckFailed(error) {
+    return{
+        type: actionTypes.LOGIN_CHECK_FAILED,
+        error
+    }
+}
 
 
 /**

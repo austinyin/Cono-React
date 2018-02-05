@@ -7,13 +7,23 @@ import {get, post} from "src/shared/js/axiosUtil";
 class Nav extends React.Component {
     constructor(props) {
         super(props);
+        this.setState({
+            account: this.props.account,
+        })
+
     }
 
     login() {
-        get('http://127.0.0.1:8000/account/login/').then(data => {
-            console.log(data)
+
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('account',nextProps.account)
+        this.setState({
+            account: this.props.account,
         })
     }
+
 
     render() {
         return (

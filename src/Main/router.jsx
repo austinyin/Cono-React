@@ -3,7 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 import Home from './Home'
 import UserCenter from './UserCenter'
 import Explore from "src/Main/Explore";
-import ExlorePeople from "src/Main/Explore/ExlorePeople";
+import ExlorePeople from "src/Main/Explore/ExlorePeople/ExlorePeople";
 
 const MainRouter = () => (
     <Switch>

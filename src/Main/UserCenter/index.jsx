@@ -7,12 +7,16 @@ import './style.scss'
 import * as UserActions from "./actions";
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import TweetCard from "src/components/TweetCard";
+import * as DialogActions from "src/components/Dialog/actions";
+import {logout as logoutAction} from "src/Account/actions";
 
 
 class UserCenter extends React.Component {
     constructor(props) {
         super(props);
         this.listUpdating = false;
+        this.showDialog = this.showDialog.bind(this);
+        this.logoutHandl = this.logoutHandl.bind(this);
         this.state = {
             userInfo: this.props.userInfo,
             tweetList: this.props.tweetList
@@ -32,13 +36,39 @@ class UserCenter extends React.Component {
         }
     }
 
+    chPassHandl() {
+        console.log('chPass')
+    }
+
+    logoutHandl(){
+        console.log('logOut')
+        this.props.logout()
+
+    }
+
+    dialogSet(){
+        const dialogs = [
+            {text: '更改密码', func: this.chPassHandl},
+            {text: '退出', func: this.logoutHandl},
+        ];
+        this.props.dialogElemsSet(dialogs)
+    }
+
     init() {
         // 初始数据获得
-        this.props.userInfoGet()
+        this.props.userInfoGet();
         for (let i = 0; i < 2; i++) {
             this.listUpdate();
         }
+        // 弹窗初始化
+        this.dialogSet()
     }
+
+    showDialog(){
+        this.props.dialogDisplaySet(true)
+    }
+
+
 
     componentDidMount() {
         this.init()
@@ -87,7 +117,7 @@ class UserCenter extends React.Component {
                                             <button>编辑个人主页</button>
                                         </span>
                                         <span>
-                                            <button>SettingBUtton</button>
+                                            <button onClick={this.showDialog}>SettingBUtton</button>
                                         </span>
 
                                     </div>
@@ -123,20 +153,23 @@ class UserCenter extends React.Component {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
                 <div className="tweets-con">
-                    <div className="row">
-                        {this.state.tweetList.map((tweet) => {
-                            return(
-                                <div key={tweet.id} className="tweet-card-con col-4">
-                                    <TweetCard tweet={tweet}/>
-                                </div>
-                            )
-                        })}
-                    </div>
+                <div className="row">
+                    {this.state.tweetList.map((tweet) => {
+                        return(
+                            <div key={tweet.id} className="tweet-card-con col-4">
+                                <TweetCard tweet={tweet}/>
+                            </div>
+                        )
+                    })}
                 </div>
+            </div>
                 {this.props.children}
             </div>
+
         )
     }
 }
@@ -153,6 +186,10 @@ function mapDispatchToProps(dispatch) {
         userInfoGet: bindActionCreators(UserActions.userInfoGet, dispatch),
         tweetNextPage: bindActionCreators(UserActions.userTweetsNextPage, dispatch),
         userResetAll: bindActionCreators(UserActions.userResetAll, dispatch),
+        dialogElemsSet: bindActionCreators(DialogActions.dialogElemsSet, dispatch),
+        dialogDisplaySet: bindActionCreators(DialogActions.dialogDisplaySet, dispatch),
+        logout: bindActionCreators(logoutAction, dispatch),
+
     }
 }
 

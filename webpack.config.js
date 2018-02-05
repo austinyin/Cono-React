@@ -1,13 +1,18 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
+
+const {CheckerPlugin, TsConfigPathsPlugin} = require('awesome-typescript-loader');
+
 function resolve(dir) {
     return path.join(__dirname, 'src', dir)
 }
 
 
 module.exports = {
-    entry: ['babel-polyfill', './src/index.jsx'],
+    entry: ['babel-polyfill', './src/index.tsx'],
 
     // entry : {
     //     main : path.resolve(__dirname,'./src/index.jsx'),
@@ -17,6 +22,7 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
+    devtool: "source-map",
     devServer:{
         historyApiFallback: true,
         contentBase: "./public",
@@ -79,17 +85,28 @@ module.exports = {
                 },
             },
             {
+                test: /\.tsx?$/,
+                loader: "awesome-typescript-loader",
+                exclude: /node_modules/
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader',
             },
             {test: /\.svg/, loader: 'svg-url-loader'},
+            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
 
         ]
     },
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
+    },
     resolve: {
-        extensions: [ '.js','.jsx', '.json', '.scss'],
+        extensions: [ '.js','.jsx', '.tsx', '.json', '.scss'],
         alias: {
+            'custom_modules': path.resolve(__dirname, 'src/custom_modules/'),
             src: path.resolve('src'),
             fetch: path.resolve('src/fetch'),
             Main: path.resolve('src/Main'),
@@ -100,9 +117,13 @@ module.exports = {
             api: path.resolve('src/api'),
             static: path.resolve('src/static'),
             assets: path.resolve('src/assets'),
-        }
+        },
+        plugins: [
+            new TsConfigPathsPlugin()
+        ],
     },
     plugins: [
+        // new CheckerPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -113,7 +134,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
-        new webpack.optimize.UglifyJsPlugin()
+        new UglifyJSPlugin()
     ],
 
 

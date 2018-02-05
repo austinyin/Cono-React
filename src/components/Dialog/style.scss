@@ -1,0 +1,25 @@
+@import "~src/assets/css/common.scss";
+#dialogCenter{
+  @include screenCover();
+  .dialog-bac{
+    z-index: 3;
+    @include screenCover();
+    background-color: rgba(0,0,0,.5);
+  }
+
+  .dialog-buttons-con{
+    width: 510px;
+    z-index: 4;
+    @include absoluteCenter();
+    background: #ffffff;
+    li{
+      height: 100%;
+      .dialog-button{
+        padding: 0 16px;
+        @include fillAll();
+      }
+    }
+  }
+
+
+}
