@@ -1,0 +1,25 @@
+
+
+/**
+ * 获取用户信息
+ */
+export const USER_INFO_GET = 'USER_INFO_GET';
+export const USER_GET_SUCCEEDED = 'USER_GET_SUCCEEDED';
+export const USER_GET_FAILED = 'USER_GET_SUCCEEDED';
+
+
+/**
+ * 获取推文信息
+ */
+export const USER_TWEETS_NEXT_PAGE = 'USER_TWEETS_NEXT_PAGE';
+export const USER_TWEETS_NEXT_PAGE_SUCCEEDED = 'USER_TWEETS_NEXT_PAGE_SUCCEEDED';
+export const USER_TWEETS_NEXT_PAGE_FAILED = 'USER_TWEETS_NEXT_PAGE_FAILED';
+export const USER_TWEETS_IS_EMPTY = 'USER_TWEETS_IS_EMPTY';
+
+
+/**
+ * 清除
+ */
+export const USER_RESET_ALL = 'USER_RESET_ALL';
+
+

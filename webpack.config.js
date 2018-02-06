@@ -12,11 +12,11 @@ function resolve(dir) {
 
 
 module.exports = {
-    entry: ['babel-polyfill', './src/index.tsx'],
+    // entry: ['babel-polyfill', './src/index.jsx'],
 
-    // entry : {
-    //     main : path.resolve(__dirname,'./src/index.jsx'),
-    // },
+    entry : {
+        main : path.resolve(__dirname,'./src/index.jsx'),
+    },
     output:{
         path: path.resolve(__dirname,'./public'),
         filename: 'bundle.js',
@@ -106,7 +106,6 @@ module.exports = {
     resolve: {
         extensions: [ '.js','.jsx', '.tsx', '.json', '.scss'],
         alias: {
-            'custom_modules': path.resolve(__dirname, 'src/custom_modules/'),
             src: path.resolve('src'),
             fetch: path.resolve('src/fetch'),
             Main: path.resolve('src/Main'),
@@ -123,7 +122,7 @@ module.exports = {
         ],
     },
     plugins: [
-        // new CheckerPlugin(),
+        new CheckerPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',
