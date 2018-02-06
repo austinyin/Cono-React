@@ -1,16 +1,17 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './style.scss'
-import Explore from "src/Main/Explore";
 import Link from "react-router-dom/es/Link";
-import {get, post} from "src/shared/js/axiosUtil";
+import {LoginState} from "src/Account/constants";
+import {connect} from "react-redux";
 
-class Nav extends React.Component {
+
+
+class Nav extends Component {
     constructor(props) {
         super(props);
-        this.setState({
+        this.state = {
             account: this.props.account,
-        })
-
+        }
     }
 
     login() {
@@ -18,7 +19,6 @@ class Nav extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('account',nextProps.account)
         this.setState({
             account: this.props.account,
         })
@@ -43,8 +43,11 @@ class Nav extends React.Component {
                             <div className="nr-infos-con">
                                 <Link to="/explore" className="nr-icon explore-icon"/>
                                 <a className="nr-icon recent-icon"/>
-                                <Link to="/UserCenter" className="nr-icon self-center-icon"/>
-                                <a className="nr-icon pub-icon" onClick={this.login}/>
+                                {this.state.account.state === LoginState.login
+                                    ? <Link to={`/${this.state.account.user.username}`} className="nr-icon self-center-icon"/>
+                                    : <Link to="/account" className="nr-icon self-center-icon"/>
+                                }
+                                <a className="nr-icon pub-icon"/>
                             </div>
                         </div>
                     </div>
@@ -55,4 +58,15 @@ class Nav extends React.Component {
     }
 }
 
-export default Nav
+function mapStateToProps(state) {
+    return {
+        account: state.Account,
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    null
+)(Nav)
+
+

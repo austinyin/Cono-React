@@ -42,7 +42,8 @@ export const LoginState = {
 export const AccountForm = {
     loginUsername: null,
     loginPassword: null,
-    registPhoneOrEmail: null,
+    registPhone: null,
+    registEmail: null,
     registFullname: null,
     registUsername: null,
     registPassword: null

@@ -12,17 +12,16 @@ function resolve(dir) {
 
 
 module.exports = {
-    // entry: ['babel-polyfill', './src/index.jsx'],
+    entry: ['babel-polyfill', path.resolve(__dirname,'./src/index.jsx')],
 
-    entry : {
-        main : path.resolve(__dirname,'./src/index.jsx'),
-    },
+    // entry : {
+    //     main : path.resolve(__dirname,'./src/index.jsx'),
+    // },
     output:{
         path: path.resolve(__dirname,'./public'),
         filename: 'bundle.js',
         publicPath: '/'
     },
-    devtool: "source-map",
     devServer:{
         historyApiFallback: true,
         contentBase: "./public",
@@ -99,10 +98,6 @@ module.exports = {
 
         ]
     },
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    },
     resolve: {
         extensions: [ '.js','.jsx', '.tsx', '.json', '.scss'],
         alias: {
@@ -116,10 +111,7 @@ module.exports = {
             api: path.resolve('src/api'),
             static: path.resolve('src/static'),
             assets: path.resolve('src/assets'),
-        },
-        plugins: [
-            new TsConfigPathsPlugin()
-        ],
+        }
     },
     plugins: [
         new CheckerPlugin(),

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './style.scss'
-import {formType, loginType} from "src/Account/constants";
+import {AccountForm, formType, loginType} from "src/Account/constants";
 
 class LogInOut extends Component {
     constructor(props, context) {
@@ -10,14 +10,7 @@ class LogInOut extends Component {
         this.setFormState = this.setFormState.bind(this)
         this.valueChangeTimers = {}; // 包含输入框函数节流定时器。
         this.canSubmits = {};  // 包含所有输入框是否可以提交状态
-        this.state = {
-            loginUsername: null,
-            loginPassword: null,
-            registPhoneOrEmail: null,
-            registFullname: null,
-            registUsername: null,
-            registPassword: null
-        }
+        this.state = AccountForm
     }
 
     /**
@@ -42,7 +35,6 @@ class LogInOut extends Component {
      * setState回调表示可以提交表单了。
      */
     setFormState(targetId, targetValue) {
-        console.log(targetId, targetValue)
         const state = Object.assign({}, this.state);
         state[targetId] = targetValue;
         this.setState(state, () => {
@@ -57,19 +49,17 @@ class LogInOut extends Component {
         const canSubmit = Object.keys(this.canSubmits).every(key => {
             return this.canSubmits[key] === true;
         });
-
         if (canSubmit) {
             const form = this.props.form;
             for (let key of Object.keys(form)) {
                 form[key] = this.state[key]
             }
             this.props.accountFunc(this.props.formType, this.props.form);
+            return
         }
-        else {
-            setTimeout(() => {
-                this.logInOutHandle(e)
-            }, 1000)
-        }
+        setTimeout(() => {
+            this.logInOutHandle(e)
+        }, 1000)
     }
 
 

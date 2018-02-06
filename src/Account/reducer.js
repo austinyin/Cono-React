@@ -20,7 +20,6 @@ export default function Account(state = initialState, action) {
          * 登陆
          */
         case actionTypes.LOGIN_SUCCEEDED:
-            console.log('action.data',action.data)
             return Object.assign({}, state, {user: action.data.user, state: LoginState.login});
 
         /**
@@ -33,7 +32,7 @@ export default function Account(state = initialState, action) {
          * 检测
          */
         case actionTypes.LOGIN_CHECK_SUCCEEDED:
-            return Object.assign({}, state, {state: LoginState.logout});
+            return Object.assign({}, state, {user: action.data.user,state: LoginState.login});
 
         /**
          * 默认和错误判断

@@ -18,8 +18,6 @@ function* userTweetsNextPage(action) {
         if(!ret.next){
             yield put({type: UserActionTypes.USER_TWEETS_IS_EMPTY});
         }
-        console.log('ahah')
-        console.log('ret', ret)
         const list = []
         for (let i = 0; i < 2; i++) {
             list.push(...ret.results) // 需要.results 是因为rest 的分页处理。

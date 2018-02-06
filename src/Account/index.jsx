@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import * as React from 'react';
 import './style.scss'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
@@ -9,7 +9,7 @@ import * as AccountActions from "./actions";
 import {AccountForm,FormType, LoginForm, RegistForm} from "./constants";
 import LogInOut from "../components/LogInOut";
 
-class Account extends Component {
+class Account extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.accountReceiveFunc = this.accountReceiveFunc.bind(this)
@@ -49,15 +49,9 @@ class Account extends Component {
                         <LogInOut formType={FormType.login} form={this.accountForm}  accountFunc={this.accountReceiveFunc}/>
                     </div>
                 </div>
-
             </div>
-
         )
     }
-}
-
-function mapStateToProps(state) {
-    return {}
 }
 
 
@@ -69,6 +63,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(Account)

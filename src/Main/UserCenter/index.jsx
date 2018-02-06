@@ -75,7 +75,6 @@ class UserCenter extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps.tweetList)
         // 将state 与redux 同步
         if (this.state.tweetList !== nextProps.tweetList) {
             this.setState({
