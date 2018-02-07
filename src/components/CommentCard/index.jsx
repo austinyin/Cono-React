@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.scss'
+import {TweetFullCardType} from "../TweetFullCard/model";
 
 class CommentCard extends React.Component {
     constructor(props, context) {
@@ -8,7 +9,7 @@ class CommentCard extends React.Component {
 
     render() {
         return (
-            <div id="commentCard">
+            <div id="commentCard" className={this.props.type === TweetFullCardType.dialog? 'dialog-comment-card' : ''}>
                 <header className="c-header">
                     <div className="c-header-top">
                         <div className="cht-left-icons">

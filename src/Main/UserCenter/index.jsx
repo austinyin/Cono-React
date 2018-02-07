@@ -9,6 +9,7 @@ import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import TweetCard from "src/components/TweetCard";
 import * as DialogActions from "src/components/Dialog/actions";
 import {logout as logoutAction} from "src/Account/actions";
+import {tweetFullCardElemSet} from "../../components/Dialog/actions";
 
 
 class UserCenter extends React.Component {
@@ -17,12 +18,23 @@ class UserCenter extends React.Component {
         this.listUpdating = false;
         this.showDialog = this.showDialog.bind(this);
         this.logoutHandl = this.logoutHandl.bind(this);
+        this.tweetClickFuncHandl = this.tweetClickFuncHandl.bind(this);
         this.state = {
             userInfo: this.props.userInfo,
             tweetList: this.props.tweetList
         }
     }
 
+    showDialog(){
+        this.props.dialogDisplaySet({
+            dialogButtons: true
+        })
+    }
+
+    tweetClickFuncHandl(id) {
+        this.props.tweetFullCardElemSet(id)
+        this.props.dialogDisplaySet({tweetFullCard: true})
+    }
 
     listUpdate() {
         this.listUpdating = true;
@@ -51,7 +63,7 @@ class UserCenter extends React.Component {
             {text: '更改密码', func: this.chPassHandl},
             {text: '退出', func: this.logoutHandl},
         ];
-        this.props.dialogElemsSet(dialogs)
+        this.props.dialogButtonsElemSet(dialogs)
     }
 
     init() {
@@ -63,12 +75,6 @@ class UserCenter extends React.Component {
         // 弹窗初始化
         this.dialogSet()
     }
-
-    showDialog(){
-        this.props.dialogDisplaySet(true)
-    }
-
-
 
     componentDidMount() {
         this.init()
@@ -152,15 +158,13 @@ class UserCenter extends React.Component {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
                 <div className="tweets-con">
                 <div className="row">
                     {this.state.tweetList.map((tweet) => {
                         return(
                             <div key={tweet.id} className="tweet-card-con col-4">
-                                <TweetCard tweet={tweet}/>
+                                <TweetCard clickFuncHandle={this.tweetClickFuncHandl} tweet={tweet}/>
                             </div>
                         )
                     })}
@@ -182,13 +186,13 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
+        logout: bindActionCreators(logoutAction, dispatch),
         userInfoGet: bindActionCreators(UserActions.userInfoGet, dispatch),
         tweetNextPage: bindActionCreators(UserActions.userTweetsNextPage, dispatch),
         userResetAll: bindActionCreators(UserActions.userResetAll, dispatch),
-        dialogElemsSet: bindActionCreators(DialogActions.dialogElemsSet, dispatch),
+        dialogButtonsElemSet: bindActionCreators(DialogActions.dialogButtonsElemSet, dispatch),
         dialogDisplaySet: bindActionCreators(DialogActions.dialogDisplaySet, dispatch),
-        logout: bindActionCreators(logoutAction, dispatch),
-
+        tweetFullCardElemSet: bindActionCreators(tweetFullCardElemSet, dispatch),
     }
 }
 

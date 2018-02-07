@@ -6,6 +6,7 @@ import * as actionTypes from "./constants";
  * 用户信息获取actions
  */
 
+// data: {key: value:boolean}
 export function dialogDisplaySet(data) {
     return{
         type: actionTypes.DIALOG_DISPLAY_SET,
@@ -13,17 +14,26 @@ export function dialogDisplaySet(data) {
     }
 }
 
-export function dialogElemsSet(data) {
+// data: elem[]
+export function dialogButtonsElemSet(data) {
     return{
-        type: actionTypes.DIALOG_ELEMS_SET,
+        type: actionTypes.DIALOG_BUTTONS_ELEM_SET,
+        data
+    }
+}
+
+// data: number=id
+export function tweetFullCardElemSet(data) {
+    return{
+        type: actionTypes.TWEET_FULL_CARD_ELEM_SET,
         data
     }
 }
 
 
-export function dialogReset() {
+export function dialogResetAll() {
     return{
-        type: actionTypes.DIALOG_RESET,
+        type: actionTypes.DIALOG_RESET_ALL,
 
     }
 }

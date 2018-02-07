@@ -3,48 +3,55 @@ import './style.scss'
 
 import SimpleUserCard from "src/components/SimpleUserCard";
 import CommentCard from "src/components/CommentCard";
+import {TweetFullCardType} from "./model";
+import Slider from "../Slider";
 
 class TweetFullCard extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.avatar = "src/assets/img/avatar/avatar.jpg"
+
+    }
+
+    componentWillReceiveProps() {
+
+    }
+
+    componentDidMount() {
     }
 
     render() {
-        return(
-            <section id="tweetFullCard" className="container-fluid">
-                <header className="full-card-header">
-                    <div className="w-100 h-100">
-                        <SimpleUserCard
-                            imgUrl={this.props.data.user.avatar?this.props.data.user.avatar:"src/assets/img/avatar/avatar.jpg"}
-                            title={this.props.data.user.username}
-                        />
+        if (this.props.data.hasOwnProperty('user')) {
+            return (
+                <section id="tweetFullCard" className={this.props.type === TweetFullCardType.dialog?"dialog-tweet-full-card": '' } >
+                    {this.props.type === TweetFullCardType.dialog ?
+                        <div className="image-slider-con image-slider-con-dialog">
+                            <Slider showDots={false}/>
+                        </div> : null
+                    }
+                    <div>
+                        <header className="full-card-header ">
+                            <div className="w-100 h-100">
+                                <SimpleUserCard
+                                    imgUrl={this.props.data.user.avatar ? this.props.data.user.avatar : "src/assets/img/avatar/avatar.jpg"}
+                                    title={this.props.data.user.username}
+                                />
+                            </div>
+                        </header>
+                        {this.props.type === TweetFullCardType.common ?
+                            <div className="image-slider-con">
+                                <Slider/>
+                            </div> : null
+                        }
+                        <CommentCard type={this.props.type} author={{name: this.props.data.user.username, text: this.props.data.text}}
+                                     comments={this.props.data.comments}/>
                     </div>
-                </header>
-                <div className="image-slider">
-                    <div className="slider-left-button">
-                        <button>left</button>
-                    </div>
-                    <div className="img-con">
-                        <img className="img-fluid" src={require("src/assets/img/tweets/tweet.jpg")} alt=""/>
-                    </div>
-                    <div className="slider-right-button">
-                        <button>right</button>
-                    </div>
-                    <div className="slider-dots">
-                        <ul>
-                            <li>.</li>
-                            <li>.</li>
-                            <li>.</li>
-                        </ul>
-                    </div>
-                </div>
-                <CommentCard author={{name:this.props.data.user.username, text: this.props.data.text}}
-                             comments={this.props.data.comments}/>
+                    }
+                </section>
+            )
+        }
+        return <div>haha</div>
 
-
-            </section>
-        )
     }
 }
 

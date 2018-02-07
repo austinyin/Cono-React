@@ -21,5 +21,13 @@
     }
   }
 
+  .dialog-tweet-con{
+    z-index: 4;
+    height: 500px;
+    max-width:900px;
+    @include absoluteCenter();
+    background: #ffffff;
+  }
+
 
 }

@@ -37,7 +37,15 @@
         background: none;
         border: none;
       }
-
     }
+  }
+}
+
+// 弹窗下的布局
+.dialog-comment-card{
+  display: flex;
+  flex-direction: column;
+  .c-header{
+    order: 3;
   }
 }

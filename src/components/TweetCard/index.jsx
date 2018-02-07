@@ -6,11 +6,16 @@ import './style.scss'
 class TweetCard extends React.Component {
     constructor(props, context) {
         super(props, context);
+        this.clickHandle = this.clickHandle.bind(this)
+    }
+
+    clickHandle(){
+        this.props.clickFuncHandle(this.props.tweet.id)
     }
 
     render() {
         return(
-            <div id="tweetCard">
+            <div id="tweetCard" onClick={this.clickHandle}>
                 <div className="img-con">
                     <a href="">
                         <img src="" alt=""/>

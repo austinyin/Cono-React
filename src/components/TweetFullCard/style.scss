@@ -1,37 +1,25 @@
 #tweetFullCard{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  .image-slider-con-dialog{
+    height: 100%;
+    .img-con{
+      height: 100%;
+    }
+    img{
+      height: 100%;
+    }
+  }
   .full-card-header{
     height: 60px;
     display: flex;
     align-items: center;
   }
+}
 
-  // 中间图片
-  .image-slider{
-    position: relative;
+.dialog-tweet-full-card{
+  display: flex;
+  flex-direction: row;
 
-    .slider-left-button, .slider-right-button{
-      position: absolute;
-      top: 50%;
-    }
-    .slider-left-button{
-      left: 5%;
-      transform: translateY(-50%);
-    }
-    .slider-right-button{
-      right: 5%;
-      transform: translateY(-50%);
-    }
-    .slider-dots{
-      ul{
-        position: absolute;
-        bottom: -5%;
-        left: 50%;
-        transform: translateX(-50%);
-        li{
-          display: inline-block;
-        }
-      }
-
-    }
-  }
 }
