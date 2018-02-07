@@ -21,11 +21,8 @@ export default function Dialog(state = initialState, action) {
                     newState = Object.assign({},state,{[key]:Object.assign({},state[key],{visible: action.data[key]})})
                 }
             }
-            return newState
+            return newState;
         case actionTypes.DIALOG_BUTTONS_ELEM_SET:
-            console.log('elems', action.data)
-            console.log('first', Object.assign({}, state['dialogButtons'], {elems: action.data}))
-            console.log(Object.assign({}, state, {'dialogButtons': Object.assign({}, state['dialogButtons'], {elems: action.data})}))
             return Object.assign({}, state, {'dialogButtons': Object.assign({}, state['dialogButtons'], {elems: action.data})})
 
         /**

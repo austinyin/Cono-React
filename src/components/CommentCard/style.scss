@@ -4,7 +4,7 @@
     justify-content: space-between;
   }
 
-  .c-items{
+  .comment-items{
     .item{
       position: relative;
       display: flex;
@@ -45,7 +45,15 @@
 .dialog-comment-card{
   display: flex;
   flex-direction: column;
+  .comment-items{
+    order: 1;
+    height: 380px;
+  }
   .c-header{
+    order: 2;
+  }
+  .comment-input-con{
     order: 3;
   }
+
 }

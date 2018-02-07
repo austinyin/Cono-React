@@ -1,7 +1,6 @@
 #tweetFullCard{
-  width: 100%;
-  height: 100%;
   background: #ffffff;
+  margin-bottom: 60px;
   .image-slider-con-dialog{
     height: 100%;
     .img-con{
@@ -18,8 +17,15 @@
   }
 }
 
+
+// 针对dialog版本的设置
 .dialog-tweet-full-card{
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
+  .tweet-full-card-main{
+    padding: 0 24px;
+  }
 
 }

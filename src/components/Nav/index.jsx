@@ -3,19 +3,24 @@ import './style.scss'
 import Link from "react-router-dom/es/Link";
 import {LoginState} from "src/Account/constants";
 import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
 
+import * as DialogActions from "src/components/Dialog/actions";
 
 
 class Nav extends Component {
     constructor(props) {
         super(props);
+        this.showPub = this.showPub.bind(this);
         this.state = {
             account: this.props.account,
         }
     }
 
-    login() {
-
+    showPub() {
+        this.props.dialogDisplaySet({
+            pubCard: true
+        })
     }
 
     componentWillReceiveProps(nextProps) {
@@ -44,10 +49,11 @@ class Nav extends Component {
                                 <Link to="/explore" className="nr-icon explore-icon"/>
                                 <a className="nr-icon recent-icon"/>
                                 {this.state.account.state === LoginState.login
-                                    ? <Link to={`/${this.state.account.user.username}`} className="nr-icon self-center-icon"/>
+                                    ? <Link to={`/${this.state.account.user.username}`}
+                                            className="nr-icon self-center-icon"/>
                                     : <Link to="/account" className="nr-icon self-center-icon"/>
                                 }
-                                <a className="nr-icon pub-icon"/>
+                                <a className="nr-icon pub-icon" onClick={this.showPub}/>
                             </div>
                         </div>
                     </div>
@@ -64,9 +70,15 @@ function mapStateToProps(state) {
     }
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        dialogDisplaySet: bindActionCreators(DialogActions.dialogDisplaySet, dispatch),
+    }
+}
+
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
 )(Nav)
 
 

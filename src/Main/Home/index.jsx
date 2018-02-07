@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component, ReactPropTypes} from 'react'
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
@@ -8,6 +9,7 @@ import HomeRightBar from "src/Main/Home/HomeRightBar/HomeRightBar";
 
 import * as TweetListActions from './actions'
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
+import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
 class Home extends Component {
     constructor(props) {
@@ -17,8 +19,12 @@ class Home extends Component {
             nowPage: this.props.nowPage,
             tweetList: this.props.tweetList,
         }
-
     }
+    // 使用context传递 TweetFullCard的Type, 让其下方所有组件都能正确的展示自己。
+    getChildContext(){
+        return {TweetFullCardType: TweetFullCardType.common};
+    }
+
 
 
     listUpdate() {
@@ -70,7 +76,7 @@ class Home extends Component {
                     <div className="row">
                         <div className="main-left-con col-8" ref="tweetCon">
                             {this.state.tweetList.map((data) => {
-                                return <TweetFullCard data={data}/>
+                                return <TweetFullCard   data={data}/>
                             })}
                         </div>
                         <div className="main-right-con col-4">
@@ -80,10 +86,16 @@ class Home extends Component {
                 </div>
                 {this.props.children}
             </div>
-
         )
     }
 }
+
+
+
+Home.childContextTypes = {
+    TweetFullCardType: PropTypes.string,
+}
+
 
 function mapStateToProps(state) {
     return {

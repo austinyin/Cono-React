@@ -23,10 +23,16 @@
 
   .dialog-tweet-con{
     z-index: 4;
-    height: 500px;
-    max-width:900px;
+    height: 600px;
     @include absoluteCenter();
     background: #ffffff;
+  }
+
+  .pub-card-con{
+    z-index: 4;
+    @include absoluteCenter();
+    width: 540px;
+    height: 305px;
   }
 
 

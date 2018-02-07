@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types';
+
 import './style.scss'
 import {TweetFullCardType} from "../TweetFullCard/model";
 
@@ -8,8 +10,9 @@ class CommentCard extends React.Component {
     }
 
     render() {
+        const type = this.context.TweetFullCardType
         return (
-            <div id="commentCard" className={this.props.type === TweetFullCardType.dialog? 'dialog-comment-card' : ''}>
+            <div id="commentCard" className={type === TweetFullCardType.dialog? 'dialog-comment-card' : ''}>
                 <header className="c-header">
                     <div className="c-header-top">
                         <div className="cht-left-icons">
@@ -26,7 +29,7 @@ class CommentCard extends React.Component {
                         </a>
                     </div>
                 </header>
-                <div className="c-items">
+                <div className="comment-items">
                     <ul>
                         <li className="item author-item">
                             <a href="" className="content-maker"><span className="">{this.props.author.name}</span></a>
@@ -47,7 +50,6 @@ class CommentCard extends React.Component {
                                         </a>
                                         : ""
                                     }
-
                                 </li>
                             )
                         })}
@@ -65,6 +67,10 @@ class CommentCard extends React.Component {
 
         )
     }
+}
+
+CommentCard.contextTypes = {
+    TweetFullCardType: PropTypes.string.isRequired,
 }
 
 export default CommentCard
