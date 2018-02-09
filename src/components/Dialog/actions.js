@@ -3,7 +3,7 @@ import * as actionTypes from "./constants";
 
 
 /**
- * 用户信息获取actions
+ * 弹窗按钮
  */
 
 // data: {key: value:boolean}
@@ -22,6 +22,12 @@ export function dialogButtonsElemSet(data) {
     }
 }
 
+
+/**
+ * tweet弹窗
+ */
+
+
 // data: number=id
 export function tweetFullCardElemSet(data) {
     return{
@@ -33,8 +39,34 @@ export function tweetFullCardElemSet(data) {
 
 export function dialogResetAll() {
     return{
-        type: actionTypes.DIALOG_RESET_ALL,
+        type: actionTypes.DIALOG_RESET_ALL
+    }
+}
 
+/**
+ * pub 发布
+ * pubTransferUpload({type:MediaType,data:File})
+ */
+
+export function pubTransferUpload(data) {
+    return{
+        type: actionTypes.DIALOG_RESET_ALL,
+        data
+    }
+}
+
+export function pubTransferUploadSucceeded(data) {
+    return{
+        type: actionTypes.DIALOG_RESET_ALL,
+        data
+    }
+}
+
+
+export function pubTransferUploadFailed(error) {
+    return{
+        type: actionTypes.DIALOG_RESET_ALL,
+        error
     }
 }
 

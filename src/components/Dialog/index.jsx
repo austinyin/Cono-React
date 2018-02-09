@@ -8,6 +8,7 @@ import './style.scss'
 import TweetFullCard from "../TweetFullCard";
 import {TweetFullCardType} from "../TweetFullCard/model";
 import PubCard from "src/components/PubCard";
+import {UploadType} from "src/components/Dialog/constants";
 
 
 class Dialog extends Component {
@@ -15,6 +16,7 @@ class Dialog extends Component {
         super(props);
         this.dialogButtonsHide = this.dialogButtonsHide.bind(this);
         this.pubCardHide = this.pubCardHide.bind(this);
+        this.upload = this.upload.bind(this);
         this.state = {
             dialogObj: this.props.dialogObj,
         }
@@ -22,6 +24,24 @@ class Dialog extends Component {
 
     getChildContext() {
         return {TweetFullCardType: TweetFullCardType.dialog};
+    }
+
+    dialogButtonsHide() {
+        this.props.dialogDisplay({
+            dialogButtons: false,
+        });
+    }
+
+    pubCardHide() {
+        this.props.dialogDisplay({
+            pubCard: false,
+        });
+    }
+
+    upload(){
+        this.refs.pubCard.state.uploadType
+            uploadType: eventClass === 'pub-main-image' ? UploadType.image : UploadType.video,
+        this.props.pubTransferUpload()
     }
 
     init() {
@@ -44,20 +64,11 @@ class Dialog extends Component {
         this.dialogResetAll()
     }
 
-    dialogButtonsHide() {
-        this.props.dialogDisplay({
-            dialogButtons: false,
-        });
-    }
 
-    pubCardHide() {
-        this.props.dialogDisplay({
-            pubCard: false,
-        });
-    }
+
 
     render() {
-        const dialogObj = this.state.dialogObj
+        const dialogObj = this.state.dialogObj;
         if(dialogObj.dialogButtons.visible || dialogObj.tweetFullCard.visible || dialogObj.pubCard.visible){
             return (
                 <div id="dialogCenter">
@@ -85,7 +96,7 @@ class Dialog extends Component {
                     }
                     {dialogObj.pubCard.visible?
                         <div className="pub-card-con">
-                            <PubCard closeFuncHandl={this.pubCardHide}/>
+                            <PubCard ref="pubCard" uploadFuncHandl={this.upload} closeFuncHandl={this.pubCardHide}/>
                         </div> :null
                     }
                     <div className="dialog-bac"/> : null
@@ -107,6 +118,7 @@ function mapDispatchToProps(dispatch) {
     return {
         dialogDisplay: bindActionCreators(DialogCenterActions.dialogDisplaySet, dispatch),
         dialogResetAll: bindActionCreators(DialogCenterActions.dialogResetAll, dispatch),
+        pubTransferUpload: bindActionCreators(DialogCenterActions.pubTransferUpload, dispatch),
     }
 }
 
