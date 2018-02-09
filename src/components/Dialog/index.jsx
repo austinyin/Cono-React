@@ -16,12 +16,17 @@ class Dialog extends Component {
         super(props);
         this.dialogButtonsHide = this.dialogButtonsHide.bind(this);
         this.pubCardHide = this.pubCardHide.bind(this);
-        this.upload = this.upload.bind(this);
+        this.uploadFuncHandl = this.uploadFuncHandl.bind(this);
+        this.transferUploadFuncHandl = this.transferUploadFuncHandl.bind(this);
         this.state = {
             dialogObj: this.props.dialogObj,
         }
     }
 
+    /**
+     * 共享给所有子组件 TweetFullCardType， 让他们根据该值表现相应的的状态。
+     * @returns {{TweetFullCardType: number}}
+     */
     getChildContext() {
         return {TweetFullCardType: TweetFullCardType.dialog};
     }
@@ -38,10 +43,20 @@ class Dialog extends Component {
         });
     }
 
-    upload(){
-        this.refs.pubCard.state.uploadType
-            uploadType: eventClass === 'pub-main-image' ? UploadType.image : UploadType.video,
-        this.props.pubTransferUpload()
+    /**
+     * 接收来自pubCard组件的 Upload函数传来的data， 并派发action。
+     * @param data
+     */
+    uploadFuncHandl(data){
+        this.props.pubUpload(data)
+    }
+
+    /**
+     * 接收来自pubCard组件的 transferUpload函数传来的data， 并派发action。
+     * @param data
+     */
+    transferUploadFuncHandl(data){
+        this.props.pubTransferUpload(data)
     }
 
     init() {
@@ -53,9 +68,8 @@ class Dialog extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // 将state 与redux 同步
         this.setState({
-            dialogObj: nextProps.dialogObj,
+            dialogObj: this.props.dialogObj,
         })
     }
 
@@ -68,7 +82,7 @@ class Dialog extends Component {
 
 
     render() {
-        const dialogObj = this.state.dialogObj;
+        const dialogObj = this.props.dialogObj;
         if(dialogObj.dialogButtons.visible || dialogObj.tweetFullCard.visible || dialogObj.pubCard.visible){
             return (
                 <div id="dialogCenter">
@@ -96,7 +110,7 @@ class Dialog extends Component {
                     }
                     {dialogObj.pubCard.visible?
                         <div className="pub-card-con">
-                            <PubCard ref="pubCard" uploadFuncHandl={this.upload} closeFuncHandl={this.pubCardHide}/>
+                            <PubCard ref="pubCard"   pubCardObj={dialogObj.pubCard} tranferUploadFunc={this.transferUploadFuncHandl}  uploadFunc={this.uploadFuncHandl} closeFuncHandl={this.pubCardHide}/>
                         </div> :null
                     }
                     <div className="dialog-bac"/> : null
@@ -119,6 +133,7 @@ function mapDispatchToProps(dispatch) {
         dialogDisplay: bindActionCreators(DialogCenterActions.dialogDisplaySet, dispatch),
         dialogResetAll: bindActionCreators(DialogCenterActions.dialogResetAll, dispatch),
         pubTransferUpload: bindActionCreators(DialogCenterActions.pubTransferUpload, dispatch),
+        pubUpload: bindActionCreators(DialogCenterActions.pubUpload, dispatch),
     }
 }
 

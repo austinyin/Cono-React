@@ -1,9 +1,10 @@
 import * as actionTypes from "./constants";
 import {stateChildOperByKey} from "src/shared/js/reducerUtils";
+import {UploadState, UploadType} from "src/components/Dialog/constants";
 
 const initialState = {
     dialogButtons: {visible: false, elems: []},
-    pubCard: {visible: false, shortCode: null, state: null, images:[], video: null},
+    pubCard: {visible: false, state: UploadState.before, transferObj: null},
     tweetFullCard: {visible: false, data: {}}
 };
 
@@ -35,15 +36,10 @@ export default function Dialog(state = initialState, action) {
          *  transfer设置
          */
         case actionTypes.PUB_TRANSFER_UPLOAD_SUCCEEDED:
-            if(action.data.type === 'image'){
-                const retImages = [...state.pubCard.images,...action.data.images]
-                return stateChildOperByKey(state, 'pubCard', {images: retImages,shortCode: action.data.shortCode})
-            }
-            if(action.data.type === 'video') {
-                return stateChildOperByKey(state, 'pubCard', {video: action.data.video,shortCode: action.data.shortCode})
-            }
-            return
-
+            console.log('action.data.transferObj',action.data.transferObj)
+            return stateChildOperByKey(state, 'pubCard', {transferObj: action.data.transferObj,state: UploadState.going})
+        case actionTypes.PUB_UPLOAD_SUCCEEDED:
+            return stateChildOperByKey(state, 'pubCard', {state: UploadState.before})
 
         /**
          * reset和default

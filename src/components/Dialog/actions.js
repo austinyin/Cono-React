@@ -50,14 +50,14 @@ export function dialogResetAll() {
 
 export function pubTransferUpload(data) {
     return{
-        type: actionTypes.DIALOG_RESET_ALL,
+        type: actionTypes.PUB_TRANSFER_UPLOAD,
         data
     }
 }
 
 export function pubTransferUploadSucceeded(data) {
     return{
-        type: actionTypes.DIALOG_RESET_ALL,
+        type: actionTypes.PUB_TRANSFER_UPLOAD_SUCCEEDED,
         data
     }
 }
@@ -65,7 +65,29 @@ export function pubTransferUploadSucceeded(data) {
 
 export function pubTransferUploadFailed(error) {
     return{
-        type: actionTypes.DIALOG_RESET_ALL,
+        type: actionTypes.PUB_TRANSFER_UPLOAD_FAILED,
+        error
+    }
+}
+
+export function pubUpload(data) {
+    return{
+        type: actionTypes.PUB_UPLOAD,
+        data
+    }
+}
+
+export function pubUploadSucceeded(data) {
+    return{
+        type: actionTypes.PUB_UPLOAD_SUCCEEDED,
+        data
+    }
+}
+
+
+export function pubUploadFailed(error) {
+    return{
+        type: actionTypes.PUB_UPLOAD_FAILED,
         error
     }
 }
