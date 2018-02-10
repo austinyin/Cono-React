@@ -2,20 +2,23 @@ import * as React from 'react';
 import './style.scss'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
+import { Redirect } from 'react-router-dom';
 
 
 import * as AccountActions from "./actions";
 
 import {AccountForm,FormType, LoginForm, RegistForm} from "./constants";
 import LogInOut from "../components/LogInOut";
+import {LoginState} from "src/Account/constants";
 
 class Account extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.accountReceiveFunc = this.accountReceiveFunc.bind(this)
         this.accountForm = Object.assign({},AccountForm)
-
     }
+
+
 
     accountReceiveFunc(type, form) {
         if(type===FormType.login) {
@@ -23,7 +26,6 @@ class Account extends React.Component {
             loginForm.username = form.loginUsername;
             loginForm.password = form.loginPassword;
             this.props.login(loginForm)
-
         }
         else if(type === FormType.regist) {
             const registForm = Object.assign({}, RegistForm);
@@ -40,6 +42,10 @@ class Account extends React.Component {
     }
 
     render() {
+        if(this.props.account.state === LoginState.login){
+            console.log('this.props.account.user.username',this.props.account.user.username)
+            return <Redirect push to={`/${this.props.account.user.username}`} />; //如果检测登陆了则重定向.
+        }
         return (
             <div id="account" className="container">
                 <div className="row account-main">
@@ -54,6 +60,11 @@ class Account extends React.Component {
     }
 }
 
+function mapStateToProps(state) {
+    return{
+        account: state.Account
+    }
+}
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -63,6 +74,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(Account)

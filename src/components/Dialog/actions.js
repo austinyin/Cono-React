@@ -28,7 +28,7 @@ export function dialogButtonsElemSet(data) {
  */
 
 
-// data: number=id
+// data: number<id>
 export function tweetFullCardElemSet(data) {
     return{
         type: actionTypes.TWEET_FULL_CARD_ELEM_SET,
@@ -44,8 +44,8 @@ export function dialogResetAll() {
 }
 
 /**
- * pub 发布
- * pubTransferUpload({type:MediaType,data:File})
+ *  pubTransfer actions
+ *  func pubTransferUpload({type:MediaType,data:File})
  */
 
 export function pubTransferUpload(data) {
@@ -70,6 +70,56 @@ export function pubTransferUploadFailed(error) {
     }
 }
 
+export function pubTransferImageRemove(id) {
+    return{
+        type: actionTypes.PUB_TRANSFER_IMAGE_REMOVE,
+        id
+    }
+}
+
+
+export function pubTransferImageRemoveSucceeded() {
+    return{
+        type: actionTypes.PUB_TRANSFER_IMAGE_REMOVE_SUCCEEDED,
+    }
+}
+
+export function pubTransferImageRemoveFailed(error) {
+    return{
+        type: actionTypes.PUB_TRANSFER_IMAGE_REMOVE_FAILED,
+        error
+    }
+}
+
+
+// 中转media清空操作。
+export function pubTransferReset() {
+    return{
+        type: actionTypes.PUB_TRANSFER_RESET
+    }
+}
+
+export function pubTransferResetSucceeded(data) {
+    return{
+        type: actionTypes.PUB_TRANSFER_RESET_SUCCEEDED,
+        data
+    }
+}
+
+export function pubTransferResetFailed(error) {
+    return{
+        type: actionTypes.PUB_TRANSFER_RESET_FAILED,
+        error
+    }
+}
+
+
+
+
+/**
+ * 发布actions
+ */
+
 export function pubUpload(data) {
     return{
         type: actionTypes.PUB_UPLOAD,
@@ -91,6 +141,9 @@ export function pubUploadFailed(error) {
         error
     }
 }
+
+
+
 
 
 

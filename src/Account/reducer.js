@@ -32,7 +32,7 @@ export default function Account(state = initialState, action) {
          * 检测
          */
         case actionTypes.LOGIN_CHECK_SUCCEEDED:
-            return Object.assign({}, state, {user: action.data.user,state: LoginState.login});
+            return Object.assign({}, state, action.data.user.hasOwnProperty('id')?{user: action.data.user,state: LoginState.login } :{user: action.data.user,state: LoginState.logout });
 
         /**
          * 默认和错误判断

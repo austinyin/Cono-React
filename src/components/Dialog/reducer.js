@@ -4,7 +4,7 @@ import {UploadState, UploadType} from "src/components/Dialog/constants";
 
 const initialState = {
     dialogButtons: {visible: false, elems: []},
-    pubCard: {visible: false, state: UploadState.before, transferObj: null},
+    pubCard: {visible: false, state: UploadState.before, transferObj: {}},
     tweetFullCard: {visible: false, data: {}}
 };
 
@@ -33,18 +33,33 @@ export default function Dialog(state = initialState, action) {
             return stateChildOperByKey(state, 'tweetFullCard', {data: action.data})
 
         /**
-         *  transfer设置
+         *  transfer
          */
         case actionTypes.PUB_TRANSFER_UPLOAD_SUCCEEDED:
-            console.log('action.data.transferObj',action.data.transferObj)
             return stateChildOperByKey(state, 'pubCard', {transferObj: action.data.transferObj,state: UploadState.going})
+        case actionTypes.PUB_TRANSFER_IMAGE_REMOVE_SUCCEEDED:
+            return stateChildOperByKey(
+                state, 'pubCard',
+                // 如果图片list为空， 则将state 设置为 UploadState.before
+                action.data.transferObj.images.length >= 1?{transferObj: action.data.transferObj}:{transferObj: action.data.transferObj,state: UploadState.before}
+            )
+        case actionTypes.PUB_TRANSFER_RESET_SUCCEEDED:
+            return stateChildOperByKey(state, 'pubCard', {transferObj: action.data.transferObj,state: UploadState.before})
+        case actionTypes.PUB_TRANSFER_RESET_FAILED:
+            return stateChildOperByKey(state, 'pubCard', {transferObj: state.pubCard.transferObj,state: UploadState.before})
+
+
+        /**
+         *  pub 提交
+         */
         case actionTypes.PUB_UPLOAD_SUCCEEDED:
             return stateChildOperByKey(state, 'pubCard', {state: UploadState.before})
+
 
         /**
          * reset和default
          */
-        case actionTypes.DIALOG_RESET_ALL:
+        case actionTypes.DIALOG_RESET_ALL_SUCCEEDED:
             return initialState;
         default:
             return state;

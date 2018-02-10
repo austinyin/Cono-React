@@ -7,17 +7,17 @@ import * as DialogCenterActions from './actions'
 import './style.scss'
 import TweetFullCard from "../TweetFullCard";
 import {TweetFullCardType} from "../TweetFullCard/model";
-import PubCard from "src/components/PubCard";
-import {UploadType} from "src/components/Dialog/constants";
+import PubCard from "src/components/Dialog/PubCard";
 
 
 class Dialog extends Component {
     constructor(props) {
         super(props);
         this.dialogButtonsHide = this.dialogButtonsHide.bind(this);
-        this.pubCardHide = this.pubCardHide.bind(this);
-        this.uploadFuncHandl = this.uploadFuncHandl.bind(this);
+        this.pubCloseFuncHandl = this.pubCloseFuncHandl.bind(this);
+        this.pubCommitFuncHandl = this.pubCommitFuncHandl.bind(this);
         this.transferUploadFuncHandl = this.transferUploadFuncHandl.bind(this);
+        this.tranferImgRemoveFuncHandl = this.tranferImgRemoveFuncHandl.bind(this);
         this.state = {
             dialogObj: this.props.dialogObj,
         }
@@ -31,23 +31,31 @@ class Dialog extends Component {
         return {TweetFullCardType: TweetFullCardType.dialog};
     }
 
+
+    // 关闭dialogButtons弹窗
     dialogButtonsHide() {
         this.props.dialogDisplay({
             dialogButtons: false,
         });
     }
 
-    pubCardHide() {
+    // 接收傀儡组件的函数，派发清空中转站action, 并派发action隐藏pubCard。
+    pubCloseFuncHandl() {
+        this.props.pubTransferReset();
         this.props.dialogDisplay({
-            pubCard: false,
-        });
+            pubCard:false
+        })
+    }
+
+    tranferImgRemoveFuncHandl(id){
+        this.props.pubTransferImageRemove(id)
     }
 
     /**
      * 接收来自pubCard组件的 Upload函数传来的data， 并派发action。
      * @param data
      */
-    uploadFuncHandl(data){
+    pubCommitFuncHandl(data){
         this.props.pubUpload(data)
     }
 
@@ -59,8 +67,9 @@ class Dialog extends Component {
         this.props.pubTransferUpload(data)
     }
 
-    init() {
 
+    init() {
+        this.props.dialogResetAll()
     }
 
     componentDidMount() {
@@ -75,7 +84,6 @@ class Dialog extends Component {
 
     componentWillUnmount() {
         // 清空列表
-        this.dialogResetAll()
     }
 
 
@@ -104,16 +112,20 @@ class Dialog extends Component {
                     {(dialogObj.tweetFullCard.visible && dialogObj.tweetFullCard.data) ?
                         <div className="dialog-tweet-con">
                             <TweetFullCard type={TweetFullCardType.dialog} data={dialogObj.tweetFullCard.data}/>
-                        </div>
-
-                        : null
+                        </div> : null
                     }
                     {dialogObj.pubCard.visible?
                         <div className="pub-card-con">
-                            <PubCard ref="pubCard"   pubCardObj={dialogObj.pubCard} tranferUploadFunc={this.transferUploadFuncHandl}  uploadFunc={this.uploadFuncHandl} closeFuncHandl={this.pubCardHide}/>
+                            <PubCard ref="pubCard"
+                                     pubCardObj={dialogObj.pubCard}
+                                     tranferUploadFunc={this.transferUploadFuncHandl}
+                                     pubCommitFunc={this.pubCommitFuncHandl}
+                                     closeFunc={this.pubCloseFuncHandl}
+                                     tranferImgRemoveFunc={this.tranferImgRemoveFuncHandl}
+                            />
                         </div> :null
                     }
-                    <div className="dialog-bac"/> : null
+                    <div className="dialog-bac"/>
                 </div>
             )
         }
@@ -133,6 +145,8 @@ function mapDispatchToProps(dispatch) {
         dialogDisplay: bindActionCreators(DialogCenterActions.dialogDisplaySet, dispatch),
         dialogResetAll: bindActionCreators(DialogCenterActions.dialogResetAll, dispatch),
         pubTransferUpload: bindActionCreators(DialogCenterActions.pubTransferUpload, dispatch),
+        pubTransferImageRemove: bindActionCreators(DialogCenterActions.pubTransferImageRemove, dispatch),
+        pubTransferReset: bindActionCreators(DialogCenterActions.pubTransferReset, dispatch),
         pubUpload: bindActionCreators(DialogCenterActions.pubUpload, dispatch),
     }
 }

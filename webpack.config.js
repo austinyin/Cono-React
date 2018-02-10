@@ -33,7 +33,15 @@ module.exports = {
                 target: 'localhost:8000',
                 changeOrigin: true,
                 secure: false
+            },
+            {
+                context: '/media',
+                target: 'localhost:8000/media',
+                changeOrigin: true,
+                secure: false
             }
+
+
         ]
     },
 

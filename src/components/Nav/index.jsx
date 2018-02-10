@@ -12,9 +12,6 @@ class Nav extends Component {
     constructor(props) {
         super(props);
         this.showPub = this.showPub.bind(this);
-        this.state = {
-            account: this.props.account,
-        }
     }
 
     showPub() {
@@ -23,11 +20,7 @@ class Nav extends Component {
         })
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            account: this.props.account,
-        })
-    }
+
 
 
     render() {
@@ -48,8 +41,8 @@ class Nav extends Component {
                             <div className="nr-infos-con">
                                 <Link to="/explore" className="nr-icon explore-icon"/>
                                 <a className="nr-icon recent-icon"/>
-                                {this.state.account.state === LoginState.login
-                                    ? <Link to={`/${this.state.account.user.username}`}
+                                {this.props.account.state === LoginState.login
+                                    ? <Link to={`/${this.props.account.user.username}`}
                                             className="nr-icon self-center-icon"/>
                                     : <Link to="/account" className="nr-icon self-center-icon"/>
                                 }
