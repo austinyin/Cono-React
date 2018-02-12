@@ -31,10 +31,13 @@ function* login(action) {
 
 function* logout(action) {
     /**
-     * 获得当前页，发送请求，再发出SUCCEEDED action
+     * 登出后利用data中传入的history来跳转路由，这里暂用根据经验值的定时器来跳转路由
      */
     try {
         const ret = yield call(logoutApi);
+        setTimeout(()=>{
+            action.data.history.push("/account");
+        },1000);
         yield put({type: AccountActionTypes.LOGOUT_SUCCEEDED, data: ret});
     } catch (error) {
         yield put({type: AccountActionTypes.LOGOUT_FAILED, error});

@@ -107,15 +107,9 @@ class TweetFullCard extends Component {
         },1000)
     }
 
-
-
-
-
     init(){
 
     }
-
-
     componentDidMount() {
         this.init()
     }
@@ -151,6 +145,7 @@ class TweetFullCard extends Component {
                                      commentRemoveFunc={this.commentRemoveFuncHandl}
                                      tweetRelationFunc={this.tweetRelationFuncHandl}
                                      author={{name: tweetData.user.username, text: tweetData.text}}
+                                     loginUser={this.props.loginUser}
                                      relations={tweetData.relations}
                                      comments={tweetData.comments}/>
                     </div>
@@ -173,6 +168,7 @@ TweetFullCard.contextTypes = {
 function mapStateToProps(state) {
     return {
         refreshList: state.Relation.refreshList,
+        loginUser: state.Account.user
     }
 }
 
@@ -182,7 +178,6 @@ function mapDispatchToProps(dispatch) {
         tweetCommentRemove: bindActionCreators(RelationActions.tweetCommentRemove, dispatch),
         tweetRelationsSet: bindActionCreators(RelationActions.tweetRelationsSet, dispatch),
         relationsRefreshDone: bindActionCreators(RelationActions.relationsRefreshDone, dispatch),
-
 
     }
 }

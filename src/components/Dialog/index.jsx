@@ -69,7 +69,7 @@ class Dialog extends Component {
 
 
     init() {
-        this.props.dialogResetAll()
+        // this.props.dialogResetAll() 暂时禁用，因为在跳转路由后dialog组件的init不一定在最后进行。
     }
 
     componentDidMount() {
@@ -83,6 +83,7 @@ class Dialog extends Component {
     }
 
     componentWillUnmount() {
+        this.props.dialogResetAll()
         // 清空列表
     }
 

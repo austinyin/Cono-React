@@ -87,7 +87,7 @@ class CommentCard extends React.Component {
                                 <li className="item common-item" key={comment.id} id={`comment-${comment.id}`}>
                                     <a href="" className="content-maker"><span className=" ">{comment.user}</span></a>
                                     <span className="item-content">{comment.text}</span>
-                                    {this.props.author.name === comment.user ?
+                                    {this.props.loginUser.username === comment.user ?
                                         <a href="" className="delete-item-button-con">
                                             <button onClick={this.commentRemove}>x</button>
                                         </a>

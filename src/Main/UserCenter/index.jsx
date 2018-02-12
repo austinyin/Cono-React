@@ -1,6 +1,8 @@
 import React from 'react'
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
+import {  } from 'react-router-dom'
+
 
 import './style.scss'
 
@@ -10,6 +12,7 @@ import TweetCard from "src/components/TweetCard";
 import * as DialogActions from "src/components/Dialog/actions";
 import {logout as logoutAction} from "src/Account/actions";
 import {tweetFullCardElemSet} from "../../components/Dialog/actions";
+import withRouter from "react-router-dom/es/withRouter";
 
 
 class UserCenter extends React.Component {
@@ -56,9 +59,7 @@ class UserCenter extends React.Component {
     }
 
     logoutHandl(){
-        console.log('logOut')
-        this.props.logout()
-
+        this.props.logout({history: this.props.history})
     }
 
     dialogSet(){
@@ -85,6 +86,7 @@ class UserCenter extends React.Component {
     }
 
     componentDidMount() {
+        console.log('didMount')
         this.init()
     }
 
@@ -205,7 +207,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(ScrollHOC(UserCenter))
+)(ScrollHOC(UserCenter)))
