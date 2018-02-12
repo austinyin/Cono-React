@@ -4,6 +4,7 @@ import * as ExploreSaga from 'src/Main/Explore/saga'
 import * as UserSaga from 'src/Main/UserCenter/saga'
 import * as AccountSaga from 'src/Account/saga'
 import * as DialogSaga from 'src/components/Dialog/saga'
+import * as RelationSaga from 'src/Relation/saga'
 
 export default function* rootSaga() {
     yield all([
@@ -12,5 +13,6 @@ export default function* rootSaga() {
         ...Object.values(UserSaga),
         ...Object.values(AccountSaga),
         ...Object.values(DialogSaga),
+        ...Object.values(RelationSaga),
     ].map(fork));
 }

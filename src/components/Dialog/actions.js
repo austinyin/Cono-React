@@ -26,8 +26,6 @@ export function dialogButtonsElemSet(data) {
 /**
  * tweet弹窗
  */
-
-
 // data: number<id>
 export function tweetFullCardElemSet(data) {
     return{

@@ -32,14 +32,16 @@ export default function Account(state = initialState, action) {
          * 检测
          */
         case actionTypes.LOGIN_CHECK_SUCCEEDED:
-            return Object.assign({}, state, action.data.user.hasOwnProperty('id')?{user: action.data.user,state: LoginState.login } :{user: action.data.user,state: LoginState.logout });
+            return Object.assign({}, state, action.data.user.hasOwnProperty('id') ? {
+                user: action.data.user,
+                state: LoginState.login
+            } : {user: action.data.user, state: LoginState.logout});
 
         /**
          * 默认和错误判断
          */
         case actionTypes.REGIST_FAILED || actionTypes.LOGIN_FAILED || actionTypes.LOGOUT_FAILED || actionTypes.LOGIN_CHECK_FAILED:
             return Object.assign({}, state, {prompt: action.error});
-
         default:
             return state
     }

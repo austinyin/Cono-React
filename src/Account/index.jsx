@@ -43,7 +43,6 @@ class Account extends React.Component {
 
     render() {
         if(this.props.account.state === LoginState.login){
-            console.log('this.props.account.user.username',this.props.account.user.username)
             return <Redirect push to={`/${this.props.account.user.username}`} />; //如果检测登陆了则重定向.
         }
         return (

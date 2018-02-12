@@ -16,13 +16,16 @@ class UserCenter extends React.Component {
     constructor(props) {
         super(props);
         this.listUpdating = false;
+        this.init = this.init.bind(this);
+        this.listUpdate = this.listUpdate.bind(this);
         this.showDialog = this.showDialog.bind(this);
         this.logoutHandl = this.logoutHandl.bind(this);
         this.tweetClickFuncHandl = this.tweetClickFuncHandl.bind(this);
         this.state = {
+            username: null,
             userInfo: this.props.userInfo,
             tweetList: this.props.tweetList
-        }
+    }
     }
 
     showDialog(){
@@ -38,7 +41,7 @@ class UserCenter extends React.Component {
 
     listUpdate() {
         this.listUpdating = true;
-        this.props.tweetNextPage()
+        this.props.tweetNextPage({username: this.state.username})
     }
 
 
@@ -68,12 +71,17 @@ class UserCenter extends React.Component {
 
     init() {
         // 初始数据获得
-        this.props.userInfoGet();
-        for (let i = 0; i < 2; i++) {
-            this.listUpdate();
-        }
-        // 弹窗初始化
-        this.dialogSet()
+        const username = this.props.match.params.user
+        this.setState({
+            username: username,
+        }, () => {
+            this.props.userInfoGet({username:this.state.username});
+            for (let i = 0; i < 2; i++) {
+                this.listUpdate();
+            }
+            // 弹窗初始化
+            this.dialogSet()
+        })
     }
 
     componentDidMount() {
@@ -100,8 +108,9 @@ class UserCenter extends React.Component {
         this.props.userResetAll();
     }
 
+
     render() {
-        return (
+        if(this.state.userInfo){return (
             <div id="userCenter" className="container">
                 <div className="user-header-con">
                     <div className="row">
@@ -173,7 +182,7 @@ class UserCenter extends React.Component {
                 {this.props.children}
             </div>
 
-        )
+        )}return <div>temp</div>
     }
 }
 

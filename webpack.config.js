@@ -13,7 +13,7 @@ function resolve(dir) {
 
 module.exports = {
     entry: ['babel-polyfill', path.resolve(__dirname,'./src/index.jsx')],
-
+    devtool: 'eval-source-map',
     // entry : {
     //     main : path.resolve(__dirname,'./src/index.jsx'),
     // },

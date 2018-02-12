@@ -25,15 +25,11 @@ class Home extends Component {
         return {TweetFullCardType: TweetFullCardType.common};
     }
 
-
-
     listUpdate() {
         this.listUpdating = true;
         this.props.tweetNextPage()
     }
-
-
-
+    
     receiveDistance(distance) {
         if(this.listUpdating === false && distance > -70) {
             this.listUpdate()

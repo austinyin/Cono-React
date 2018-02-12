@@ -3,12 +3,13 @@ import * as actionTypes from "./constants";
 
 
 /**
- * 用户信息获取actions
+ * 用户信息获取actions data{username}
  */
 
-export function userInfoGet() {
+export function userInfoGet(data) {
     return{
         type: actionTypes.USER_INFO_GET,
+        data
     }
 }
 
@@ -33,9 +34,10 @@ export function userGetFailed(error) {
  */
 
 
-export function userTweetsNextPage() {
+export function userTweetsNextPage(data) {
     return{
         type: actionTypes.USER_TWEETS_NEXT_PAGE,
+        data
     }
 }
 

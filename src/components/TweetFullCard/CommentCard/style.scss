@@ -3,6 +3,13 @@
     display: flex;
     justify-content: space-between;
   }
+  // relation状态
+  .like_active,.collect_active{
+    color: red;
+    span{
+      color: red;
+    }
+  }
 
   .comment-items{
     .item{
