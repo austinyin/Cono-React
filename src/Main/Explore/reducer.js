@@ -4,6 +4,7 @@ const initialState = {
     nowPage: 0,
     tweetList: [],
     userList: [],
+    snapshotUserList: [],
     prompt: '' // 提示内容
 };
 
@@ -31,6 +32,13 @@ export default function Explore(state = initialState, action) {
             return Object.assign({}, state, {userList: action.data});
         case actionTypes.RECOMMEND_USER_GET_FAILED:
             return Object.assign({}, state, {prompt: action.error});
+
+        /**
+         * 首页snapshot快照
+         */
+        case actionTypes.SNAPSHOT_USER_GET_SUCCEEDED:
+            return Object.assign({}, state, {snapshotUserList: action.data});
+
 
         /**
          * 默认或回位

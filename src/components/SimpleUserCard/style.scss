@@ -1,11 +1,12 @@
 @import "~src/assets/css/common.scss";
+
 #SimpleUserCard{
   height: inherit;
   @include commonFlex();
   .suc-left{
     height: inherit;
     @include commonFlex();
-    // 头像
+    /* 头像 */
     .img-con{
       display: inline-block;
       height: 36px !important;
@@ -35,5 +36,13 @@
       margin-left: 10%;
 
     }
+  }
+
+  /* 关注按钮 */
+  .follow-button{
+    background: yellow;
+  }
+  .follow-button-active{
+    background: aquamarine;
   }
 }

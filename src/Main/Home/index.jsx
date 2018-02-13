@@ -8,6 +8,9 @@ import TweetFullCard from "src/components/TweetFullCard";
 import HomeRightBar from "src/Main/Home/HomeRightBar/HomeRightBar";
 
 import * as TweetListActions from './actions'
+import * as ExploreActions from 'Main/Explore/action'
+
+
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
@@ -29,8 +32,11 @@ class Home extends Component {
         this.listUpdating = true;
         this.props.tweetNextPage()
     }
-    
+
     receiveDistance(distance) {
+        /**
+         * 根据HOC传过来的距离判断是否需要加载tweet数据
+         */
         if(this.listUpdating === false && distance > -70) {
             this.listUpdate()
         }
@@ -38,6 +44,10 @@ class Home extends Component {
 
 
     init() {
+        /**
+         * 如果登陆了则获取snapshot内容
+         */
+        this.props.snapshotUserGet();
         for (let i = 0; i < 2; i++) {
             this.listUpdate();
         }
@@ -48,7 +58,7 @@ class Home extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // 将state 与redux 同步
+        // tweetList的暂时单独处理，其他的放一起粗糙处理。
         if(this.state.tweetList !== nextProps.tweetList) {
             this.setState({
                 tweetList: nextProps.tweetList
@@ -76,7 +86,7 @@ class Home extends Component {
                             })}
                         </div>
                         <div className="main-right-con col-4">
-                            <HomeRightBar/>
+                            {this.props.snapshotUserList.length >=1 ? <HomeRightBar loginUser={this.props.loginUser} snapshotUserList={this.props.snapshotUserList}/>: ""}
                         </div>
                     </div>
                 </div>
@@ -96,7 +106,9 @@ Home.childContextTypes = {
 function mapStateToProps(state) {
     return {
         nowPage: state.TweetList.nowPage,
-        tweetList: state.TweetList.tweetList
+        tweetList: state.TweetList.tweetList,
+        snapshotUserList: state.Explore.snapshotUserList,
+        loginUser: state.Account.user,
     }
 }
 
@@ -104,6 +116,7 @@ function mapDispatchToProps(dispatch) {
     return {
         tweetNextPage: bindActionCreators(TweetListActions.tweetsNextPage, dispatch),
         tweetListReset: bindActionCreators(TweetListActions.tweetsReset, dispatch),
+        snapshotUserGet: bindActionCreators(ExploreActions.snapshotUserGet, dispatch),
     }
 }
 

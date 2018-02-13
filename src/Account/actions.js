@@ -101,6 +101,35 @@ export function loginCheckFailed(error) {
     }
 }
 
+/**
+ * 修改密码, 传入history用于更改密码后跳转路由。
+ */
+export function changePassword(data,history) {
+    return{
+        type: actionTypes.CHANGE_PASSWORD,
+        data,
+        history
+    }
+}
+
+
+export function changePasswordSucceeded(data) {
+    return{
+        type: actionTypes.CHANGE_PASSWORD_SUCCEEDED,
+        data
+    }
+}
+
+export function changePasswordFailed(error) {
+    return{
+        type: actionTypes.CHANGE_PASSWORD_FAILED,
+        error
+    }
+}
+
+
+
+
 
 /**
  * 清除

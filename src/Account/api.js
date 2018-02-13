@@ -38,5 +38,13 @@ export function logoutApi() {
 }
 
 
+export function changePasswordApi(data) {
+    let url = "http://127.0.0.1:8000/api/account/changePassword";
+    return post(url,data).then(ret => {
+        return ret.data
+    })
+}
+
+
 
 

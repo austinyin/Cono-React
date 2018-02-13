@@ -20,7 +20,6 @@ import {bindActionCreators} from "redux";
 import {loginCheck} from "./Account/actions";
 
 
-
 // 根路由
 const AppRouter = () => (
     <Switch>

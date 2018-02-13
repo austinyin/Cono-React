@@ -1,6 +1,6 @@
 import {get} from 'src/shared/js/axiosUtil.js'
 
-export function getRecommendTweet(page, page_size=10) {
+export function getRecommendTweetApi(page, page_size=10) {
     let url = `http://127.0.0.1:8000/api/recommendTweet`;
     let data = {
         page: page,
@@ -9,8 +9,14 @@ export function getRecommendTweet(page, page_size=10) {
     return get(url, data)
 }
 
-export function getRecommendUser() {
+export function getRecommendUserApi() {
     let url = `http://127.0.0.1:8000/api/user/recommend`;
-
     return get(url)
 }
+
+
+export function snapshotUserGetApi() {
+    let url = "http://127.0.0.1:8000/api/user/snapshotList";
+    return get(url).then( ret => ret.data)
+}
+

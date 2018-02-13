@@ -54,8 +54,9 @@ class ExlorePeople extends React.Component {
                 <div className="recommends">
                     <ul>
                         {this.props.userList.map((user) => {
-                            return <SimpleUserCard followButton={true} title={user.username}
-                                                   subtitle={user.first_name + user.last_name}/>
+                            return <SimpleUserCard followButton={true}
+                                                   user={user}
+                            />
                         })}
                     </ul>
                 </div>

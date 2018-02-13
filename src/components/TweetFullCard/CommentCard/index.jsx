@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import './style.scss'
-import {TweetRefreshState,TweetRelationType} from "src/Relation/model";
+import {RefreshState,TweetRelationType} from "src/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
 class CommentCard extends React.Component {
@@ -17,7 +17,6 @@ class CommentCard extends React.Component {
 
     tweetRelationClickHandl(e){
         e.stopPropagation()
-        console.log('class', e.target.className)
         if(e.target.className.includes('like')){
             this.props.tweetRelationFunc(TweetRelationType.like)
         }

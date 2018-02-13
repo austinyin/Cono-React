@@ -27,6 +27,14 @@ export const LOGIN_CHECK = 'LOGIN_CHECK';
 export const LOGIN_CHECK_SUCCEEDED = 'LOGIN_CHECK_SUCCEEDED';
 export const LOGIN_CHECK_FAILED = 'LOGIN_CHECK_FAILED';
 
+/**
+ * 修改密码
+ */
+export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
+export const CHANGE_PASSWORD_SUCCEEDED = 'CHANGE_PASSWORD_SUCCEEDED';
+export const CHANGE_PASSWORD_FAILED = 'CHANGE_PASSWORD_FAILED';
+
+
 export const FormType = {
     login : 'login',
     regist : 'regist'

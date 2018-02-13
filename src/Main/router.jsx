@@ -5,17 +5,17 @@ import UserCenter from './UserCenter'
 import Explore from "src/Main/Explore";
 import ExlorePeople from "src/Main/Explore/ExlorePeople/ExlorePeople";
 import Account from "src/Account";
+import SettingCenter from "src/Main/SettingCenter";
 
 const MainRouter = () => (
-    <Switch>
+    <switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/explore" component={Explore}/>
-        <Route exact path='/account' component={Account} />
-
         <Route exact path="/explore/people" component={ExlorePeople}/>
-        <Route path="/:user" component={UserCenter}/>
-
-    </Switch>
+        <Route exact path='/account' component={Account}/>
+        <Route path='/setting' component={SettingCenter}/>
+        <Route exact path="/user/:user" component={UserCenter}/>
+    </switch>
 
 )
 

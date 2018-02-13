@@ -58,6 +58,28 @@ export function recommendUserGetFailed(error) {
     }
 }
 
+export function snapshotUserGet() {
+    return{
+        type: actionTypes.SNAPSHOT_USER_GET,
+    }
+}
+
+export function snapshotUserGetSucceeded(data) {
+    return{
+        type: actionTypes.SNAPSHOT_USER_GET_SUCCEEDED,
+        data
+    }
+}
+
+export function snapshotUserGetFailed(error) {
+    return{
+        type: actionTypes.SNAPSHOT_USER_GET_FAILED,
+        error
+    }
+}
+
+
+
 /**
  * 通用
  */

@@ -86,7 +86,6 @@ class UserCenter extends React.Component {
     }
 
     componentDidMount() {
-        console.log('didMount')
         this.init()
     }
 
@@ -174,7 +173,7 @@ class UserCenter extends React.Component {
                 <div className="row">
                     {this.state.tweetList.map((tweet) => {
                         return(
-                            <div key={tweet.id} className="tweet-card-con col-4">
+                            <div key={tweet.id} id={`tweet-${tweet.id}`} className="tweet-card-con col-4">
                                 <TweetCard clickFuncHandle={this.tweetClickFuncHandl} tweet={tweet}/>
                             </div>
                         )

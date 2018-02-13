@@ -16,25 +16,25 @@ class HomeRightBar extends React.Component {
                     <li className="r-bar-author">
                         <SimpleUserCard
                             imgUrl={"src/assets/img/avatar/avatar.jpg"}
-                            title={"monkey"}
+                            user={this.props.loginUser}
                         />
                     </li>
+
                     <li>
                         <span>快拍</span>
                         <a href=""><span>全部播放</span></a>
                     </li>
-                    <li className="r-bar-recom">
-                        <SimpleUserCard
-                            imgUrl={"src/assets/img/avatar/avatar.jpg"}
-                            title={"monkey"}
-                        />
-                    </li>
-                    <li className="r-bar-author">
-                        <SimpleUserCard
-                            imgUrl={"src/assets/img/avatar/avatar.jpg"}
-                            title={"monkey"}
-                        />
-                    </li>
+                    {this.props.snapshotUserList.map((user, k) => {
+                        return (
+                            <li className="r-bar-recom">
+                                <SimpleUserCard
+                                    imgUrl={"src/assets/img/avatar/avatar.jpg"}
+                                    user={user}
+                                />
+                            </li>
+                        )
+                    })}
+
                 </ul>
 
 

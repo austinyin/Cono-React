@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{Component} from 'react'
 import './style.scss'
 
 
 
-class TweetCard extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+class TweetCard extends Component {
+    constructor(props) {
+        super(props);
         this.clickHandle = this.clickHandle.bind(this)
     }
 

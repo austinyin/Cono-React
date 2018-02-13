@@ -1,8 +1,9 @@
-import {call, put, select} from 'redux-saga/effects'
+import {call, put} from 'redux-saga/effects'
 import {takeEvery} from 'redux-saga'
 
 import * as AccountActionTypes from './constants'
-import {registApi, loginApi, logoutApi, loginCheckApi} from "./api";
+import {loginApi, loginCheckApi, logoutApi, registApi} from "./api";
+import {changePasswordApi} from "src/Account/api";
 
 
 function* regist(action) {
@@ -35,9 +36,9 @@ function* logout(action) {
      */
     try {
         const ret = yield call(logoutApi);
-        setTimeout(()=>{
+        setTimeout(() => {
             action.data.history.push("/account");
-        },1000);
+        }, 1000);
         yield put({type: AccountActionTypes.LOGOUT_SUCCEEDED, data: ret});
     } catch (error) {
         yield put({type: AccountActionTypes.LOGOUT_FAILED, error});
@@ -57,10 +58,23 @@ function* loginCheck(action) {
     }
 }
 
+function* changePasswordSaga(action) {
+    try {
+        console.log('chanPass')
+        const ret = yield call(changePasswordApi, action.data);
+        if(ret.changePassword){ // 成功返回True。
+            action.history.push('/account');
+
+        }
+        yield put({type: AccountActionTypes.CHANGE_PASSWORD_SUCCEEDED, data: ret});
+    } catch (error) {
+        yield put({type: AccountActionTypes.CHANGE_PASSWORD_FAILED, error});
+    }
+}
 
 
 /**
- * 注册,登陆,登出,检测
+ * 注册,登陆,登出,检测,修改密码
  */
 export function* watchRegist() {
     yield* takeEvery(AccountActionTypes.REGIST, regist)
@@ -77,6 +91,13 @@ export function* watchLogout() {
 export function* watchLoginCheck() {
     yield* takeEvery(AccountActionTypes.LOGIN_CHECK, loginCheck)
 }
+
+export function* watchChangePassword() {
+    yield* takeEvery(AccountActionTypes.CHANGE_PASSWORD, changePasswordSaga)
+}
+
+
+
 
 
 

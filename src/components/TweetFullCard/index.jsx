@@ -9,7 +9,7 @@ import SimpleUserCard from "src/components/SimpleUserCard";
 import CommentCard from "src/components/TweetFullCard/CommentCard";
 import Slider from "../Slider";
 import * as RelationActions from "src/Relation/actions";
-import {TweetRefreshState,TweetRelationType} from "src/Relation/model";
+import {RefreshState, RefreshType, TweetRelationType} from "src/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
 class TweetFullCard extends Component {
@@ -22,7 +22,7 @@ class TweetFullCard extends Component {
         this.avatar = "src/assets/img/avatar/avatar.jpg"
         this.state = {
             tweetData: this.props.data,
-            refreshState: TweetRefreshState.calm
+            refreshState: RefreshState.calm
         }
     }
 
@@ -32,13 +32,12 @@ class TweetFullCard extends Component {
      * @param type
      */
     tweetRelationFuncHandl(type){
-        console.log('tweetRelationFuncHandl')
         const data = {
             type,
             tweetId: this.state.tweetData.id,
         };
         this.setState({
-            refreshState: TweetRefreshState.agitate
+            refreshState: RefreshState.agitate
         }, () => {
             this.props.tweetRelationsSet(data)
             this.settleDown()
@@ -57,7 +56,7 @@ class TweetFullCard extends Component {
             tweetId: this.state.tweetData.id
         };
         this.setState({
-            refreshState: TweetRefreshState.agitate
+            refreshState: RefreshState.agitate
         }, () => {
             this.props.tweetCommentLeave(data)
             this.settleDown()
@@ -70,7 +69,7 @@ class TweetFullCard extends Component {
             tweetId: this.state.tweetData.id
         };
         this.setState({
-            refreshState: TweetRefreshState.agitate
+            refreshState: RefreshState.agitate
         }, () => {
             this.props.tweetCommentRemove(data)
             this.settleDown()
@@ -78,23 +77,24 @@ class TweetFullCard extends Component {
     }
 
     /**
+     * refreshObj{key:{state:RefreshState}}
      * 每秒钟检测一次，如果reducer中succeeded action 完成了，则将更新状态refreshState设为calm
      * 并将state的tweetData设置为返回的新tweet，实现局部刷新。
      * setState 完成后告诉store已经刷新完毕，并清除定时器
      */
     refreshStateDetect(settleDownTimer) {
         const selfId = this.state.tweetData.id
-        const refreshList = this.props.refreshList
-        const findKey = Object.keys(refreshList).find(k => {
-            return parseInt(k) === selfId&&refreshList[k].state===TweetRefreshState.agitate;
+        const refreshObj = this.props.tweetRefreshObj
+        const findKey = Object.keys(refreshObj).find(k => {
+            return parseInt(k) === selfId&&refreshObj[k].state===RefreshState.agitate;
         })
         if(findKey){
-            const newTweetData = refreshList[findKey].data
+            const newTweetData = refreshObj[findKey].data
             this.setState({
-                refreshState: TweetRefreshState.calm,
+                refreshState: RefreshState.calm,
                 tweetData: newTweetData
             }, () => {
-                this.props.relationsRefreshDone({id: selfId})
+                this.props.relationsRefreshDone({id: selfId, type: RefreshType.tweet})
                 clearInterval(settleDownTimer)
             })
         }
@@ -132,7 +132,7 @@ class TweetFullCard extends Component {
                             <div className="w-100 h-100">
                                 <SimpleUserCard
                                     imgUrl={tweetData.user.avatar ? tweetData.user.avatar : "src/assets/img/avatar/avatar.jpg"}
-                                    title={tweetData.user.username}
+                                    user={tweetData.user}
                                 />
                             </div>
                         </header>
@@ -149,7 +149,7 @@ class TweetFullCard extends Component {
                                      relations={tweetData.relations}
                                      comments={tweetData.comments}/>
                     </div>
-                    {this.state.refreshState === TweetRefreshState.agitate ?
+                    {this.state.refreshState === RefreshState.agitate ?
                         <div>agitae</div>
                         : <div>calm</div>
                     }
@@ -167,7 +167,7 @@ TweetFullCard.contextTypes = {
 
 function mapStateToProps(state) {
     return {
-        refreshList: state.Relation.refreshList,
+        tweetRefreshObj: state.Relation.tweetRefreshObj,
         loginUser: state.Account.user
     }
 }

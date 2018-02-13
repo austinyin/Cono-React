@@ -21,18 +21,16 @@ class Explore extends React.Component {
     }
 
 
-
     listUpdate() {
         this.listUpdating = true;
         this.props.tweetNextPage()
     }
 
     receiveDistance(distance) {
-        if(this.listUpdating === false && distance > -70) {
+        if (this.listUpdating === false && distance > -70) {
             this.listUpdate()
         }
     }
-
 
 
     init() {
@@ -42,7 +40,6 @@ class Explore extends React.Component {
             this.props.tweetNextPage();
         }
     }
-
 
 
     componentDidMount() {
@@ -75,11 +72,15 @@ class Explore extends React.Component {
                         <a href="" className="eh-more-link"><span>查看全部</span></a>
                     </header>
                     <div className="eh-users-con row">
-                        {this.state.userList.map((user,index) => {
-                            if(index<3){
+                        {this.state.userList.map((user, index) => {
+                            if (index < 3) {
                                 return <div className="user-card-con col-4">
-                                            <SimpleUserCard followButton={true} verticle={true} title={user.username} subtitle={user.first_name + user.last_name}/>
-                                        </div>
+                                    <SimpleUserCard
+                                        followButton={true}
+                                        verticle={true}
+                                        user={user}
+                                    />
+                                </div>
                             }
                         })}
                     </div>
@@ -92,7 +93,7 @@ class Explore extends React.Component {
                         <div className="row">
 
                             {this.state.tweetList.map((tweet) => {
-                                return(
+                                return (
                                     <div className="tweet-card-con col-4">
                                         <TweetCard tweet={tweet}/>
                                     </div>

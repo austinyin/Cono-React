@@ -110,7 +110,7 @@ class Dialog extends Component {
                         </div>
                         : null
                     }
-                    {(dialogObj.tweetFullCard.visible && dialogObj.tweetFullCard.data) ?
+                    {(dialogObj.tweetFullCard.visible && dialogObj.tweetFullCard.data.hasOwnProperty('id')) ?
                         <div className="dialog-tweet-con">
                             <TweetFullCard type={TweetFullCardType.dialog} data={dialogObj.tweetFullCard.data}/>
                         </div> : null

@@ -37,6 +37,7 @@ export default function Account(state = initialState, action) {
                 state: LoginState.login
             } : {user: action.data.user, state: LoginState.logout});
 
+
         /**
          * 默认和错误判断
          */

@@ -34,7 +34,6 @@ function* userInfoGetSaga(action) {
      * 获得当前页，发送请求，再发出SUCCEEDED action
      */
     try {
-        console.log('action.data.usernameaction.data.usernameaction.data.username',action.data.username)
         const ret = yield call(getUserInfo, action.data.username);
         yield put({type: UserActionTypes.USER_GET_SUCCEEDED, data: ret});
     } catch (error) {
