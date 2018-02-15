@@ -1,11 +1,11 @@
 import React from 'react'
 import './style.scss'
 import Link from "react-router-dom/es/Link";
-import * as RelationActions from "src/Relation/actions";
+import * as RelationActions from "src/extra/Relation/actions";
 import {bindActionCreators} from "redux";
-import {PersonUserRelationType, RefreshState, RefreshType} from "src/Relation/model";
+import {PersonUserRelationType, RefreshState, RefreshType} from "src/extra/Relation/model";
 import connect from "react-redux/es/connect/connect";
-import {LoginState} from "src/Account/constants";
+import {LoginState} from "src/extra/Account/constants";
 import withRouter from "react-router-dom/es/withRouter";
 
 class SimpleUserCard extends React.Component {
@@ -18,7 +18,7 @@ class SimpleUserCard extends React.Component {
     }
 
     followButtonClickHandle(e) {
-        e.stopPropagation() //禁止冒泡.
+        e.stopPropagation() //禁止冒泡
         if (this.props.loginState !== LoginState.login) {
             this.props.history.push('/account')
         }
@@ -59,7 +59,6 @@ class SimpleUserCard extends React.Component {
     }
 
 
-
     render() {
         const user = this.state.user
         return (
@@ -68,7 +67,7 @@ class SimpleUserCard extends React.Component {
                     <Link to={`/${user.username}`} className="img-con">
                         <img className="img " src={require("src/assets/img/avatar/avatar.jpg")}/>
                     </Link>
-                    <Link to={`/${this.props.title}`} className="infos-con">
+                    <Link to={`/${user.username}`} className="infos-con">
                         <span ref="title" className="left-item left-title">{user.username}</span>
                         <span
                             className="left-item left-subtitle">{user.fullname ? user.fullname : ''}</span>

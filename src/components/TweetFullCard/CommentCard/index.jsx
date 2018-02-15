@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import './style.scss'
-import {RefreshState,TweetRelationType} from "src/Relation/model";
+import {RefreshState,TweetRelationType} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
 class CommentCard extends React.Component {

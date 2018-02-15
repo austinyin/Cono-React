@@ -8,8 +8,8 @@ import { Redirect } from 'react-router-dom';
 import * as AccountActions from "./actions";
 
 import {AccountForm,FormType, LoginForm, RegistForm} from "./constants";
-import LogInOut from "../components/LogInOut";
-import {LoginState} from "src/Account/constants";
+import {LoginState} from "src/extra/Account/constants";
+import LogInOut from "../../components/LogInOut";
 
 class Account extends React.Component {
     constructor(props, context) {

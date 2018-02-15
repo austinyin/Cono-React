@@ -3,6 +3,9 @@ import {takeEvery} from 'redux-saga'
 
 import * as ExploreRecommendActionTypes from './constants'
 import {getRecommendTweetApi, getRecommendUserApi, snapshotUserGetApi} from "src/Main/Explore/api";
+import {searchGetApi} from "./api";
+import {getHomeTweets} from "../Home/api";
+import * as TweetListActionTypes from "../Home/constants";
 
 const getNowPageNum = state => state.Explore.nowPage;
 
@@ -13,15 +16,12 @@ function* recommendTweetNextPageSaga(action) {
      */
     try {
         const nowPage = yield select(getNowPageNum);
-        const ret = yield call(getRecommendTweetApi, 1);
+        const ret = yield call(getHomeTweets, nowPage+1);
         if (!ret.next) {
             yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_IS_EMPTY});
         }
-        const list = [];
-        for (let i = 0; i < 2; i++) {
-            list.push(...ret.data.results)
-        }
-        yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_NEXT_PAGE_SUCCEEDED, data: list});
+
+        yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_NEXT_PAGE_SUCCEEDED, data: ret.data.results});
     } catch (error) {
         yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_NEXT_PAGE_FAILED, error});
     }
@@ -33,11 +33,7 @@ function* recommendUserGetSaga(action) {
      */
     try {
         const ret = yield call(getRecommendUserApi);
-        const list = [];
-        for (let i = 0; i < 2; i++) {
-            list.push(...ret.data)
-        }
-        yield put({type: ExploreRecommendActionTypes.RECOMMEND_USER_GET_SUCCEEDED, data: list});
+        yield put({type: ExploreRecommendActionTypes.RECOMMEND_USER_GET_SUCCEEDED, data: ret.data});
     } catch (error) {
         yield put({type: ExploreRecommendActionTypes.RECOMMEND_USER_GET_FAILED, error});
     }
@@ -56,6 +52,9 @@ function* snapshotUserGetSaga(action) {
     }
 }
 
+
+
+
 // 监听Explore页拉取推文的action
 export function* watchRecommendTweetNextPage() {
     yield* takeEvery(ExploreRecommendActionTypes.RECOMMEND_TWEETS_NEXT_PAGE, recommendTweetNextPageSaga)
@@ -70,3 +69,5 @@ export function* watchRecommendUserGet() {
 export function* watchSnapshotUserGet() {
     yield* takeEvery(ExploreRecommendActionTypes.SNAPSHOT_USER_GET, snapshotUserGetSaga)
 }
+
+

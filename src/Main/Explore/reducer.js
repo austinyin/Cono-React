@@ -39,7 +39,6 @@ export default function Explore(state = initialState, action) {
         case actionTypes.SNAPSHOT_USER_GET_SUCCEEDED:
             return Object.assign({}, state, {snapshotUserList: action.data});
 
-
         /**
          * 默认或回位
          */

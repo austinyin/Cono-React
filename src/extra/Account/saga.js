@@ -3,7 +3,7 @@ import {takeEvery} from 'redux-saga'
 
 import * as AccountActionTypes from './constants'
 import {loginApi, loginCheckApi, logoutApi, registApi} from "./api";
-import {changePasswordApi} from "src/Account/api";
+import {changePasswordApi} from "src/extra/Account/api";
 
 
 function* regist(action) {

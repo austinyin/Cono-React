@@ -13,17 +13,14 @@ class Explore extends React.Component {
     constructor(props) {
         super(props);
         this.listUpdating = false;
-        this.state = {
-            nowPage: this.props.nowPage,
-            tweetList: this.props.tweetList,
-            userList: this.props.userList
-        }
     }
 
 
     listUpdate() {
-        this.listUpdating = true;
-        this.props.tweetNextPage()
+        if(!this.props.isEmpty){
+            this.listUpdating = true;
+            this.props.tweetNextPage()
+        }
     }
 
     receiveDistance(distance) {
@@ -36,9 +33,8 @@ class Explore extends React.Component {
     init() {
         // 初始两倍数据
         this.props.userGet();
-        for (let i = 0; i < 2; i++) {
-            this.props.tweetNextPage();
-        }
+        this.props.tweetNextPage();
+
     }
 
 
@@ -49,12 +45,9 @@ class Explore extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         // 将state 与redux 同步
-        this.setState({
-            tweetList: nextProps.tweetList,
-            userList: nextProps.userList
-        }, () => {
+        if (this.props.tweetList !== nextProps.tweetList) {
             this.listUpdating = false;
-        })
+        }
     }
 
     componentWillUnmount() {
@@ -64,6 +57,8 @@ class Explore extends React.Component {
 
 
     render() {
+        const userList = this.props.userList
+        const tweetList = this.props.tweetList
         return (
             <div id="explore" className="container">
                 <div className="explore-header">
@@ -72,7 +67,7 @@ class Explore extends React.Component {
                         <a href="" className="eh-more-link"><span>查看全部</span></a>
                     </header>
                     <div className="eh-users-con row">
-                        {this.state.userList.map((user, index) => {
+                        {userList.map((user, index) => {
                             if (index < 3) {
                                 return <div className="user-card-con col-4">
                                     <SimpleUserCard
@@ -92,7 +87,7 @@ class Explore extends React.Component {
                     <div className="tweets-con">
                         <div className="row">
 
-                            {this.state.tweetList.map((tweet) => {
+                            {tweetList.map((tweet) => {
                                 return (
                                     <div className="tweet-card-con col-4">
                                         <TweetCard tweet={tweet}/>
@@ -113,7 +108,9 @@ function mapStateToProps(state) {
     return {
         nowPage: state.Explore.nowPage,
         tweetList: state.Explore.tweetList,
-        userList: state.Explore.userList
+        userList: state.Explore.userList,
+        isEmpty: state.TweetList.isEmpty,
+
     }
 }
 

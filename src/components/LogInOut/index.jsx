@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './style.scss'
-import {AccountForm, formType, loginType} from "src/Account/constants";
+import {AccountForm, formType, loginType} from "src/extra/Account/constants";
 
 class LogInOut extends Component {
     constructor(props, context) {

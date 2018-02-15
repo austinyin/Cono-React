@@ -26,6 +26,7 @@
   }
 
   .nav-center{
+    position: relative;
     justify-content: center;
     //输入框
     .input-con input{
@@ -37,6 +38,15 @@
       padding: 3px 10px 3px 26px;
       z-index: 2;
       background-color: rgb(250,250,250);
+    }
+    // 搜索结果
+    .search-result{
+      z-index: 4;
+      position: absolute;
+      top: 0;
+      transform: translateY(50%);
+      background: #ffffff;
+
     }
   }
 

@@ -4,7 +4,7 @@ import Home from './Home'
 import UserCenter from './UserCenter'
 import Explore from "src/Main/Explore";
 import ExlorePeople from "src/Main/Explore/ExlorePeople/ExlorePeople";
-import Account from "src/Account";
+import Account from "src/extra/Account";
 import SettingCenter from "src/Main/SettingCenter";
 
 const MainRouter = () => (
@@ -14,7 +14,7 @@ const MainRouter = () => (
         <Route exact path="/explore/people" component={ExlorePeople}/>
         <Route exact path='/account' component={Account}/>
         <Route path='/setting' component={SettingCenter}/>
-        <Route exact path="/user/:user" component={UserCenter}/>
+        <Route exact path="/:user" component={UserCenter}/>
     </switch>
 
 )

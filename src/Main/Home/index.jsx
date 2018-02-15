@@ -1,4 +1,4 @@
-import React, {Component, ReactPropTypes} from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
@@ -18,39 +18,35 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.listUpdating = false;
-        this.state = {
-            nowPage: this.props.nowPage,
-            tweetList: this.props.tweetList,
-        }
     }
+
     // 使用context传递 TweetFullCard的Type, 让其下方所有组件都能正确的展示自己。
-    getChildContext(){
+    getChildContext() {
         return {TweetFullCardType: TweetFullCardType.common};
     }
 
     listUpdate() {
-        this.listUpdating = true;
-        this.props.tweetNextPage()
+        if(!this.props.isEmpty){
+            this.listUpdating = true;
+            this.props.tweetNextPage()
+        }
     }
 
     receiveDistance(distance) {
         /**
          * 根据HOC传过来的距离判断是否需要加载tweet数据
          */
-        if(this.listUpdating === false && distance > -70) {
+        if (this.listUpdating === false && distance > -70) {
             this.listUpdate()
         }
     }
-
 
     init() {
         /**
          * 如果登陆了则获取snapshot内容
          */
         this.props.snapshotUserGet();
-        for (let i = 0; i < 2; i++) {
-            this.listUpdate();
-        }
+        this.listUpdate();
     }
 
     componentDidMount() {
@@ -58,13 +54,8 @@ class Home extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // tweetList的暂时单独处理，其他的放一起粗糙处理。
-        if(this.state.tweetList !== nextProps.tweetList) {
-            this.setState({
-                tweetList: nextProps.tweetList
-            }, () => {
-                this.listUpdating = false;
-            })
+        if (this.props.tweetList !== nextProps.tweetList) {
+            this.listUpdating = false;
         }
 
     }
@@ -76,17 +67,19 @@ class Home extends Component {
 
 
     render() {
+        const tweetList = this.props.tweetList;
         return (
             <div id="home" ref="home">
                 <div className="container main">
                     <div className="row">
                         <div className="main-left-con col-8" ref="tweetCon">
-                            {this.state.tweetList.map((data) => {
-                                return <TweetFullCard   data={data}/>
+                            {tweetList.map((data) => {
+                                return <TweetFullCard data={data}/>
                             })}
                         </div>
                         <div className="main-right-con col-4">
-                            {this.props.snapshotUserList.length >=1 ? <HomeRightBar loginUser={this.props.loginUser} snapshotUserList={this.props.snapshotUserList}/>: ""}
+                            {this.props.snapshotUserList.length >= 1 ? <HomeRightBar loginUser={this.props.loginUser}
+                                                                                     snapshotUserList={this.props.snapshotUserList}/> : ""}
                         </div>
                     </div>
                 </div>
@@ -95,7 +88,6 @@ class Home extends Component {
         )
     }
 }
-
 
 
 Home.childContextTypes = {
@@ -107,8 +99,10 @@ function mapStateToProps(state) {
     return {
         nowPage: state.TweetList.nowPage,
         tweetList: state.TweetList.tweetList,
+        isEmpty: state.TweetList.isEmpty,
         snapshotUserList: state.Explore.snapshotUserList,
         loginUser: state.Account.user,
+
     }
 }
 

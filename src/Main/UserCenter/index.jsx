@@ -1,7 +1,7 @@
 import React from 'react'
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import {  } from 'react-router-dom'
+import {} from 'react-router-dom'
 
 
 import './style.scss'
@@ -10,7 +10,7 @@ import * as UserActions from "./actions";
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import TweetCard from "src/components/TweetCard";
 import * as DialogActions from "src/components/Dialog/actions";
-import {logout as logoutAction} from "src/Account/actions";
+import {logout as logoutAction} from "src/extra/Account/actions";
 import {tweetFullCardElemSet} from "../../components/Dialog/actions";
 import withRouter from "react-router-dom/es/withRouter";
 
@@ -23,15 +23,14 @@ class UserCenter extends React.Component {
         this.listUpdate = this.listUpdate.bind(this);
         this.showDialog = this.showDialog.bind(this);
         this.logoutHandl = this.logoutHandl.bind(this);
+        this.chPassHandl = this.chPassHandl.bind(this);
         this.tweetClickFuncHandl = this.tweetClickFuncHandl.bind(this);
         this.state = {
-            username: null,
-            userInfo: this.props.userInfo,
-            tweetList: this.props.tweetList
-    }
+            username: props.match.params.user,
+        }
     }
 
-    showDialog(){
+    showDialog() {
         this.props.dialogDisplaySet({
             dialogButtons: true
         })
@@ -43,8 +42,10 @@ class UserCenter extends React.Component {
     }
 
     listUpdate() {
-        this.listUpdating = true;
-        this.props.tweetNextPage({username: this.state.username})
+        if (!this.props.isEmpty) {
+            this.listUpdating = true;
+            this.props.tweetNextPage({username: this.state.username})
+        }
     }
 
 
@@ -55,14 +56,14 @@ class UserCenter extends React.Component {
     }
 
     chPassHandl() {
-        console.log('chPass')
+        this.props.history.push('/setting/password')
     }
 
-    logoutHandl(){
+    logoutHandl() {
         this.props.logout({history: this.props.history})
     }
 
-    dialogSet(){
+    dialogSet() {
         const dialogs = [
             {text: '更改密码', func: this.chPassHandl},
             {text: '退出', func: this.logoutHandl},
@@ -70,13 +71,12 @@ class UserCenter extends React.Component {
         this.props.dialogButtonsElemSet(dialogs)
     }
 
-    init() {
+    init(routeUsername = this.props.match.params.user) {
         // 初始数据获得
-        const username = this.props.match.params.user
         this.setState({
-            username: username,
+            username: routeUsername,
         }, () => {
-            this.props.userInfoGet({username:this.state.username});
+            this.props.userInfoGet({username: this.state.username});
             for (let i = 0; i < 2; i++) {
                 this.listUpdate();
             }
@@ -86,23 +86,24 @@ class UserCenter extends React.Component {
     }
 
     componentDidMount() {
+        console.log('DidMount')
         this.init()
     }
 
     componentWillReceiveProps(nextProps) {
-        // 将state 与redux 同步
-        if (this.state.tweetList !== nextProps.tweetList) {
-            this.setState({
-                tweetList: nextProps.tweetList,
-            }, () => {
-                this.listUpdating = false;
-            })
-        } else if (this.state.userInfo !== nextProps.userInfo) {
-            this.setState({
-                userInfo: nextProps.userInfo
-            })
+        /**
+         * 因为路由事件没有销毁组件,
+         * 这里通过判断props中location来决定是否触发init，暂定这样,可能有更好的办法。
+         *
+         */
+        if (this.props.location.pathname !== nextProps.location.pathname) {
+            this.props.userResetAll();
+            this.init(nextProps.match.params.user)
         }
+
+
     }
+
 
     componentWillUnmount() {
         // 清空列表
@@ -111,79 +112,84 @@ class UserCenter extends React.Component {
 
 
     render() {
-        if(this.state.userInfo){return (
-            <div id="userCenter" className="container">
-                <div className="user-header-con">
-                    <div className="row">
-                        <div className="user-header-left col-4">
-                            <div>
-                                <img src="" alt=""/>
-                            </div>
-                        </div>
-                        <div className="user-header-right col-8">
-                            <div className="right-header">
+        const userInfo = this.props.userInfo
+        const tweetList = this.props.tweetList
+        if (userInfo) {
+            return (
+                <div id="userCenter" className="container">
+                    <div className="user-header-con">
+                        <div className="row">
+                            <div className="user-header-left col-4">
                                 <div>
-                                    <h1>{this.state.userInfo.username}</h1>
-                                    <span></span>
+                                    <img src="" alt=""/>
                                 </div>
-                                {this.props.userInfo.isSelf ?
+                            </div>
+                            <div className="user-header-right col-8">
+                                <div className="right-header">
                                     <div>
+                                        <h1>{userInfo.username}</h1>
+                                        <span></span>
+                                    </div>
+                                    {userInfo.isSelf ?
+                                        <div>
                                         <span>
                                             <button>编辑个人主页</button>
                                         </span>
-                                        <span>
+                                            <span>
                                             <button onClick={this.showDialog}>SettingBUtton</button>
                                         </span>
 
-                                    </div>
-                                    :
-                                    <div>
+                                        </div>
+                                        :
+                                        <div>
                                         <span>
                                             <button>关注</button>
                                         </span>
-                                                <span>
+                                            <span>
                                             <button>↓</button>
                                         </span>
-                                                <span>
+                                            <span>
                                             <button>...</button>
                                         </span>
-                                    </div>
-                                }
+                                        </div>
+                                    }
 
-                            </div>
-                            <div className="header-right-middle">
+                                </div>
+                                <div className="header-right-middle">
                                 <span>
                                     <span>274</span> 帖子
                                 </span>
-                                <span>
+                                    <span>
                                     <span>17.4百万</span> 关注者
                                 </span>
-                                <span>
+                                    <span>
                                     正在关注 <span>0</span>
                                 </span>
-                            </div>
-                            <div className="header-right-bottom">
-                                <p>{this.state.userInfo.describe}</p>
-                                <a href="">{this.state.userInfo.web_page}</a>
+                                </div>
+                                <div className="header-right-bottom">
+                                    <p>{userInfo.describe}</p>
+                                    <a href="">{userInfo.web_page}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className="tweets-con">
+                        <div className="row">
+                            {tweetList.map((tweet) => {
+                                return (
+                                    <div key={tweet.id} id={`tweet-${tweet.id}`} className="tweet-card-con col-4">
+                                        <TweetCard clickFuncHandle={this.tweetClickFuncHandl} tweet={tweet}/>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    {this.props.children}
                 </div>
-                <div className="tweets-con">
-                <div className="row">
-                    {this.state.tweetList.map((tweet) => {
-                        return(
-                            <div key={tweet.id} id={`tweet-${tweet.id}`} className="tweet-card-con col-4">
-                                <TweetCard clickFuncHandle={this.tweetClickFuncHandl} tweet={tweet}/>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-                {this.props.children}
-            </div>
 
-        )}return <div>temp</div>
+            )
+        }
+        return <div/>
     }
 }
 
@@ -191,6 +197,8 @@ function mapStateToProps(state) {
     return {
         userInfo: state.User.userInfo,
         tweetList: state.User.tweetList,
+        isEmpty: state.User.isElement,
+
     }
 }
 

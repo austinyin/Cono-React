@@ -8,8 +8,8 @@ import {connect} from "react-redux";
 import SimpleUserCard from "src/components/SimpleUserCard";
 import CommentCard from "src/components/TweetFullCard/CommentCard";
 import Slider from "../Slider";
-import * as RelationActions from "src/Relation/actions";
-import {RefreshState, RefreshType, TweetRelationType} from "src/Relation/model";
+import * as RelationActions from "src/extra/Relation/actions";
+import {RefreshState, RefreshType, TweetRelationType} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
 class TweetFullCard extends Component {

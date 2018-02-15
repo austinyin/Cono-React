@@ -58,6 +58,10 @@ export function recommendUserGetFailed(error) {
     }
 }
 
+/**
+ * snapshot
+ */
+
 export function snapshotUserGet() {
     return{
         type: actionTypes.SNAPSHOT_USER_GET,
@@ -77,6 +81,8 @@ export function snapshotUserGetFailed(error) {
         error
     }
 }
+
+
 
 
 

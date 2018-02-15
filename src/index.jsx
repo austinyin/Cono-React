@@ -9,7 +9,7 @@ import 'assets/css/index.scss'
 import 'bootstrap/scss/bootstrap.scss'
 // Main组件
 import Main from './Main'
-import Account from "./Account/index";
+import Account from "./extra/Account/index";
 
 // redux-saga 环境
 import 'babel-polyfill'
@@ -17,7 +17,7 @@ import 'regenerator-runtime/runtime'
 // store初始化
 import configureStore from "./store/configureStore";
 import {bindActionCreators} from "redux";
-import {loginCheck} from "./Account/actions";
+import {loginCheck} from "./extra/Account/actions";
 
 
 // 根路由
