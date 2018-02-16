@@ -1,6 +1,6 @@
 import * as actionTypes from "./constants";
 import {stateChildOperByKey} from "src/shared/js/reducerUtils";
-import {UploadState, UploadType} from "src/components/Dialog/constants";
+import {UploadState, MediaType} from "src/components/Dialog/constants";
 
 const initialState = {
     dialogButtons: {visible: false, elems: []},

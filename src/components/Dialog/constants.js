@@ -48,7 +48,7 @@ export const UploadState = {
     done: 3,
 };
 
-export const UploadType = {
+export const MediaType = {
     image: 1,
     video: 2,
 };

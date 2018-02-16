@@ -53,8 +53,7 @@ class Nav extends React.Component {
                 <div className="container">
                     <div className="row nav-main">
                         <div className="col-4 nav-left">
-                            <a className="nl-infos-con">
-                            </a>
+                            <Link to="/" className="nl-infos-con"/>
                         </div>
                         <div className="col-4 nav-center">
                             <div className="input-con">

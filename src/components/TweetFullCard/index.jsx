@@ -12,6 +12,7 @@ import * as RelationActions from "src/extra/Relation/actions";
 import {RefreshState, RefreshType} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import TweetRelationHOC from "src/shared/HOC/TweetRelationHOC";
+import {MediaType} from "src/components/Dialog/constants";
 
 class TweetFullCard extends Component {
     constructor(props) {
@@ -68,6 +69,7 @@ class TweetFullCard extends Component {
         // 如果进行了异步更改，将接收HOC返回的更改后的tweetData
         const tweetData = this.props.HOCTweet ? this.props.HOCTweet : this.props.data;
         const images = tweetData.images
+        // const video = tweetData.video
         if (tweetData.hasOwnProperty('images')) {
             return (
                 // 如果 type 为 TweetFullCardType.dialog
@@ -98,7 +100,10 @@ class TweetFullCard extends Component {
                                      author={{name: tweetData.user.username, text: tweetData.text}}
                                      loginUser={this.props.loginUser}
                                      relations={tweetData.relations}
-                                     comments={tweetData.comments}/>
+                                     comments={tweetData.comments}
+                                     totalLike={tweetData.total_like}
+                                     pubTime={tweetData.create_time}
+                        />
                     </div>
                 </section>
             )

@@ -64,7 +64,7 @@ class CommentCard extends React.Component {
                     </div>
                     <div className="c-header-bottom">
                         <a href="">
-                            <span>39552</span> 次赞
+                            <span>{this.props.totalLike}</span> 次赞
                         </a>
                     </div>
                 </header>
@@ -90,7 +90,7 @@ class CommentCard extends React.Component {
                             )
                         })}
                     </ul>
-                    <div><a href="">15分钟前</a></div>
+                    <div><a href="">{this.props.pubTime}</a></div>
                 </div>
                 <form ref="commentForm" className="comment-input-con">
                     <textarea ref="commentInput" name="" id="" cols="30" rows="1"/>
