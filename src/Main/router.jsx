@@ -6,10 +6,12 @@ import Explore from "src/Main/Explore";
 import ExlorePeople from "src/Main/Explore/ExlorePeople/ExlorePeople";
 import Account from "src/extra/Account";
 import SettingCenter from "src/Main/SettingCenter";
+import Test from "src/components/Test";
 
 const MainRouter = () => (
     <switch>
         <Route exact path="/" component={Home}/>
+        <Route exact path="/test" component={Test}/>
         <Route exact path="/explore" component={Explore}/>
         <Route exact path="/explore/people" component={ExlorePeople}/>
         <Route exact path='/account' component={Account}/>

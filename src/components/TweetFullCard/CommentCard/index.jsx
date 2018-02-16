@@ -8,14 +8,13 @@ import {TweetFullCardType} from "src/components/TweetFullCard/model";
 class CommentCard extends React.Component {
     constructor(props, context) {
         super(props, context);
-        this.tweetRelationClickHandl = this.tweetRelationClickHandl.bind(this);
+        this.tweetRelationClickHandle = this.tweetRelationClickHandle.bind(this);
+        this.answerClickHandle = this.answerClickHandle.bind(this);
         this.commentRemove = this.commentRemove.bind(this);
         this.commentCommit = this.commentCommit.bind(this);
-        this.init = this.init.bind(this);
-
     }
 
-    tweetRelationClickHandl(e){
+    tweetRelationClickHandle(e){
         e.stopPropagation()
         if(e.target.className.includes('like')){
             this.props.tweetRelationFunc(TweetRelationType.like)
@@ -23,6 +22,12 @@ class CommentCard extends React.Component {
         else if(e.target.className.includes('collect')){
             this.props.tweetRelationFunc(TweetRelationType.collect)
         }
+    }
+
+    answerClickHandle(e){
+        e.stopPropagation()
+        this.refs.commentInput.focus()
+
     }
 
     commentCommit(e) {
@@ -43,17 +48,6 @@ class CommentCard extends React.Component {
     }
 
 
-    init() {
-        this.refs.commentInput.addEventListener('keydown', function (event) {
-
-        })
-    }
-
-    componentDidMount() {
-        this.init()
-    }
-
-
     render() {
         const type = this.context.TweetFullCardType
         return (
@@ -61,11 +55,11 @@ class CommentCard extends React.Component {
                 <header className="c-header">
                     <div className="c-header-top">
                         <div className="cht-left-icons">
-                            <a className={(this.props.relations&&this.props.relations.is_like)? "like_active" : ""}><span onClick={this.tweetRelationClickHandl} className="like">a</span></a>
-                            <a><span className="answer"/>b</a>
+                            <a className={(this.props.relations&&this.props.relations.is_like)? "like_active" : ""}><span onClick={this.tweetRelationClickHandle} className="like">a</span></a>
+                            <a><span onClick={this.answerClickHandle} className="answer">b</span></a>
                         </div>
                         <div className="cht-right-icons">
-                            <a className={(this.props.relations&&this.props.relations.is_collect)? "collect_active" : ""}><span onClick={this.tweetRelationClickHandl} className="collect">c</span></a>
+                            <a className={(this.props.relations&&this.props.relations.is_collect)? "collect_active" : ""}><span onClick={this.tweetRelationClickHandle} className="collect">c</span></a>
                         </div>
                     </div>
                     <div className="c-header-bottom">

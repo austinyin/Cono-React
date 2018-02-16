@@ -9,19 +9,18 @@ import SimpleUserCard from "src/components/SimpleUserCard";
 import CommentCard from "src/components/TweetFullCard/CommentCard";
 import Slider from "../Slider";
 import * as RelationActions from "src/extra/Relation/actions";
-import {RefreshState, RefreshType, TweetRelationType} from "src/extra/Relation/model";
+import {RefreshState, RefreshType} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
+import TweetRelationHOC from "src/shared/HOC/TweetRelationHOC";
 
 class TweetFullCard extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.init = this.init.bind(this);
+    constructor(props) {
+        super(props);
         this.tweetRelationFuncHandl = this.tweetRelationFuncHandl.bind(this);
         this.commentLeaveFuncHandl = this.commentLeaveFuncHandl.bind(this);
         this.commentRemoveFuncHandl = this.commentRemoveFuncHandl.bind(this);
         this.avatar = "src/assets/img/avatar/avatar.jpg"
         this.state = {
-            tweetData: this.props.data,
             refreshState: RefreshState.calm
         }
     }
@@ -31,17 +30,12 @@ class TweetFullCard extends Component {
      * 子组件中点击喜欢或收藏传输的type，后台先查找后将相应状态取反状态即可。
      * @param type
      */
-    tweetRelationFuncHandl(type){
+    tweetRelationFuncHandl(type) {
         const data = {
             type,
-            tweetId: this.state.tweetData.id,
-        };
-        this.setState({
-            refreshState: RefreshState.agitate
-        }, () => {
-            this.props.tweetRelationsSet(data)
-            this.settleDown()
-        })
+            tweetId: this.props.data.id,
+        }
+        this.props.HOCRelationFunc(data)
 
     }
 
@@ -53,78 +47,35 @@ class TweetFullCard extends Component {
     commentLeaveFuncHandl(text) {
         const data = {
             text: text,
-            tweetId: this.state.tweetData.id
+            tweetId: this.props.data.id
         };
-        this.setState({
-            refreshState: RefreshState.agitate
-        }, () => {
-            this.props.tweetCommentLeave(data)
-            this.settleDown()
-        })
+        this.props.HOCCommentLeaveFunc(data)
+
     }
 
     commentRemoveFuncHandl(id) {
         const data = {
             commentId: id,
-            tweetId: this.state.tweetData.id
+            tweetId: this.props.data.id
         };
-        this.setState({
-            refreshState: RefreshState.agitate
-        }, () => {
-            this.props.tweetCommentRemove(data)
-            this.settleDown()
-        })
-    }
-
-    /**
-     * refreshObj{key:{state:RefreshState}}
-     * 每秒钟检测一次，如果reducer中succeeded action 完成了，则将更新状态refreshState设为calm
-     * 并将state的tweetData设置为返回的新tweet，实现局部刷新。
-     * setState 完成后告诉store已经刷新完毕，并清除定时器
-     */
-    refreshStateDetect(settleDownTimer) {
-        const selfId = this.state.tweetData.id
-        const refreshObj = this.props.tweetRefreshObj
-        const findKey = Object.keys(refreshObj).find(k => {
-            return parseInt(k) === selfId&&refreshObj[k].state===RefreshState.agitate;
-        })
-        if(findKey){
-            const newTweetData = refreshObj[findKey].data
-            this.setState({
-                refreshState: RefreshState.calm,
-                tweetData: newTweetData
-            }, () => {
-                this.props.relationsRefreshDone({id: selfId, type: RefreshType.tweet})
-                clearInterval(settleDownTimer)
-            })
-        }
-    }
-
-
-    settleDown() {
-        const settleDownTimer = setInterval(() =>{
-            this.refreshStateDetect(settleDownTimer)
-        },1000)
-    }
-
-    init(){
+        this.props.HOCCommentRemoveFunc(data)
 
     }
-    componentDidMount() {
-        this.init()
-    }
+
 
     render() {
         const type = this.context.TweetFullCardType;
-        const tweetData = this.state.tweetData;
-        if (tweetData.hasOwnProperty('id')) {
+        // 如果进行了异步更改，将接收HOC返回的更改后的tweetData
+        const tweetData = this.props.HOCTweet ? this.props.HOCTweet : this.props.data;
+        const images = tweetData.images
+        if (tweetData.hasOwnProperty('images')) {
             return (
                 // 如果 type 为 TweetFullCardType.dialog
                 <section id="tweetFullCard" className={type === TweetFullCardType.dialog ?
                     "dialog-tweet-full-card" : ''}>
-                    {type === TweetFullCardType.dialog ?
+                    {type === TweetFullCardType.dialog&& images ?
                         <div className="image-slider-con image-slider-con-dialog">
-                            <Slider/>
+                            <Slider images={images}/>
                         </div> : null
                     }
                     <div className="tweet-full-card-main">
@@ -136,9 +87,9 @@ class TweetFullCard extends Component {
                                 />
                             </div>
                         </header>
-                        {type === TweetFullCardType.common ?
+                        {type === TweetFullCardType.common && images ?
                             <div className="image-slider-con">
-                                <Slider/>
+                                <Slider images={images}/>
                             </div> : null
                         }
                         <CommentCard commentLeaveFunc={this.commentLeaveFuncHandl}
@@ -149,10 +100,6 @@ class TweetFullCard extends Component {
                                      relations={tweetData.relations}
                                      comments={tweetData.comments}/>
                     </div>
-                    {this.state.refreshState === RefreshState.agitate ?
-                        <div>agitae</div>
-                        : <div>calm</div>
-                    }
                 </section>
             )
         }
@@ -167,24 +114,14 @@ TweetFullCard.contextTypes = {
 
 function mapStateToProps(state) {
     return {
-        tweetRefreshObj: state.Relation.tweetRefreshObj,
         loginUser: state.Account.user
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        tweetCommentLeave: bindActionCreators(RelationActions.tweetCommentLeave, dispatch),
-        tweetCommentRemove: bindActionCreators(RelationActions.tweetCommentRemove, dispatch),
-        tweetRelationsSet: bindActionCreators(RelationActions.tweetRelationsSet, dispatch),
-        relationsRefreshDone: bindActionCreators(RelationActions.relationsRefreshDone, dispatch),
-
-    }
-}
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
-)(TweetFullCard)
+    null
+)(TweetRelationHOC(TweetFullCard))
 
 

@@ -3,7 +3,7 @@ import {post} from "src/shared/js/axiosUtil";
 
 /**
  * registApi,loginApi, loginCheckApi
- * return data is like {type:message,user:userInfo}
+ * return data is like {type:message,user:user}
  */
 export function registApi(data) {
     let url = "http://127.0.0.1:8000/api/account/regist";

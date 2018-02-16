@@ -1,66 +1,36 @@
 import React from 'react'
 import './style.scss'
 import Link from "react-router-dom/es/Link";
-import * as RelationActions from "src/extra/Relation/actions";
-import {bindActionCreators} from "redux";
-import {PersonUserRelationType, RefreshState, RefreshType} from "src/extra/Relation/model";
-import connect from "react-redux/es/connect/connect";
-import {LoginState} from "src/extra/Account/constants";
 import withRouter from "react-router-dom/es/withRouter";
+import RelationHOC from "src/shared/HOC/RelationHOC";
+import {bindActionCreators} from "redux";
+import * as RelationActions from "src/extra/Relation/actions";
+import connect from "react-redux/es/connect/connect";
+import {PersonUserRelationType} from "src/extra/Relation/model";
 
 class SimpleUserCard extends React.Component {
     constructor(props) {
         super(props);
         this.followButtonClickHandle = this.followButtonClickHandle.bind(this);
-        this.state = {
-            user: this.props.user
-        }
     }
 
     followButtonClickHandle(e) {
-        e.stopPropagation() //禁止冒泡
-        if (this.props.loginState !== LoginState.login) {
-            this.props.history.push('/account')
-        }
+        /**
+         * 将follow流程交给HOC
+         */
+        e.stopPropagation()
         const data = {
-            targetId: this.state.user.id,
+            targetId: this.props.user.id,
             type: PersonUserRelationType.follow,
         }
-        this.setState({
-            refreshState: RefreshState.agitate
-        }, () => {
-            this.props.personRelationsSet(data)
-            this.settleDown()
-        })
+        this.props.HOCfollowHandle(data)
     }
-
-    refreshStateDetect(settleDownTimer) {
-        const selfId = this.state.user.id;
-        const refreshObj = this.props.personRefreshObj
-        const findKey = Object.keys(refreshObj).find(k => {
-            return parseInt(k) === selfId && refreshObj[k].state === RefreshState.agitate;
-        })
-        if (findKey) {
-            const newPersonData = refreshObj[findKey].data
-            this.setState({
-                refreshState: RefreshState.calm,
-                user: newPersonData
-            }, () => {
-                this.props.relationsRefreshDone({id: selfId, type: RefreshType.person})
-                clearInterval(settleDownTimer)
-            })
-        }
-    }
-
-    settleDown() {
-        const settleDownTimer = setInterval(() => {
-            this.refreshStateDetect(settleDownTimer)
-        }, 1000)
-    }
-
 
     render() {
-        const user = this.state.user
+        //这里是RelationHOC的state中的user
+        const user = this.props.user
+        // 首次显示采用父组件传入的user的relations,之后follow操作后由HOC返回。
+        const relations = this.props.relations ? this.props.relations : this.props.user.relations
         return (
             <div id="SimpleUserCard" className={this.props.verticle ? 'd-flex flex-column' : ''}>
                 <div className={this.props.verticle ? 'd-flex flex-column suc-left' : 'suc-left'}>
@@ -76,32 +46,34 @@ class SimpleUserCard extends React.Component {
                 {this.props.middle ? <div className="suc-middle">middle</div> : ''}
                 {this.props.followButton ? <div className="suc-right">
                     <button onClick={this.followButtonClickHandle}
-                            className={user.relations.is_follow ? "follow-button follow-button-active" : "follow-button"}>关注
+                            className={relations.is_follow ? "follow-button follow-button-active" : "follow-button"}>关注
                     </button>
-                </div> : ''}
+                </div> : null}
             </div>
         )
     }
 }
 
-function mapStateToProps(state) {
+
+export function mapStateToProps(state) {
     return {
         loginState: state.Account.state,
+        loginUser: state.Account.user,
         personRefreshObj: state.Relation.personRefreshObj,
     }
 }
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
     return {
         personRelationsSet: bindActionCreators(RelationActions.personRelationsSet, dispatch),
         relationsRefreshDone: bindActionCreators(RelationActions.relationsRefreshDone, dispatch),
     }
 }
 
+
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(SimpleUserCard))
-
+)(RelationHOC(SimpleUserCard)))
 
 

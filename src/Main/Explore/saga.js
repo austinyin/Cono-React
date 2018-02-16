@@ -17,7 +17,7 @@ function* recommendTweetNextPageSaga(action) {
     try {
         const nowPage = yield select(getNowPageNum);
         const ret = yield call(getHomeTweets, nowPage+1);
-        if (!ret.next) {
+        if(!ret.data.next) {
             yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_IS_EMPTY});
         }
 

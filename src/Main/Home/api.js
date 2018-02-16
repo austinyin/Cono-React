@@ -7,5 +7,7 @@ export function getHomeTweets(page, page_size=10) {
         page: page,
         page_size: page_size
     };
-    return get(url, data)
+    return get(url, data).then(ret => {
+        return ret.data
+    })
 }

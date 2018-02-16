@@ -1,7 +1,7 @@
 import * as actionTypes from "./constants";
 
 const initialState = {
-    userInfo: {},
+    user: {},
     nowPage: 0,
     tweetList: [],
     isEmpty: false,
@@ -15,7 +15,7 @@ export default function User(state = initialState, action) {
          * 用户信息
          */
         case actionTypes.USER_GET_SUCCEEDED:
-            return Object.assign({}, state, {userInfo: action.data});
+            return Object.assign({}, state, {user: action.data});
         case actionTypes.USER_GET_FAILED:
             return Object.assign({}, state, {prompt: action.error});
 

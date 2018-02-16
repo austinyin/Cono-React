@@ -60,11 +60,10 @@ function* loginCheck(action) {
 
 function* changePasswordSaga(action) {
     try {
-        console.log('chanPass')
         const ret = yield call(changePasswordApi, action.data);
-        if(ret.changePassword){ // 成功返回True。
+        // 成功则.changePassword返回True。
+        if(ret.changePassword){
             action.history.push('/account');
-
         }
         yield put({type: AccountActionTypes.CHANGE_PASSWORD_SUCCEEDED, data: ret});
     } catch (error) {

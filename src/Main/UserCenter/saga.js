@@ -4,30 +4,7 @@ import {takeEvery} from 'redux-saga'
 import * as UserActionTypes from './constants'
 import {getUserInfo, getUserTweets} from "src/Main/UserCenter/api";
 
-const getNowPageNum = state => state.Explore.nowPage;
 
-
-function* userTweetsNextPageSaga(action) {
-    /**
-     * 获得当前页，发送请求，再发出SUCCEEDED action
-     */
-    try {
-        const nowPage = yield select(getNowPageNum)
-        const ret = yield call(getUserTweets, action.data.username, 1);
-        // 如果没有下一页， 则发送empty action。
-        if(!ret.next){
-            yield put({type: UserActionTypes.USER_TWEETS_IS_EMPTY});
-        }
-        const list = []
-        for (let i = 0; i < 2; i++) {
-            list.push(...ret.results) // 需要.results 是因为rest 的分页处理。
-        }
-        yield put({type: UserActionTypes.USER_TWEETS_NEXT_PAGE_SUCCEEDED, data: list});
-    }
-    catch (error) {
-        yield put({type: UserActionTypes.USER_TWEETS_NEXT_PAGE_FAILED, error});
-    }
-}
 
 function* userInfoGetSaga(action) {
     /**
@@ -40,6 +17,27 @@ function* userInfoGetSaga(action) {
         yield put({type: UserActionTypes.USER_GET_FAILED, error});
     }
 }
+
+const getNowPageNum = state => state.User.nowPage;
+
+function* userTweetsNextPageSaga(action) {
+    /**
+     * 获得当前页，发送请求，再发出SUCCEEDED action
+     */
+    try {
+        const nowPage = yield select(getNowPageNum)
+        const ret = yield call(getUserTweets, action.data.username, nowPage+1);
+        // 如果没有下一页， 则发送empty action。
+        if(!ret.next){
+            yield put({type: UserActionTypes.USER_TWEETS_IS_EMPTY});
+        }
+        yield put({type: UserActionTypes.USER_TWEETS_NEXT_PAGE_SUCCEEDED, data: ret.results});
+    }
+    catch (error) {
+        yield put({type: UserActionTypes.USER_TWEETS_NEXT_PAGE_FAILED, error});
+    }
+}
+
 
 // 监听 用户获取
 export function* watchUserInfoGet() {

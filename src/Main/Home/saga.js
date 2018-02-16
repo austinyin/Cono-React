@@ -17,7 +17,7 @@ function* tweetNextPage(action) {
         if(!ret.next){
             yield put({type: TweetListActionTypes.TWEETS_IS_EMPTY});
         }
-        yield put({type: TweetListActionTypes.TWEETS_NEXT_PAGE_SUCCEEDED, data: ret.data.results});
+        yield put({type: TweetListActionTypes.TWEETS_NEXT_PAGE_SUCCEEDED, data: ret.results});
     } catch (error) {
         yield put({type: TweetListActionTypes.TWEETS_NEXT_PAGE_FAILED, error});
     }
