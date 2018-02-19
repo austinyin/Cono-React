@@ -28,6 +28,31 @@ export function userGetFailed(error) {
 }
 
 
+/**
+ * 用户关系列表获取
+ */
+
+export function userRelationsGet(username) {
+    return{
+        type: actionTypes.USER_RELATIONS_GET,
+        username
+    }
+}
+
+export function userRelationsGetSucceeded(data) {
+    return{
+        type: actionTypes.USER_RELATIONS_GET_SUCCEEDED,
+        data
+    }
+}
+
+export function userRelationsGetGetFailed(error) {
+    return{
+        type: actionTypes.USER_RELATIONS_GET_FAILED,
+        error
+    }
+}
+
 
 /**
  * 用户推文actions

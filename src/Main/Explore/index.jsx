@@ -7,6 +7,7 @@ import * as ExploreActions from "./action";
 import SimpleUserCard from "src/components/SimpleUserCard";
 import TweetCard from "src/components/TweetCard";
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
+import Link from "react-router-dom/es/Link";
 
 
 class Explore extends React.Component {
@@ -64,7 +65,9 @@ class Explore extends React.Component {
                 <div className="explore-header">
                     <header>
                         <span>发现用户</span>
-                        <a href="" className="eh-more-link"><span>查看全部</span></a>
+                        <Link to="/explore/people" className="eh-more-link">
+                            <span>查看全部</span>
+                        </Link>
                     </header>
                     <div className="eh-users-con row">
                         {userList.map((user, index) => {

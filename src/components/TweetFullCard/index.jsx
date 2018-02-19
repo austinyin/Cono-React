@@ -1,3 +1,6 @@
+/**
+ * 这里的更多评论命名有点拗口，待解决
+ */
 import React, {Component} from 'react'
 import './style.scss'
 import PropTypes from 'prop-types';
@@ -13,19 +16,30 @@ import {RefreshState, RefreshType} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import TweetRelationHOC from "src/shared/HOC/TweetRelationHOC";
 import {MediaType} from "src/components/Dialog/constants";
+import VideoCard from "src/components/VideoCard";
+import {tweetCommentLeaveApi, tweetCommentNextPageApi} from "src/extra/Relation/api";
 
 class TweetFullCard extends Component {
     constructor(props) {
         super(props);
+        this.getMoreCommentFuncHandl = this.getMoreCommentFuncHandl.bind(this);
         this.tweetRelationFuncHandl = this.tweetRelationFuncHandl.bind(this);
         this.commentLeaveFuncHandl = this.commentLeaveFuncHandl.bind(this);
         this.commentRemoveFuncHandl = this.commentRemoveFuncHandl.bind(this);
         this.avatar = "src/assets/img/avatar/avatar.jpg"
         this.state = {
-            refreshState: RefreshState.calm
+            refreshState: RefreshState.calm,
+            comment: {
+                nowPage: 1,
+                comments: this.props.tweetData.comments
+            },
         }
     }
 
+    getMoreCommentFuncHandl(){
+        this.props.HOCGetMoreCommentFunc()
+
+    }
 
     /**
      * 子组件中点击喜欢或收藏传输的type，后台先查找后将相应状态取反状态即可。
@@ -34,10 +48,9 @@ class TweetFullCard extends Component {
     tweetRelationFuncHandl(type) {
         const data = {
             type,
-            tweetId: this.props.data.id,
+            tweetId: this.props.tweetData.id,
         }
         this.props.HOCRelationFunc(data)
-
     }
 
     /**
@@ -45,10 +58,11 @@ class TweetFullCard extends Component {
      * 派发留言action，开始更新。
      * @param text
      */
-    commentLeaveFuncHandl(text) {
+    commentLeaveFuncHandl(text, signTargetList) {
         const data = {
-            text: text,
-            tweetId: this.props.data.id
+            tweetId: this.props.tweetData.id,
+            text,
+            signTargetList
         };
         this.props.HOCCommentLeaveFunc(data)
 
@@ -57,27 +71,34 @@ class TweetFullCard extends Component {
     commentRemoveFuncHandl(id) {
         const data = {
             commentId: id,
-            tweetId: this.props.data.id
+            tweetId: this.props.tweetData.id
         };
         this.props.HOCCommentRemoveFunc(data)
-
     }
 
 
     render() {
         const type = this.context.TweetFullCardType;
         // 如果进行了异步更改，将接收HOC返回的更改后的tweetData
-        const tweetData = this.props.HOCTweet ? this.props.HOCTweet : this.props.data;
+        const tweetData = this.props.HOCTweet ? this.props.HOCTweet : this.props.tweetData;
+        // const comments = this.state.comment.comments.hasOwnProperty('data') ? this.state.comment.comments: tweetData.comments
+        const comments = this.props.HOCComments
         const images = tweetData.images
-        // const video = tweetData.video
+        const videoObj = tweetData.video
+        let MediaElem = null
+        if (images.length > 0) {
+            MediaElem = <Slider images={images}/>
+        } else {
+            MediaElem = <VideoCard videoObj={videoObj}/>
+        }
         if (tweetData.hasOwnProperty('images')) {
             return (
                 // 如果 type 为 TweetFullCardType.dialog
                 <section id="tweetFullCard" className={type === TweetFullCardType.dialog ?
                     "dialog-tweet-full-card" : ''}>
-                    {type === TweetFullCardType.dialog&& images ?
-                        <div className="image-slider-con image-slider-con-dialog">
-                            <Slider images={images}/>
+                    {type === TweetFullCardType.dialog ?
+                        <div className="media-con-dialog">
+                            {MediaElem}
                         </div> : null
                     }
                     <div className="tweet-full-card-main">
@@ -89,20 +110,24 @@ class TweetFullCard extends Component {
                                 />
                             </div>
                         </header>
-                        {type === TweetFullCardType.common && images ?
-                            <div className="image-slider-con">
-                                <Slider images={images}/>
+                        {type === TweetFullCardType.common ?
+                            <div className="media-con ">
+                                {MediaElem}
                             </div> : null
                         }
+
                         <CommentCard commentLeaveFunc={this.commentLeaveFuncHandl}
                                      commentRemoveFunc={this.commentRemoveFuncHandl}
                                      tweetRelationFunc={this.tweetRelationFuncHandl}
+                                     getMoreCommentFunc={this.getMoreCommentFuncHandl}
                                      author={{name: tweetData.user.username, text: tweetData.text}}
                                      loginUser={this.props.loginUser}
                                      relations={tweetData.relations}
-                                     comments={tweetData.comments}
+                                     comments={comments}
+                                     hasNext={comments}
                                      totalLike={tweetData.total_like}
                                      pubTime={tweetData.create_time}
+                                     signList={tweetData.sign_list}
                         />
                     </div>
                 </section>

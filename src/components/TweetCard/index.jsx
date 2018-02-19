@@ -1,6 +1,11 @@
-import React,{Component} from 'react'
+import React, {Component} from 'react'
 import './style.scss'
-
+import * as DialogActions from "../Dialog/actions";
+import {tweetFullCardElemSet} from "../Dialog/actions";
+import withRouter from "react-router-dom/es/withRouter";
+import {bindActionCreators} from "redux";
+import ScrollRelationHOC from "../../shared/HOC/ScrollRelationHOC";
+import connect from "react-redux/es/connect/connect";
 
 
 class TweetCard extends Component {
@@ -9,12 +14,13 @@ class TweetCard extends Component {
         this.clickHandle = this.clickHandle.bind(this)
     }
 
-    clickHandle(){
-        this.props.clickFuncHandle(this.props.tweet.id)
+    clickHandle() {
+        this.props.tweetFullCardElemSet(this.props.tweet.id)
+        this.props.dialogDisplaySet({tweetFullCard: true})
     }
 
     render() {
-        return(
+        return (
             <div id="tweetCard" onClick={this.clickHandle}>
                 <div className="img-con">
                     <a href="">
@@ -39,4 +45,19 @@ class TweetCard extends Component {
     }
 }
 
-export default TweetCard
+
+function mapDispatchToProps(dispatch) {
+    return {
+        dialogDisplaySet: bindActionCreators(DialogActions.dialogDisplaySet, dispatch),
+        tweetFullCardElemSet: bindActionCreators(tweetFullCardElemSet, dispatch),
+    }
+}
+
+export default withRouter(connect(
+    null,
+    mapDispatchToProps
+)(ScrollRelationHOC(TweetCard)))
+
+
+
+

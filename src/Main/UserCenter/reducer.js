@@ -1,4 +1,6 @@
 import * as actionTypes from "./constants";
+import {stateChildOperByKey} from "src/shared/js/reducerUtils";
+import {RefreshState} from "src/extra/Relation/model";
 
 const initialState = {
     user: {},
@@ -20,7 +22,14 @@ export default function User(state = initialState, action) {
             return Object.assign({}, state, {prompt: action.error});
 
         /**
-         * 推文
+         * 用户relations
+         */
+        case actionTypes.USER_RELATIONS_GET_SUCCEEDED:
+            return stateChildOperByKey(state, "user", {"relations_obj": action.data})
+
+
+        /**
+         * 用户推文
          */
         case actionTypes.USER_TWEETS_NEXT_PAGE_SUCCEEDED:
             return Object.assign({}, state, {

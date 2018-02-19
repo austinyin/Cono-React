@@ -2,17 +2,23 @@
   background: #ffffff;
   margin-bottom: 60px;
   .media-con{
-    height: 100%;
+    width: 100%;
     .img-con{
-      height: 100%;
+      width: 100%;
     }
-    img{
-      height: 100%;
+    img,video{
+      width: 100%;
     }
-
-
-
   }
+
+  // 视频
+  .video-con{
+    width: 100%;
+    video{
+      width: 100%;
+    }
+  }
+
   .full-card-header{
     height: 60px;
     display: flex;
@@ -33,5 +39,17 @@
   .tweet-full-card-main{
     padding: 0 24px;
   }
+
+  .media-con-dialog{
+    height: 100%;
+    .img-con{
+      height: 100%;
+    }
+    img,video{
+      height: 100%;
+    }
+  }
+
+
 
 }

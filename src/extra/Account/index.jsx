@@ -17,9 +17,7 @@ class Account extends React.Component {
         this.accountReceiveFunc = this.accountReceiveFunc.bind(this)
         this.accountForm = Object.assign({},AccountForm)
     }
-
-
-
+    
     accountReceiveFunc(type, form) {
         if(type===FormType.login) {
             const loginForm = Object.assign({}, LoginForm);

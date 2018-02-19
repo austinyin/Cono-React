@@ -74,7 +74,7 @@ class Home extends Component {
                     <div className="row">
                         <div className="main-left-con col-8" ref="tweetCon">
                             {tweetList.map((data) => {
-                                return <TweetFullCard data={data}/>
+                                return <TweetFullCard tweetData={data}/>
                             })}
                         </div>
                         <div className="main-right-con col-4">
@@ -102,7 +102,6 @@ function mapStateToProps(state) {
         isEmpty: state.TweetList.isEmpty,
         snapshotUserList: state.Explore.snapshotUserList,
         loginUser: state.Account.user,
-
     }
 }
 

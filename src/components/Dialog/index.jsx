@@ -8,19 +8,20 @@ import './style.scss'
 import TweetFullCard from "../TweetFullCard";
 import {TweetFullCardType} from "../TweetFullCard/model";
 import PubCard from "src/components/Dialog/PubCard";
+import {MediaType} from "src/components/Dialog/constants";
 
 
 class Dialog extends Component {
     constructor(props) {
         super(props);
-        this.dialogButtonsHide = this.dialogButtonsHide.bind(this);
+
         this.pubCloseFuncHandl = this.pubCloseFuncHandl.bind(this);
         this.pubCommitFuncHandl = this.pubCommitFuncHandl.bind(this);
         this.transferUploadFuncHandl = this.transferUploadFuncHandl.bind(this);
-        this.tranferImgRemoveFuncHandl = this.tranferImgRemoveFuncHandl.bind(this);
-        this.state = {
-            dialogObj: this.props.dialogObj,
-        }
+        this.tranferRemoveFuncHandl = this.tranferRemoveFuncHandl.bind(this);
+        this.dialogButtonsHide = this.dialogButtonsHide.bind(this);
+        this.dialogHideAll = this.dialogHideAll.bind(this);
+
     }
 
     /**
@@ -47,8 +48,21 @@ class Dialog extends Component {
         })
     }
 
-    tranferImgRemoveFuncHandl(id){
-        this.props.pubTransferImageRemove(id)
+    dialogHideAll(){
+        this.props.dialogDisplay({
+            pubCard:false,
+            dialogButtons:false,
+            tweetFullCard:false,
+        })
+    }
+
+    tranferRemoveFuncHandl(data){
+        if(data.type===MediaType.image){
+            this.props.pubTransferImageRemove(data.id)
+        } else {
+            this.props.pubTransferReset()
+        }
+
     }
 
     /**
@@ -76,11 +90,6 @@ class Dialog extends Component {
         this.init()
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            dialogObj: this.props.dialogObj,
-        })
-    }
 
     componentWillUnmount() {
         this.props.dialogResetAll()
@@ -112,7 +121,7 @@ class Dialog extends Component {
                     }
                     {(dialogObj.tweetFullCard.visible && dialogObj.tweetFullCard.data.hasOwnProperty('id')) ?
                         <div className="dialog-tweet-con">
-                            <TweetFullCard type={TweetFullCardType.dialog} data={dialogObj.tweetFullCard.data}/>
+                            <TweetFullCard type={TweetFullCardType.dialog} tweetData={dialogObj.tweetFullCard.data}/>
                         </div> : null
                     }
                     {dialogObj.pubCard.visible?
@@ -122,11 +131,11 @@ class Dialog extends Component {
                                      tranferUploadFunc={this.transferUploadFuncHandl}
                                      pubCommitFunc={this.pubCommitFuncHandl}
                                      closeFunc={this.pubCloseFuncHandl}
-                                     tranferImgRemoveFunc={this.tranferImgRemoveFuncHandl}
+                                     tranferRemoveFunc={this.tranferRemoveFuncHandl}
                             />
                         </div> :null
                     }
-                    <div className="dialog-bac"/>
+                    <div onClick={this.dialogHideAll} className="dialog-bac"/>
                 </div>
             )
         }

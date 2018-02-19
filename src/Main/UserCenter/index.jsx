@@ -45,10 +45,6 @@ class UserCenter extends React.Component {
         this.props.HOCfollowHandle(data)
     }
 
-    tweetClickFuncHandl(id) {
-        this.props.tweetFullCardElemSet(id)
-        this.props.dialogDisplaySet({tweetFullCard: true})
-    }
 
     chPassHandl() {
         this.props.history.push('/setting/password')
@@ -226,7 +222,6 @@ function mapDispatchToProps(dispatch) {
         userResetAll: bindActionCreators(UserActions.userResetAll, dispatch),
         dialogButtonsElemSet: bindActionCreators(DialogActions.dialogButtonsElemSet, dispatch),
         dialogDisplaySet: bindActionCreators(DialogActions.dialogDisplaySet, dispatch),
-        tweetFullCardElemSet: bindActionCreators(tweetFullCardElemSet, dispatch),
     }
 }
 

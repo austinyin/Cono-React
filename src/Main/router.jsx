@@ -6,17 +6,17 @@ import Explore from "src/Main/Explore";
 import ExlorePeople from "src/Main/Explore/ExlorePeople/ExlorePeople";
 import Account from "src/extra/Account";
 import SettingCenter from "src/Main/SettingCenter";
-import Test from "src/components/Test";
+import MultiSelect from "src/components/MultiSelect";
 
 const MainRouter = () => (
     <switch>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/test" component={Test}/>
+        <Route exact path="/test" component={MultiSelect}/>
         <Route exact path="/explore" component={Explore}/>
         <Route exact path="/explore/people" component={ExlorePeople}/>
         <Route exact path='/account' component={Account}/>
         <Route path='/setting' component={SettingCenter}/>
-        <Route exact path="/:user" component={UserCenter}/>
+        {/*<Route exact path="/:user" component={UserCenter}/>*/}
     </switch>
 
 )

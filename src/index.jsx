@@ -34,7 +34,6 @@ class App extends Component {
         super(props);
     }
 
-
     componentDidMount() {
         // 启动时进行登陆检查
         this.props.loginCheck()

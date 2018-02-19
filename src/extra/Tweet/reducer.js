@@ -7,7 +7,7 @@ const initialState = {
     prompt: ''
 };
 
-export default function TweetList(state = initialState, action) {
+export default function Tweet(state = initialState, action) {
     switch (action.type) {
         case actionTypes.TWEETS_NEXT_PAGE_SUCCEEDED:
             return Object.assign({}, state, {nowPage: state.nowPage + 1, tweetList: [...state.tweetList,...action.data]});

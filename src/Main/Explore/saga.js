@@ -17,11 +17,11 @@ function* recommendTweetNextPageSaga(action) {
     try {
         const nowPage = yield select(getNowPageNum);
         const ret = yield call(getHomeTweets, nowPage+1);
-        if(!ret.data.next) {
+        if(!ret.next) {
             yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_IS_EMPTY});
         }
 
-        yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_NEXT_PAGE_SUCCEEDED, data: ret.data.results});
+        yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_NEXT_PAGE_SUCCEEDED, data: ret.results});
     } catch (error) {
         yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_NEXT_PAGE_FAILED, error});
     }

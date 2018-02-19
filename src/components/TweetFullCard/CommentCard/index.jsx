@@ -2,8 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import './style.scss'
-import {RefreshState,TweetRelationType} from "src/extra/Relation/model";
+import {RefreshState, TweetRelationType} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
+import MultiSelect from "src/components/MultiSelect";
+import {getMultiSelectValue} from "src/shared/js/commonUtil";
+import Link from "react-router-dom/es/Link";
+
+const list = [
+    {label: 'monkyin', value: 'monkyin'},
+    {label: 'xiaobei', value: 'xiaobei'},
+    {label: 'beibei', value: 'beibei'},
+
+]
 
 class CommentCard extends React.Component {
     constructor(props, context) {
@@ -12,29 +22,30 @@ class CommentCard extends React.Component {
         this.answerClickHandle = this.answerClickHandle.bind(this);
         this.commentRemove = this.commentRemove.bind(this);
         this.commentCommit = this.commentCommit.bind(this);
+
     }
 
-    tweetRelationClickHandle(e){
+    tweetRelationClickHandle(e) {
         e.stopPropagation()
-        if(e.target.className.includes('like')){
+        if (e.target.className.includes('like')) {
             this.props.tweetRelationFunc(TweetRelationType.like)
         }
-        else if(e.target.className.includes('collect')){
+        else if (e.target.className.includes('collect')) {
             this.props.tweetRelationFunc(TweetRelationType.collect)
         }
     }
 
-    answerClickHandle(e){
+    answerClickHandle(e) {
         e.stopPropagation()
         this.refs.commentInput.focus()
-
     }
 
     commentCommit(e) {
         e.preventDefault()
+        const selectedList = this.refs.multiSelect.state.selectedList
         const text = this.refs.commentInput.value;
-        this.props.commentLeaveFunc(text)
-
+        const signTargetList = getMultiSelectValue(selectedList)
+        this.props.commentLeaveFunc(text, signTargetList)
     }
 
     commentRemove(e) {
@@ -47,19 +58,23 @@ class CommentCard extends React.Component {
         }
     }
 
-
     render() {
         const type = this.context.TweetFullCardType
+        const comments = this.props.comments
+        const relations = this.props.relations
+        const author = this.props.author
         return (
             <div id="commentCard" className={type === TweetFullCardType.dialog ? 'dialog-comment-card' : ''}>
                 <header className="c-header">
                     <div className="c-header-top">
                         <div className="cht-left-icons">
-                            <a className={(this.props.relations&&this.props.relations.is_like)? "like_active" : ""}><span onClick={this.tweetRelationClickHandle} className="like">a</span></a>
+                            <a className={(relations && relations.is_like) ? "like_active" : ""}><span
+                                onClick={this.tweetRelationClickHandle} className="like">a</span></a>
                             <a><span onClick={this.answerClickHandle} className="answer">b</span></a>
                         </div>
                         <div className="cht-right-icons">
-                            <a className={(this.props.relations&&this.props.relations.is_collect)? "collect_active" : ""}><span onClick={this.tweetRelationClickHandle} className="collect">c</span></a>
+                            <a className={(relations && relations.is_collect) ? "collect_active" : ""}><span
+                                onClick={this.tweetRelationClickHandle} className="collect">c</span></a>
                         </div>
                     </div>
                     <div className="c-header-bottom">
@@ -71,15 +86,23 @@ class CommentCard extends React.Component {
                 <div className="comment-items">
                     <ul>
                         <li className="item author-item">
-                            <a href="" className="content-maker"><span className="">{this.props.author.name}</span></a>
-                            <span className="item-content">{this.props.author.text}</span>
+                            <a href="" className="content-maker"><span className="">{author.name}</span></a>
+                            <span className="item-content">
+                                <p>{author.text}</p>
+                                {this.props.signList.map((v, k) => <Link to={`/${v}`} className="img-con">@{v}</Link>)}
+                            </span>
                         </li>
-                        <li className="show-more-content"><a href="">more</a></li>
-                        {this.props.comments.map((comment) => {
+                        {comments.hasNext?
+                            <li className="show-more-content"><a onClick={this.props.getMoreCommentFunc}>more</a></li>: null
+                        }
+                        {comments.data.map((comment) => {
                             return (
                                 <li className="item common-item" key={comment.id} id={`comment-${comment.id}`}>
                                     <a href="" className="content-maker"><span className=" ">{comment.user}</span></a>
-                                    <span className="item-content">{comment.text}</span>
+                                    <span className="item-content">
+                                        <p>{comment.text}</p>
+                                        {comment.sign_list.map((v, k) => <Link to={`/${v}`} className="img-con">@{v}</Link>)}
+                                    </span>
                                     {this.props.loginUser.username === comment.user ?
                                         <a href="" className="delete-item-button-con">
                                             <button onClick={this.commentRemove}>x</button>
@@ -94,6 +117,8 @@ class CommentCard extends React.Component {
                 </div>
                 <form ref="commentForm" className="comment-input-con">
                     <textarea ref="commentInput" name="" id="" cols="30" rows="1"/>
+                    <span onClick={this.signHandle}>@</span>
+                    <MultiSelect ref="multiSelect" itemList={list} selectedList={this.selectedList}/>
                     <button onClick={this.commentCommit}>提交</button>
                     <div className="comment-input-button-con">
                         <button>...</button>
