@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 
 import SimpleUserCard from 'src/components/SimpleUserCard'
+import Notices from 'components/Notices'
 
 import * as DialogActions from "src/components/Dialog/actions";
 import * as SearchActions from "src/extra/Search/actions";
@@ -14,10 +15,12 @@ import * as SearchActions from "src/extra/Search/actions";
 class Nav extends React.Component {
     constructor(props) {
         super(props);
-        this.showPub = this.showPub.bind(this);
         this.searchChangeHandle = this.searchChangeHandle.bind(this);
+        this.showPub = this.showPub.bind(this);
+        this.toggleNoticeHandle = this.toggleNoticeHandle.bind(this);
         this.state = {
-            searchUserList: this.props.searchUserList
+            searchUserList: this.props.searchUserList,
+            showNotice: false,
         }
     }
 
@@ -30,6 +33,11 @@ class Nav extends React.Component {
             })
         }
     }
+
+    toggleNoticeHandle(){
+        this.setState({
+            showNotice: !this.state.showNotice
+        })}
 
     showPub() {
         this.props.dialogDisplaySet({
@@ -48,6 +56,18 @@ class Nav extends React.Component {
 
 
     render() {
+        const account = this.props.account
+        let NoticesElem = null
+        let SelfCenterIconElem = null
+        if(account.state === LoginState.login){
+            NoticesElem = <div ref="noticesCon" className={this.state.showNotice? "notices-con" : "notices-con notice-hide"}>
+                <Notices/>
+            </div>
+            SelfCenterIconElem = <Link to={`/${account.user.username}`}
+                                       className="nr-icon self-center-icon"/>
+        } else {
+            SelfCenterIconElem = <Link to="/account" className="nr-icon self-center-icon"/>
+        }
         return (
             <div id="nav">
                 <div className="container">
@@ -70,12 +90,11 @@ class Nav extends React.Component {
                         <div className="col-4 nav-right">
                             <div className="nr-infos-con">
                                 <Link to="/explore" className="nr-icon explore-icon"/>
-                                <a className="nr-icon recent-icon"/>
-                                {this.props.account.state === LoginState.login
-                                    ? <Link to={`/${this.props.account.user.username}`}
-                                            className="nr-icon self-center-icon"/>
-                                    : <Link to="/account" className="nr-icon self-center-icon"/>
-                                }
+                                <span className="notices-icon">
+                                    <a onClick={this.toggleNoticeHandle} className="nr-icon recent-icon"/>
+                                    {NoticesElem}
+                                </span>
+                                {SelfCenterIconElem}
                                 <a className="nr-icon pub-icon" onClick={this.showPub}/>
                             </div>
                         </div>

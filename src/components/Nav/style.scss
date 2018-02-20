@@ -25,6 +25,21 @@
     width: 176px;
   }
 
+
+  .notices-icon{
+    position: relative;
+
+  }
+  .notices-con{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+  }
+  .notice-hide{
+    display: none;
+  }
+
+
   .nav-center{
     position: relative;
     justify-content: center;
