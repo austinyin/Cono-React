@@ -7,6 +7,7 @@ import ExlorePeople from "src/Main/Explore/ExlorePeople/ExlorePeople";
 import Account from "src/extra/Account";
 import SettingCenter from "src/Main/SettingCenter";
 import MultiSelect from "src/components/MultiSelect";
+import Snapshot from "src/Main/Snapshot";
 
 const MainRouter = () => (
     <switch>
@@ -16,6 +17,7 @@ const MainRouter = () => (
         <Route exact path="/explore/people" component={ExlorePeople}/>
         <Route exact path='/account' component={Account}/>
         <Route path='/setting' component={SettingCenter}/>
+        <Route path='/snapshot/:user' component={Snapshot}/>
         {/*<Route exact path="/:user" component={UserCenter}/>*/}
     </switch>
 
