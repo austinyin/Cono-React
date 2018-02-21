@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './style.scss'
+// import './style.scss'
 import Link from "react-router-dom/es/Link";
 import {LoginState} from "src/extra/Account/constants";
 import {connect} from "react-redux";
@@ -10,6 +10,7 @@ import Notices from 'components/Notices'
 
 import * as DialogActions from "src/components/Dialog/actions";
 import * as SearchActions from "src/extra/Search/actions";
+import {NavTag} from "src/components/Nav/style";
 
 
 class Nav extends React.Component {
@@ -69,7 +70,7 @@ class Nav extends React.Component {
             SelfCenterIconElem = <Link to="/account" className="nr-icon self-center-icon"/>
         }
         return (
-            <div id="nav">
+            <NavTag id="nav">
                 <div className="container">
                     <div className="row nav-main">
                         <div className="col-4 nav-left">
@@ -100,7 +101,7 @@ class Nav extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </NavTag>
 
         )
     }

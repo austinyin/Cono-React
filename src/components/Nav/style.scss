@@ -10,7 +10,7 @@
     margin: 0 auto;
   }
 
-  // 左中右
+  /* 左中右 */
   .nav-left, .nav-center, .nav-right {
     display: flex;
     align-items: center;
@@ -61,7 +61,6 @@
       top: 0;
       transform: translateY(50%);
       background: #ffffff;
-
     }
   }
 
