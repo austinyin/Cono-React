@@ -7,6 +7,8 @@ import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import MultiSelect from "src/components/MultiSelect";
 import {getMultiSelectValue} from "src/shared/js/commonUtil";
 import Link from "react-router-dom/es/Link";
+import {IconTag, IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
+import {CommentCardTag} from "src/components/TweetFullCard/CommentCard/Style.jsx";
 
 const list = [
     {label: 'monkyin', value: 'monkyin'},
@@ -64,17 +66,32 @@ class CommentCard extends React.Component {
         const relations = this.props.relations
         const author = this.props.author
         return (
-            <div id="commentCard" className={type === TweetFullCardType.dialog ? 'dialog-comment-card' : ''}>
+            <div id="commentCard" className={type === TweetFullCardType.dialog && 'dialog-comment-card'}>
                 <header className="c-header">
                     <div className="c-header-top">
                         <div className="cht-left-icons">
-                            <a className={(relations && relations.is_like) ? "like_active" : ""}><span
-                                onClick={this.tweetRelationClickHandle} className="like">a</span></a>
-                            <a><span onClick={this.answerClickHandle} className="answer">b</span></a>
+                            <a className={(relations && relations.is_like) && "like_active" }>
+                                <IconTag
+                                    type={IconTypeToPosition.like.type}
+                                    onClick={this.tweetRelationClickHandle}
+                                    className="like"
+                                />
+                            </a>
+                            <a>
+                                <IconTag
+                                    type={IconTypeToPosition.answer.type}
+                                    onClick={this.answerClickHandle}
+                                    className="collect"
+                                />
+                            </a>
                         </div>
                         <div className="cht-right-icons">
-                            <a className={(relations && relations.is_collect) ? "collect_active" : ""}><span
-                                onClick={this.tweetRelationClickHandle} className="collect">c</span></a>
+                            <a className={(relations && relations.is_collect) && "collect_active" }>
+                                <IconTag
+                                    type={IconTypeToPosition.collect.type}
+                                    onClick={this.tweetRelationClickHandle} className="collect"
+                                />
+                            </a>
                         </div>
                     </div>
                     <div className="c-header-bottom">
@@ -103,12 +120,12 @@ class CommentCard extends React.Component {
                                         <p>{comment.text}</p>
                                         {comment.sign_list.map((v, k) => <Link to={`/${v}`} className="img-con">@{v}</Link>)}
                                     </span>
-                                    {this.props.loginUser.username === comment.user ?
+                                    {this.props.loginUser.username === comment.user &&
+                                    (
                                         <a href="" className="delete-item-button-con">
                                             <button onClick={this.commentRemove}>x</button>
                                         </a>
-                                        : ""
-                                    }
+                                    )}
                                 </li>
                             )
                         })}
@@ -121,7 +138,7 @@ class CommentCard extends React.Component {
                     <MultiSelect ref="multiSelect" itemList={list} selectedList={this.selectedList}/>
                     <button onClick={this.commentCommit}>提交</button>
                     <div className="comment-input-button-con">
-                        <button>...</button>
+                        <IconTag type={IconTypeToPosition.ellipsis.type}/>
                     </div>
                 </form>
             </div>

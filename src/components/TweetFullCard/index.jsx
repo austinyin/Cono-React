@@ -2,22 +2,19 @@
  * 这里的更多评论命名有点拗口，待解决
  */
 import React, {Component} from 'react'
-import './style.scss'
 import PropTypes from 'prop-types';
-import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-
+import './style.scss'
 
 import SimpleUserCard from "src/components/SimpleUserCard";
 import CommentCard from "src/components/TweetFullCard/CommentCard";
 import Slider from "../Slider";
-import * as RelationActions from "src/extra/Relation/actions";
-import {RefreshState, RefreshType} from "src/extra/Relation/model";
+import {RefreshState} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import TweetRelationHOC from "src/shared/HOC/TweetRelationHOC";
-import {MediaType} from "src/components/Dialog/constants";
 import VideoCard from "src/components/VideoCard";
-import {tweetCommentLeaveApi, tweetCommentNextPageApi} from "src/extra/Relation/api";
+import {TweetFullCardTag} from "src/components/TweetFullCard/style";
+
 
 class TweetFullCard extends Component {
     constructor(props) {

@@ -2,7 +2,8 @@
   background: #FAFAFA;
 }
 .main{
-  margin-top: 135px;
+  margin: 135px auto 0;
+  max-width: 935px;
   &>.row{
     padding: 0 70px;
   }

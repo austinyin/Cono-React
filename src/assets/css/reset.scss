@@ -1,6 +1,22 @@
 
 .container-fluid{margin:0;padding:0 !important;}
 
+*[class*="col-"]{
+  padding: 0 !important;
+}
+
+a{
+  color: #262626;
+  font-weight: 600;
+}
+
+a,p,span{
+  font-size: 14px;
+}
+
+
+
+
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,
 form,fieldset,legend,button,input,textarea,th,td  {margin:0;padding:0;}
 
@@ -15,9 +31,7 @@ small{font-size:12px;}
 
 ul,ol{list-style:none;}
 
-a{text-decoration:none;color: black}
-
-a:hover{text-decoration:underline;}
+a{text-decoration:none;}
 
 sup{vertical-align:text-top;}
 

@@ -1,18 +1,20 @@
 import React from 'react'
 import MainRouter from './router'
 import Nav from "src/components/Nav";
-import DialogCenter from 'components/Dialog'
+import Dialog from 'components/Dialog'
 import {connect} from "react-redux";
+import {MainTag} from "src/Main/style";
 
-const Main = ({ match,account }) => (
-    <div>
+const Main = ({match, account}) => (
+    <MainTag>
         <div className="nav-con">
             <Nav account={account}/>
         </div>
-        <DialogCenter/>
+        <Dialog/>
         <MainRouter match={match}/>
-    </div>
+    </MainTag>
 );
+
 
 
 function mapStateToProps(state) {

@@ -1,5 +1,4 @@
 import React from 'react'
-import './style.scss'
 import Link from "react-router-dom/es/Link";
 import withRouter from "react-router-dom/es/withRouter";
 import RelationHOC from "src/shared/HOC/RelationHOC";
@@ -7,6 +6,7 @@ import {bindActionCreators} from "redux";
 import * as RelationActions from "src/extra/Relation/actions";
 import connect from "react-redux/es/connect/connect";
 import {PersonUserRelationType} from "src/extra/Relation/model";
+import {SimpleUserCardTag} from "src/components/SimpleUserCard/style";
 
 class SimpleUserCard extends React.Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class SimpleUserCard extends React.Component {
         // 首次显示采用父组件传入的user的relations,之后follow操作后由HOC返回。
         const relations = this.props.relations ? this.props.relations : this.props.user.relations
         return (
-            <div id="SimpleUserCard" className={this.props.verticle ? 'd-flex flex-column' : ''}>
+            <SimpleUserCardTag id="SimpleUserCard" className={this.props.verticle && 'd-flex flex-column' }>
                 <div className={this.props.verticle ? 'd-flex flex-column suc-left' : 'suc-left'}>
                     <Link to={`/${user.username}`} className="img-con">
                         <img className="img " src={require("src/assets/img/avatar/avatar.jpg")}/>
@@ -40,16 +40,18 @@ class SimpleUserCard extends React.Component {
                     <Link to={`/${user.username}`} className="infos-con">
                         <span ref="title" className="left-item left-title">{user.username}</span>
                         <span
-                            className="left-item left-subtitle">{user.fullname ? user.fullname : ''}</span>
+                            className="left-item left-subtitle">{user.fullname && user.fullname}</span>
                     </Link>
                 </div>
-                {this.props.middle ? <div className="suc-middle">middle</div> : ''}
-                {this.props.followButton ? <div className="suc-right">
-                    <button onClick={this.followButtonClickHandle}
-                            className={relations.is_follow ? "follow-button follow-button-active" : "follow-button"}>关注
-                    </button>
-                </div> : null}
-            </div>
+                {this.props.middle && <div className="suc-middle">middle</div> }
+                {this.props.followButton &&(
+                    <div className="suc-right">
+                        <button onClick={this.followButtonClickHandle}
+                                className={relations.is_follow ? "follow-button follow-button-active" : "follow-button"}>关注
+                        </button>
+                    </div>
+                )}
+            </SimpleUserCardTag>
         )
     }
 }

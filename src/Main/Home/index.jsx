@@ -70,14 +70,14 @@ class Home extends Component {
         const tweetList = this.props.tweetList;
         return (
             <div id="home" ref="home">
-                <div className="container main">
-                    <div className="row">
-                        <div className="main-left-con col-8" ref="tweetCon">
+                <div className="container-fluid ">
+                    <div className="row main justify-content-center">
+                        <div className="main-left-con col-12 col-lg-8" ref="tweetCon">
                             {tweetList.map((data) => {
                                 return <TweetFullCard tweetData={data}/>
                             })}
                         </div>
-                        <div className="main-right-con col-4">
+                        <div className="main-right-con d-none d-lg-flex col-md-4">
                             {this.props.snapshotUserList.length >= 1 ? <HomeRightBar loginUser={this.props.loginUser}
                                                                                      snapshotUserList={this.props.snapshotUserList}/> : ""}
                         </div>
