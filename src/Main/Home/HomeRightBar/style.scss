@@ -1,3 +1,21 @@
 #homeRightBar{
+  width: 100%;
+  margin-left: 28px;
+  .r-bar-author{
+    height: 50px;
+    margin-bottom: 12px;
+  }
 
+  .streamer {
+    border-top: 1px solid rgba(0, 0, 0, .0975);
+
+    span{
+      color: rgb(153, 153, 153);
+    }
+    a{
+      font-weight: 400;
+      color:#222222;
+    }
+  }
 }
+

@@ -78,8 +78,11 @@ class Home extends Component {
                             })}
                         </div>
                         <div className="main-right-con d-none d-lg-flex col-md-4">
-                            {this.props.snapshotUserList.length >= 1 ? <HomeRightBar loginUser={this.props.loginUser}
-                                                                                     snapshotUserList={this.props.snapshotUserList}/> : ""}
+                            {this.props.snapshotUserList.length >= 1 && (
+                                <HomeRightBar loginUser={this.props.loginUser}
+                                              snapshotUserList={this.props.snapshotUserList}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

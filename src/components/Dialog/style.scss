@@ -3,14 +3,14 @@
   @include screenCover();
   .dialog-bac{
     z-index: 3;
-    @include screenCover();
+    @include screenCover(fixed);
     background-color: rgba(0,0,0,.5);
   }
 
   .dialog-buttons-con{
     width: 510px;
     z-index: 4;
-    @include absoluteCenter();
+    @include absoluteCenter(fixed);
     background: #ffffff;
     li{
       height: 100%;
@@ -24,13 +24,14 @@
   .dialog-tweet-con{
     z-index: 4;
     height: 600px;
-    @include absoluteCenter();
+    @include absoluteCenter(fixed);
     background: #ffffff;
   }
 
   .pub-card-con{
     z-index: 4;
     @include absoluteCenter();
+    position: fixed;
     width: 540px;
     height: 305px;
   }

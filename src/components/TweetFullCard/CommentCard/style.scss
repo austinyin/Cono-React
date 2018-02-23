@@ -1,45 +1,64 @@
 #commentCard{
+  padding: 0 16px;
   .c-header-top{
     display: flex;
     justify-content: space-between;
-  }
-  // relation状态
-  .like_active,.collect_active{
-    color: red;
-    span{
-      color: red;
-    }
+    margin-top: 4px;
   }
 
   .comment-items{
     .item{
+      padding: 5px 0 6px 0;
       position: relative;
       display: flex;
       .content-maker{
         position: absolute;
         left: 0;
-        top: 0;
+        top: 5px;
       }
       .item-content{
         display: inline-block;
-        text-indent: 60px;
-        vertical-align: middle;
-        align-items: center;
         max-width: 100%;
+        align-items: center;
+        vertical-align: middle;
         p{
           display: inline-block;
+          max-width: 100%;
+          text-indent: 60px;
+          overflow-wrap: break-word;
+          margin: 0;
         }
       }
     }
+
+    .show-more-content a{
+      color: #999;
+    }
   }
 
-  .comment-input-con{
-    padding-right: 26px;
+  /* 发表时间 */
+  .pub-time{
+    padding-bottom: 6px;
+    border-bottom: 1px solid #efefef;
+  }
+  .pub-time a{
+    color: #999;
+    font-size: 12px;
+  }
+  /* End 发表时间 */
+
+  .comment-form{
     display: flex;
     height: 100%;
+    padding: 16px 26px  16px 0;
     align-items: center;
     justify-content: space-between;
-    textarea{
+    .input-con{
+      min-width: 80%;
+    }
+
+    input{
+      width: 100%;
       border: none;
     }
     .comment-input-button-con{
@@ -49,9 +68,14 @@
       }
     }
   }
+
+  .sign-icon{
+    cursor: pointer;
+  }
+
 }
 
-// 弹窗下的布局
+// 弹窗下的布局, 通过order来控制, 相信还有更好的方案。
 .dialog-comment-card{
   display: flex;
   flex-direction: column;
@@ -59,11 +83,14 @@
     order: 1;
     height: 380px;
   }
-  .c-header{
+  .pub-time{
     order: 2;
   }
-  .comment-input-con{
+  .c-header{
     order: 3;
+  }
+  .comment-form{
+    order: 4;
   }
 
 }

@@ -1,14 +1,15 @@
 import React, {Component} from 'react'
-import './style.scss'
 import * as DialogActions from "../Dialog/actions";
 import {tweetFullCardElemSet} from "../Dialog/actions";
 import withRouter from "react-router-dom/es/withRouter";
 import {bindActionCreators} from "redux";
 import ScrollRelationHOC from "../../shared/HOC/ScrollRelationHOC";
 import connect from "react-redux/es/connect/connect";
+import {IconTag, IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
+import {TweetCardTag, TweetTypeIcon} from "src/components/TweetCard/style";
 
 
-class TweetCard extends Component {
+class TweetCard extends React.Component {
     constructor(props) {
         super(props);
         this.clickHandle = this.clickHandle.bind(this)
@@ -19,28 +20,54 @@ class TweetCard extends Component {
         this.props.dialogDisplaySet({tweetFullCard: true})
     }
 
+    componentDidMount(){
+    }
+
+
     render() {
+        const {tweet} = this.props
+
+        let mediaType = null;
+        if(tweet.images.length>1){
+            mediaType = IconTypeToPosition.multiImages.type
+        }
+        if(tweet.video){
+            mediaType = IconTypeToPosition.camera.type
+        }
+
+
         return (
-            <div id="tweetCard" onClick={this.clickHandle}>
-                <div className="img-con">
-                    <a href="">
-                        <img src="" alt=""/>
-                    </a>
-                </div>
-                <div className="img-cover">
-                    <span className="media-icon"/>
-                    <div className="middle-icons">
-                        <div className="m-icon-left">
-                            <span/>
-                            <span>{this.props.tweet.total_like}</span>
-                        </div>
-                        <div className="m-icon-right">
-                            <span/>
-                            <span>{this.props.tweet.comments.length}</span>
+            <TweetCardTag id="tweetCard" onClick={this.clickHandle}>
+                <a className="tweet-card-wrapper">
+                    <div className="img-con">
+                        <img className="tweet-image" src={tweet.image_thumbnail.image} alt=""/>
+                        <TweetTypeIcon
+                            width="48px"
+                            height="48px"
+                            type={mediaType}
+                            className="tweet-type-icon"
+                        />
+                    </div>
+                    <div className="img-cover">
+                        <div className="img-cover-middle">
+                            <div className="cover-middle-left">
+                                <IconTag
+                                    type={IconTypeToPosition.like.type}
+                                    fill={true}
+                                />
+                                <span className="tag-label">{tweet.total_like}</span>
+                            </div>
+                            <div className="cover-middle-right">
+                                <IconTag
+                                    type={IconTypeToPosition.answer.type}
+                                    fill={true}
+                                />
+                                <span className="tag-label">{tweet.comments.length||0}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </a>
+            </TweetCardTag>
         )
     }
 }

@@ -8,6 +8,7 @@ import SimpleUserCard from "src/components/SimpleUserCard";
 import TweetCard from "src/components/TweetCard";
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import Link from "react-router-dom/es/Link";
+import {TweetCardConTag} from "src/shared/styleJs/common/componentStyle";
 
 
 class Explore extends React.Component {
@@ -69,11 +70,14 @@ class Explore extends React.Component {
                             <span>查看全部</span>
                         </Link>
                     </header>
-                    <div className="eh-users-con row">
+                    <div className="eh-users-con row justify-content-between">
                         {userList.map((user, index) => {
                             if (index < 3) {
                                 return <div className="user-card-con col-4">
                                     <SimpleUserCard
+                                        imgWidth="78px"
+                                        imgHeight="78px"
+                                        showSubtitle={true}
                                         followButton={true}
                                         verticle={true}
                                         user={user}
@@ -88,13 +92,13 @@ class Explore extends React.Component {
                         <span>探索</span>
                     </header>
                     <div className="tweets-con">
-                        <div className="row">
+                        <div className="row justify-content-between">
 
                             {tweetList.map((tweet) => {
                                 return (
-                                    <div className="tweet-card-con col-4">
+                                    <TweetCardConTag className="tweet-card-con col-4">
                                         <TweetCard tweet={tweet}/>
-                                    </div>
+                                    </TweetCardConTag>
                                 )
                             })}
                         </div>

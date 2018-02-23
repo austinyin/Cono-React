@@ -2,14 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import './style.scss'
-import {RefreshState, TweetRelationType} from "src/extra/Relation/model";
+import {TweetRelationType} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import MultiSelect from "src/components/MultiSelect";
 import {getMultiSelectValue} from "src/shared/js/commonUtil";
 import Link from "react-router-dom/es/Link";
 import {IconTag, IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
-import {CommentCardTag} from "src/components/TweetFullCard/CommentCard/Style.jsx";
-
+import {SignIcon} from "src/components/TweetFullCard/CommentCard/Style";
 const list = [
     {label: 'monkyin', value: 'monkyin'},
     {label: 'xiaobei', value: 'xiaobei'},
@@ -23,7 +22,11 @@ class CommentCard extends React.Component {
         this.tweetRelationClickHandle = this.tweetRelationClickHandle.bind(this);
         this.answerClickHandle = this.answerClickHandle.bind(this);
         this.commentRemove = this.commentRemove.bind(this);
+        this.signHandle = this.signHandle.bind(this);
         this.commentCommit = this.commentCommit.bind(this);
+        this.state = {
+            showSign: false
+        }
 
     }
 
@@ -42,8 +45,17 @@ class CommentCard extends React.Component {
         this.refs.commentInput.focus()
     }
 
+    signHandle() {
+        this.setState({
+            showSign: !this.state.showSign
+        })
+    }
+
     commentCommit(e) {
         e.preventDefault()
+        if (e.keyCode !== 13) {
+            return
+        }
         const selectedList = this.refs.multiSelect.state.selectedList
         const text = this.refs.commentInput.value;
         const signTargetList = getMultiSelectValue(selectedList)
@@ -70,11 +82,12 @@ class CommentCard extends React.Component {
                 <header className="c-header">
                     <div className="c-header-top">
                         <div className="cht-left-icons">
-                            <a className={(relations && relations.is_like) && "like_active" }>
+                            <a>
                                 <IconTag
+                                    active={relations && relations.is_like}
                                     type={IconTypeToPosition.like.type}
                                     onClick={this.tweetRelationClickHandle}
-                                    className="like"
+                                    className="like mr-3"
                                 />
                             </a>
                             <a>
@@ -86,8 +99,9 @@ class CommentCard extends React.Component {
                             </a>
                         </div>
                         <div className="cht-right-icons">
-                            <a className={(relations && relations.is_collect) && "collect_active" }>
+                            <a>
                                 <IconTag
+                                    active={relations && relations.is_collect}
                                     type={IconTypeToPosition.collect.type}
                                     onClick={this.tweetRelationClickHandle} className="collect"
                                 />
@@ -102,15 +116,16 @@ class CommentCard extends React.Component {
                 </header>
                 <div className="comment-items">
                     <ul>
-                        <li className="item author-item">
+                        <li className="item author-item ">
                             <a href="" className="content-maker"><span className="">{author.name}</span></a>
                             <span className="item-content">
                                 <p>{author.text}</p>
                                 {this.props.signList.map((v, k) => <Link to={`/${v}`} className="img-con">@{v}</Link>)}
                             </span>
                         </li>
-                        {comments.hasNext?
-                            <li className="show-more-content"><a onClick={this.props.getMoreCommentFunc}>more</a></li>: null
+                        {comments.hasNext ?
+                            <li className="show-more-content"><a onClick={this.props.getMoreCommentFunc}>显示更多</a>
+                            </li> : null
                         }
                         {comments.data.map((comment) => {
                             return (
@@ -118,7 +133,8 @@ class CommentCard extends React.Component {
                                     <a href="" className="content-maker"><span className=" ">{comment.user}</span></a>
                                     <span className="item-content">
                                         <p>{comment.text}</p>
-                                        {comment.sign_list.map((v, k) => <Link to={`/${v}`} className="img-con">@{v}</Link>)}
+                                        {comment.sign_list.map((v, k) => <Link to={`/${v}`}
+                                                                               className="img-con">@{v}</Link>)}
                                     </span>
                                     {this.props.loginUser.username === comment.user &&
                                     (
@@ -130,16 +146,21 @@ class CommentCard extends React.Component {
                             )
                         })}
                     </ul>
-                    <div><a href="">{this.props.pubTime}</a></div>
                 </div>
-                <form ref="commentForm" className="comment-input-con">
-                    <textarea ref="commentInput" name="" id="" cols="30" rows="1"/>
-                    <span onClick={this.signHandle}>@</span>
-                    <MultiSelect ref="multiSelect" itemList={list} selectedList={this.selectedList}/>
-                    <button onClick={this.commentCommit}>提交</button>
-                    <div className="comment-input-button-con">
-                        <IconTag type={IconTypeToPosition.ellipsis.type}/>
+                <div className="pub-time"><a>{this.props.pubTime}</a></div>
+                <form ref="commentForm" className="comment-form">
+                    <div className="input-con" style={{display: !this.state.showSign && 'none'}}>
+                        <MultiSelect inputOnKeyUp={this.commentCommit} ref="multiSelect" itemList={list}/>
                     </div>
+                    <div className="input-con" style={{display: this.state.showSign && 'none'}}>
+                        <input onKeyUp={this.commentCommit} ref="commentInput" placeholder="添加评论...  按Enter提交"/>
+                    </div>
+
+                    <SignIcon
+                        className="sign-icon float-right"
+                        onClick={this.signHandle}
+                        active={this.state.showSign}
+                    />
                 </form>
             </div>
 

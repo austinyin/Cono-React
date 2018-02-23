@@ -9,8 +9,8 @@ export const SimpleUserCardTag = styled.div`
       ${CommonFlex};
     }
     .img{
-        width: 30px;
-        height: 30px;
+        width: ${props => props.imgWidth || "30px"};
+        height: ${props => props.imgHeight || "30px"};
         border-radius: 50%;
         background: #ffffff;
     }
@@ -22,6 +22,10 @@ export const SimpleUserCardTag = styled.div`
         display: block;
         line-height: 90%;
     }
+    .left-subtitle{
+        color: #999;
+        font-size: 14px;
+      }
     /* End left */
     
     

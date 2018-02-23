@@ -7,6 +7,7 @@ import {MainTag} from "src/Main/style";
 
 const Main = ({match, account}) => (
     <MainTag>
+        <div className="nav-holder"/>
         <div className="nav-con">
             <Nav account={account}/>
         </div>

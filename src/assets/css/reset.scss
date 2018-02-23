@@ -1,47 +1,85 @@
 
-.container-fluid{margin:0;padding:0 !important;}
-
-*[class*="col-"]{
+.container-fluid {
+  margin: 0;
   padding: 0 !important;
 }
 
-a{
-  color: #262626;
-  font-weight: 600;
+body {
+  a, p, span {
+    font-size: 14px;
+    margin: 0;
+  }
+  a {
+    color: #262626;
+    font-weight: 600;
+  }
+
+  ul {
+    margin: 0;
+  }
+  input, button, select, textarea {
+    outline: none
+  }
+
+  button:focus{
+    outline: none
+  }
+
 }
 
-a,p,span{
-  font-size: 14px;
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre
+form, fieldset, legend, button, input, textarea, th, td {
+  margin: 0;
+  padding: 0;
 }
 
+body, button, input, select, textarea {
+  font: 12px/1.5
+}
 
+address, cite, dfn, em, var {
+  font-style: normal;
+}
 
+code, kbd, pre, samp {
+  font-family: courier new, courier, monospace;
+}
 
-body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,
-form,fieldset,legend,button,input,textarea,th,td  {margin:0;padding:0;}
+small {
+  font-size: 12px;
+}
 
-body,button,input,select,textarea{font:12px/1.5}
+ul, ol {
+  list-style: none;
+}
 
+a {
+  text-decoration: none;
+}
 
-address,cite,dfn,em,var{font-style:normal;}
+sup {
+  vertical-align: text-top;
+}
 
-code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+sub {
+  vertical-align: text-bottom;
+}
 
-small{font-size:12px;}
+legend {
+  color: #000;
+}
 
-ul,ol{list-style:none;}
+fieldset, img {
+  border: 0;
+}
 
-a{text-decoration:none;}
+button, input, select, textarea {
+  font-size: 100%;
+}
 
-sup{vertical-align:text-top;}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
-sub{vertical-align:text-bottom;}
-
-legend{color:#000;}
-
-fieldset,img{border:0;}
-
-button,input,select,textarea{font-size:100%;}
-
-table{border-collapse:collapse;border-spacing:0;}
 
