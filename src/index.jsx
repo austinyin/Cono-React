@@ -6,7 +6,7 @@ import {connect, Provider} from 'react-redux'
 
 // 全局style
 import 'assets/css/index.scss'
-import 'bootstrap/scss/bootstrap.scss'
+import 'src/assets/css/bootstrap-grid.css'
 // Main组件
 import Main from './Main'
 import Account from "./extra/Account/index";

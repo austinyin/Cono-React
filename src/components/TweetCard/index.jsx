@@ -5,7 +5,7 @@ import withRouter from "react-router-dom/es/withRouter";
 import {bindActionCreators} from "redux";
 import ScrollRelationHOC from "../../shared/HOC/ScrollRelationHOC";
 import connect from "react-redux/es/connect/connect";
-import {IconTag, IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
+import {PositionIconTag, IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
 import {TweetCardTag, TweetTypeIcon} from "src/components/TweetCard/style";
 
 
@@ -51,14 +51,14 @@ class TweetCard extends React.Component {
                     <div className="img-cover">
                         <div className="img-cover-middle">
                             <div className="cover-middle-left">
-                                <IconTag
+                                <PositionIconTag
                                     type={IconTypeToPosition.like.type}
                                     fill={true}
                                 />
                                 <span className="tag-label">{tweet.total_like}</span>
                             </div>
                             <div className="cover-middle-right">
-                                <IconTag
+                                <PositionIconTag
                                     type={IconTypeToPosition.answer.type}
                                     fill={true}
                                 />

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {AbsoluteFill, InlineToFill} from "src/shared/styleJs/common/commonStyle";
-import {IconTag} from "src/shared/styleJs/common/componentStyle";
+import {PositionIconTag} from "src/shared/styleJs/common/componentStyle";
 
 export const TweetCardTag = styled.section`
   position: relative;
@@ -64,7 +64,7 @@ export const TweetCardTag = styled.section`
 
 `
 
-export const TweetTypeIcon = IconTag.extend`
+export const TweetTypeIcon = PositionIconTag.extend`
     position: absolute;
     right: 0;
     top: 0;

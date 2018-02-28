@@ -40,10 +40,10 @@ class SimpleUserCard extends React.Component {
                 className={this.props.verticle && 'd-flex flex-column' }
             >
                 <div className={this.props.verticle ? 'd-flex flex-column suc-left' : 'suc-left'}>
-                    <Link to={`/${user.username}`} className="img-con">
+                    <Link to={`/user/${user.username}`} className="img-con">
                         <img className="img " src={require("src/assets/img/avatar/avatar.jpg")}/>
                     </Link>
-                    <Link to={`/${user.username}`} className="infos-con">
+                    <Link to={`/user/${user.username}`} className="infos-con">
                         <span ref="title" className="left-item left-title">{user.username}</span>
                         {this.props.showSubtitle &&(
                             <span className="left-item left-subtitle">{user.fullname && user.fullname}</span>

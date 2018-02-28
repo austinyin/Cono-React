@@ -13,6 +13,7 @@ import {logout as logoutAction} from "src/extra/Account/actions";
 import {tweetFullCardElemSet} from "../../components/Dialog/actions";
 
 import {PersonUserRelationType} from "src/extra/Relation/model";
+import {CommonContainerTag, TweetCardConTag} from "src/shared/styleJs/common/componentStyle";
 
 
 class UserCenter extends React.Component {
@@ -25,8 +26,8 @@ class UserCenter extends React.Component {
         this.showDialog = this.showDialog.bind(this);
         this.logoutHandl = this.logoutHandl.bind(this);
         this.chPassHandl = this.chPassHandl.bind(this);
-        this.tweetClickFuncHandl = this.tweetClickFuncHandl.bind(this);
         this.followClickHandle = this.followClickHandle.bind(this);
+
 
         this.state = {
             username: props.match.params.user,
@@ -127,7 +128,7 @@ class UserCenter extends React.Component {
         const relations = this.props.relations ? this.props.relations : {}
         if (user.hasOwnProperty('id')) {
             return (
-                <div id="userCenter" className="container">
+                <CommonContainerTag id="userCenter" className="container">
                     <div className="user-header-con">
                         <div className="row">
                             <div className="user-header-left col-4">
@@ -186,18 +187,18 @@ class UserCenter extends React.Component {
                         </div>
                     </div>
                     <div className="tweets-con">
-                        <div className="row">
+                        <div className="row justify-content-between">
                             {tweetList.map((tweet) => {
                                 return (
-                                    <div key={tweet.id} id={`tweet-${tweet.id}`} className="tweet-card-con col-4">
-                                        <TweetCard clickFuncHandle={this.tweetClickFuncHandl} tweet={tweet}/>
-                                    </div>
+                                    <TweetCardConTag key={tweet.id} id={`tweet-${tweet.id}`} className="tweet-card-con col-4">
+                                        <TweetCard tweet={tweet}/>
+                                    </TweetCardConTag>
                                 )
                             })}
                         </div>
                     </div>
                     {this.props.children}
-                </div>
+                </CommonContainerTag>
 
             )
         }

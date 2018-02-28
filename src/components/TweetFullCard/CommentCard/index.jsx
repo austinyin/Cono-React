@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-import './style.scss'
 import {TweetRelationType} from "src/extra/Relation/model";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import MultiSelect from "src/components/MultiSelect";
 import {getMultiSelectValue} from "src/shared/js/commonUtil";
 import Link from "react-router-dom/es/Link";
-import {IconTag, IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
-import {SignIcon} from "src/components/TweetFullCard/CommentCard/Style";
+import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/common/componentStyle";
+import {CommentCardTag, SignIcon} from "src/components/TweetFullCard/CommentCard/Style";
+import {ButtonIconTag} from "src/shared/styleJs/common/IconsStyle";
+import closeIcon16 from 'src/assets/img/icon/close_black_16.png'
+
 const list = [
     {label: 'monkyin', value: 'monkyin'},
     {label: 'xiaobei', value: 'xiaobei'},
@@ -29,6 +31,7 @@ class CommentCard extends React.Component {
         }
 
     }
+
 
     tweetRelationClickHandle(e) {
         e.stopPropagation()
@@ -73,17 +76,20 @@ class CommentCard extends React.Component {
     }
 
     render() {
-        const type = this.context.TweetFullCardType
+        const type = this.props.tweetType
         const comments = this.props.comments
         const relations = this.props.relations
         const author = this.props.author
         return (
-            <div id="commentCard" className={type === TweetFullCardType.dialog && 'dialog-comment-card'}>
+            <CommentCardTag
+                id="commentCard"
+                type={type}
+            >
                 <header className="c-header">
                     <div className="c-header-top">
                         <div className="cht-left-icons">
                             <a>
-                                <IconTag
+                                <PositionIconTag
                                     active={relations && relations.is_like}
                                     type={IconTypeToPosition.like.type}
                                     onClick={this.tweetRelationClickHandle}
@@ -91,7 +97,7 @@ class CommentCard extends React.Component {
                                 />
                             </a>
                             <a>
-                                <IconTag
+                                <PositionIconTag
                                     type={IconTypeToPosition.answer.type}
                                     onClick={this.answerClickHandle}
                                     className="collect"
@@ -100,7 +106,7 @@ class CommentCard extends React.Component {
                         </div>
                         <div className="cht-right-icons">
                             <a>
-                                <IconTag
+                                <PositionIconTag
                                     active={relations && relations.is_collect}
                                     type={IconTypeToPosition.collect.type}
                                     onClick={this.tweetRelationClickHandle} className="collect"
@@ -119,8 +125,11 @@ class CommentCard extends React.Component {
                         <li className="item author-item ">
                             <a href="" className="content-maker"><span className="">{author.name}</span></a>
                             <span className="item-content">
-                                <p>{author.text}</p>
-                                {this.props.signList.map((v, k) => <Link to={`/${v}`} className="img-con">@{v}</Link>)}
+                                <p>
+                                    {author.text}
+                                    {this.props.signList.map((v, k) => <Link to={`/${v}`}>@{v}</Link>)}
+                                </p>
+
                             </span>
                         </li>
                         {comments.hasNext ?
@@ -132,14 +141,22 @@ class CommentCard extends React.Component {
                                 <li className="item common-item" key={comment.id} id={`comment-${comment.id}`}>
                                     <a href="" className="content-maker"><span className=" ">{comment.user}</span></a>
                                     <span className="item-content">
-                                        <p>{comment.text}</p>
-                                        {comment.sign_list.map((v, k) => <Link to={`/${v}`}
-                                                                               className="img-con">@{v}</Link>)}
+                                        <p>
+                                            {comment.text}
+                                            {comment.sign_list.map((v, k) => <Link to={`/${v}`}>@{v}</Link>)}
+                                        </p>
+
                                     </span>
                                     {this.props.loginUser.username === comment.user &&
                                     (
                                         <a href="" className="delete-item-button-con">
-                                            <button onClick={this.commentRemove}>x</button>
+                                            <ButtonIconTag
+                                                onClick={this.commentRemove}
+                                                width="10px"
+                                                height="10px"
+                                                bacImage={closeIcon16}
+                                                className="delete-comment-button"
+                                            />
                                         </a>
                                     )}
                                 </li>
@@ -162,7 +179,7 @@ class CommentCard extends React.Component {
                         active={this.state.showSign}
                     />
                 </form>
-            </div>
+            </CommentCardTag>
 
         )
     }

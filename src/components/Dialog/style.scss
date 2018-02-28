@@ -1,10 +1,16 @@
 @import "~src/assets/css/common.scss";
 #dialogCenter{
+  justify-content: center;
   @include screenCover();
   .dialog-bac{
     z-index: 3;
     @include screenCover(fixed);
     background-color: rgba(0,0,0,.5);
+  }
+  .dialog-hide-button{
+    position: absolute;
+    right: 32px;
+    top: 32px;
   }
 
   .dialog-buttons-con{
@@ -24,24 +30,12 @@
   .dialog-tweet-con{
     z-index: 4;
     height: 600px;
-    @include absoluteCenter(fixed);
+    @include absoluteCenter(absolute);
     background: #ffffff;
   }
 
   .pub-card-con{
     z-index: 4;
     @include absoluteCenter();
-    position: fixed;
-    width: 540px;
-    height: 305px;
   }
-
-    //媒体展示图片
-    .pub-display-image{
-      width: 40px;
-      height: 40px;
-    }
-
-
-
 }

@@ -46,7 +46,6 @@ class Nav extends React.Component {
         if(this.nowState === RefreshState.agitate){
             return
         }
-        console.log('?')
         const nowIsTop = this.state.isTop
         const scrollTop = document.documentElement.scrollTop
         const navElemHeight = this.navElem.clientHeight
@@ -55,7 +54,6 @@ class Nav extends React.Component {
             this.setState({
                 isTop: false
             },()=> {
-                console.log(this.state.isTop)
                 this.nowState = RefreshState.calm
             })
         }
@@ -64,7 +62,6 @@ class Nav extends React.Component {
             this.setState({
                 isTop: true
             },()=> {
-                console.log(this.state.isTop)
                 this.nowState = RefreshState.calm
             })
         }
@@ -102,7 +99,7 @@ class Nav extends React.Component {
                 <div ref="noticesCon" className={this.state.showNotice ? "notices-con" : "notices-con notice-hide"}>
                     <Notices/>
                 </div>
-            SelfCenterIconElem = <Link to={`/${account.user.username}`}
+            SelfCenterIconElem = <Link to={`/user/${account.user.username}`}
                                        className="nr-icon self-center-icon"/>
         }
 
@@ -116,12 +113,12 @@ class Nav extends React.Component {
                     isTop={this.state.isTop}
             >
                 <div className="container-fluid">
-                    <div className="row nav-main">
-                        <div className="col-5 col-lg-4 nav-left justify-content-between">
+                    <div className="row nav-main justify-content-between">
+                        <div className="nav-left col-5 col-md-4">
                             <Link to="/" className="nl-infos-con"/>
                             <Link to="/" className="nl-infos-con nl-infos-con-moving"/>
                         </div>
-                        <div className="col-4 nav-center d-none d-lg-flex">
+                        <div className="nav-center col-md-3 d-none d-md-flex">
                             <div className="input-con">
                                 <CommonInputTag onChange={this.searchChangeHandle} type="text" placeholder="search"/>
                                 <ul className="search-result">
@@ -133,7 +130,7 @@ class Nav extends React.Component {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-7 col-lg-4 nav-right">
+                        <div className="nav-right col-7 col-md-5">
                             <div className="nr-infos-con">
                                 <Link to="/explore" className="nr-icon explore-icon"/>
                                 <span className="notices-icon">

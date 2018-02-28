@@ -2,13 +2,13 @@ import React from 'react'
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
-import './style.scss'
 import * as ExploreActions from "./action";
 import SimpleUserCard from "src/components/SimpleUserCard";
 import TweetCard from "src/components/TweetCard";
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import Link from "react-router-dom/es/Link";
-import {TweetCardConTag} from "src/shared/styleJs/common/componentStyle";
+import {CommonWrapperTag, TweetCardConTag} from "src/shared/styleJs/common/componentStyle";
+import {ExploreTag} from "src/Main/Explore/style";
 
 
 class Explore extends React.Component {
@@ -19,7 +19,7 @@ class Explore extends React.Component {
 
 
     listUpdate() {
-        if(!this.props.isEmpty){
+        if (!this.props.isEmpty) {
             this.listUpdating = true;
             this.props.tweetNextPage()
         }
@@ -62,50 +62,55 @@ class Explore extends React.Component {
         const userList = this.props.userList
         const tweetList = this.props.tweetList
         return (
-            <div id="explore" className="container">
-                <div className="explore-header">
-                    <header>
-                        <span>发现用户</span>
-                        <Link to="/explore/people" className="eh-more-link">
-                            <span>查看全部</span>
-                        </Link>
-                    </header>
-                    <div className="eh-users-con row justify-content-between">
-                        {userList.map((user, index) => {
-                            if (index < 3) {
-                                return <div className="user-card-con col-4">
-                                    <SimpleUserCard
-                                        imgWidth="78px"
-                                        imgHeight="78px"
-                                        showSubtitle={true}
-                                        followButton={true}
-                                        verticle={true}
-                                        user={user}
-                                    />
-                                </div>
-                            }
-                        })}
-                    </div>
-                </div>
-                <div className="explore-main">
-                    <header>
-                        <span>探索</span>
-                    </header>
-                    <div className="tweets-con">
-                        <div className="row justify-content-between">
-
-                            {tweetList.map((tweet) => {
-                                return (
-                                    <TweetCardConTag className="tweet-card-con col-4">
-                                        <TweetCard tweet={tweet}/>
-                                    </TweetCardConTag>
-                                )
+            <CommonWrapperTag>
+                <ExploreTag id="explore" className="container-fluid">
+                    <div className="explore-header">
+                        <header>
+                            <span>发现用户</span>
+                            <Link to="/explore/people" className="header-more-link">
+                                <span>查看全部</span>
+                            </Link>
+                        </header>
+                        <div className="header-users-con row">
+                            {userList.map((user, index) => {
+                                if (index < 3) {
+                                    return (
+                                        <div className="user-card-con col-4">
+                                            <SimpleUserCard
+                                                imgWidth="78px"
+                                                imgHeight="78px"
+                                                showSubtitle={true}
+                                                followButton={true}
+                                                verticle={true}
+                                                user={user}
+                                            />
+                                        </div>
+                                    )
+                                }
                             })}
                         </div>
                     </div>
-                    {this.props.children}
-                </div>
-            </div>
+                    <div className="explore-main">
+                        <header>
+                            <span>探索</span>
+                        </header>
+                        <div className="tweets-con row">
+                            {tweetList.map((tweet) => {
+                                return (
+                                    <div className="col-4">
+                                        <TweetCardConTag className="tweet-card-con">
+                                            <TweetCard tweet={tweet}/>
+                                        </TweetCardConTag>
+                                    </div>
+
+                                )
+                            })}
+                        </div>
+                        {this.props.children}
+                    </div>
+                </ExploreTag>
+            </CommonWrapperTag>
+
 
         )
     }

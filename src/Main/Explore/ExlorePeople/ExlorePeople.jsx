@@ -4,8 +4,9 @@ import {connect} from "react-redux";
 
 import SimpleUserCard from "src/components/SimpleUserCard";
 
-import './style.scss'
 import * as ExploreActions from "src/Main/Explore/action";
+import {CommonWrapperTag} from "src/shared/styleJs/common/componentStyle";
+import {ExplorePeopleTag, ExplorePeopleWrapperTag, UserCardWrapper} from "./style";
 
 
 class ExlorePeople extends React.Component {
@@ -47,20 +48,32 @@ class ExlorePeople extends React.Component {
 
     render() {
         return (
-            <div id="exlorePeople" className="container">
-                <header>
-                    <span>推荐</span>
-                </header>
-                <div className="recommends">
-                    <ul>
-                        {this.props.userList.map((user) => {
-                            return <SimpleUserCard followButton={true}
-                                                   user={user}
-                            />
-                        })}
-                    </ul>
-                </div>
-            </div>
+            <ExplorePeopleWrapperTag>
+                <ExplorePeopleTag id="exlorePeople" className="container-fluid">
+                    <header>
+                        <span>推荐</span>
+                    </header>
+                    <div className="recommends">
+                        <ul>
+                            {this.props.userList.map((user) => {
+                                return (
+                                    <UserCardWrapper>
+                                        <div>
+                                            <SimpleUserCard followButton={true}
+                                                            user={user}
+                                                            imgWidth="56px"
+                                                            imgHeight="56px"
+                                            />
+                                        </div>
+                                    </UserCardWrapper>
+                                    )
+
+                            })}
+                        </ul>
+                    </div>
+                </ExplorePeopleTag>
+            </ExplorePeopleWrapperTag>
+
 
         )
     }

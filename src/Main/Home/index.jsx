@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
-import './style.scss'
 import TweetFullCard from "src/components/TweetFullCard";
 import HomeRightBar from "src/Main/Home/HomeRightBar/HomeRightBar";
 
@@ -13,6 +12,7 @@ import * as ExploreActions from 'Main/Explore/action'
 
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
+import {HomeTag} from "src/Main/Home/style";
 
 class Home extends Component {
     constructor(props) {
@@ -69,15 +69,15 @@ class Home extends Component {
     render() {
         const tweetList = this.props.tweetList;
         return (
-            <div id="home" ref="home">
+            <HomeTag id="home" ref="home">
                 <div className="container-fluid ">
                     <div className="row main justify-content-center">
-                        <div className="main-left-con col-12 col-lg-8" ref="tweetCon">
+                        <div className="main-left-con col-12 col-md-8" ref="tweetCon">
                             {tweetList.map((data) => {
                                 return <TweetFullCard tweetData={data}/>
                             })}
                         </div>
-                        <div className="main-right-con d-none d-lg-flex col-md-4">
+                        <div className="main-right-con col-md-4 d-none d-lg-flex ">
                             {this.props.snapshotUserList.length >= 1 && (
                                 <HomeRightBar loginUser={this.props.loginUser}
                                               snapshotUserList={this.props.snapshotUserList}
@@ -87,7 +87,7 @@ class Home extends Component {
                     </div>
                 </div>
                 {this.props.children}
-            </div>
+            </HomeTag>
         )
     }
 }

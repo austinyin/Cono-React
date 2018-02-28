@@ -2,31 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6eb7671-99d2-4b68-b1f7-f041e1479d21" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/common/icon/signIcon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/common/icon/textIcon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/TweetCard/style.jsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Main/Tweet/index.jsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/icon/close_black_16.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/icon/close_gray_16.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/icon/close_pink_16.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/assets/img/icon/close_white_32.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/shared/HOC/ResizeHoc.jsx" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx" afterPath="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/style.scss" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/Main/Explore/index.jsx" afterPath="$PROJECT_DIR$/src/Main/Explore/index.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Explore/style.scss" afterPath="$PROJECT_DIR$/src/Main/Explore/style.scss" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Home/HomeRightBar/HomeRightBar.jsx" afterPath="$PROJECT_DIR$/src/Main/Home/HomeRightBar/HomeRightBar.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Home/HomeRightBar/style.scss" afterPath="$PROJECT_DIR$/src/Main/Home/HomeRightBar/style.scss" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Explore/style.scss" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/Main/Home/index.jsx" afterPath="$PROJECT_DIR$/src/Main/Home/index.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/Main/index.jsx" afterPath="$PROJECT_DIR$/src/Main/index.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/common.scss" afterPath="$PROJECT_DIR$/src/assets/css/common.scss" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/index.scss" afterPath="$PROJECT_DIR$/src/assets/css/index.scss" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Home/style.scss" afterPath="$PROJECT_DIR$/src/Main/Home/style.scss" />
+      <change beforePath="$PROJECT_DIR$/src/Main/UserCenter/index.jsx" afterPath="$PROJECT_DIR$/src/Main/UserCenter/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/Main/router.jsx" afterPath="$PROJECT_DIR$/src/Main/router.jsx" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/reset.scss" afterPath="$PROJECT_DIR$/src/assets/css/reset.scss" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/common/icon/signIcon.png" afterPath="$PROJECT_DIR$/src/assets/img/icon/signIcon.png" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/common/icon/textIcon.png" afterPath="$PROJECT_DIR$/src/assets/img/icon/textIcon.png" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialog/index.jsx" afterPath="$PROJECT_DIR$/src/components/Dialog/index.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialog/style.scss" afterPath="$PROJECT_DIR$/src/components/Dialog/style.scss" />
-      <change beforePath="$PROJECT_DIR$/src/components/Notices/style.scss" afterPath="$PROJECT_DIR$/src/components/Notices/style.scss" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/index.jsx" afterPath="$PROJECT_DIR$/src/components/Nav/index.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/SimpleUserCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/SimpleUserCard/index.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/SimpleUserCard/style.jsx" afterPath="$PROJECT_DIR$/src/components/SimpleUserCard/style.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/SimpleUserCard/style.scss" afterPath="$PROJECT_DIR$/src/components/SimpleUserCard/style.scss" />
       <change beforePath="$PROJECT_DIR$/src/components/TweetCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/TweetCard/index.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/TweetCard/style.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetCard/style.jsx" afterPath="$PROJECT_DIR$/src/components/TweetCard/style.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/style.scss" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/style.scss" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/index.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/style.scss" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/style.scss" />
+      <change beforePath="$PROJECT_DIR$/src/index.jsx" afterPath="$PROJECT_DIR$/src/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,22 +51,107 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/style.scss">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="56" column="10" lean-forward="false" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+            <state relative-caret-position="170">
+              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/MultiSelect/style.scss">
+      <file leaf-file-name="IconsStyle.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/IconsStyle.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="12" />
+            <state relative-caret-position="662">
+              <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+              <folding>
+                <marker date="1519833467742" expanded="true" signature="1002:1571" ph="{...}" />
+                <marker date="1519833467742" expanded="true" signature="1616:1910" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/style.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+                <marker date="1519834226457" expanded="true" signature="142:2704" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="156:167" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="156:2678" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="156:2704" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="255:285" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="295:401" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="419:443" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="478:644" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="478:2678" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="603:638" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="684:718" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="752:810" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="824:920" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="886:914" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="956:982" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="1025:1126" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="1160:1532" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="1413:1453" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="1490:1526" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="1555:1916" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="1651:1792" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="1822:1910" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="1952:1978" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="2046:2109" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="2159:2186" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="2258:2425" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="2460:2502" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="2538:2580" ph="{...}" />
+                <marker date="1519834226457" expanded="true" signature="2650:2677" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Dialog/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Dialog/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="145" column="77" lean-forward="false" selection-start-line="145" selection-start-column="77" selection-end-line="145" selection-end-column="77" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Dialog/style.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="23" />
+              <folding>
+                <marker date="1519826306459" expanded="true" signature="316:606" ph="{...}" />
+                <marker date="1519826306459" expanded="true" signature="458:538" ph="{...}" />
+                <marker date="1519826306459" expanded="true" signature="561:605" ph="{...}" />
+                <marker date="1519826306459" expanded="true" signature="658:887" ph="{...}" />
+                <marker date="1519826306459" expanded="true" signature="932:1099" ph="{...}" />
+                <marker date="1519826306459" expanded="true" signature="976:990" ph="{...}" />
+                <marker date="1519826306459" expanded="true" signature="1040:1055" ph="{...}" />
+                <marker date="1519826306459" expanded="true" signature="1083:1098" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,87 +159,29 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/MultiSelect/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="82" column="70" lean-forward="true" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="152" column="32" lean-forward="false" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+            <state relative-caret-position="128">
+              <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="32" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#2724#4401#0" expanded="false" />
-                <element signature="e#4418#6404#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Style.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <marker date="1519381236460" expanded="true" signature="209:384" ph="{...}" />
-                <marker date="1519381236460" expanded="true" signature="265:348" ph="{...}" />
-                <marker date="1519381236460" expanded="true" signature="265:384" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="componentStyle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/componentStyle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <marker date="1519381568470" expanded="true" signature="142:214" ph="{...}" />
-                <marker date="1519381568470" expanded="true" signature="262:492" ph="{...}" />
-                <marker date="1519381568470" expanded="true" signature="348:492" ph="{...}" />
-                <marker date="1519381568470" expanded="true" signature="1390:1771" ph="{...}" />
-                <marker date="1519381568470" expanded="true" signature="1390:1959" ph="{...}" />
-                <marker date="1519381568470" expanded="true" signature="1452:1771" ph="{...}" />
-                <marker date="1519381568470" expanded="true" signature="2008:2094" ph="{...}" />
-                <marker date="1519381568470" expanded="true" signature="2008:2310" ph="{...}" />
-                <marker date="1519381568470" expanded="true" signature="2355:2459" ph="{...}" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/index.jsx">
+        <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/VideoCard/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="532">
+              <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/VideoCard/style.scss">
+      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Dialog/constants.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -155,15 +190,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.jsx.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/VideoCard/style.jsx.js">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/Snapshot/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="26" />
-              <folding>
-                <marker date="1519381836675" expanded="true" signature="111:125" ph="{...}" />
-                <marker date="1519381836675" expanded="true" signature="111:194" ph="{...}" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -181,39 +213,42 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>more</find>
-      <find>show-more-content</find>
-      <find>textarea</find>
-      <find>input</find>
+      <find>tweetType</find>
+      <find>item-content</find>
+      <find>dialog-tweet-full-card</find>
+      <find>dialogCenter</find>
+      <find>dialog-tweet-con</find>
+      <find>\}</find>
+      <find>.col-10</find>
+      <find>c</find>
+      <find>col</find>
+      <find>pub-display-image</find>
+      <find>p</find>
+      <find>PUB_TRANSFER_IMAGE_REMOVE_SUCCEEDED</find>
+      <find>pub-elem</find>
+      <find>@med</find>
+      <find>image</find>
+      <find>fileInputChangeHandl</find>
       <find>@</find>
-      <find>multi-select-con</find>
-      <find>selectedList</find>
-      <find>添加评论</find>
+      <find>SignI</find>
       <find>signHandle</find>
-      <find>border-bo</find>
-      <find>TweetCard</find>
-      <find>.pub-card-con</find>
-      <find>.extends</find>
-      <find>-384px -286px;</find>
-      <find>tweet-full-card-main</find>
-      <find>order</find>
-      <find>comment-input-con</find>
-      <find>c-header</find>
-      <find>multiSelect</find>
-      <find>time</find>
-      <find>CommentCardTag</find>
-      <find>#multiSelect</find>
-      <find>#commentCard</find>
-      <find>#commentCard .comment-form .input-con</find>
-      <find>SignIcon</find>
-      <find>搜寻</find>
-      <find>MultiSelect</find>
-      <find>video</find>
-      <find>IconTag</find>
-      <find>videoCardIcon</find>
+      <find>showSign</find>
+      <find>textar</find>
+      <find>console</find>
+      <find>console.log</find>
+      <find>sign-icon</find>
+      <find>Icon</find>
+      <find>x</find>
+      <find>输入文字</find>
+      <find>540px</find>
+      <find>image-delete-icon</find>
+      <find>ButtonIcon</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>`</replace>
+      <replace>C</replace>
+      <replace>Col</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Code\front-end\Cono\src\components\SimpleUserCard</dir>
@@ -221,6 +256,9 @@
       <dir>D:\Code\front-end\Cono\src\components</dir>
       <dir>D:\Code\front-end\Cono\src\components\TweetCard</dir>
       <dir>D:\Code\front-end\Cono\src\assets\img</dir>
+      <dir>D:\Code\front-end\Cono\src\components\Dialog\PubCard</dir>
+      <dir>D:\Code\front-end\Cono\src\Main\SettingCenter</dir>
+      <dir>D:\Code\front-end\Cono</dir>
       <dir>D:\Code\front-end\Cono\src</dir>
     </dirStrings>
   </component>
@@ -230,57 +268,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main/Snapshot/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/Snapshot/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/Nav/style.scss" />
-        <option value="$PROJECT_DIR$/src/shared/styleJs/constantsStyle.js" />
-        <option value="$PROJECT_DIR$/src/shared/styleJs/commonStyle.js" />
-        <option value="$PROJECT_DIR$/src/Main/Home/style.js" />
-        <option value="$PROJECT_DIR$/src/Main/Home/style.scss" />
+        <option value="$PROJECT_DIR$/src/Main/UserCenter/index.jsx" />
+        <option value="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap-grid.css" />
+        <option value="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/assets/css/bootstrap-grid.css" />
+        <option value="$PROJECT_DIR$/src/index.jsx" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/shared/styleJs/common/reset.js" />
-        <option value="$PROJECT_DIR$/src/components/Nav/style.js" />
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/style.js" />
-        <option value="$PROJECT_DIR$/src/components/Nav/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/style.jsx" />
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/index.jsx" />
-        <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/shared/HOC/TweetRelationHOC.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Slider/style.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Slider/index.jsx" />
-        <option value="$PROJECT_DIR$/src/assets/css/index.scss" />
-        <option value="$PROJECT_DIR$/src/assets/css/text.scss" />
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx.js" />
         <option value="$PROJECT_DIR$/src/components/Nav/style.jsx" />
-        <option value="$PROJECT_DIR$/src/shared/styleJs/common/constantsStyle.js" />
-        <option value="$PROJECT_DIR$/src/Main/Home/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/Home/HomeRightBar/HomeRightBar.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/Home/HomeRightBar/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/SimpleUserCard/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/SimpleUserCard/style.jsx" />
-        <option value="$PROJECT_DIR$/src/components/SimpleUserCard/style.scss" />
-        <option value="$PROJECT_DIR$/src/Main/index.jsx" />
         <option value="$PROJECT_DIR$/src/Main/style.js" />
-        <option value="$PROJECT_DIR$/src/components/TweetCard/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/Dialog/PubCard/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/Dialog/style.scss" />
-        <option value="$PROJECT_DIR$/src/assets/css/common.scss" />
+        <option value="$PROJECT_DIR$/src/Main/Home/style.scss" />
+        <option value="$PROJECT_DIR$/src/Main/Home/index.jsx" />
         <option value="$PROJECT_DIR$/src/Main/Explore/style.scss" />
-        <option value="$PROJECT_DIR$/src/Main/Explore/index.jsx" />
-        <option value="$PROJECT_DIR$/src/shared/styleJs/common/commonStyle.js" />
-        <option value="$PROJECT_DIR$/src/components/TweetCard/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/TweetCard/style.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Home/style.jsx" />
         <option value="$PROJECT_DIR$/src/assets/css/reset.scss" />
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/MultiSelect/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/Notices/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/style.scss" />
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx" />
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/MultiSelect/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/TweetCard/style.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Explore/style.jsx" />
         <option value="$PROJECT_DIR$/src/shared/styleJs/common/componentStyle.js" />
-        <option value="$PROJECT_DIR$/src/components/VideoCard/style.jsx.js" />
-        <option value="$PROJECT_DIR$/src/components/VideoCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Explore/index.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/style.scss" />
+        <option value="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/style.js" />
+        <option value="$PROJECT_DIR$/src/Main/Tweet/api.js" />
+        <option value="$PROJECT_DIR$/src/Main/Tweet/constants.js" />
+        <option value="$PROJECT_DIR$/src/Main/Tweet/actions.js" />
+        <option value="$PROJECT_DIR$/src/Main/router.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Tweet/style.js" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/style.scss" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/style.scss" />
+        <option value="$PROJECT_DIR$/src/shared/styleJs/common/commonStyle.js" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/style.jsx" />
+        <option value="$PROJECT_DIR$/src/shared/styleJs/common/bootstrapStyle.js" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/style.js" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/PubCard/style.scss" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx" />
+        <option value="$PROJECT_DIR$/src/components/MultiSelect/style.scss" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Nav/index.jsx" />
+        <option value="$PROJECT_DIR$/src/shared/HOC/ResizeHoc.jsx" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/shared/HOC/TweetRelationHOC.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Tweet/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/reducer.js" />
+        <option value="$PROJECT_DIR$/src/components/Slider/index.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Snapshot/index.jsx" />
+        <option value="$PROJECT_DIR$/src/shared/styleJs/common/IconsStyle.jsx" />
+        <option value="$PROJECT_DIR$/src/components/MultiSelect/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/PubCard/style.js" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/style.scss" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/index.jsx" />
       </list>
     </option>
   </component>
@@ -302,10 +340,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="267" />
-    <option name="y" value="68" />
+    <option name="x" value="313" />
+    <option name="y" value="7" />
     <option name="width" value="1508" />
-    <option name="height" value="960" />
+    <option name="height" value="985" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -333,6 +371,11 @@
             <path>
               <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cono" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cono" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -345,27 +388,58 @@
               <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cono" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cono" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="icon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cono" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="VideoCard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cono" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cono" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Dialog" type="462c0819:PsiDirectoryNode" />
+              <item name="PubCard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cono" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="TweetFullCard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cono" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="TweetFullCard" type="462c0819:PsiDirectoryNode" />
+              <item name="CommentCard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cono" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cono" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
-              <item name="Explore" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
@@ -405,23 +479,23 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/components/Nav/index.jsx" />
     <property name="nodejs_interpreter_path" value="D:/node/node" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Code/front-end/Cono/src/components/TweetFullCard/CommentCard/style.scss" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Code/front-end/Cono/src/components/TweetFullCard/index.jsx" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\front-end\Cono\src\assets\img" />
       <recent name="D:\Code\front-end\Cono\src\extra" />
       <recent name="D:\Code\front-end\Cono\src\components\TweetFullCard" />
       <recent name="D:\Code\front-end\Cono\src\components\Dialog" />
       <recent name="D:\Code\front-end\Cono\src\Main" />
-      <recent name="D:\Code\front-end\Cono\src\components" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\front-end\Cono\src\assets\img\icon" />
+      <recent name="D:\Code\front-end\Cono\src\Main\Tweet" />
+      <recent name="D:\Code\front-end\Cono\src\assets\css" />
       <recent name="D:\Code\front-end\Cono\src\assets\img\common\icon" />
       <recent name="D:\Code\front-end\Cono\src\assets\img\common" />
-      <recent name="D:\Code\front-end\Cono\src\Main\Snapshot" />
-      <recent name="D:\Code\front-end\Cono\src\components\Notices" />
-      <recent name="D:\Code\front-end\Cono\src\extra\Tweet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -524,7 +598,16 @@
       <workItem from="1519226254857" duration="3518000" />
       <workItem from="1519264628381" duration="20268000" />
       <workItem from="1519297594281" duration="15094000" />
-      <workItem from="1519353251127" duration="13625000" />
+      <workItem from="1519353251127" duration="13715000" />
+      <workItem from="1519392814168" duration="835000" />
+      <workItem from="1519442554022" duration="7061000" />
+      <workItem from="1519485181133" duration="599000" />
+      <workItem from="1519523407839" duration="1889000" />
+      <workItem from="1519540447528" duration="191000" />
+      <workItem from="1519563671373" duration="1060000" />
+      <workItem from="1519746016823" duration="8933000" />
+      <workItem from="1519791609502" duration="12897000" />
+      <workItem from="1519821166883" duration="11791000" />
     </task>
     <task id="LOCAL-00001" summary="2/1 11:57">
       <created>1517457439855</created>
@@ -680,11 +763,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519291864032</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="2/23 18:31  well done , write some css">
+      <created>1519381918119</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1519381918119</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="487059000" />
+    <option name="totallyTimeSpent" value="532405000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -696,17 +786,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="267" y="68" width="1508" height="960" extended-state="0" />
+    <frame x="313" y="7" width="1508" height="985" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914573" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3101197" sideWeight="0.5068493" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26802722" sideWeight="0.6454389" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29404616" sideWeight="0.49315068" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2510204" sideWeight="0.6809917" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2865566" sideWeight="0.49315068" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37783375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26802722" sideWeight="0.3545611" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2510204" sideWeight="0.31900826" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32685298" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -752,250 +842,55 @@
     <MESSAGE value="2/21 15:00 snapshot 100%" />
     <MESSAGE value="2/22 00:43 styled-components done" />
     <MESSAGE value="2/22 17:29 have tried styled components, during judged, decide to use both styled components and sass file, sass write general css, styled components write components css" />
-    <option name="LAST_COMMIT_MESSAGE" value="2/22 17:29 have tried styled components, during judged, decide to use both styled components and sass file, sass write general css, styled components write components css" />
+    <MESSAGE value="2/23 18:31  well done , write some css" />
+    <option name="LAST_COMMIT_MESSAGE" value="2/23 18:31  well done , write some css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="126" lean-forward="false" selection-start-line="4" selection-start-column="126" selection-end-line="4" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/common/icons.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/style.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="71" lean-forward="false" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Slider/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Slider/style.jsx">
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/constantsStyle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding>
-            <marker date="1519300059606" expanded="true" signature="111:142" ph="{...}" />
-          </folding>
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Slider/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Main/Explore/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="78" column="28" lean-forward="false" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="28" />
+        <state relative-caret-position="289">
+          <caret line="101" column="51" lean-forward="false" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="51" />
           <folding>
             <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/TweetRelationHOC.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/TweetCard/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="97" column="58" lean-forward="false" selection-start-line="97" selection-start-column="58" selection-end-line="97" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/reset.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/js/commonUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Nav/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="70" column="6" lean-forward="false" selection-start-line="70" selection-start-column="6" selection-end-line="72" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/style.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-            <marker date="1519288776245" expanded="true" signature="222:223" ph="{...}" />
-            <marker date="1519288776245" expanded="true" signature="222:836" ph="{...}" />
-            <marker date="1519288776245" expanded="true" signature="281:383" ph="{...}" />
-            <marker date="1519288776245" expanded="true" signature="404:430" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="81" column="36" lean-forward="false" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/HomeRightBar/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/HomeRightBar/HomeRightBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SimpleUserCard/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="58" column="25" lean-forward="false" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Nav/style.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding>
-            <marker date="1519307167567" expanded="true" signature="232:2343" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="351:925" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="351:2343" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="461:510" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="565:656" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="676:768" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="676:919" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="949:1056" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1076:1108" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1125:1186" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1203:1229" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1261:1321" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1378:1504" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1555:1593" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1607:2140" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1607:2343" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1827:1880" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1900:1948" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="1973:2026" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="2043:2131" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="2043:2138" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="2222:2343" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="2237:2267" ph="{...}" />
-            <marker date="1519307167567" expanded="true" signature="2286:2320" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Nav/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="119" column="87" lean-forward="false" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="87" />
+        <state relative-caret-position="752">
+          <caret line="82" column="15" lean-forward="false" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SimpleUserCard/style.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="187">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="40" />
           <folding>
+            <element signature="e#0#38#0" expanded="false" />
             <marker date="1519310624953" expanded="true" signature="150:655" ph="{...}" />
-            <marker date="1519310624953" expanded="true" signature="171:655" ph="{...}" />
             <marker date="1519310624953" expanded="true" signature="219:247" ph="{...}" />
             <marker date="1519310624953" expanded="true" signature="256:428" ph="{...}" />
             <marker date="1519310624953" expanded="true" signature="448:479" ph="{...}" />
             <marker date="1519310624953" expanded="true" signature="494:551" ph="{...}" />
             <marker date="1519310624953" expanded="true" signature="570:625" ph="{...}" />
-            <marker date="1519310624953" expanded="true" signature="654:655" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/style.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-            <marker date="1519310898395" expanded="true" signature="203:364" ph="{...}" />
-            <marker date="1519310898395" expanded="true" signature="236:255" ph="{...}" />
-            <marker date="1519310898395" expanded="true" signature="256:364" ph="{...}" />
-            <marker date="1519310898395" expanded="true" signature="265:363" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,35 +898,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="476">
+          <caret line="64" column="64" lean-forward="false" selection-start-line="64" selection-start-column="64" selection-end-line="64" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#25#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dialog/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/Main/Explore/ExlorePeople/style.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+            <marker date="1519793147602" expanded="true" signature="160:202" ph="{...}" />
+            <marker date="1519793147602" expanded="true" signature="246:394" ph="{...}" />
+            <marker date="1519793147602" expanded="true" signature="370:393" ph="{...}" />
+            <marker date="1519793147602" expanded="true" signature="440:444" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/common.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1033">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1039,20 +933,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/common/icons2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/Main/Tweet/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="22" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/Main/Home/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Tweet/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Tweet/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetCard/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/Main/Home/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/router.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#25#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Tweet/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1060,177 +995,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetCard/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Main/Home/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="64" column="75" lean-forward="false" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="75" />
+        <state relative-caret-position="170">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="33" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ArticleWithin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="98" column="52" lean-forward="false" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/constantsStyle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/commonStyle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1519377868720" expanded="true" signature="77:110" ph="{...}" />
-            <marker date="1519377868720" expanded="true" signature="142:220" ph="{...}" />
-            <marker date="1519377868720" expanded="true" signature="255:336" ph="{...}" />
-            <marker date="1519377868720" expanded="true" signature="372:435" ph="{...}" />
-            <marker date="1519377868720" expanded="true" signature="470:615" ph="{...}" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetCard/style.jsx">
+    <entry file="file://$PROJECT_DIR$/src/shared/HOC/RelationHOC.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="55" column="18" lean-forward="false" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <marker date="1519379116424" expanded="true" signature="231:1001" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="257:1001" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="279:304" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="318:341" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="359:395" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="413:453" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="503:622" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="646:670" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="693:799" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="843:873" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="889:971" ph="{...}" />
-            <marker date="1519379116424" expanded="true" signature="1048:1099" ph="{...}" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/text.scss">
+    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ScrollRelationHOC.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#53#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/reset.scss">
+    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ScrollHOC.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="44" column="20" lean-forward="false" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Notices/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MultiSelect/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="56" column="10" lean-forward="false" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+        <state relative-caret-position="476">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="100" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx">
+    <entry file="file://$PROJECT_DIR$/src/assets/css/common.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="300">
+          <caret line="63" column="2" lean-forward="false" selection-start-line="63" selection-start-column="2" selection-end-line="65" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/commonStyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <marker date="1519824685366" expanded="true" signature="77:110" ph="{...}" />
+            <marker date="1519824685366" expanded="true" signature="142:220" ph="{...}" />
+            <marker date="1519824685366" expanded="true" signature="255:336" ph="{...}" />
+            <marker date="1519824685366" expanded="true" signature="372:435" ph="{...}" />
+            <marker date="1519824685366" expanded="true" signature="470:554" ph="{...}" />
+            <marker date="1519824685366" expanded="true" signature="591:673" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/style.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-            <marker date="1519381236460" expanded="true" signature="209:384" ph="{...}" />
-            <marker date="1519381236460" expanded="true" signature="265:348" ph="{...}" />
-            <marker date="1519381236460" expanded="true" signature="265:384" ph="{...}" />
+            <marker date="1519823371035" expanded="true" signature="229:620" ph="{...}" />
+            <marker date="1519823371035" expanded="true" signature="364:390" ph="{...}" />
+            <marker date="1519823371035" expanded="true" signature="410:536" ph="{...}" />
+            <marker date="1519823371035" expanded="true" signature="663:922" ph="{...}" />
+            <marker date="1519823371035" expanded="true" signature="764:812" ph="{...}" />
+            <marker date="1519823371035" expanded="true" signature="833:920" ph="{...}" />
+            <marker date="1519823371035" expanded="true" signature="881:916" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/bootstrapStyle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="152" column="32" lean-forward="false" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+        <state relative-caret-position="323">
+          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="18" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#2724#4401#0" expanded="false" />
-            <element signature="e#4418#6404#0" expanded="false" />
+            <marker date="1519825952581" expanded="true" signature="62:204" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="235:343" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="371:477" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="505:614" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="642:730" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="758:867" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="895:1004" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="1032:1120" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="1148:1257" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="1285:1394" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="1422:1510" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="1539:1648" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="1677:1786" ph="{...}" />
+            <marker date="1519825952581" expanded="true" signature="1815:1906" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MultiSelect/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/assets/css/bootstrap-grid.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="82" column="70" lean-forward="true" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
+        <state relative-caret-position="266">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/componentStyle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <marker date="1519381568470" expanded="true" signature="142:214" ph="{...}" />
-            <marker date="1519381568470" expanded="true" signature="262:492" ph="{...}" />
-            <marker date="1519381568470" expanded="true" signature="348:492" ph="{...}" />
-            <marker date="1519381568470" expanded="true" signature="1390:1771" ph="{...}" />
-            <marker date="1519381568470" expanded="true" signature="1390:1959" ph="{...}" />
-            <marker date="1519381568470" expanded="true" signature="1452:1771" ph="{...}" />
-            <marker date="1519381568470" expanded="true" signature="2008:2094" ph="{...}" />
-            <marker date="1519381568470" expanded="true" signature="2008:2310" ph="{...}" />
-            <marker date="1519381568470" expanded="true" signature="2355:2459" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/VideoCard/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1238,23 +1138,257 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/VideoCard/style.jsx.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="274">
+          <caret line="70" column="16" lean-forward="false" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/saga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="78" />
           <folding>
-            <marker date="1519381836675" expanded="true" signature="111:125" ph="{...}" />
-            <marker date="1519381836675" expanded="true" signature="111:194" ph="{...}" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/VideoCard/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MultiSelect/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="75" column="4" lean-forward="false" selection-start-line="75" selection-start-column="4" selection-end-line="86" selection-end-column="5" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1519832378332" expanded="true" signature="265:440" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="483:1871" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="516:597" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="623:703" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="720:788" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="807:933" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="958:1090" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1118:1152" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1178:1204" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1237:1305" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1319:1362" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1396:1533" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1553:1582" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1604:1650" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1687:1742" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1760:1786" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1920:2116" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="1980:2018" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="2030:2049" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="2061:2080" ph="{...}" />
+            <marker date="1519832378332" expanded="true" signature="2096:2115" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Nav/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ResizeHoc.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#29#67#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/HOC/TweetRelationHOC.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Tweet/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="45" column="13" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Slider/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Snapshot/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/IconsStyle.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+          <folding>
+            <marker date="1519833467742" expanded="true" signature="1002:1571" ph="{...}" />
+            <marker date="1519833467742" expanded="true" signature="1616:1910" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MultiSelect/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <marker date="1519826306459" expanded="true" signature="316:606" ph="{...}" />
+            <marker date="1519826306459" expanded="true" signature="458:538" ph="{...}" />
+            <marker date="1519826306459" expanded="true" signature="561:605" ph="{...}" />
+            <marker date="1519826306459" expanded="true" signature="658:887" ph="{...}" />
+            <marker date="1519826306459" expanded="true" signature="932:1099" ph="{...}" />
+            <marker date="1519826306459" expanded="true" signature="976:990" ph="{...}" />
+            <marker date="1519826306459" expanded="true" signature="1040:1055" ph="{...}" />
+            <marker date="1519826306459" expanded="true" signature="1083:1098" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <marker date="1519834226457" expanded="true" signature="142:2704" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="156:167" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="156:2678" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="156:2704" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="255:285" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="295:401" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="419:443" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="478:644" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="478:2678" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="603:638" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="684:718" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="752:810" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="824:920" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="886:914" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="956:982" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="1025:1126" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="1160:1532" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="1413:1453" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="1490:1526" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="1555:1916" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="1651:1792" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="1822:1910" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="1952:1978" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="2046:2109" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="2159:2186" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="2258:2425" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="2460:2502" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="2538:2580" ph="{...}" />
+            <marker date="1519834226457" expanded="true" signature="2650:2677" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="145" column="77" lean-forward="false" selection-start-line="145" selection-start-column="77" selection-end-line="145" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

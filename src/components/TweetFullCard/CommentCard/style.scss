@@ -28,6 +28,12 @@
           overflow-wrap: break-word;
           margin: 0;
         }
+        a{
+
+        }
+      }
+      .delete-comment-button{
+        vertical-align: top;
       }
     }
 
@@ -72,7 +78,6 @@
   .sign-icon{
     cursor: pointer;
   }
-
 }
 
 // 弹窗下的布局, 通过order来控制, 相信还有更好的方案。

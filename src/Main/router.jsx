@@ -1,6 +1,7 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import Home from './Home'
+import Tweet from './Tweet'
 import UserCenter from './UserCenter'
 import Explore from "src/Main/Explore";
 import ExlorePeople from "src/Main/Explore/ExlorePeople/ExlorePeople";
@@ -13,12 +14,13 @@ const MainRouter = () => (
     <switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/test" component={MultiSelect}/>
+        <Route exact path="/tweet/:id" component={Tweet}/>
         <Route exact path="/explore" component={Explore}/>
         <Route exact path="/explore/people" component={ExlorePeople}/>
         <Route exact path='/account' component={Account}/>
         <Route path='/setting' component={SettingCenter}/>
         <Route path='/snapshot/:user' component={Snapshot}/>
-        {/*<Route exact path="/:user" component={UserCenter}/>*/}
+        <Route exact path="/user/:user" component={UserCenter}/>
     </switch>
 
 )

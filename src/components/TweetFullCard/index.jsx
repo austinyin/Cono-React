@@ -16,7 +16,7 @@ import VideoCard from "src/components/VideoCard";
 import {TweetFullCardTag} from "src/components/TweetFullCard/style";
 
 
-class TweetFullCard extends Component {
+class TweetFullCard extends React.Component {
     constructor(props) {
         super(props);
         this.getMoreCommentFuncHandl = this.getMoreCommentFuncHandl.bind(this);
@@ -33,7 +33,10 @@ class TweetFullCard extends Component {
         }
     }
 
-    getMoreCommentFuncHandl(){
+
+
+
+    getMoreCommentFuncHandl() {
         this.props.HOCGetMoreCommentFunc()
 
     }
@@ -75,7 +78,8 @@ class TweetFullCard extends Component {
 
 
     render() {
-        const type = this.context.TweetFullCardType;
+        const type =  this.context.TweetFullCardType===TweetFullCardType.dialog? this.props.type : this.context.TweetFullCardType
+
         // 如果进行了异步更改，将接收HOC返回的更改后的tweetData
         const tweetData = this.props.HOCTweet ? this.props.HOCTweet : this.props.tweetData;
         // const comments = this.state.comment.comments.hasOwnProperty('data') ? this.state.comment.comments: tweetData.comments
@@ -88,16 +92,19 @@ class TweetFullCard extends Component {
         } else {
             MediaElem = <VideoCard videoObj={videoObj}/>
         }
+
         if (tweetData.hasOwnProperty('images')) {
             return (
                 // 如果 type 为 TweetFullCardType.dialog
-                <section id="tweetFullCard" className={type === TweetFullCardType.dialog ?
-                    "dialog-tweet-full-card" : ''}>
-                    {type === TweetFullCardType.dialog ?
+                <TweetFullCardTag
+                    id="tweetFullCard"
+                    type={type}
+                >
+                    {type === TweetFullCardType.dialog &&(
                         <div className="media-con-dialog">
                             {MediaElem}
-                        </div> : null
-                    }
+                        </div>
+                    )}
                     <div className="tweet-full-card-main">
                         <header className="full-card-header ">
                             <div className="w-100 h-100">
@@ -107,11 +114,11 @@ class TweetFullCard extends Component {
                                 />
                             </div>
                         </header>
-                        {type === TweetFullCardType.common ?
+                        {type === TweetFullCardType.common &&(
                             <div className="media-con ">
                                 {MediaElem}
-                            </div> : null
-                        }
+                            </div>
+                        )}
 
                         <CommentCard commentLeaveFunc={this.commentLeaveFuncHandl}
                                      commentRemoveFunc={this.commentRemoveFuncHandl}
@@ -125,9 +132,10 @@ class TweetFullCard extends Component {
                                      totalLike={tweetData.total_like}
                                      pubTime={tweetData.create_time}
                                      signList={tweetData.sign_list}
+                                     tweetType={type}
                         />
                     </div>
-                </section>
+                </TweetFullCardTag>
             )
         }
         return <div/>
