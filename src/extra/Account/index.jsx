@@ -10,12 +10,31 @@ import * as AccountActions from "./actions";
 import {AccountForm,FormType, LoginForm, RegistForm} from "./constants";
 import {LoginState} from "src/extra/Account/constants";
 import LogInOut from "../../components/LogInOut";
+import withRouter from "react-router-dom/es/withRouter";
+import {AccountTag} from "src/extra/Account/style";
 
 class Account extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.accountReceiveFunc = this.accountReceiveFunc.bind(this)
         this.accountForm = Object.assign({},AccountForm)
+        this.state = {
+            formType: null
+        }
+    }
+
+    componentWillReceiveProps(nextProps){
+        const path = nextProps.match.path
+        let formType = null
+        if(path.includes('login')){
+            formType = FormType.login
+        }
+        if(path.includes('regist')){
+            formType = FormType.regist
+        }
+        this.setState({
+            formType
+        })
     }
     
     accountReceiveFunc(type, form) {
@@ -41,18 +60,16 @@ class Account extends React.Component {
 
     render() {
         if(this.props.account.state === LoginState.login){
-            return <Redirect push to={`/${this.props.account.user.username}`} />; //如果检测登陆了则重定向.
+            return <Redirect push to={`/user/${this.props.account.user.username}`} />; //如果检测登陆了则重定向.
         }
-        return (
-            <div id="account" className="container">
-                <div className="row account-main">
-                    <div className="account-left col-6">
-                    </div>
-                    <div className="account-right logInOut-con col-6">
-                        <LogInOut formType={FormType.login} form={this.accountForm}  accountFunc={this.accountReceiveFunc}/>
+        return this.state.formType&&(
+            <AccountTag id="account" className="container-fluid">
+                <div className="row">
+                    <div className="account-main col-6 col-md-3">
+                        <LogInOut formType={this.state.formType} form={this.accountForm}  accountFunc={this.accountReceiveFunc}/>
                     </div>
                 </div>
-            </div>
+            </AccountTag>
         )
     }
 }
@@ -70,7 +87,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(Account)
+)(Account))

@@ -10,11 +10,12 @@ import ScrollRelationHOC from "src/shared/HOC/ScrollRelationHOC";
 import * as UserActions from "./actions";
 import * as DialogActions from "src/components/Dialog/actions";
 import {logout as logoutAction} from "src/extra/Account/actions";
-import {tweetFullCardElemSet} from "../../components/Dialog/actions";
 
 import {PersonUserRelationType} from "src/extra/Relation/model";
-import {CommonContainerTag, TweetCardConTag} from "src/shared/styleJs/common/componentStyle";
-
+import {CommonWrapperTag, TweetCardConTag, TweetItemsWrapperTag} from "src/shared/styleJs/common/componentStyle";
+import {ChooseTag, UserCenterHeaderTag} from "src/Main/UserCenter/style";
+import Link from "react-router-dom/es/Link";
+import {CenterChooseType, ChooseTypeValueToIsEmptyKey, ChooseTypeValueToTweetKey} from "src/Main/UserCenter/model";
 
 class UserCenter extends React.Component {
     constructor(props) {
@@ -26,11 +27,11 @@ class UserCenter extends React.Component {
         this.showDialog = this.showDialog.bind(this);
         this.logoutHandl = this.logoutHandl.bind(this);
         this.chPassHandl = this.chPassHandl.bind(this);
+        this.changeTweetsClickHandle = this.changeTweetsClickHandle.bind(this);
         this.followClickHandle = this.followClickHandle.bind(this);
-
-
         this.state = {
             username: props.match.params.user,
+            nowTweetType: CenterChooseType.publish,
         }
     }
 
@@ -54,6 +55,20 @@ class UserCenter extends React.Component {
 
     logoutHandl() {
         this.props.logout({history: this.props.history})
+    }
+
+    changeTweetsClickHandle(e){
+        const className = e.target.className
+        let nowTweetType = null
+        if(className.includes('pub')){
+            nowTweetType = CenterChooseType.publish
+        }
+        if(className.includes('collect')){
+            nowTweetType = CenterChooseType.collect
+        }
+        this.setState({
+            nowTweetType
+        })
     }
 
     receiveDistance(distance) {
@@ -80,10 +95,11 @@ class UserCenter extends React.Component {
         })
     }
 
-    listUpdate() {
-        if (!this.props.isEmpty) {
+    listUpdate(tweetType=null) {
+        const type = tweetType || this.state.nowTweetType
+        if (!this.props[ChooseTypeValueToIsEmptyKey[type]]) {
             this.listUpdating = true;
-            this.props.tweetNextPage({username: this.state.username})
+            this.props.tweetNextPage({username: this.state.username,tweetType:type})
         }
     }
 
@@ -93,12 +109,12 @@ class UserCenter extends React.Component {
             username: routeUsername,
         }, () => {
             this.props.userInfoGet({username: this.state.username});
-            this.listUpdate();
+            this.listUpdate(CenterChooseType.publish);
+            this.listUpdate(CenterChooseType.collect);
             // 弹窗初始化
             this.dialogSet()
         })
     }
-
 
 
     componentDidMount() {
@@ -124,81 +140,93 @@ class UserCenter extends React.Component {
 
     render() {
         const user = this.props.user
-        const tweetList = this.props.tweetList
+        const nowType = this.state.nowTweetType
+        const tweetList = this.props[ChooseTypeValueToTweetKey[nowType]]
         const relations = this.props.relations ? this.props.relations : {}
         if (user.hasOwnProperty('id')) {
+            console.log('haas?')
             return (
-                <CommonContainerTag id="userCenter" className="container">
+                <CommonWrapperTag id="userCenter" className="container">
                     <div className="user-header-con">
-                        <div className="row">
+                        <UserCenterHeaderTag className="row">
                             <div className="user-header-left col-4">
-                                <div>
-                                    <img src="" alt=""/>
+                                <div className="avatar-wrapper">
+                                    <img className="avatar" src={user.avatar}/>
                                 </div>
                             </div>
                             <div className="user-header-right col-8">
-                                <div className="right-header">
-                                    <div>
-                                        <h1>{user.username}</h1>
-                                    </div>
-                                    {user.isSelf ?
-                                        <div>
-                                        <span>
-                                            <button>编辑个人主页</button>
-                                        </span>
+                                <div className="right-top">
+                                    <h1>{user.username}</h1>
+                                    {user.isSelf ? (
                                             <span>
-                                            <button onClick={this.showDialog}>SettingBUtton</button>
-                                        </span>
-
-                                        </div>
-                                        :
-                                        <div>
-                                        <span>
-                                            <button onClick={this.followClickHandle}
-                                                    className={relations.is_follow ? "follow-button follow-button-active" : "follow-button"}>关注
-                                             </button>
-                                        </span>
+                                                <span>
+                                                    <Link to="/settingCenter" className="self-center-link">编辑个人主页</Link>
+                                                </span>
+                                                    <span>
+                                                    <button onClick={this.showDialog}>SettingBUtton</button>
+                                                </span>
+                                            </span>
+                                        )
+                                        : (
                                             <span>
-                                            <button>↓</button>
-                                        </span>
-                                            <span>
-                                            <button>...</button>
-                                        </span>
-                                        </div>
+                                                <span>
+                                                    <button onClick={this.followClickHandle}
+                                                            className={relations.is_follow ? "follow-button follow-button-active" : "follow-button"}>关注
+                                                     </button>
+                                                </span>
+                                                    <span>
+                                                    <button>↓</button>
+                                                </span>
+                                                    <span>
+                                                    <button>...</button>
+                                                </span>
+                                            </span>
+                                        )
                                     }
 
                                 </div>
-                                <div className="header-right-middle">
+                                <div className="right-middle">
                                 <span>
-                                    <span>274</span> 帖子
+                                    <span className="bolder-font">274</span> 帖子
                                 </span>
-                                    <span>
-                                    <span>17.4百万</span> 关注者
+                                <span>
+                                    <span className="bolder-font">17.4百万</span> 关注者
                                 </span>
-                                    <span>
-                                    正在关注 <span>0</span>
+                                <span>
+                                    正在关注 <span className="bolder-font">0
+                                </span>
                                 </span>
                                 </div>
-                                <div className="header-right-bottom">
+                                <div className="right-bottom">
                                     <p>{user.describe}</p>
                                     <a href="">{user.web_page}</a>
                                 </div>
                             </div>
-                        </div>
+                        </UserCenterHeaderTag>
                     </div>
-                    <div className="tweets-con">
-                        <div className="row justify-content-between">
-                            {tweetList.map((tweet) => {
-                                return (
-                                    <TweetCardConTag key={tweet.id} id={`tweet-${tweet.id}`} className="tweet-card-con col-4">
-                                        <TweetCard tweet={tweet}/>
+                    <ChooseTag activeType={this.state.nowTweetType}>
+                        <div className="choose-main">
+                            <span onClick={this.changeTweetsClickHandle} className="choose-item choose-item-pub">
+                                帖子
+                            </span>
+                            <span onClick={this.changeTweetsClickHandle} className="choose-item choose-item-collect">
+                                收藏夹
+                            </span>
+                        </div>
+                    </ChooseTag>
+                    <TweetItemsWrapperTag className="row">
+                        {tweetList.map((tweet) => {
+                            return (
+                                <div className="col-4">
+                                    <TweetCardConTag>
+                                        <TweetCard key={tweet.id} tweet={tweet}/>
                                     </TweetCardConTag>
-                                )
-                            })}
-                        </div>
-                    </div>
+                                </div>
+                            )
+                        })}
+                    </TweetItemsWrapperTag>
                     {this.props.children}
-                </CommonContainerTag>
+                </CommonWrapperTag>
 
             )
         }
@@ -210,7 +238,8 @@ function mapStateToProps(state) {
     return {
         user: state.User.user,
         tweetList: state.User.tweetList,
-        isEmpty: state.User.isElement,
+        collectTweetList: state.User.collectTweetList,
+        isTweetListEmpty: state.User.isElement,
 
     }
 }

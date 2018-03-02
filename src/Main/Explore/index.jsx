@@ -7,10 +7,8 @@ import SimpleUserCard from "src/components/SimpleUserCard";
 import TweetCard from "src/components/TweetCard";
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import Link from "react-router-dom/es/Link";
-import {CommonWrapperTag, TweetCardConTag} from "src/shared/styleJs/common/componentStyle";
+import {CommonWrapperTag, TweetCardConTag, TweetItemsWrapperTag} from "src/shared/styleJs/common/componentStyle";
 import {ExploreTag} from "src/Main/Explore/style";
-
-
 class Explore extends React.Component {
     constructor(props) {
         super(props);
@@ -94,18 +92,17 @@ class Explore extends React.Component {
                         <header>
                             <span>探索</span>
                         </header>
-                        <div className="tweets-con row">
-                            {tweetList.map((tweet) => {
-                                return (
-                                    <div className="col-4">
-                                        <TweetCardConTag className="tweet-card-con">
-                                            <TweetCard tweet={tweet}/>
-                                        </TweetCardConTag>
-                                    </div>
-
-                                )
-                            })}
-                        </div>
+                        <TweetItemsWrapperTag className="row">
+                                {tweetList.map((tweet) => {
+                                    return (
+                                        <div className="col-4">
+                                            <TweetCardConTag>
+                                                <TweetCard tweet={tweet}/>
+                                            </TweetCardConTag>
+                                        </div>
+                                    )
+                                })}
+                        </TweetItemsWrapperTag>
                         {this.props.children}
                     </div>
                 </ExploreTag>

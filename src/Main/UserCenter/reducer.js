@@ -1,12 +1,15 @@
 import * as actionTypes from "./constants";
 import {stateChildOperByKey} from "src/shared/js/reducerUtils";
 import {RefreshState} from "src/extra/Relation/model";
+import {CenterChooseType, ChooseTypeValueToIsEmptyKey, ChooseTypeValueToTweetKey} from "src/Main/UserCenter/model";
 
 const initialState = {
     user: {},
     nowPage: 0,
     tweetList: [],
-    isEmpty: false,
+    collectTweetList: [],
+    isTweetListEmpty: false,
+    isCollectTweetListEmpty: false,
     prompt: ''
 };
 
@@ -34,12 +37,12 @@ export default function User(state = initialState, action) {
         case actionTypes.USER_TWEETS_NEXT_PAGE_SUCCEEDED:
             return Object.assign({}, state, {
                 nowPage: state.nowPage + 1,
-                tweetList: [...state.tweetList, ...action.data]
+                [ChooseTypeValueToTweetKey[action.data.tweetType]]: [...state.tweetList, ...action.data.tweets]
             });
         case actionTypes.USER_TWEETS_NEXT_PAGE_FAILED:
             return Object.assign({}, state, {prompt: action.error});
         case actionTypes.USER_TWEETS_IS_EMPTY:
-            return Object.assign({}, state, {isEmpty: true});
+            return Object.assign({}, state, {[ChooseTypeValueToIsEmptyKey[action.tweetType]]: true});
 
         /**
          * 默认或回位

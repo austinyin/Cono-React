@@ -35,18 +35,19 @@ class TweetCard extends React.Component {
             mediaType = IconTypeToPosition.camera.type
         }
 
-
         return (
             <TweetCardTag id="tweetCard" onClick={this.clickHandle}>
                 <a className="tweet-card-wrapper">
                     <div className="img-con">
                         <img className="tweet-image" src={tweet.image_thumbnail.image} alt=""/>
-                        <TweetTypeIcon
-                            width="48px"
-                            height="48px"
-                            type={mediaType}
-                            className="tweet-type-icon"
-                        />
+                        {mediaType&&(
+                            <TweetTypeIcon
+                                width="48px"
+                                height="48px"
+                                type={mediaType}
+                                className="tweet-type-icon"
+                            />
+                        )}
                     </div>
                     <div className="img-cover">
                         <div className="img-cover-middle">

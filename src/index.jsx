@@ -7,9 +7,12 @@ import {connect, Provider} from 'react-redux'
 // 全局style
 import 'assets/css/index.scss'
 import 'src/assets/css/bootstrap-grid.css'
-// Main组件
+
+// 引入组件
 import Main from './Main'
 import Account from "./extra/Account/index";
+import Snapshot from "src/extra/Snapshot";
+
 
 // redux-saga 环境
 import 'babel-polyfill'
@@ -23,7 +26,9 @@ import {loginCheck} from "./extra/Account/actions";
 // 根路由
 const AppRouter = () => (
     <Switch>
-        <Route exact path='/account' component={Account} />
+        <Route exact path='/account/login' component={Account} />
+        <Route exact path='/account/regist' component={Account} />
+        <Route path='/snapshot/:user' component={Snapshot}/>
         <Route path='/' component={Main}/>
     </Switch>
 );

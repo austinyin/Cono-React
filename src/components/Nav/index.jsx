@@ -104,7 +104,7 @@ class Nav extends React.Component {
         }
 
         if (account.state === LoginState.logout) {
-            SelfCenterIconElem = <Link to="/account" className="nr-icon self-center-icon"/>
+            SelfCenterIconElem = <Link to="/account/login" className="nr-icon self-center-icon"/>
         }
 
         return (

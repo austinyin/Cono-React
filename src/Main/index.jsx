@@ -17,7 +17,6 @@ const Main = ({match, account}) => (
 );
 
 
-
 function mapStateToProps(state) {
     return {
         account: state.Account,

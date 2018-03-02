@@ -2,6 +2,8 @@
 
 
 body {
+  input:-webkit-autofill {-webkit-box-shadow: 0 0 0 1000px white inset;}
+
   a, p, span {
     font-size: 14px;
     margin: 0;
@@ -11,10 +13,7 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-  .row{
-    margin-left: 0;
-    margin-right: 0;
-  }
+
   [class*="col-"] {
     padding-left: 0;
     padding-right: 0;

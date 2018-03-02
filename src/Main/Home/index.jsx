@@ -15,9 +15,13 @@ import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import {HomeTag} from "src/Main/Home/style";
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
+    constructor(props,context) {
+        super(props,context);
+        this.resizeScrollTopReciever = this.resizeScrollTopReciever.bind(this);
         this.listUpdating = false;
+        this.state = {
+            rightBarStyle: {}
+        }
     }
 
     // 使用context传递 TweetFullCard的Type, 让其下方所有组件都能正确的展示自己。
@@ -25,33 +29,14 @@ class Home extends Component {
         return {TweetFullCardType: TweetFullCardType.common};
     }
 
-    listUpdate() {
-        if(!this.props.isEmpty){
-            this.listUpdating = true;
-            this.props.tweetNextPage()
-        }
-    }
-
-    receiveDistance(distance) {
-        /**
-         * 根据HOC传过来的距离判断是否需要加载tweet数据
-         */
-        if (this.listUpdating === false && distance > -70) {
-            this.listUpdate()
-        }
-    }
-
-    init() {
+    componentDidMount() {
         /**
          * 如果登陆了则获取snapshot内容
          */
+        window.addEventListener('resize',this.onWindowResize)
+        this.props.tweetListReset();
         this.props.snapshotUserGet();
-        this.listUpdate();
-    }
-
-    componentDidMount() {
-        this.init()
-    }
+        this.listUpdate();    }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.tweetList !== nextProps.tweetList) {
@@ -61,10 +46,49 @@ class Home extends Component {
     }
 
     componentWillUnmount() {
-        // 清空列表
-        this.props.tweetListReset();
+        // 不清空，用作缓存
+        // this.props.tweetListReset();
     }
 
+    listUpdate() {
+        if(!this.props.isEmpty){
+            this.listUpdating = true;
+            this.props.tweetNextPage()
+        }
+    }
+
+    resizeScrollTopReciever(scrollTop){
+        /**
+         * 在滚动或者伸缩窗口时，都能保证rightBar的准确定位。
+         */
+        const tweetConElem = this.refs.tweetCon
+        const fixRight = tweetConElem.offsetWidth + tweetConElem.offsetLeft
+        const fixTop = tweetConElem.offsetTop
+        const NavHeight = 53
+        let rightBarStyle = {}
+        if(scrollTop>fixTop - NavHeight){
+            rightBarStyle = {
+                position: "fixed",
+                left: fixRight,
+                top: `${NavHeight}px`,
+                maxWidth: tweetConElem.offsetWidth/2
+            }
+        }
+        this.setState({
+            rightBarStyle:rightBarStyle
+        })
+    }
+
+
+
+    receiveDistance(distance) {
+        /**
+         * 根据HOC传过来的距离判断是否需要加载tweet数据
+         */
+        if (this.listUpdating === false && distance > -70) {
+            this.listUpdate()
+        }
+    }
 
     render() {
         const tweetList = this.props.tweetList;
@@ -78,11 +102,13 @@ class Home extends Component {
                             })}
                         </div>
                         <div className="main-right-con col-md-4 d-none d-lg-flex ">
-                            {this.props.snapshotUserList.length >= 1 && (
-                                <HomeRightBar loginUser={this.props.loginUser}
-                                              snapshotUserList={this.props.snapshotUserList}
-                                />
-                            )}
+                            <div style={this.state.rightBarStyle}>
+                                {this.props.snapshotUserList.length >= 1 && (
+                                    <HomeRightBar loginUser={this.props.loginUser}
+                                                  snapshotUserList={this.props.snapshotUserList}
+                                    />
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>

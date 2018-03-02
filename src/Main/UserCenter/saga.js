@@ -2,7 +2,8 @@ import {call, put, select} from 'redux-saga/effects'
 import {takeEvery} from 'redux-saga'
 
 import * as UserActionTypes from './constants'
-import {getUserInfoApi, getUserTweetsApi, userRelationsGetApi} from "src/Main/UserCenter/api";
+import {getUserCollectTweetsApi, getUserInfoApi, getUserTweetsApi, userRelationsGetApi} from "src/Main/UserCenter/api";
+import {CenterChooseType} from "src/Main/UserCenter/model";
 
 const getNowPageNum = state => state.User.nowPage;
 
@@ -38,12 +39,19 @@ function* userTweetsNextPageSaga(action) {
      */
     try {
         const nowPage = yield select(getNowPageNum)
-        const ret = yield call(getUserTweetsApi, action.data.username, nowPage+1);
+        const {username,tweetType} = action.data
+        let ret =  null
+        if(tweetType===CenterChooseType.publish) {
+            ret = yield call(getUserTweetsApi, username, nowPage+1);
+        }
+        if(tweetType===CenterChooseType.collect){
+            ret = yield call(getUserCollectTweetsApi, username, nowPage+1);
+        }
         // 如果没有下一页， 则发送empty action。
         if(!ret.next){
-            yield put({type: UserActionTypes.USER_TWEETS_IS_EMPTY});
+            yield put({type: UserActionTypes.USER_TWEETS_IS_EMPTY,tweetType});
         }
-        yield put({type: UserActionTypes.USER_TWEETS_NEXT_PAGE_SUCCEEDED, data: ret.results});
+        yield put({type: UserActionTypes.USER_TWEETS_NEXT_PAGE_SUCCEEDED, data: {tweets:ret.results,tweetType}});
     }
     catch (error) {
         yield put({type: UserActionTypes.USER_TWEETS_NEXT_PAGE_FAILED, error});
