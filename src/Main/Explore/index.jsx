@@ -45,7 +45,7 @@ class Explore extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         // 将state 与redux 同步
-        if (this.props.tweetList !== nextProps.tweetList) {
+        if (this.props.tweetData !== nextProps.tweetData) {
             this.listUpdating = false;
         }
     }

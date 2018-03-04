@@ -39,7 +39,7 @@ class Home extends Component {
         this.listUpdate();    }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.tweetList !== nextProps.tweetList) {
+        if (this.props.tweetData !== nextProps.tweetData) {
             this.listUpdating = false;
         }
 

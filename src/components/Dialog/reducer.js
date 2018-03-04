@@ -15,11 +15,11 @@ export default function Dialog(state = initialState, action) {
          * 全局显示设置
          */
         case actionTypes.DIALOG_DISPLAY_SET:
-            var newState = {};
+            var newState = Object.assign({},state);
             for(let key in action.data){
                 if(state.hasOwnProperty(key)){
                     // action.data 类型为 {key: boolean}, 通过遍历为其设置隐藏或显示。
-                    newState = stateChildOperByKey(state, key, {visible: action.data[key]})
+                    newState = stateChildOperByKey(newState, key, {visible: action.data[key]})
                 }
             }
             return newState;

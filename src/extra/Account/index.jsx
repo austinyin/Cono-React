@@ -1,9 +1,7 @@
 import * as React from 'react';
-import './style.scss'
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import { Redirect } from 'react-router-dom';
-
 
 import * as AccountActions from "./actions";
 
@@ -16,6 +14,7 @@ import {AccountTag} from "src/extra/Account/style";
 class Account extends React.Component {
     constructor(props, context) {
         super(props, context);
+        this.formTypeSet = this.formTypeSet.bind(this)
         this.accountReceiveFunc = this.accountReceiveFunc.bind(this)
         this.accountForm = Object.assign({},AccountForm)
         this.state = {
@@ -23,8 +22,17 @@ class Account extends React.Component {
         }
     }
 
+    componentDidMount(){
+        const path = this.props.match.path
+        this.formTypeSet(path)
+    }
+
     componentWillReceiveProps(nextProps){
         const path = nextProps.match.path
+        this.formTypeSet(path)
+    }
+
+    formTypeSet(path){
         let formType = null
         if(path.includes('login')){
             formType = FormType.login

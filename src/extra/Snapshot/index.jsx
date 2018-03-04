@@ -48,7 +48,6 @@ class Snapshot extends React.Component {
                 mediaList: data
             }, () => {
                 this.next()
-                console.log(this.state.mediaList)
             })
         })
     }
@@ -56,7 +55,6 @@ class Snapshot extends React.Component {
     userInit() {
         const username = this.props.match.params.user
         getUserInfoApi(username).then(user => {
-            console.log('user',user)
             this.setState({user})
         })
     }
@@ -97,7 +95,6 @@ class Snapshot extends React.Component {
         clearTimeout(this.playImageTimer)
         const {mediaList, beforeMediaList} = this.state
         if (item.type === MediaType.image) {
-            console.log('in')
             this.setState({
                 nowMediaType: item.type,
                 nowImages: {
@@ -127,7 +124,6 @@ class Snapshot extends React.Component {
          * 图片播放流
          * 如果播放完最后一张图片则跳出到基础播放流中，否则增加nowIndex后递归。
          */
-        console.log('in playImaw')
         const nowImages = Object.assign(this.state.nowImages)
         if (nowImages.nowIndex < nowImages.list.length - 1) {
             nowImages.nowIndex += 1
@@ -226,7 +222,7 @@ class Snapshot extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        tweetList: state.TweetList.tweetList,
+        tweetList: state.TweetList.tweetData,
     }
 }
 

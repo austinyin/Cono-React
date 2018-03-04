@@ -10,13 +10,10 @@ import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/common/com
 import {CommentCardTag, SignIcon} from "src/components/TweetFullCard/CommentCard/Style";
 import {ButtonIconTag} from "src/shared/styleJs/common/IconsStyle";
 import closeIcon16 from 'src/assets/img/icon/close_black_16.png'
+import UserMultiSelectHOC from "src/shared/HOC/UserMultiSelectHOC";
+import withRouter from "react-router-dom/es/withRouter";
 
-const list = [
-    {label: 'monkyin', value: 'monkyin'},
-    {label: 'xiaobei', value: 'xiaobei'},
-    {label: 'beibei', value: 'beibei'},
-
-]
+const FriendMultiSelect =  UserMultiSelectHOC(MultiSelect)
 
 class CommentCard extends React.Component {
     constructor(props, context) {
@@ -29,7 +26,6 @@ class CommentCard extends React.Component {
         this.state = {
             showSign: false
         }
-
     }
 
 
@@ -57,6 +53,10 @@ class CommentCard extends React.Component {
     commentCommit(e) {
         e.preventDefault()
         if (e.keyCode !== 13) {
+            return
+        }
+        if(!this.props.loginUser.hasOwnProperty('id')){
+            this.props.history.push('/account/login')
             return
         }
         const selectedList = this.refs.multiSelect.state.selectedList
@@ -167,7 +167,7 @@ class CommentCard extends React.Component {
                 <div className="pub-time"><a>{this.props.pubTime}</a></div>
                 <form ref="commentForm" className="comment-form">
                     <div className="input-con" style={{display: !this.state.showSign && 'none'}}>
-                        <MultiSelect inputOnKeyUp={this.commentCommit} ref="multiSelect" itemList={list}/>
+                        <FriendMultiSelect inputOnKeyUp={this.commentCommit} ref="multiSelect"/>
                     </div>
                     <div className="input-con" style={{display: this.state.showSign && 'none'}}>
                         <input onKeyUp={this.commentCommit} ref="commentInput" placeholder="添加评论...  按Enter提交"/>
@@ -189,4 +189,4 @@ CommentCard.contextTypes = {
     TweetFullCardType: PropTypes.string.isRequired,
 }
 
-export default CommentCard
+export default withRouter(CommentCard)

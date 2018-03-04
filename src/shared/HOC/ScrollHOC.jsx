@@ -52,4 +52,6 @@ const ScrollHOC = (WrappedComponent) => {
     }
 };
 
+
+
 export default ScrollHOC;

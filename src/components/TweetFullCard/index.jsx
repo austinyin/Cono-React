@@ -107,7 +107,7 @@ class TweetFullCard extends React.Component {
                     )}
                     <div className="tweet-full-card-main">
                         <header className="full-card-header ">
-                            <div className="w-100 h-100">
+                            <div>
                                 <SimpleUserCard
                                     imgUrl={tweetData.user.avatar ? tweetData.user.avatar : "src/assets/img/avatar/avatar.jpg"}
                                     user={tweetData.user}

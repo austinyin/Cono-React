@@ -12,7 +12,7 @@ import {MediaType} from "src/components/Dialog/constants";
 import {ButtonIconTag} from "src/shared/styleJs/common/IconsStyle";
 
 import closeIconWhite32 from 'src/assets/img/icon/close_white_32.png'
-import {DialogTweetWrapperTag} from "src/components/Dialog/style";
+import {DialogButtonsTag, DialogTweetWrapperTag} from "src/components/Dialog/style";
 import ResizeHoc from "src/shared/HOC/ResizeHoc";
 
 
@@ -35,6 +35,26 @@ class Dialog extends Component {
     componentWillUnmount() {
         this.props.dialogResetAll()
         // 清空列表
+    }
+
+    componentWillReceiveProps(nextProps){
+        /**
+         * 弹窗或禁止背景动作
+         */
+        const {dialogObj} = nextProps
+        if (dialogObj.dialogButtons.visible || dialogObj.tweetFullCard.visible || dialogObj.pubCard.visible){
+            const body = document.getElementsByTagName('body')[0]
+            const html = document.getElementsByTagName('html')[0]
+            body.classList.add("lock-back")
+            html.classList.add("lock-back")
+        }
+        if(!dialogObj.dialogButtons.visible &&!dialogObj.tweetFullCard.visible && !dialogObj.pubCard.visible){
+            const body = document.getElementsByTagName('body')[0]
+            const html = document.getElementsByTagName('html')[0]
+            body.classList.remove("lock-back")
+            html.classList.remove("lock-back")
+
+        }
     }
 
 
@@ -119,7 +139,7 @@ class Dialog extends Component {
             return (
                 <div id="dialogCenter" className="row">
                     {dialogObj.dialogButtons.visible && (
-                        <div className="dialog-buttons-con">
+                        <DialogButtonsTag className="dialog-buttons-con col-10 col-md-8 col-lg-6 col-xl-4">
                             <ul>
                                 {dialogObj.dialogButtons.elems.map((v, k) => {
                                     return (
@@ -132,7 +152,7 @@ class Dialog extends Component {
                                     <button className="dialog-button" onClick={this.dialogButtonsHide}>取消</button>
                                 </li>
                             </ul>
-                        </div>
+                        </DialogButtonsTag>
                     )
                     }
                     {(dialogObj.tweetFullCard.visible && dialogObj.tweetFullCard.data.hasOwnProperty('id')) && (

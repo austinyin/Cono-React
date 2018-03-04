@@ -70,7 +70,6 @@ class LogInOut extends Component {
                 return
             }
             if (elem.type === 'text') {
-                console.log('tex')
                 elem.value = ""
                 return
             }

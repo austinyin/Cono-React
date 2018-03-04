@@ -2,6 +2,18 @@ import axios from 'axios'
 
 // 保证session前后一致
 axios.defaults.withCredentials=true;
+axios.defaults.xsrfHeaderName = "X_CSRFToken";
+axios.defaults.xsrfCookieName = "csrftoken";
+// 请求拦截,每次请求检测vuex中是否存在token
+axios.interceptors.request.use(config => {
+        config.headers.X_CSRFToken = "9t78aKsWB3XJ5ntiU4wvgr0u6sjLAMFIMf8RMohfAcss88kVHeBtCyZiAGuTnVJK"
+        return config
+    },
+    err => {
+        return Promise.reject(err)
+    }
+)
+
 
 export function get(url, data) {
     if(data) {

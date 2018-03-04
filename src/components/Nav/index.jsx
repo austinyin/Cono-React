@@ -22,7 +22,6 @@ class Nav extends React.Component {
         this.handleScroll = this.handleScroll.bind(this);
         this.showPub = this.showPub.bind(this);
         this.nowState = RefreshState.calm
-
         this.state = {
             searchUserList: this.props.searchUserList,
             showNotice: false,

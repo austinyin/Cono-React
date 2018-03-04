@@ -3,9 +3,8 @@ import {takeEvery} from 'redux-saga'
 
 import * as UserActionTypes from './constants'
 import {getUserCollectTweetsApi, getUserInfoApi, getUserTweetsApi, userRelationsGetApi} from "src/Main/UserCenter/api";
-import {CenterChooseType} from "src/Main/UserCenter/model";
+import {CenterChooseType, ChooseTypeValueToTweetKey} from "src/Main/UserCenter/model";
 
-const getNowPageNum = state => state.User.nowPage;
 
 
 function* userInfoGetSaga(action) {
@@ -33,13 +32,16 @@ function* userRelationsGetSaga(action) {
 }
 
 
+const getNowPageNum = (state,tweetType) => state.User[ChooseTypeValueToTweetKey[tweetType]].nowPage;
+
 function* userTweetsNextPageSaga(action) {
     /**
      * 获得当前页，发送请求，再发出SUCCEEDED action
      */
     try {
-        const nowPage = yield select(getNowPageNum)
         const {username,tweetType} = action.data
+        const nowPage = yield select(getNowPageNum,tweetType)
+
         let ret =  null
         if(tweetType===CenterChooseType.publish) {
             ret = yield call(getUserTweetsApi, username, nowPage+1);
@@ -49,7 +51,7 @@ function* userTweetsNextPageSaga(action) {
         }
         // 如果没有下一页， 则发送empty action。
         if(!ret.next){
-            yield put({type: UserActionTypes.USER_TWEETS_IS_EMPTY,tweetType});
+            yield put({type: UserActionTypes.USER_TWEETS_IS_EMPTY,data:{tweetType}});
         }
         yield put({type: UserActionTypes.USER_TWEETS_NEXT_PAGE_SUCCEEDED, data: {tweets:ret.results,tweetType}});
     }

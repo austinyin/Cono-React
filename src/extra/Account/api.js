@@ -1,4 +1,5 @@
 import {post} from "src/shared/js/axiosUtil";
+import { Cookies } from 'react-cookie';
 
 
 /**
@@ -39,11 +40,26 @@ export function logoutApi() {
 
 
 export function changePasswordApi(data) {
-    let url = "http://127.0.0.1:8000/api/account/changePassword";
+    let url = "http://127.0.0.1:8000/api/account/change/password";
     return post(url,data).then(ret => {
         return ret.data
     })
 }
+
+export function changeSelfInfoApi(data) {
+    let url = "http://127.0.0.1:8000/api/account/change";
+    return post(url,data).then(ret => {
+        return ret.data
+    })
+}
+
+export function changeAvatarApi(data) {
+    let url = "http://127.0.0.1:8000/api/account/change/avatar";
+    return post(url,data).then(ret => {
+        return ret.data
+    })
+}
+
 
 
 

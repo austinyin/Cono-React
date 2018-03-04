@@ -6,10 +6,8 @@ import {CenterChooseType, ChooseTypeValueToIsEmptyKey, ChooseTypeValueToTweetKey
 const initialState = {
     user: {},
     nowPage: 0,
-    tweetList: [],
-    collectTweetList: [],
-    isTweetListEmpty: false,
-    isCollectTweetListEmpty: false,
+    tweetData: {nowPage:0, list: [],isEmpty: false},
+    collectTweetData: {nowPage:0, list: [],isEmpty: false},
     prompt: ''
 };
 
@@ -28,21 +26,23 @@ export default function User(state = initialState, action) {
          * 用户relations
          */
         case actionTypes.USER_RELATIONS_GET_SUCCEEDED:
-            return stateChildOperByKey(state, "user", {"relations_obj": action.data})
+            return stateChildOperByKey(state, "user", {relations_obj: action.data})
 
 
         /**
          * 用户推文
          */
         case actionTypes.USER_TWEETS_NEXT_PAGE_SUCCEEDED:
-            return Object.assign({}, state, {
-                nowPage: state.nowPage + 1,
-                [ChooseTypeValueToTweetKey[action.data.tweetType]]: [...state.tweetList, ...action.data.tweets]
-            });
+            var key = ChooseTypeValueToTweetKey[action.data.tweetType]
+            return stateChildOperByKey(
+                    state,
+                    [key],
+                    {list: [...state[key].list, ...action.data.tweets],nowPage: state[key].nowPage + 1}
+                )
         case actionTypes.USER_TWEETS_NEXT_PAGE_FAILED:
             return Object.assign({}, state, {prompt: action.error});
         case actionTypes.USER_TWEETS_IS_EMPTY:
-            return Object.assign({}, state, {[ChooseTypeValueToIsEmptyKey[action.tweetType]]: true});
+            return stateChildOperByKey(state, [ChooseTypeValueToTweetKey[action.data.tweetType]], {isEmpty: true})
 
         /**
          * 默认或回位

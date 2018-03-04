@@ -15,7 +15,7 @@ const MainRouter = () => (
         <Route exact path="/tweet/:id" component={Tweet}/>
         <Route exact path="/explore" component={Explore}/>
         <Route exact path="/explore/people" component={ExlorePeople}/>
-        <Route path='/setting' component={SettingCenter}/>
+        <Route path='/account' component={SettingCenter}/>
         <Route exact path="/user/:user" component={UserCenter}/>
     </switch>
 

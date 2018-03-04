@@ -32,6 +32,8 @@ export function pubTransferResetApi() {
     let url = "http://127.0.0.1:8000/api/upload/transfer/reset";
     return post(url).then( ret => {
         return ret.data
+    }).catch(error => {
+        console.log(error)
     })
 }
 

@@ -37,7 +37,7 @@ function* logout(action) {
     try {
         const ret = yield call(logoutApi);
         setTimeout(() => {
-            action.data.history.push("/account");
+            action.data.history.push("/account/login");
         }, 1000);
         yield put({type: AccountActionTypes.LOGOUT_SUCCEEDED, data: ret});
     } catch (error) {

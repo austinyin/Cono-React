@@ -2,7 +2,6 @@ import React from 'react'
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import withRouter from "react-router-dom/es/withRouter";
-import './style.scss'
 
 import TweetCard from "src/components/TweetCard";
 import ScrollRelationHOC from "src/shared/HOC/ScrollRelationHOC";
@@ -12,10 +11,14 @@ import * as DialogActions from "src/components/Dialog/actions";
 import {logout as logoutAction} from "src/extra/Account/actions";
 
 import {PersonUserRelationType} from "src/extra/Relation/model";
-import {CommonWrapperTag, TweetCardConTag, TweetItemsWrapperTag} from "src/shared/styleJs/common/componentStyle";
+import {
+    CommonButtonTag, CommonWrapperTag, TweetCardConTag,
+    TweetItemsWrapperTag
+} from "src/shared/styleJs/common/componentStyle";
 import {ChooseTag, UserCenterHeaderTag} from "src/Main/UserCenter/style";
 import Link from "react-router-dom/es/Link";
 import {CenterChooseType, ChooseTypeValueToIsEmptyKey, ChooseTypeValueToTweetKey} from "src/Main/UserCenter/model";
+import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/common/IconsStyle";
 
 class UserCenter extends React.Component {
     constructor(props) {
@@ -35,6 +38,40 @@ class UserCenter extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.init()
+    }
+
+    componentWillReceiveProps(nextProps) {
+        /**
+         * 因为路由事件没有销毁组件,
+         * 这里通过判断props中location来决定是否触发init，暂定这样,可能有更好的办法。
+         */
+        if (this.props.location.pathname !== nextProps.location.pathname) {
+            this.props.userResetAll();
+            this.init(nextProps.match.params.user)
+        }
+    }
+
+    componentWillUnmount() {
+        // 清空列表
+        this.props.userResetAll();
+    }
+
+    init(routeUsername = this.props.match.params.user) {
+        // 初始数据获得
+        this.setState({
+            username: routeUsername,
+        }, () => {
+            this.props.userInfoGet({username: this.state.username});
+            this.listUpdate(CenterChooseType.publish);
+            this.listUpdate(CenterChooseType.collect);
+            // 弹窗初始化
+            this.dialogButtonsSet()
+        })
+    }
+
+
     followClickHandle(e) {
         /**
          * 将follow流程交给HOC
@@ -49,7 +86,7 @@ class UserCenter extends React.Component {
 
 
     chPassHandl() {
-        this.props.history.push('/setting/password')
+        this.props.history.push('/account/password/change')
         this.props.dialogDisplaySet({dialogButtons: false})
     }
 
@@ -77,7 +114,7 @@ class UserCenter extends React.Component {
         }
     }
 
-    dialogSet() {
+    dialogButtonsSet() {
         /**
          * 这里将handle函数传递了到了dialog组件，
          * dialog组件中点击相应button将触发本组件中的函数。
@@ -103,48 +140,16 @@ class UserCenter extends React.Component {
         }
     }
 
-    init(routeUsername = this.props.match.params.user) {
-        // 初始数据获得
-        this.setState({
-            username: routeUsername,
-        }, () => {
-            this.props.userInfoGet({username: this.state.username});
-            this.listUpdate(CenterChooseType.publish);
-            this.listUpdate(CenterChooseType.collect);
-            // 弹窗初始化
-            this.dialogSet()
-        })
-    }
 
-
-    componentDidMount() {
-        this.init()
-    }
-
-    componentWillReceiveProps(nextProps) {
-        /**
-         * 因为路由事件没有销毁组件,
-         * 这里通过判断props中location来决定是否触发init，暂定这样,可能有更好的办法。
-         */
-        if (this.props.location.pathname !== nextProps.location.pathname) {
-            this.props.userResetAll();
-            this.init(nextProps.match.params.user)
-        }
-    }
-
-    componentWillUnmount() {
-        // 清空列表
-        this.props.userResetAll();
-    }
 
 
     render() {
         const user = this.props.user
         const nowType = this.state.nowTweetType
-        const tweetList = this.props[ChooseTypeValueToTweetKey[nowType]]
+        const tweetList = this.props[ChooseTypeValueToTweetKey[nowType]].list
         const relations = this.props.relations ? this.props.relations : {}
+
         if (user.hasOwnProperty('id')) {
-            console.log('haas?')
             return (
                 <CommonWrapperTag id="userCenter" className="container">
                     <div className="user-header-con">
@@ -154,31 +159,32 @@ class UserCenter extends React.Component {
                                     <img className="avatar" src={user.avatar}/>
                                 </div>
                             </div>
-                            <div className="user-header-right col-8">
+                            <div className="user-header-right col-5">
                                 <div className="right-top">
                                     <h1>{user.username}</h1>
                                     {user.isSelf ? (
                                             <span>
                                                 <span>
-                                                    <Link to="/settingCenter" className="self-center-link">编辑个人主页</Link>
+                                                    <Link to="/account" className="self-center-link">编辑个人主页</Link>
                                                 </span>
-                                                    <span>
-                                                    <button onClick={this.showDialog}>SettingBUtton</button>
+                                                <span className="setting-icon">
+                                                    <PositionIconTag
+                                                        onClick={this.showDialog}
+                                                        type={IconTypeToPosition.setting.type}
+                                                    />
                                                 </span>
                                             </span>
                                         )
                                         : (
                                             <span>
                                                 <span>
-                                                    <button onClick={this.followClickHandle}
-                                                            className={relations.is_follow ? "follow-button follow-button-active" : "follow-button"}>关注
-                                                     </button>
-                                                </span>
-                                                    <span>
-                                                    <button>↓</button>
-                                                </span>
-                                                    <span>
-                                                    <button>...</button>
+                                                    <CommonButtonTag
+                                                        onClick={this.followClickHandle}
+                                                        style={{verticalAlign:"middle"}}
+                                                        active={relations.is_follow}
+                                                    >
+                                                        {relations.is_follow?"已关注":"关注"}
+                                                     </CommonButtonTag>
                                                 </span>
                                             </span>
                                         )
@@ -198,22 +204,25 @@ class UserCenter extends React.Component {
                                 </span>
                                 </div>
                                 <div className="right-bottom">
-                                    <p>{user.describe}</p>
-                                    <a href="">{user.web_page}</a>
+                                    <p>{user.self_intro}</p>
+                                    <a onClick={() => location.href=`http://${user.web_page}`}>{user.web_page}</a>
                                 </div>
                             </div>
                         </UserCenterHeaderTag>
                     </div>
-                    <ChooseTag activeType={this.state.nowTweetType}>
-                        <div className="choose-main">
+                    {user.isSelf&&(
+                        <ChooseTag activeType={this.state.nowTweetType}>
+                            <div className="choose-main">
                             <span onClick={this.changeTweetsClickHandle} className="choose-item choose-item-pub">
                                 帖子
                             </span>
-                            <span onClick={this.changeTweetsClickHandle} className="choose-item choose-item-collect">
+                                <span onClick={this.changeTweetsClickHandle} className="choose-item choose-item-collect">
                                 收藏夹
                             </span>
-                        </div>
-                    </ChooseTag>
+                            </div>
+                        </ChooseTag>
+                    )}
+
                     <TweetItemsWrapperTag className="row">
                         {tweetList.map((tweet) => {
                             return (
@@ -237,9 +246,8 @@ class UserCenter extends React.Component {
 function mapStateToProps(state) {
     return {
         user: state.User.user,
-        tweetList: state.User.tweetList,
-        collectTweetList: state.User.collectTweetList,
-        isTweetListEmpty: state.User.isElement,
+        tweetData: state.User.tweetData,
+        collectTweetData: state.User.collectTweetData,
 
     }
 }

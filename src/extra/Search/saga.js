@@ -18,8 +18,33 @@ function* userSearchGetSaga(action) {
 }
 
 
-// 监听搜索
+// const getFriendData = state => state.Search.friendData;
+//
+// function* friendSearchGetSaga(action) {
+//     /**
+//      * 获得当前页，发送请求，再发出SUCCEEDED action
+//      */
+//     try {
+//         let friendData = yield select(getFriendData);
+//         if(!friendData.isInit){
+//             friendData = yield call(friendsGetApi)
+//         }
+//         const filterList = friendData.list.filter(user => {
+//             return user.username.includes(action.key)
+//         });
+//         yield put({type: SearchActionTypes.FRIEND_SEARCH_GET_SUCCEEDED, filterList});
+//     } catch (error) {
+//         yield put({type: SearchActionTypes.FRIEND_SEARCH_GET_FAILED, error});
+//     }
+// }
 
+
+// 监听用户搜索
 export function* watchUserSearchGet() {
     yield* takeEvery(SearchActionTypes.USER_SEARCH_GET, userSearchGetSaga)
 }
+
+// // 监听好友搜索
+// export function* watchFriendSearchGet() {
+//     yield* takeEvery(SearchActionTypes.FRIEND_SEARCH_GET, friendSearchGetSaga)
+// }
