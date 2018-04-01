@@ -23,7 +23,7 @@ class TweetFullCard extends React.Component {
         this.tweetRelationFuncHandl = this.tweetRelationFuncHandl.bind(this);
         this.commentLeaveFuncHandl = this.commentLeaveFuncHandl.bind(this);
         this.commentRemoveFuncHandl = this.commentRemoveFuncHandl.bind(this);
-        this.avatar = "src/assets/img/avatar/avatar.jpg"
+        this.avatar = "src/shared/assets/img/avatar/avatar.jpg"
         this.state = {
             refreshState: RefreshState.calm,
             comment: {
@@ -109,7 +109,7 @@ class TweetFullCard extends React.Component {
                         <header className="full-card-header ">
                             <div>
                                 <SimpleUserCard
-                                    imgUrl={tweetData.user.avatar ? tweetData.user.avatar : "src/assets/img/avatar/avatar.jpg"}
+                                    imgUrl={tweetData.user.avatar ? tweetData.user.avatar : "src/shared/assets/img/avatar/avatar.jpg"}
                                     user={tweetData.user}
                                 />
                             </div>

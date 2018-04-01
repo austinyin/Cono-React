@@ -5,13 +5,15 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 
 import SimpleUserCard from 'src/components/SimpleUserCard'
-import Notices from 'components/Notices'
+import Notices from 'components/Nav/Notices'
 
 import * as DialogActions from "src/components/Dialog/actions";
 import * as SearchActions from "src/extra/Search/actions";
 import {NavTag} from "src/components/Nav/style.jsx";
 import {RefreshState} from "src/extra/Relation/model";
 import {CommonInputTag} from "src/shared/styleJs/common/componentStyle";
+import {SearchResultTag} from "src/components/Nav/style";
+import {PositionIconTag} from "src/shared/styleJs/common/IconsStyle";
 
 
 class Nav extends React.Component {
@@ -91,11 +93,14 @@ class Nav extends React.Component {
 
     render() {
         const account = this.props.account
-        let NoticesElem = null
-        let SelfCenterIconElem = null
+        const {searchUserList,showNotice} = this.state // 搜索结果和是否显示最新消息
+
+        let NoticesElem
+        let SelfCenterIconElem
+
         if (account.state === LoginState.login) {
             NoticesElem =
-                <div ref="noticesCon" className={this.state.showNotice ? "notices-con" : "notices-con notice-hide"}>
+                <div ref="noticesCon" className={showNotice ? "notices-con" : "notices-con notice-hide"}>
                     <Notices/>
                 </div>
             SelfCenterIconElem = <Link to={`/user/${account.user.username}`}
@@ -120,20 +125,29 @@ class Nav extends React.Component {
                         <div className="nav-center col-md-3 d-none d-md-flex">
                             <div className="input-con">
                                 <CommonInputTag onChange={this.searchChangeHandle} type="text" placeholder="search"/>
-                                <ul className="search-result">
-                                    {this.state.searchUserList.map((v, k) => {
-                                        return <li key={v.id}>
-                                            <SimpleUserCard user={v}/>
-                                        </li>
+                                <SearchResultTag
+                                    hide={searchUserList.length<1}
+                                >
+                                    {searchUserList.map((user, k) => {
+                                        return (account.user.id!==user.id)&&(
+                                            <li>
+                                                <SimpleUserCard user={user}
+                                                                showSubtitle={true}
+                                                                key={user.id}
+                                                />
+                                            </li>
+                                        )
                                     })}
-                                </ul>
+                                </SearchResultTag>
                             </div>
                         </div>
                         <div className="nav-right col-7 col-md-5">
                             <div className="nr-infos-con">
                                 <Link to="/explore" className="nr-icon explore-icon"/>
                                 <span className="notices-icon">
-                                    <a onClick={this.toggleNoticeHandle} className="nr-icon recent-icon"/>
+                                    <a onClick={this.toggleNoticeHandle}
+                                       className={showNotice?"nr-icon recent-icon-active":"nr-icon recent-icon"}
+                                    />
                                     {NoticesElem}
                                 </span>
                                 {SelfCenterIconElem}
@@ -143,7 +157,6 @@ class Nav extends React.Component {
                     </div>
                 </div>
             </NavTag>
-
         )
     }
 }

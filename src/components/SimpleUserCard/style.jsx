@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 import {CommonFlex} from "src/shared/styleJs/common/commonStyle";
+import {hoverResetStyle} from "src/shared/styleJs/common/resetStyle";
 
 export const SimpleUserCardTag = styled.div`
-    height: inherit;
+    height: 100%;
     ${CommonFlex};
+    a{
+      ${hoverResetStyle};
+    }
     /* left */
     .suc-left{
       ${CommonFlex};

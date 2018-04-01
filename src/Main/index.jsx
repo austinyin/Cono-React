@@ -11,7 +11,7 @@ const Main = ({match, account}) => (
         <div className="nav-con">
             <Nav account={account}/>
         </div>
-        <Dialog/>
+            <Dialog/>
         <MainRouter match={match}/>
     </MainTag>
 );

@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components'
-import signIcon from "src/assets/img/icon/signIcon.png"
-import textIcon from "src/assets/img/icon/textIcon.png"
+import signIcon from "src/shared/assets/img/icon/signIcon.png"
+import textIcon from "src/shared/assets/img/icon/textIcon.png"
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
 export const SignIcon = styled.span`

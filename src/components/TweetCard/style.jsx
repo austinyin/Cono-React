@@ -29,7 +29,6 @@ export const TweetCardTag = styled.section`
   /* img cover hover显示的内容*/
   .img-cover{
     ${AbsoluteFill};
-    display: flex;
   display: none;
     align-items: center;
     background: rgba(0,0,0,.3);

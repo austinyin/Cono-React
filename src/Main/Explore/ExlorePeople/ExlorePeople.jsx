@@ -47,6 +47,7 @@ class ExlorePeople extends React.Component {
 
 
     render() {
+        const {loginUser,userList} = this.props
         return (
             <ExplorePeopleWrapperTag>
                 <ExplorePeopleTag id="exlorePeople" className="container-fluid">
@@ -55,14 +56,15 @@ class ExlorePeople extends React.Component {
                     </header>
                     <div className="recommends">
                         <ul>
-                            {this.props.userList.map((user) => {
-                                return (
+                            {userList.map((user) => {
+                                return (loginUser.id!==user.id)&&(
                                     <UserCardWrapper>
                                         <div>
                                             <SimpleUserCard followButton={true}
-                                                            user={user}
                                                             imgWidth="56px"
                                                             imgHeight="56px"
+                                                            user={user}
+                                                            key={user.id}
                                             />
                                         </div>
                                     </UserCardWrapper>
@@ -82,7 +84,8 @@ class ExlorePeople extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        userList: state.Explore.userList
+        userList: state.Explore.userList,
+        loginUser: state.Account.user
     }
 }
 

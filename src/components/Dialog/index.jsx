@@ -11,7 +11,7 @@ import PubCard from "src/components/Dialog/PubCard";
 import {MediaType} from "src/components/Dialog/constants";
 import {ButtonIconTag} from "src/shared/styleJs/common/IconsStyle";
 
-import closeIconWhite32 from 'src/assets/img/icon/close_white_32.png'
+import closeIconWhite32 from 'src/shared/assets/img/icon/close_white_32.png'
 import {DialogButtonsTag, DialogTweetWrapperTag} from "src/components/Dialog/style";
 import ResizeHoc from "src/shared/HOC/ResizeHoc";
 

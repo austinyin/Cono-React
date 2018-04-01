@@ -57,8 +57,8 @@ class Explore extends React.Component {
 
 
     render() {
-        const userList = this.props.userList
-        const tweetList = this.props.tweetList
+        const {userList,tweetList,loginUser} = this.props
+
         return (
             <CommonWrapperTag>
                 <ExploreTag id="explore" className="container-fluid">
@@ -72,7 +72,7 @@ class Explore extends React.Component {
                         <div className="header-users-con row">
                             {userList.map((user, index) => {
                                 if (index < 3) {
-                                    return (
+                                    return (loginUser.id!==user.id)&&(
                                         <div className="user-card-con col-4">
                                             <SimpleUserCard
                                                 imgWidth="78px"
@@ -81,6 +81,7 @@ class Explore extends React.Component {
                                                 followButton={true}
                                                 verticle={true}
                                                 user={user}
+                                                key={user.id}
                                             />
                                         </div>
                                     )
@@ -94,10 +95,10 @@ class Explore extends React.Component {
                         </header>
                         <TweetItemsWrapperTag className="row">
                                 {tweetList.map((tweet) => {
-                                    return (
+                                    return (loginUser.id!==tweet.user.id)&&(
                                         <div className="col-4">
                                             <TweetCardConTag>
-                                                <TweetCard tweet={tweet}/>
+                                                <TweetCard tweet={tweet} key={tweet.id}/>
                                             </TweetCardConTag>
                                         </div>
                                     )
@@ -119,6 +120,7 @@ function mapStateToProps(state) {
         tweetList: state.Explore.tweetList,
         userList: state.Explore.userList,
         isEmpty: state.TweetList.isEmpty,
+        loginUser: state.Account.user,
 
     }
 }

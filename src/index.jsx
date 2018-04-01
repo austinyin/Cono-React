@@ -6,8 +6,8 @@ import {connect, Provider} from 'react-redux'
 import { CookiesProvider } from 'react-cookie';
 
 // 全局style
-import 'assets/css/index.scss'
-import 'src/assets/css/bootstrap-grid.css'
+import 'src/shared/assets/css/index.scss'
+import 'src/shared/assets/css/bootstrap-grid.css'
 
 // 引入组件
 import Main from './Main'
@@ -23,6 +23,8 @@ import 'regenerator-runtime/runtime'
 import configureStore from "./store/configureStore";
 import {bindActionCreators} from "redux";
 import {loginCheck} from "./extra/Account/actions";
+export const store = configureStore()
+
 
 
 
@@ -66,7 +68,6 @@ App = withRouter(connect(
 )(App));
 
 
-const store = configureStore()
 
 render(
     <Provider store={store}>

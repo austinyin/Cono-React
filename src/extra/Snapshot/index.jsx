@@ -1,3 +1,7 @@
+/**
+ * 快照页面
+ * 等待修复左右翻页功能
+ */
 import React from 'react'
 import {connect} from "react-redux";
 import withRouter from "react-router-dom/es/withRouter";
@@ -76,10 +80,13 @@ class Snapshot extends React.Component {
          */
         const {mediaList, beforeMediaList} = this.state
         const item = mediaList.pop()
-        if (item) {
-            beforeMediaList.push(item)
-            this.runPlayProcess(item)
+
+        if(!item){
+            this.props.history.push('/')
+            return
         }
+        beforeMediaList.push(item)
+        this.runPlayProcess(item)
     }
 
     before() {
@@ -165,8 +172,8 @@ class Snapshot extends React.Component {
     render() {
         const {user,nowImages} = this.state
         const {list, nowIndex} = nowImages
-        let imageSrc = null
-        let videoSrc = null
+        let imageSrc
+        let videoSrc
         if (this.state.nowMediaType === MediaType.image) {
             imageSrc = list[nowIndex].image
         }
@@ -181,7 +188,7 @@ class Snapshot extends React.Component {
                         <div className="user-wrapper">
                             {user&&(
                                 <SimpleUserCard
-                                    imgUrl={"src/assets/img/avatar/avatar.jpg"}
+                                    imgUrl={"src/shared/assets/img/avatar/avatar.jpg"}
                                     user={user}
                                 />
                             )}
@@ -209,7 +216,12 @@ class Snapshot extends React.Component {
                             }
                         </div>
                         <div className="media-con">
-                            <img ref="img" style={{width: '100%'}} src={`http://127.0.0.1:8000${imageSrc}`} alt=""/>
+                            <img ref="img"
+                                 style={{width: '100%',
+                                     height:!imageSrc&&0
+                                 }}
+                                 src={`http://127.0.0.1:8000${imageSrc}`}
+                            />
                             <video id="myVideo" style={{width: '100%'}} className="video-ha" ref="video"
                                    src={`http://127.0.0.1:8000${videoSrc}`}/>
                         </div>

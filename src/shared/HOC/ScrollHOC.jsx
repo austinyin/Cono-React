@@ -10,8 +10,6 @@ const ScrollHOC = (WrappedComponent) => {
             this.onWindowResize = this.onWindowResize.bind(this)
         }
 
-
-
         handleScroll() {
             const distance = this.documentElem.clientHeight - this.guidElem.getBoundingClientRect().top
             this.refs.wrapChild.receiveDistance(distance)

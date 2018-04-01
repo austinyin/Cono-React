@@ -1,3 +1,6 @@
+/**
+ * 首页
+ */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
@@ -9,10 +12,10 @@ import HomeRightBar from "src/Main/Home/HomeRightBar/HomeRightBar";
 import * as TweetListActions from './actions'
 import * as ExploreActions from 'Main/Explore/action'
 
-
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import {HomeTag} from "src/Main/Home/style";
+
 
 class Home extends Component {
     constructor(props,context) {
@@ -34,9 +37,9 @@ class Home extends Component {
          * 如果登陆了则获取snapshot内容
          */
         window.addEventListener('resize',this.onWindowResize)
-        this.props.tweetListReset();
         this.props.snapshotUserGet();
-        this.listUpdate();    }
+        this.listUpdate();
+    }
 
     componentWillReceiveProps(nextProps) {
         if (this.props.tweetData !== nextProps.tweetData) {
@@ -46,8 +49,8 @@ class Home extends Component {
     }
 
     componentWillUnmount() {
-        // 不清空，用作缓存
-        // this.props.tweetListReset();
+        // 组件销毁则清空数据(待加入缓存功能)
+        this.props.tweetListReset();
     }
 
     listUpdate() {
@@ -91,14 +94,15 @@ class Home extends Component {
     }
 
     render() {
-        const tweetList = this.props.tweetList;
+        const {tweetList,loginUser} = this.props;
+
         return (
             <HomeTag id="home" ref="home">
                 <div className="container-fluid ">
                     <div className="row main justify-content-center">
                         <div className="main-left-con col-12 col-md-8" ref="tweetCon">
                             {tweetList.map((data) => {
-                                return <TweetFullCard tweetData={data}/>
+                                return (loginUser.id!==data.user.id)&&<TweetFullCard tweetData={data} key={data.id}/>
                             })}
                         </div>
                         <div className="main-right-con col-md-4 d-none d-lg-flex ">

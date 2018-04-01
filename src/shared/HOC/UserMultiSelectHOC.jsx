@@ -30,7 +30,7 @@ const UserMultiSelectHOC = (WrappedComponent) => {
 
         render() {
             return (
-                <WrappedComponent ref="wrapChild" {...this.props} itemList={this.state.friendList}/>
+                <WrappedComponent ref={x => this.child=x} {...this.props} itemList={this.state.friendList}/>
             )
         }
     }

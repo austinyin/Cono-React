@@ -148,7 +148,6 @@ class UserCenter extends React.Component {
         const nowType = this.state.nowTweetType
         const tweetList = this.props[ChooseTypeValueToTweetKey[nowType]].list
         const relations = this.props.relations ? this.props.relations : {}
-
         if (user.hasOwnProperty('id')) {
             return (
                 <CommonWrapperTag id="userCenter" className="container">
@@ -193,13 +192,13 @@ class UserCenter extends React.Component {
                                 </div>
                                 <div className="right-middle">
                                 <span>
-                                    <span className="bolder-font">274</span> 帖子
+                                    <span className="bolder-font">{user.tweet_total}</span> 帖子
                                 </span>
                                 <span>
-                                    <span className="bolder-font">17.4百万</span> 关注者
+                                    <span className="bolder-font">{user.relations_obj.followerList.length}</span> 关注者
                                 </span>
                                 <span>
-                                    正在关注 <span className="bolder-font">0
+                                    正在关注 <span className="bolder-font">{user.relations_obj.friendList.length}
                                 </span>
                                 </span>
                                 </div>

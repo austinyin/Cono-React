@@ -8,6 +8,7 @@ import connect from "react-redux/es/connect/connect";
 import {PersonUserRelationType} from "src/extra/Relation/model";
 import {SimpleUserCardTag} from "src/components/SimpleUserCard/style";
 import {CommonButtonTag} from "src/shared/styleJs/common/componentStyle";
+import {SimpleUserCardType} from "src/components/SimpleUserCard/model";
 
 class SimpleUserCard extends React.Component {
     constructor(props) {
@@ -29,7 +30,17 @@ class SimpleUserCard extends React.Component {
 
     render() {
         //这里是RelationHOC的state中的user
-        const user = this.props.user
+        const {user,type} = this.props
+        let route_link
+
+        if(type===SimpleUserCardType.common){
+            route_link = `/user/${user.username}`
+        }
+        if(type===SimpleUserCardType.snapshot){
+            route_link = `/snapshot/${user.username}`
+        }
+
+
         // 首次显示采用父组件传入的user的relations,之后follow操作后由HOC返回。
         const relations = this.props.relations ? this.props.relations : this.props.user.relations
         return (
@@ -40,14 +51,14 @@ class SimpleUserCard extends React.Component {
                 className={this.props.verticle && 'd-flex flex-column' }
             >
                 <div className={this.props.verticle ? 'd-flex flex-column suc-left' : 'suc-left'}>
-                    <Link to={`/user/${user.username}`} className="img-con">
-                        <img className="img " src={require("src/assets/img/avatar/avatar.jpg")}/>
+                    <Link to={route_link} className="img-con">
+                        <img className="img " src={require("src/shared/assets/img/avatar/avatar.jpg")}/>
                     </Link>
-                    <Link to={`/user/${user.username}`} className="infos-con">
+                    <Link to={route_link} className="infos-con">
                         <span ref="title" className="left-item left-title">{user.username}</span>
                         {this.props.showSubtitle &&(
-                            <span className="left-item left-subtitle">{user.fullname && user.fullname}</span>
-                        ) }
+                            <span className="left-item left-subtitle">{user.fullname}</span>
+                        )}
                     </Link>
                 </div>
                 {this.props.middle && <div className="suc-middle">middle</div> }
@@ -64,6 +75,8 @@ class SimpleUserCard extends React.Component {
         )
     }
 }
+
+SimpleUserCard.defaultProps = { type: SimpleUserCardType.common };
 
 
 export function mapStateToProps(state) {

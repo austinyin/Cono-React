@@ -1,0 +1,38 @@
+#slider{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  .slider-left-button-con, .slider-right-button-con{
+    position: absolute;
+    top: 50%;
+  }
+  .slider-left-button-con{
+    left: 5%;
+    transform: translateY(-50%);
+  }
+  .slider-right-button-con{
+    right: 5%;
+    transform: translateY(-50%);
+  }
+
+  .slider-dots{
+    ul{
+      position: absolute;
+      bottom: -5%;
+      left: 50%;
+      transform: translateX(-50%);
+      li{
+        display: inline-block;
+      }
+      // 激活状态
+      .dot-active{
+        color: red;
+      }
+    }
+  }
+
+  // 首页状态
+  .index-image{
+    width: 100%;
+  }
+}

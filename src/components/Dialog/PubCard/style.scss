@@ -1,0 +1,50 @@
+#pubCard{
+  width: 100%;
+  background: #ffffff;
+  header,footer{
+    padding: 0 15px;
+  }
+  .pub-selections{
+    height: 200px;
+  }
+  .pub-main-image,.pub-main-video {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    line-height: 100%;
+    & > div{
+      text-align: center;
+    }
+  }
+  .pub-icon-image,.pub-icon-video{
+    display: inline-block;
+  }
+
+  // 图片展示li
+  .pub-elem{
+    position: relative;
+    display: inline-block;
+    video{
+      width: 100%;
+    }
+    .image-delete-icon,.video-delete-icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  // 隐藏部分input
+  .pub-form{
+    display: none;
+  }
+
+  .footer-left-button-con,.footer-right-button-con{
+    display: inline-block;
+  }
+  .footer-right-button-con{
+    float: right;
+  }
+}
