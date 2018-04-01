@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "set NODE_ENV=production&&webpack-dev-server --config webpack.config.js",
+    "start:linux": "export NODE_ENV=production&&webpack-dev-server --config webpack.config.js",
     "server": "webpack-dev-server --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "set NODE_ENV=production&&webpack --config webpack.config.js --progress",
+    "build:linux": "export NODE_ENV=production&&webpack --config webpack.config.js --progress"
   },
   "author": "yin",
   "license": "ISC",

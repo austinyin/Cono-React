@@ -12,6 +12,7 @@ import {SnapshotTag} from "src/extra/Snapshot/style";
 import {getSnapshotsApi} from "src/extra/Snapshot/api";
 import {getUserInfoApi} from "src/Main/UserCenter/api";
 import {MediaType} from "src/components/Dialog/constants";
+import {SERVER_ROOT} from "src/shared/api";
 
 class Snapshot extends React.Component {
     constructor(props) {
@@ -220,10 +221,10 @@ class Snapshot extends React.Component {
                                  style={{width: '100%',
                                      height:!imageSrc&&0
                                  }}
-                                 src={`http://127.0.0.1:8000${imageSrc}`}
+                                 src={`${SERVER_ROOT}${imageSrc}`}
                             />
                             <video id="myVideo" style={{width: '100%'}} className="video-ha" ref="video"
-                                   src={`http://127.0.0.1:8000${videoSrc}`}/>
+                                   src={`${SERVER_ROOT}${videoSrc}`}/>
                         </div>
                     </div>
                 </div>

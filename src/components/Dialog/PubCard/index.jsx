@@ -11,6 +11,7 @@ import {ButtonIconTag} from "src/shared/styleJs/common/IconsStyle";
 
 import uploadRemoveIcon from 'src/shared/assets/img/icon/upload_remove_icon.png'
 import UserMultiSelectHOC from "src/shared/HOC/UserMultiSelectHOC";
+import {SERVER_ROOT} from "src/shared/api";
 
 
 
@@ -87,7 +88,7 @@ class PubCard extends Component {
             MediaElem = images.map((v, k) => {
                 return <li key={k.id} className="pub-elem">
                     <img id={v.id} className="pub-display-image"
-                         src={v.image.includes('http') ? v.image : `http://127.0.0.1:8000${v.image}`} alt=""/>
+                         src={v.image.includes('http') ? v.image : `${SERVER_ROOT}${v.image}`} alt=""/>
                     <ButtonIconTag
                         onClick={this.tranferRemove}
                         className="image-delete-icon"

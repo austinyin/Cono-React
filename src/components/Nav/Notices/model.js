@@ -1,4 +1,5 @@
 import {pubTimeCalc} from "src/shared/js/commonUtil";
+import {SERVER_ROOT} from "src/shared/api";
 
 export const NoticeType = {
     comments: 'comments',
@@ -24,7 +25,7 @@ export function getNoticeDescByType(data) {
      */
     if((data.type === NoticeType.tweetLikes)||(data.type === NoticeType.tweetCollects)){
         ret.username =data.obj.user.username
-        ret.tweetThumbnail = `http://127.0.0.1:8000/api/tweet/${data.obj.tweet}/thumbnail`
+        ret.tweetThumbnail = `${SERVER_ROOT}/api/tweet/${data.obj.tweet}/thumbnail`
         ret.avatar = data.obj.user.avatar
 
     }
@@ -54,7 +55,7 @@ export function getNoticeDescByType(data) {
         ret.username =data.obj.user.username
         ret.avatar = data.obj.user.avatar
         ret.actionDesc = `评论了${data.obj.text}`
-        ret.tweetThumbnail = `http://127.0.0.1:8000/api/tweet/${data.obj.tweet}/thumbnail`
+        ret.tweetThumbnail = `${SERVER_ROOT}/api/tweet/${data.obj.tweet}/thumbnail`
     }
     return ret
 }

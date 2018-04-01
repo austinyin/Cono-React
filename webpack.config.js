@@ -98,8 +98,8 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
                 loader: 'eslint-loader',
+                exclude: /(node_modules|api)/
             },
             {test: /\.svg/, loader: 'svg-url-loader'},
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
@@ -131,7 +131,7 @@ module.exports = {
         //     Popper: ['popper.js', 'default']
         // }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
         new UglifyJSPlugin()
     ],
