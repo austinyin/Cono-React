@@ -1,4 +1,4 @@
-import {takeEvery} from "redux-saga";
+import {takeEvery} from 'redux-saga'
 import {call, put, select} from 'redux-saga/effects'
 
 import * as SearchActionTypes from "./constants";

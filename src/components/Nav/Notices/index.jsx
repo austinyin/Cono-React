@@ -40,7 +40,7 @@ class Notices extends React.Component {
                             obj: v.obj,
                         })
                         return (
-                            <li className="notice-card container-fluid">
+                            <li className="notice-card container-fluid" key={k}>
                                 <div className="row">
                                     <div className="notice-card-left notice-user col-4 col-sm-3">
                                         <span className="avatar-con">

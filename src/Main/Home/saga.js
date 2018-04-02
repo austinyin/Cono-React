@@ -14,6 +14,7 @@ function* tweetNextPage(action) {
     try {
         const nowPage = yield select(getNowPageNum);
         const ret = yield call(getHomeTweets, nowPage+1);
+        console.log('ret',ret);
         if(!ret.next){
             yield put({type: TweetListActionTypes.TWEETS_IS_EMPTY});
         }

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Home from './Home'
 import Tweet from './Tweet'
 import UserCenter from './UserCenter'
@@ -9,7 +9,7 @@ import SettingCenter from "src/Main/SettingCenter";
 import MultiSelect from "src/components/MultiSelect";
 
 const MainRouter = () => (
-    <switch>
+    <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/test" component={MultiSelect}/>
         <Route exact path="/tweet/:id" component={Tweet}/>
@@ -17,7 +17,7 @@ const MainRouter = () => (
         <Route exact path="/explore/people" component={ExlorePeople}/>
         <Route path='/account' component={SettingCenter}/>
         <Route exact path="/user/:user" component={UserCenter}/>
-    </switch>
+    </Switch>
 
 )
 

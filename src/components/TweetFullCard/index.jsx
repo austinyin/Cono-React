@@ -143,7 +143,7 @@ class TweetFullCard extends React.Component {
 }
 
 TweetFullCard.contextTypes = {
-    TweetFullCardType: PropTypes.string.isRequired,
+    TweetFullCardType: PropTypes.number.isRequired,
 };
 
 

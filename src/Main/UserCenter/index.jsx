@@ -225,9 +225,9 @@ class UserCenter extends React.Component {
                     <TweetItemsWrapperTag className="row">
                         {tweetList.map((tweet) => {
                             return (
-                                <div className="col-4">
+                                <div className="col-4" key={tweet.id}>
                                     <TweetCardConTag>
-                                        <TweetCard key={tweet.id} tweet={tweet}/>
+                                        <TweetCard  tweet={tweet}/>
                                     </TweetCardConTag>
                                 </div>
                             )

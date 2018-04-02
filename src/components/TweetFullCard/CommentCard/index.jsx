@@ -198,7 +198,7 @@ class CommentCard extends React.Component {
 }
 
 CommentCard.contextTypes = {
-    TweetFullCardType: PropTypes.string.isRequired,
+    TweetFullCardType: PropTypes.number.isRequired,
 }
 
 export default withRouter(CommentCard)

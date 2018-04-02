@@ -30,7 +30,7 @@ class HomeRightBar extends React.Component {
                     </li>
                     {snapshotUserList.map((user, k) => {
                         return (loginUser.id!==user.id)&&(
-                            <li className="r-bar-recom">
+                            <li className="r-bar-recom" key={user.id}>
                                 <SimpleUserCard
                                     imgWidth="50px"
                                     imgHeight="50px"

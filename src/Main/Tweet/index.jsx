@@ -64,7 +64,7 @@ class Tweet extends React.Component {
 }
 
 Tweet.childContextTypes = {
-    TweetFullCardType: PropTypes.string,
+    TweetFullCardType: PropTypes.number,
 }
 
 

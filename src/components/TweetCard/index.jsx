@@ -7,6 +7,7 @@ import ScrollRelationHOC from "../../shared/HOC/ScrollRelationHOC";
 import connect from "react-redux/es/connect/connect";
 import {PositionIconTag, IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
 import {TweetCardTag, TweetTypeIcon} from "src/components/TweetCard/style";
+import RelationHOC from "src/shared/HOC/RelationHOC";
 
 
 class TweetCard extends React.Component {
@@ -54,14 +55,14 @@ class TweetCard extends React.Component {
                             <div className="cover-middle-left">
                                 <PositionIconTag
                                     type={IconTypeToPosition.like.type}
-                                    fill={true}
+                                    fill={true.toString()}
                                 />
                                 <span className="tag-label">{tweet.total_like}</span>
                             </div>
                             <div className="cover-middle-right">
                                 <PositionIconTag
                                     type={IconTypeToPosition.answer.type}
-                                    fill={true}
+                                    fill={true.toString()}
                                 />
                                 <span className="tag-label">{tweet.comments.length||0}</span>
                             </div>
@@ -84,7 +85,7 @@ function mapDispatchToProps(dispatch) {
 export default withRouter(connect(
     null,
     mapDispatchToProps
-)(ScrollRelationHOC(TweetCard)))
+)(RelationHOC(TweetCard)))
 
 
 

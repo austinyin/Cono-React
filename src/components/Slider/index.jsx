@@ -101,7 +101,7 @@ class Slider extends React.Component {
 }
 
 Slider.contextTypes = {
-    TweetFullCardType: PropTypes.string.isRequired,
+    TweetFullCardType: PropTypes.number.isRequired,
 }
 
 export default Slider

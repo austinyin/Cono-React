@@ -95,6 +95,8 @@ class Home extends Component {
 
     render() {
         const {tweetList,loginUser} = this.props;
+        console.log('tweetList',tweetList);
+        console.log('loginUser',loginUser);
 
         return (
             <HomeTag id="home" ref="home">
@@ -124,7 +126,7 @@ class Home extends Component {
 
 
 Home.childContextTypes = {
-    TweetFullCardType: PropTypes.string,
+    TweetFullCardType: PropTypes.number,
 }
 
 

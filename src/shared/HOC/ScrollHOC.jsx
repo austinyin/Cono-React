@@ -30,6 +30,7 @@ const ScrollHOC = (WrappedComponent) => {
             window.addEventListener('scroll', this.handleScroll);
             window.addEventListener('resize', this.onWindowResize);
             this.guidElem = this.refs.scrollGuide;
+            console.log('this.refs.scrollGuide',this.refs);
             this.documentElem = document.documentElement
         }
 
@@ -49,7 +50,6 @@ const ScrollHOC = (WrappedComponent) => {
         }
     }
 };
-
 
 
 export default ScrollHOC;

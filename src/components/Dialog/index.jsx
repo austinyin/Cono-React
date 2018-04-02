@@ -209,7 +209,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 Dialog.childContextTypes = {
-    TweetFullCardType: PropTypes.string,
+    TweetFullCardType: PropTypes.number,
 }
 
 
