@@ -1,5 +1,6 @@
 import {post} from "src/shared/js/axiosUtil";
 import { Cookies } from 'react-cookie';
+import {SERVER_ROOT} from "src/shared/api";
 
 
 /**
@@ -7,14 +8,14 @@ import { Cookies } from 'react-cookie';
  * return data is like {type:message,user:user}
  */
 export function registApi(data) {
-    let url = "http://127.0.0.1:8000/api/account/regist";
+    let url = `${SERVER_ROOT}/api/account/regist`;
     return post(url, JSON.stringify(data)).then(ret => {
         return ret.data
     })
 }
 
 export function loginApi(data) {
-    let url = "http://127.0.0.1:8000/api/account/login";
+    let url = `${SERVER_ROOT}/api/account/login`;
 
     return post(url, JSON.stringify(data)).then(ret => {
         return ret.data
@@ -22,7 +23,7 @@ export function loginApi(data) {
 }
 
 export function loginCheckApi() {
-    let url = "http://127.0.0.1:8000/api/account/loginCheck";
+    let url = `${SERVER_ROOT}/api/account/loginCheck`;
     return post(url).then(ret => {
         return ret.data
     })
@@ -32,7 +33,7 @@ export function loginCheckApi() {
 
 
 export function logoutApi() {
-    let url = "http://127.0.0.1:8000/api/account/logout";
+    let url = `${SERVER_ROOT}/api/account/logout`;
     return post(url).then(ret => {
         return ret.data
     })
@@ -40,21 +41,21 @@ export function logoutApi() {
 
 
 export function changePasswordApi(data) {
-    let url = "http://127.0.0.1:8000/api/account/change/password";
+    let url = `${SERVER_ROOT}/api/account/change/password`;
     return post(url,data).then(ret => {
         return ret.data
     })
 }
 
 export function changeSelfInfoApi(data) {
-    let url = "http://127.0.0.1:8000/api/account/change";
+    let url = `${SERVER_ROOT}/api/account/change`;
     return post(url,data).then(ret => {
         return ret.data
     })
 }
 
 export function changeAvatarApi(data) {
-    let url = "http://127.0.0.1:8000/api/account/change/avatar";
+    let url = `${SERVER_ROOT}/api/account/change/avatar`;
     return post(url,data).then(ret => {
         return ret.data
     })

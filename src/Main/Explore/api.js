@@ -17,6 +17,6 @@ export function getRecommendUserApi() {
 
 
 export function snapshotUserGetApi() {
-    let url = "http://127.0.0.1:8000/api/user/snapshotList";
+    let url = `${SERVER_ROOT}/api/user/snapshotList`;
     return get(url).then( ret => ret.data)
 }

@@ -10,7 +10,7 @@ export function getTweetFullCard(id) {
 
 
 export function transferUploadApi(formData) {
-    let url = "http://127.0.0.1:8000/api/upload/transfer";
+    let url = `${SERVER_ROOT}/api/upload/transfer`;
     const config = {
         headers:{'Content-Type':'multipart/form-data'}
     };
@@ -20,7 +20,7 @@ export function transferUploadApi(formData) {
 }
 
 export function pubTransferImageRemoveApi(id) {
-    let url = "http://127.0.0.1:8000/api/upload/transfer/imageRemove";
+    let url = `${SERVER_ROOT}/api/upload/transfer/imageRemove`;
     const data = {
         id
     };
@@ -30,7 +30,7 @@ export function pubTransferImageRemoveApi(id) {
 }
 
 export function pubTransferResetApi() {
-    let url = "http://127.0.0.1:8000/api/upload/transfer/reset";
+    let url = `${SERVER_ROOT}/api/upload/transfer/reset`;
     return post(url).then( ret => {
         return ret.data
     }).catch(error => {
@@ -40,7 +40,7 @@ export function pubTransferResetApi() {
 
 
 export function pubApi(data) {
-    let url = "http://127.0.0.1:8000/api/upload/commit";
+    let url = `${SERVER_ROOT}/api/upload/commit`;
     return post(url, data).then( ret => {
         return ret.data
     })

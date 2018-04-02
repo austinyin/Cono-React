@@ -57,7 +57,7 @@ class Slider extends React.Component {
     render() {
         const type = this.context.TweetFullCardType;
         const images = this.props.images
-        const nowImage = images.length>0? images[this.state.imageIndex].image : "http://127.0.0.1:8000/media/%E6%8E%A8%E6%96%87%E5%9B%BE%E7%89%87/2018/02/17/tweet.jpg"
+        const nowImage = images.length>0? images[this.state.imageIndex].image : `${SERVER_ROOT}/media/%E6%8E%A8%E6%96%87%E5%9B%BE%E7%89%87/2018/02/17/tweet.jpg`
         const {directIcons} = this.state
         return(
             <div id="slider">

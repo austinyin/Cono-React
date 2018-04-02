@@ -34,7 +34,7 @@ export function tweetCommentNextPageApi(data) {
  */
 
 export function tweetRelationsSetApi(data) {
-    let url = "http://127.0.0.1:8000/api/relation/tweet";
+    let url = `${SERVER_ROOT}/api/relation/tweet`;
     return post(url, data).then(ret => {
         return ret.data
     })
@@ -46,7 +46,7 @@ export function tweetRelationsSetApi(data) {
 
 export function personRelationsSetApi(data) {
 
-    let url = "http://127.0.0.1:8000/api/relation/person";
+    let url = `${SERVER_ROOT}/api/relation/person`;
     return post(url, data).then(ret => {
         return ret.data
     })
