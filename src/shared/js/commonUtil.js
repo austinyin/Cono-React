@@ -66,5 +66,6 @@ export function pubTimeCalc (dateObj) {
     else {
         timeSpanStr = year + '年' + month + '月' + day + '日 ' + hour + ':' + minute;
     }
+    console.log('timeSpanStr',timeSpanStr);
     return timeSpanStr;
 }
