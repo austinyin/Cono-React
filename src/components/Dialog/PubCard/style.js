@@ -37,8 +37,11 @@ export const PubCardTag = styled.div`
 
   // 媒体展示li
     .pub-medias{
-      margin-left: -1px;
-      margin-right: -1px;
+        max-height: 600px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-left: -1px;
+        margin-right: -1px;
     }
     .pub-elem{
       display: block;

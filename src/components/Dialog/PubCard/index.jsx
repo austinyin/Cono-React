@@ -79,6 +79,7 @@ class PubCard extends Component {
 
     render() {
         const pubCardObj = this.props.pubCardObj
+        console.log('pubCardObj',pubCardObj);
         const images = pubCardObj.transferObj.images
         const videoObj = pubCardObj.transferObj.video
 
@@ -86,17 +87,19 @@ class PubCard extends Component {
         let MediaElem = null
         if (images && images.length > 0) {
             MediaElem = images.map((v, k) => {
-                return <li key={k.id} className="pub-elem">
-                    <img id={v.id} className="pub-display-image"
-                         src={v.image.includes('http') ? v.image : `${SERVER_ROOT}${v.image}`} alt=""/>
-                    <ButtonIconTag
-                        onClick={this.tranferRemove}
-                        className="image-delete-icon"
-                        width="21px"
-                        height="21px"
-                        bacImage={uploadRemoveIcon}
-                    />
-                </li>
+                return (
+                    <li key={v} className="pub-elem">
+                        <img id={v.id} className="pub-display-image"
+                             src={v.image.includes('http') ? v.image : `${SERVER_ROOT}${v.image}`} alt=""/>
+                        <ButtonIconTag
+                            onClick={this.tranferRemove}
+                            className="image-delete-icon"
+                            width="21px"
+                            height="21px"
+                            bacImage={uploadRemoveIcon}
+                        />
+                    </li>
+                )
             })
         }
         else {
