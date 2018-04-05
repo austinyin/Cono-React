@@ -1,22 +1,27 @@
+/**
+ * Tweet关系高级组件
+ * 包括tweet收藏，评论添加和删除和获取更多评论
+ */
 import React from 'react'
 import {bindActionCreators, compose} from "redux";
 import * as RelationActions from "src/extra/Relation/actions";
 import connect from "react-redux/es/connect/connect";
-import {RefreshState, RefreshType} from "src/extra/Relation/model";
+import {RefreshState} from "src/extra/Relation/model";
 import {
-    tweetCommentLeaveApi, tweetCommentNextPageApi, tweetCommentRemoveApi,
+    tweetCommentLeaveApi,
+    tweetCommentNextPageApi,
+    tweetCommentRemoveApi,
     tweetRelationsSetApi
 } from "src/extra/Relation/api";
-import {tweetCommentLeave} from "src/extra/Relation/actions";
 
 const TweetRelationHOC = (WrappedComponent) => {
     return class TweetRelationHOC extends React.Component {
         constructor(props) {
             super(props);
-            this.getMoreCommentFunc= this.getMoreCommentFunc.bind(this);
-            this.tweetRelationFunc= this.tweetRelationFunc.bind(this);
-            this.commentLeaveFunc= this.commentLeaveFunc.bind(this);
-            this.commentRemoveFunc= this.commentRemoveFunc.bind(this);
+            this.getMoreCommentFunc = this.getMoreCommentFunc.bind(this);
+            this.tweetRelationFunc = this.tweetRelationFunc.bind(this);
+            this.commentLeaveFunc = this.commentLeaveFunc.bind(this);
+            this.commentRemoveFunc = this.commentRemoveFunc.bind(this);
             this.state = {
                 refreshState: RefreshState.calm,
                 tweet: null,
@@ -28,18 +33,18 @@ const TweetRelationHOC = (WrappedComponent) => {
         }
 
 
-        getMoreCommentFunc(){
+        getMoreCommentFunc() {
             const {nowPage, comments} = this.state.comment
             const data = {
-                tweetId:this.props.tweetData.id,
-                page: nowPage+1,
+                tweetId: this.props.tweetData.id,
+                page: nowPage + 1,
             }
             tweetCommentNextPageApi(data).then(data => {
-                comments.data = [...comments.data,...data.data]
+                comments.data = [...comments.data, ...data.data]
                 comments.hasNext = data.hasNext
                 this.setState({
-                    comment:{
-                        nowPage: nowPage +1,
+                    comment: {
+                        nowPage: nowPage + 1,
                         comments: comments
                     }
                 })
@@ -75,9 +80,9 @@ const TweetRelationHOC = (WrappedComponent) => {
             }, () => {
                 tweetCommentLeaveApi(data).then(data => {
                     const {tweet, comment} = data
-                    const stateComment = Object.assign({},this.state.comment)
+                    const stateComment = Object.assign({}, this.state.comment)
                     stateComment.nowPage += 1;
-                    stateComment.comments.data = [...stateComment.comments.data,comment]
+                    stateComment.comments.data = [...stateComment.comments.data, comment]
                     this.setState({
                         refreshState: RefreshState.calm,
                         tweet: tweet,
@@ -91,9 +96,9 @@ const TweetRelationHOC = (WrappedComponent) => {
         commentRemoveFunc(data) {
             this.setState({
                 refreshState: RefreshState.agitate
-            }, () =>{
-                tweetCommentRemoveApi(data).then(data =>{
-                    const stateComment = Object.assign({},this.state.comment)
+            }, () => {
+                tweetCommentRemoveApi(data).then(data => {
+                    const stateComment = Object.assign({}, this.state.comment)
                     stateComment.comments.data = stateComment.comments.data.filter((item) => {
                         return item.id !== data.commentId
                     });
@@ -172,7 +177,6 @@ const TweetRelationHOC = (WrappedComponent) => {
         }
     }
 };
-
 
 
 function mapStateToProps(state) {

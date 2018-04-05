@@ -1,9 +1,12 @@
+/**
+ * 用户关系设置高级组件
+ * 代办: 改名UserRelationHOC
+ */
 import React from 'react'
-import {bindActionCreators, compose} from "redux";
-import * as RelationActions from "src/extra/Relation/actions";
+import {compose} from "redux";
 import connect from "react-redux/es/connect/connect";
-import {RefreshState, RefreshType} from "src/extra/Relation/model";
-import {personRelationsSetApi, tweetRelationsSetApi} from "src/extra/Relation/api";
+import {RefreshState} from "src/extra/Relation/model";
+import {personRelationsSetApi} from "src/extra/Relation/api";
 
 const RelationHOC = (WrappedComponent) => {
     return class RelationHOC extends React.Component {
@@ -17,8 +20,9 @@ const RelationHOC = (WrappedComponent) => {
         }
 
         /**
-         *
-         * @param data(targetId,type)
+         * 用户follow处理
+         * 通过设置RefreshState 进行函数节流
+         * @param data(targetId: number,type: string)
          */
         followHandle(data) {
             this.setState({

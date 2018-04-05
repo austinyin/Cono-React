@@ -1,7 +1,12 @@
+/**
+ * 常用工具封装
+ */
+
 export function regexParseId(idStr){
     return idStr.replace(/[^0-9]/ig,"");
 }
 
+// 将用户对象列表反序列化为用户名列表
 export function getMultiSelectValue(list) {
     const retList = []
     list.map((v, k) => {
@@ -10,7 +15,7 @@ export function getMultiSelectValue(list) {
     return retList
 }
 
-
+// 获取cookie
 export function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -27,6 +32,10 @@ export function getCookie(name) {
     return cookieValue;
 }
 
+/**
+ * @param dateObj date对象
+ * @returns timeSpanStr 距离现在时间的序列格式
+ */
 export function pubTimeCalc (dateObj) {
     var timespan = dateObj.getTime() / 1000
     var dateTime = new Date(timespan * 1000);

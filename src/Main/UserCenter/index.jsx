@@ -1,3 +1,8 @@
+/**
+ * 用户中心
+ * 显示用户的基本信息和发布的推文
+ * 根据是否是本人展示不同的状态
+ */
 import React from 'react'
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
@@ -94,13 +99,13 @@ class UserCenter extends React.Component {
         this.props.logout({history: this.props.history})
     }
 
-    changeTweetsClickHandle(e){
+    changeTweetsClickHandle(e) {
         const className = e.target.className
         let nowTweetType = null
-        if(className.includes('pub')){
+        if (className.includes('pub')) {
             nowTweetType = CenterChooseType.publish
         }
-        if(className.includes('collect')){
+        if (className.includes('collect')) {
             nowTweetType = CenterChooseType.collect
         }
         this.setState({
@@ -132,15 +137,13 @@ class UserCenter extends React.Component {
         })
     }
 
-    listUpdate(tweetType=null) {
+    listUpdate(tweetType = null) {
         const type = tweetType || this.state.nowTweetType
         if (!this.props[ChooseTypeValueToIsEmptyKey[type]]) {
             this.listUpdating = true;
-            this.props.tweetNextPage({username: this.state.username,tweetType:type})
+            this.props.tweetNextPage({username: this.state.username, tweetType: type})
         }
     }
-
-
 
 
     render() {
@@ -179,10 +182,10 @@ class UserCenter extends React.Component {
                                                 <span>
                                                     <CommonButtonTag
                                                         onClick={this.followClickHandle}
-                                                        style={{verticalAlign:"middle"}}
+                                                        style={{verticalAlign: "middle"}}
                                                         active={relations.is_follow}
                                                     >
-                                                        {relations.is_follow?"已关注":"关注"}
+                                                        {relations.is_follow ? "已关注" : "关注"}
                                                      </CommonButtonTag>
                                                 </span>
                                             </span>
@@ -194,28 +197,29 @@ class UserCenter extends React.Component {
                                 <span>
                                     <span className="bolder-font">{user.tweet_total}</span> 帖子
                                 </span>
-                                <span>
+                                    <span>
                                     <span className="bolder-font">{user.relations_obj.followerList.length}</span> 关注者
                                 </span>
-                                <span>
+                                    <span>
                                     正在关注 <span className="bolder-font">{user.relations_obj.friendList.length}
                                 </span>
                                 </span>
                                 </div>
                                 <div className="right-bottom">
                                     <p>{user.self_intro}</p>
-                                    <a onClick={() => location.href=`http://${user.web_page}`}>{user.web_page}</a>
+                                    <a onClick={() => location.href = `http://${user.web_page}`}>{user.web_page}</a>
                                 </div>
                             </div>
                         </UserCenterHeaderTag>
                     </div>
-                    {user.isSelf&&(
+                    {user.isSelf && (
                         <ChooseTag activeType={this.state.nowTweetType}>
                             <div className="choose-main">
                             <span onClick={this.changeTweetsClickHandle} className="choose-item choose-item-pub">
                                 帖子
                             </span>
-                                <span onClick={this.changeTweetsClickHandle} className="choose-item choose-item-collect">
+                                <span onClick={this.changeTweetsClickHandle}
+                                      className="choose-item choose-item-collect">
                                 收藏夹
                             </span>
                             </div>
@@ -227,7 +231,7 @@ class UserCenter extends React.Component {
                             return (
                                 <div className="col-4" key={tweet.id}>
                                     <TweetCardConTag>
-                                        <TweetCard  tweet={tweet}/>
+                                        <TweetCard tweet={tweet}/>
                                     </TweetCardConTag>
                                 </div>
                             )

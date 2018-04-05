@@ -1,7 +1,9 @@
+/**
+ * 返回用户的朋友列表
+ */
 import React, {Component} from 'react'
 import connect from "react-redux/es/connect/connect";
 import {compose} from "redux";
-
 
 
 const UserMultiSelectHOC = (WrappedComponent) => {
@@ -26,11 +28,9 @@ const UserMultiSelectHOC = (WrappedComponent) => {
         }
 
 
-
-
         render() {
             return (
-                <WrappedComponent ref={x => this.child=x} {...this.props} itemList={this.state.friendList}/>
+                <WrappedComponent ref={elem => this.child=elem} {...this.props} itemList={this.state.friendList}/>
             )
         }
     }

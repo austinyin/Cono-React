@@ -1,6 +1,8 @@
+/**
+ * 窗口滚动高级组件
+ * 用于触底刷新
+ */
 import React, {Component} from 'react'
-
-
 
 const ScrollHOC = (WrappedComponent) => {
     return class ScrollHOC extends Component {
@@ -30,7 +32,6 @@ const ScrollHOC = (WrappedComponent) => {
             window.addEventListener('scroll', this.handleScroll);
             window.addEventListener('resize', this.onWindowResize);
             this.guidElem = this.refs.scrollGuide;
-            console.log('this.refs.scrollGuide',this.refs);
             this.documentElem = document.documentElement
         }
 

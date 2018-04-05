@@ -1,3 +1,8 @@
+/**
+ * 推文发布卡片
+ * 媒体,点击左侧发布图片,右侧发布视频
+ * 可以添加描述和圈出好友
+ */
 import React, {Component} from 'react'
 
 import {PubInputClassToRefs} from "src/components/Dialog/PubCard/model";
@@ -14,8 +19,7 @@ import UserMultiSelectHOC from "src/shared/HOC/UserMultiSelectHOC";
 import {SERVER_ROOT} from "src/shared/api";
 
 
-
-const FriendMultiSelect =  UserMultiSelectHOC(MultiSelect)
+const FriendMultiSelect = UserMultiSelectHOC(MultiSelect)
 
 
 class PubCard extends Component {
@@ -44,7 +48,7 @@ class PubCard extends Component {
         // 根据对应关系找到input并打开。
         this.setState({
             uploadType: eventClass === 'pub-main-image' ? MediaType.image : MediaType.video,
-        },() => {
+        }, () => {
             this.refs[PubInputClassToRefs[eventClass]].click();
         })
     }
@@ -79,7 +83,7 @@ class PubCard extends Component {
 
     render() {
         const pubCardObj = this.props.pubCardObj
-        console.log('pubCardObj',pubCardObj);
+        console.log('pubCardObj', pubCardObj);
         const images = pubCardObj.transferObj.images
         const videoObj = pubCardObj.transferObj.video
 
@@ -113,83 +117,85 @@ class PubCard extends Component {
             </li>
         }
 
-        return pubCardObj && pubCardObj.state &&(
-                <PubCardTag id="pubCard">
-                    <header className="header">在这里发布</header>
-                    <div className="pub-main">
-                        {/*有文件后则跳转可编辑状态*/}
-                        {pubCardObj.state === UploadState.before ?
-                            <div className="pub-selections">
-                                <a onClick={this.upFileHandl} className="pub-main-image">
-                                    <div className="pub-icon-con"><span className="pub-icon-image"/></div>
-                                    <div>
-                                        <span>上传图片</span>
+        return pubCardObj && pubCardObj.state && (
+            <PubCardTag id="pubCard">
+                <header className="header">在这里发布</header>
+                <div className="pub-main">
+                    {/*有文件后则跳转可编辑状态*/}
+                    {pubCardObj.state === UploadState.before ?
+                        <div className="pub-selections">
+                            <a onClick={this.upFileHandl} className="pub-main-image">
+                                <div className="pub-icon-con"><span className="pub-icon-image"/></div>
+                                <div>
+                                    <span>上传图片</span>
+                                </div>
+                            </a>
+                            <a onClick={this.upFileHandl} className="pub-main-video">
+                                <div className="pub-icon-con"><span className="pub-icon-video"/></div>
+                                <div>
+                                    <span>上传视频</span>
+                                </div>
+                            </a>
+                            <form className="pub-form" ref="pubForm" action="">
+                                <input ref="imageInput" onChange={this.fileInputChangeHandl} className="image-input"
+                                       type="file"/>
+                                <input ref="videoInput" onChange={this.fileInputChangeHandl} className="video-input"
+                                       type="file"/>
+                            </form>
+
+                        </div>
+                        : <div className="pub-display">
+                            <div className="pub-medias">
+                                <ul>
+                                    {MediaElem}
+                                </ul>
+                            </div>
+                            <div>
+                                {/*继续上传按钮只有在上传图片时显示*/}
+                                {this.state.uploadType === MediaType.image && (
+                                    <div className="add-image-input-wrapper"
+                                         onClick={() => this.refs.addImageInput.click()}>
+                                        <span>添加图片</span>
+                                        <input ref="addImageInput" className="add-image-input"
+                                               onChange={this.fileInputChangeHandl} type="file"/>
                                     </div>
-                                </a>
-                                <a onClick={this.upFileHandl} className="pub-main-video">
-                                    <div className="pub-icon-con"><span className="pub-icon-video"/></div>
-                                    <div>
-                                        <span>上传视频</span>
-                                    </div>
-                                </a>
-                                <form className="pub-form" ref="pubForm" action="">
-                                    <input ref="imageInput" onChange={this.fileInputChangeHandl} className="image-input"
-                                           type="file"/>
-                                    <input ref="videoInput" onChange={this.fileInputChangeHandl} className="video-input"
-                                           type="file"/>
-                                </form>
+                                )}
 
                             </div>
-                            : <div className="pub-display">
-                                <div className="pub-medias">
-                                    <ul>
-                                        {MediaElem}
-                                    </ul>
-                                </div>
-                                <div>
-                                    {/*继续上传按钮只有在上传图片时显示*/}
-                                    {this.state.uploadType === MediaType.image && (
-                                        <div className="add-image-input-wrapper" onClick={() => this.refs.addImageInput.click()}>
-                                            <span>添加图片</span>
-                                            <input ref="addImageInput" className="add-image-input" onChange={this.fileInputChangeHandl} type="file"/>
-                                        </div>
-                                    )}
-
-                                </div>
-                                <div className="pub-describe">
+                            <div className="pub-describe">
                                 <textarea
                                     ref="pubTextInput"
                                     className="textArea"
                                     style={{display: this.state.showSign && 'none'}}
                                     placeholder="请在这里输入文字"
                                 />
-                                    <div style={{display: !this.state.showSign && 'none'}}>
-                                        <FriendMultiSelect
-                                            ref={x => this.multiSelect=x}
-                                            selectedList={this.selectedList}
-                                        />
-                                    </div>
-
-                                    <SignIcon
-                                        className="sign-icon"
-                                        onClick={this.signHandle}
-                                        active={this.state.showSign}
+                                <div style={{display: !this.state.showSign && 'none'}}>
+                                    <FriendMultiSelect
+                                        ref={x => this.multiSelect = x}
+                                        selectedList={this.selectedList}
                                     />
-
                                 </div>
-                            </div>
-                        }
 
+                                <SignIcon
+                                    className="sign-icon"
+                                    onClick={this.signHandle}
+                                    active={this.state.showSign}
+                                />
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <footer className="footer">
+                    <div className="footer-left-button-con">
+                        <button onClick={this.props.closeFunc}>关闭</button>
                     </div>
-                    <footer className="footer">
-                        <div className="footer-left-button-con">
-                            <button onClick={this.props.closeFunc}>关闭</button>
-                        </div>
-                        <div className="footer-right-button-con">
-                            <button onClick={this.uploadCommitHandl}>发帖</button>
-                        </div>
-                    </footer>
-                </PubCardTag>
+                    <div className="footer-right-button-con">
+                        <button onClick={this.uploadCommitHandl}>发帖</button>
+                    </div>
+                </footer>
+            </PubCardTag>
         )
     }
 }

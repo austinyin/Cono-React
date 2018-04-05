@@ -1,3 +1,6 @@
+/**
+ *
+ */
 import React from 'react'
 import {
     AvatarTag,
@@ -12,7 +15,6 @@ import {logout as logoutAction} from "src/extra/Account/actions";
 import withRouter from "react-router-dom/es/withRouter";
 import {editForm} from "src/Main/SettingCenter/model";
 import {connect} from "react-redux";
-import {changeSelfInfoApi} from "src/extra/Account/api";
 import AvatarSetHOC from "../../../shared/HOC/AvatarSetHOC";
 
 
@@ -36,7 +38,7 @@ class Edit extends React.Component {
     }
 
     render() {
-        const loginUser = this.props.HOCloginUser|| this.props.loginUser
+        const loginUser = this.props.HOCloginUser || this.props.loginUser
         return (
             <div id="edit" className="container-fluid">
                 <SettingRightWrapperTag>
@@ -46,7 +48,7 @@ class Edit extends React.Component {
                         </aside>
                         <div className="row-right col-8">
                             <h2>{loginUser.username}</h2>
-                            {/*AvatarSetHOC中的头像设置form*/}
+                            {/*AvatarSetHOC 中的头像设置form*/}
                             {this.props.children}
                         </div>
                     </SettingRightFirstRowTag>

@@ -1,3 +1,6 @@
+/**
+ * 朋友推荐页
+ */
 import React from 'react'
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
@@ -5,9 +8,7 @@ import {connect} from "react-redux";
 import SimpleUserCard from "src/components/SimpleUserCard";
 
 import * as ExploreActions from "src/Main/Explore/action";
-import {CommonWrapperTag} from "src/shared/styleJs/common/componentStyle";
 import {ExplorePeopleTag, ExplorePeopleWrapperTag, UserCardWrapper} from "./style";
-
 
 class ExlorePeople extends React.Component {
     constructor(props, context) {
@@ -21,7 +22,6 @@ class ExlorePeople extends React.Component {
         // 初始数据
         this.props.userGet();
     }
-
 
 
     componentDidMount() {
@@ -47,7 +47,7 @@ class ExlorePeople extends React.Component {
 
 
     render() {
-        const {loginUser,userList} = this.props
+        const {loginUser, userList} = this.props
         return (
             <ExplorePeopleWrapperTag>
                 <ExplorePeopleTag id="exlorePeople" className="container-fluid">
@@ -57,7 +57,7 @@ class ExlorePeople extends React.Component {
                     <div className="recommends">
                         <ul>
                             {userList.map((user) => {
-                                return (loginUser.id!==user.id)&&(
+                                return (loginUser.id !== user.id) && (
                                     <UserCardWrapper>
                                         <div>
                                             <SimpleUserCard followButton={true}
@@ -68,15 +68,13 @@ class ExlorePeople extends React.Component {
                                             />
                                         </div>
                                     </UserCardWrapper>
-                                    )
+                                )
 
                             })}
                         </ul>
                     </div>
                 </ExplorePeopleTag>
             </ExplorePeopleWrapperTag>
-
-
         )
     }
 }

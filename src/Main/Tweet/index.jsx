@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 import React from 'react'
 
 import withRouter from "react-router-dom/es/withRouter";
@@ -9,8 +12,8 @@ import PropTypes from 'prop-types';
 
 
 class Tweet extends React.Component {
-    constructor(props,context) {
-        super(props,context);
+    constructor(props, context) {
+        super(props, context);
         this.onWindowResize = this.onWindowResize.bind(this);
         this.state = {
             data: null,
@@ -49,7 +52,7 @@ class Tweet extends React.Component {
 
 
     render() {
-        const {data,type} = this.state
+        const {data, type} = this.state
         return (
             <TweetTag>
                 {data && (

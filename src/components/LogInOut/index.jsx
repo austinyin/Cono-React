@@ -15,10 +15,9 @@ class LogInOut extends Component {
         this.valueChangeTimers = {}; // 包含输入框函数节流定时器。
         this.canSubmits = {};  // 包含所有输入框是否可以提交状态
         this.state = {
-            form: Object.assign({},AccountForm),
+            form: Object.assign({}, AccountForm),
         }
     }
-
 
 
     /**
@@ -91,9 +90,10 @@ class LogInOut extends Component {
                         />
                     </div>
                     {formType === FormType.login && (
-                        <form id="loginForm" >
+                        <form id="loginForm">
                             <input type="text" onChange={this.valueChangeHandle} placeholder="用户名" id="loginUsername"/>
-                            <input type="password" onChange={this.valueChangeHandle}placeholder="密码"  id="loginPassword"/>
+                            <input type="password" onChange={this.valueChangeHandle} placeholder="密码"
+                                   id="loginPassword"/>
                             <div>
                                 <button onClick={this.logInOutHandle}>登陆</button>
                             </div>
@@ -105,10 +105,12 @@ class LogInOut extends Component {
                             <div>
                                 <button>使用微信登陆</button>
                             </div>
-                            <input type="text" onChange={this.valueChangeHandle} placeholder="手机或邮箱" id="registPhoneOrEmail"/>
+                            <input type="text" onChange={this.valueChangeHandle} placeholder="手机或邮箱"
+                                   id="registPhoneOrEmail"/>
                             <input type="text" onChange={this.valueChangeHandle} placeholder="姓名" id="registFullname"/>
                             <input type="text" onChange={this.valueChangeHandle} placeholder="用户名" id="registUsername"/>
-                            <input type="password" onChange={this.valueChangeHandle} placeholder="密码" id="registPassword"/>
+                            <input type="password" onChange={this.valueChangeHandle} placeholder="密码"
+                                   id="registPassword"/>
                             <div>
                                 <button onClick={this.logInOutHandle}>注册</button>
                             </div>

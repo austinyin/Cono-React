@@ -18,11 +18,12 @@ import {HomeTag} from "src/Main/Home/style";
 
 
 class Home extends Component {
-    constructor(props,context) {
-        super(props,context);
+    constructor(props, context) {
+        super(props, context);
         this.resizeScrollTopReciever = this.resizeScrollTopReciever.bind(this);
-        this.listUpdating = false;
+        this.listUpdating = false; // 函数节流和保证每次刷新的正确完成
         this.state = {
+            // rightBar组件的样式,滑动到某一距离则显示固定定位
             rightBarStyle: {}
         }
     }
@@ -34,9 +35,9 @@ class Home extends Component {
 
     componentDidMount() {
         /**
-         * 如果登陆了则获取snapshot内容
+         * 如果已登陆则获取snapshot内容
          */
-        window.addEventListener('resize',this.onWindowResize)
+        window.addEventListener('resize', this.onWindowResize)
         this.props.snapshotUserGet();
         this.listUpdate();
     }
@@ -54,34 +55,34 @@ class Home extends Component {
     }
 
     listUpdate() {
-        if(!this.props.isEmpty){
+        if (!this.props.isEmpty) {
             this.listUpdating = true;
             this.props.tweetNextPage()
         }
     }
 
-    resizeScrollTopReciever(scrollTop){
+    resizeScrollTopReciever(scrollTop) {
         /**
          * 在滚动或者伸缩窗口时，都能保证rightBar的准确定位。
+         * 在顶部导航nav底部滚动到了 rightBar组件顶部位置时，将rightBar进行固定定位
          */
         const tweetConElem = this.refs.tweetCon
         const fixRight = tweetConElem.offsetWidth + tweetConElem.offsetLeft
         const fixTop = tweetConElem.offsetTop
         const NavHeight = 53
         let rightBarStyle = {}
-        if(scrollTop>fixTop - NavHeight){
+        if (scrollTop > (fixTop - NavHeight)) {
             rightBarStyle = {
                 position: "fixed",
                 left: fixRight,
                 top: `${NavHeight}px`,
-                maxWidth: tweetConElem.offsetWidth/2
+                maxWidth: tweetConElem.offsetWidth / 2
             }
         }
         this.setState({
-            rightBarStyle:rightBarStyle
+            rightBarStyle: rightBarStyle
         })
     }
-
 
 
     receiveDistance(distance) {
@@ -94,17 +95,17 @@ class Home extends Component {
     }
 
     render() {
-        const {tweetList,loginUser} = this.props;
-        console.log('tweetList',tweetList);
-        console.log('loginUser',loginUser);
+        const {tweetList, loginUser} = this.props;
 
         return (
             <HomeTag id="home" ref="home">
                 <div className="container-fluid ">
                     <div className="row main justify-content-center">
                         <div className="main-left-con col-12 col-md-8" ref="tweetCon">
+                            {/*暂时显示自己发布的内容*/}
                             {tweetList.map((data) => {
-                                return (loginUser.id!==data.user.id)&&<TweetFullCard tweetData={data} key={data.id}/>
+                                return  <TweetFullCard tweetData={data} key={data.id}/>
+                                // return (loginUser.id !== data.user.id) && <TweetFullCard tweetData={data} key={data.id}/>
                             })}
                         </div>
                         <div className="main-right-con col-md-4 d-none d-lg-flex ">
@@ -118,6 +119,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                {/*滚动刷新的路标*/}
                 {this.props.children}
             </HomeTag>
         )

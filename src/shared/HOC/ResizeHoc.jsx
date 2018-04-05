@@ -1,3 +1,7 @@
+/**
+ * window 尺寸改变监控高级组件
+ * 主要用于 为TweetFullCard 响应式状态显示提供对应的值
+ */
 import React, {Component} from 'react'
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
@@ -36,10 +40,6 @@ const ResizeHoc = (WrappedComponent) => {
             }
 
         }
-
-
-
-
 
         render() {
             return(

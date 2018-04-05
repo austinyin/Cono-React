@@ -1,3 +1,6 @@
+/**
+ * 用户信息设置高级组件
+ */
 import React, {Component} from 'react'
 import {bindActionCreators,compose} from "redux";
 import {changeAvatarApi, changePasswordApi, changeSelfInfoApi} from "../../extra/Account/api";
@@ -17,8 +20,10 @@ export const AvatarSetHOC = (WrappedComponent) => {
             }
         }
 
+        /**
+         * 改变用户头像
+         */
         onAvatarInputChange(e) {
-            // 新建formData, 传给父组件.
             if (e.target.value) {
                 const formData = new FormData();
                 formData.append('file', e.target.files[0]);
@@ -30,19 +35,29 @@ export const AvatarSetHOC = (WrappedComponent) => {
             }
         }
 
+        /**
+         * 改变用户信息
+         */
         changeSelfInfoHandle(form){
             changeSelfInfoApi(form).then(data => {
                 this.redirectAfterStateSet(data.user)
             })
         }
 
+
+        /**
+         * 改变用户密码
+         */
         changePasswordHandle(form){
             changePasswordApi(form).then(data => {
                 this.redirectAfterStateSet(data.user)
-
             })
         }
 
+
+        /**
+         * 用户信息改变后跳转页面。
+         */
         redirectAfterStateSet(user){
             if(user.hasOwnProperty('id')){
                 this.setState({loginUser: user},() =>{
@@ -59,7 +74,8 @@ export const AvatarSetHOC = (WrappedComponent) => {
                     {...this.props}
                     HOCloginUser={this.state.loginUser}
                     HOCchangeSelfInfoHandle={this.changeSelfInfoHandle}
-                    HOCchangePasswordHandle={this.changePasswordHandle}>
+                    HOCchangePasswordHandle={this.changePasswordHandle}
+                >
                     <AvatarSetFormTag>
                         <a className="avatar-set-button" onClick={() => this.avatarInput.click()}>点击修改头像</a>
                         <input type="file" ref={x => this.avatarInput = x} onChange={this.onAvatarInputChange}/>

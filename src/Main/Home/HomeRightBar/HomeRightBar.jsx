@@ -1,3 +1,7 @@
+/**
+ * 首页右边栏组件
+ * 展示好友snapShot
+ */
 import React from 'react'
 
 import './style.scss'
@@ -11,7 +15,7 @@ class HomeRightBar extends React.Component {
     }
 
     render() {
-        const {loginUser,snapshotUserList} = this.props
+        const {loginUser, snapshotUserList} = this.props
         return (
             <div id="homeRightBar">
                 <ul>
@@ -29,7 +33,7 @@ class HomeRightBar extends React.Component {
                         <a className="float-right"><span>全部播放</span></a>
                     </li>
                     {snapshotUserList.map((user, k) => {
-                        return (loginUser.id!==user.id)&&(
+                        return (loginUser.id !== user.id) && (
                             <li className="r-bar-recom" key={user.id}>
                                 <SimpleUserCard
                                     imgWidth="50px"
@@ -42,10 +46,7 @@ class HomeRightBar extends React.Component {
                             </li>
                         )
                     })}
-
                 </ul>
-
-
             </div>
 
         )

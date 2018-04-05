@@ -2,10 +2,8 @@ import {call, put, select} from 'redux-saga/effects'
 import {takeEvery} from 'redux-saga'
 
 import * as ExploreRecommendActionTypes from './constants'
-import {getRecommendTweetApi, getRecommendUserApi, snapshotUserGetApi} from "src/Main/Explore/api";
-import {searchGetApi} from "./api";
+import {getRecommendUserApi, snapshotUserGetApi} from "src/Main/Explore/api";
 import {getHomeTweets} from "../Home/api";
-import * as TweetListActionTypes from "../Home/constants";
 
 const getNowPageNum = state => state.Explore.nowPage;
 
@@ -16,8 +14,8 @@ function* recommendTweetNextPageSaga(action) {
      */
     try {
         const nowPage = yield select(getNowPageNum);
-        const ret = yield call(getHomeTweets, nowPage+1);
-        if(!ret.next) {
+        const ret = yield call(getHomeTweets, nowPage + 1);
+        if (!ret.next) {
             yield put({type: ExploreRecommendActionTypes.RECOMMEND_TWEETS_IS_EMPTY});
         }
 
@@ -51,8 +49,6 @@ function* snapshotUserGetSaga(action) {
         yield put({type: ExploreRecommendActionTypes.SNAPSHOT_USER_GET_FAILED, error});
     }
 }
-
-
 
 
 // 监听Explore页拉取推文的action

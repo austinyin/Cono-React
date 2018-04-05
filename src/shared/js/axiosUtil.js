@@ -1,3 +1,6 @@
+/**
+ * axios组件的封装
+ */
 import axios from 'axios'
 
 // 保证session前后一致

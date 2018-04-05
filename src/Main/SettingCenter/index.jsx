@@ -1,3 +1,7 @@
+/**
+ * 用户设置中心
+ * 用户头像更换,信息更改
+ */
 import React from 'react'
 
 import SettingCenterRouter from "src/Main/SettingCenter/router";
@@ -13,19 +17,19 @@ class SettingCenter extends React.Component {
         super(props, context);
         this.onLocationChange = this.onLocationChange.bind(this)
         this.state = {
-            settingElemList:settingElemList
+            settingElemList: settingElemList
         }
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.onLocationChange()
     }
 
-    onLocationChange(location=this.props.location){
+    onLocationChange(location = this.props.location) {
         const path = location.pathname
         const settingElemList = [...this.state.settingElemList]
         settingElemList.forEach(elem => {
-            if(path.includes(elem.link)){
+            if (path.includes(elem.link)) {
                 elem.active = true
                 return elem
             }
@@ -36,12 +40,12 @@ class SettingCenter extends React.Component {
             settingElemList
         })
     }
-    componentWillReceiveProps(nextProps){
-        if(this.props.location.pathname !== nextProps.location.pathname){
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.location.pathname !== nextProps.location.pathname) {
             this.onLocationChange(nextProps.location)
         }
     }
-
 
 
     render() {

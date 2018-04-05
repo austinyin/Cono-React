@@ -11,7 +11,6 @@ import MultiSelect from "src/components/MultiSelect";
 const MainRouter = () => (
     <Switch>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/test" component={MultiSelect}/>
         <Route exact path="/tweet/:id" component={Tweet}/>
         <Route exact path="/explore" component={Explore}/>
         <Route exact path="/explore/people" component={ExlorePeople}/>

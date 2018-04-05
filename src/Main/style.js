@@ -4,10 +4,9 @@ import {fixedTop} from "src/shared/styleJs/common/commonStyle";
 
 export const MainTag = styled.div`
 
-// 导航固定定位了，所以需要一个占位
+// 顶部导航固定定位时占位
 .nav-holder{
   height: 77px;
-  
 }
 
 .nav-con{
@@ -16,5 +15,5 @@ export const MainTag = styled.div`
     background: #fff;
     border-bottom: ${BorderStyles.commonBorder};
     width: 100%;
-    }
+}
 `

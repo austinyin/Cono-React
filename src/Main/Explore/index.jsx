@@ -1,3 +1,7 @@
+/**
+ * 发现页
+ * 包含tweet推荐和朋友推荐
+ */
 import React from 'react'
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
@@ -9,6 +13,7 @@ import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import Link from "react-router-dom/es/Link";
 import {CommonWrapperTag, TweetCardConTag, TweetItemsWrapperTag} from "src/shared/styleJs/common/componentStyle";
 import {ExploreTag} from "src/Main/Explore/style";
+
 class Explore extends React.Component {
     constructor(props) {
         super(props);
@@ -31,10 +36,8 @@ class Explore extends React.Component {
 
 
     init() {
-        // 初始两倍数据
         this.props.userGet();
         this.props.tweetNextPage();
-
     }
 
 
@@ -44,7 +47,7 @@ class Explore extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // 将state 与redux 同步
+        // 接受到了新数据则表示刷新完成
         if (this.props.tweetData !== nextProps.tweetData) {
             this.listUpdating = false;
         }
@@ -57,7 +60,7 @@ class Explore extends React.Component {
 
 
     render() {
-        const {userList,tweetList,loginUser} = this.props
+        const {userList, tweetList, loginUser} = this.props
 
         return (
             <CommonWrapperTag>
@@ -72,7 +75,7 @@ class Explore extends React.Component {
                         <div className="header-users-con row">
                             {userList.map((user, index) => {
                                 if (index < 3) {
-                                    return (loginUser.id!==user.id)&&(
+                                    return (loginUser.id !== user.id) && (
                                         <div className="user-card-con col-4">
                                             <SimpleUserCard
                                                 imgWidth="78px"
@@ -94,15 +97,15 @@ class Explore extends React.Component {
                             <span>探索</span>
                         </header>
                         <TweetItemsWrapperTag className="row">
-                                {tweetList.map((tweet) => {
-                                    return (loginUser.id!==tweet.user.id)&&(
-                                        <div className="col-4">
-                                            <TweetCardConTag>
-                                                <TweetCard tweet={tweet} key={tweet.id}/>
-                                            </TweetCardConTag>
-                                        </div>
-                                    )
-                                })}
+                            {tweetList.map((tweet) => {
+                                return (loginUser.id !== tweet.user.id) && (
+                                    <div className="col-4">
+                                        <TweetCardConTag>
+                                            <TweetCard tweet={tweet} key={tweet.id}/>
+                                        </TweetCardConTag>
+                                    </div>
+                                )
+                            })}
                         </TweetItemsWrapperTag>
                         {this.props.children}
                     </div>

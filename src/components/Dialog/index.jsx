@@ -1,3 +1,8 @@
+/**
+ * 弹窗组件
+ * 弹窗显示时锁定背景
+ * 内容根据reducer中的dialogObj设置
+ */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import {bindActionCreators} from "redux";
@@ -37,18 +42,18 @@ class Dialog extends Component {
         // 清空列表
     }
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         /**
          * 弹窗或禁止背景动作
          */
         const {dialogObj} = nextProps
-        if (dialogObj.dialogButtons.visible || dialogObj.tweetFullCard.visible || dialogObj.pubCard.visible){
+        if (dialogObj.dialogButtons.visible || dialogObj.tweetFullCard.visible || dialogObj.pubCard.visible) {
             const body = document.getElementsByTagName('body')[0]
             const html = document.getElementsByTagName('html')[0]
             body.classList.add("lock-back")
             html.classList.add("lock-back")
         }
-        if(!dialogObj.dialogButtons.visible &&!dialogObj.tweetFullCard.visible && !dialogObj.pubCard.visible){
+        if (!dialogObj.dialogButtons.visible && !dialogObj.tweetFullCard.visible && !dialogObj.pubCard.visible) {
             const body = document.getElementsByTagName('body')[0]
             const html = document.getElementsByTagName('html')[0]
             body.classList.remove("lock-back")
