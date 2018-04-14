@@ -45,6 +45,9 @@ function* PubTransferImageRemoveSaga(action) {
 function* pubTransferResetSaga(action) {
     try {
         const ret = yield call(pubTransferResetApi, action.id);
+        if(!ret.transferReset){
+            throw new Error(ret.msg)
+        }
         yield put({type: DialogActionTypes.PUB_TRANSFER_RESET_SUCCEEDED, data: ret});
     } catch (error) {
         yield put({type: DialogActionTypes.PUB_TRANSFER_RESET_FAILED, error});

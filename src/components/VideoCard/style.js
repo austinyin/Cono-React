@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import {PositionIconTag} from "src/shared/styleJs/common/componentStyle";
-import {AbsoluteCenter} from "src/shared/styleJs/common/commonStyle";
+import {PositionIconTag} from "src/shared/styleJs/componentStyle";
+import {AbsoluteCenter} from "src/shared/styleJs/commonStyle";
 import videoPlayIcon from 'src/shared/assets/img/icon/videoPlay.png'
 
 export const VideoCardTag = styled.div`

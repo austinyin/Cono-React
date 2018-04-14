@@ -13,9 +13,9 @@ const ScrollHOC = (WrappedComponent) => {
         }
 
         handleScroll() {
-            const distance = this.documentElem.clientHeight - this.guidElem.getBoundingClientRect().top
-            this.refs.wrapChild.receiveDistance(distance)
-
+            const {scrollGuide,wrapChild} = this.refs
+            const distance = document.documentElement.clientHeight - scrollGuide.getBoundingClientRect().top
+            wrapChild.receiveDistance(distance)
             this.sendScrollTop()
         }
 
@@ -25,14 +25,12 @@ const ScrollHOC = (WrappedComponent) => {
 
         sendScrollTop(){
             const resizeScrollTopReciever = this.refs.wrapChild.resizeScrollTopReciever
-            resizeScrollTopReciever && resizeScrollTopReciever(this.documentElem.scrollTop)
+            resizeScrollTopReciever && resizeScrollTopReciever(document.documentElement.scrollTop)
         }
 
         componentDidMount() {
             window.addEventListener('scroll', this.handleScroll);
             window.addEventListener('resize', this.onWindowResize);
-            this.guidElem = this.refs.scrollGuide;
-            this.documentElem = document.documentElement
         }
 
         componentWillUnmount() {
@@ -46,6 +44,7 @@ const ScrollHOC = (WrappedComponent) => {
             return(
                 <WrappedComponent ref="wrapChild" {...this.props} >
                     <div ref="scrollGuide" className="scroll-guide"/>
+                    <div ref="haha"/>
                 </WrappedComponent>
             )
         }

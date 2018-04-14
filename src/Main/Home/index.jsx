@@ -33,6 +33,10 @@ class Home extends Component {
         return {TweetFullCardType: TweetFullCardType.common};
     }
 
+    componentWillMount(){
+        document.title = "Cono"
+    }
+
     componentDidMount() {
         /**
          * 如果已登陆则获取snapshot内容
@@ -43,7 +47,7 @@ class Home extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.tweetData !== nextProps.tweetData) {
+        if (this.props.tweetList !== nextProps.tweetList) {
             this.listUpdating = false;
         }
 
@@ -89,13 +93,16 @@ class Home extends Component {
         /**
          * 根据HOC传过来的距离判断是否需要加载tweet数据
          */
+        console.log('distance', distance);
+        console.log('this.listUpdating', this.listUpdating);
         if (this.listUpdating === false && distance > -70) {
             this.listUpdate()
         }
     }
 
+
     render() {
-        const {tweetList, loginUser} = this.props;
+        const {tweetList} = this.props;
 
         return (
             <HomeTag id="home" ref="home">
@@ -104,7 +111,7 @@ class Home extends Component {
                         <div className="main-left-con col-12 col-md-8" ref="tweetCon">
                             {/*暂时显示自己发布的内容*/}
                             {tweetList.map((data) => {
-                                return  <TweetFullCard tweetData={data} key={data.id}/>
+                                return <TweetFullCard tweetData={data} key={data.id}/>
                                 // return (loginUser.id !== data.user.id) && <TweetFullCard tweetData={data} key={data.id}/>
                             })}
                         </div>

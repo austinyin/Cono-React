@@ -8,8 +8,7 @@ export const SignIcon = styled.span`
   width: 16px;
   height: 16px;
   cursor: pointer;
-  background: url(${props => props.active ?textIcon:signIcon });
-  background-repeat: no-repeat;  
+  background: url(${props => props.active ?textIcon:signIcon }) no-repeat;
 `
 export const CommentCardTag = styled.div`
 padding: 0 16px;
@@ -89,7 +88,7 @@ padding: 0 16px;
   .sign-icon{
     cursor: pointer;
   }
-  ${props => props.type === TweetFullCardType.dialog && DialogCommentCardTagExtend}
+  ${props => props.type === TweetFullCardType.dialog && DialogCommentCardTagExtend};
 `
 
 export const DialogCommentCardTagExtend = css`
@@ -98,14 +97,18 @@ export const DialogCommentCardTagExtend = css`
   .comment-items{
     order: 1;
     height: 380px;
+    flex:  0 0 65%;
   }
   .pub-time{
     order: 2;
+    flex: 0 0 5%;
   }
   .c-header{
     order: 3;
+    flex: 0 0 15%;
   }
   .comment-form{
     order: 4;
+    flex:  0 0 15%;
   }
 `

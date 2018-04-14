@@ -4,6 +4,7 @@ import Nav from "src/components/Nav";
 import Dialog from 'components/Dialog'
 import {connect} from "react-redux";
 import {MainTag} from "src/Main/style";
+import Animations from "src/extra/Animations";
 
 const Main = ({match, account}) => (
     <MainTag>
@@ -13,6 +14,7 @@ const Main = ({match, account}) => (
             <Nav account={account}/>
         </div>
             <Dialog/>
+            <Animations/>
         <MainRouter match={match}/>
     </MainTag>
 );
@@ -30,6 +32,6 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
 )(Main)
 

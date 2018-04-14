@@ -1,6 +1,11 @@
+/**
+ * 视频卡片组件
+ * 通过props传入视频对象
+ * 能够展示视频播放状态，通过点击视频控制视频播放和暂停。
+ */
 import React from 'react'
 import './style.scss'
-import {IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
+import {IconTypeToPosition} from "src/shared/styleJs/componentStyle";
 import {VideoCardIconTag} from "src/components/VideoCard/style.js";
 import {VideoCardTag} from "src/components/VideoCard/style";
 

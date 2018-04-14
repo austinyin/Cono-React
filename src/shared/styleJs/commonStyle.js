@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import {BorderStyles} from "src/shared/styleJs/common/constantsStyle";
+import {BorderStyles} from "src/shared/styleJs/constantsStyle";
 
 export const fixedTop = css `
     position: fixed;

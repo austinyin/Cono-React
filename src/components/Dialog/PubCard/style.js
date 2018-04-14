@@ -1,5 +1,8 @@
 import styled from 'styled-components'
-import {BorderStyles} from "src/shared/styleJs/common/constantsStyle";
+import {BorderStyles} from "src/shared/styleJs/constantsStyle";
+
+import camera from 'src/shared/assets/img/icon/camera.png'
+import dv from 'src/shared/assets/img/icon/dv.png'
 
 export const PubCardTag = styled.div`
   width:100%;
@@ -28,6 +31,13 @@ export const PubCardTag = styled.div`
     & > div{
       text-align: center;
       }
+    }
+    
+    .pub-main-image{
+      background: url(${camera}) no-repeat center center;
+    }
+    .pub-main-video{
+      background: url(${dv}) no-repeat center center;
     }
    
     .pub-icon-image,.pub-icon-video{

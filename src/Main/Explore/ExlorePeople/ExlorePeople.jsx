@@ -23,6 +23,9 @@ class ExlorePeople extends React.Component {
         this.props.userGet();
     }
 
+    componentWillMount(){
+        document.title = "Cono - 发现朋友"
+    }
 
     componentDidMount() {
         //初始化
@@ -58,13 +61,12 @@ class ExlorePeople extends React.Component {
                         <ul>
                             {userList.map((user) => {
                                 return (loginUser.id !== user.id) && (
-                                    <UserCardWrapper>
+                                    <UserCardWrapper key={user.id}>
                                         <div>
                                             <SimpleUserCard followButton={true}
                                                             imgWidth="56px"
                                                             imgHeight="56px"
                                                             user={user}
-                                                            key={user.id}
                                             />
                                         </div>
                                     </UserCardWrapper>

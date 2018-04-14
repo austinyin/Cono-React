@@ -8,7 +8,6 @@ const initialState = {
 };
 
 export default function Account(state = initialState, action) {
-
     switch (action.type) {
         /**
          * 注册

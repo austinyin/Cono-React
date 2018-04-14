@@ -1,6 +1,6 @@
 import styled,{css} from 'styled-components'
-import {BorderStyles} from "src/shared/styleJs/common/constantsStyle";
-import {CommonBorder} from "src/shared/styleJs/common/commonStyle";
+import {BorderStyles} from "src/shared/styleJs/constantsStyle";
+import {CommonBorder} from "src/shared/styleJs/commonStyle";
 
 
 const AsideStyle = css`

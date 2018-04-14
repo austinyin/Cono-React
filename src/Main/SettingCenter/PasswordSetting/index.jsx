@@ -7,7 +7,7 @@ import withRouter from "react-router-dom/es/withRouter";
 import connect from "react-redux/es/connect/connect";
 import {AvatarTag, SettingRightFirstRowTag, SettingRightWrapperTag} from "src/Main/SettingCenter/style";
 import {SettingRightRowTag} from "../style";
-import {CommonButtonTag} from "../../../shared/styleJs/common/componentStyle";
+import {CommonButtonTag} from "../../../shared/styleJs/componentStyle";
 import {passwordChangeForm} from "../model";
 import AvatarSetHOC from "../../../shared/HOC/AvatarSetHOC";
 import {changePasswordApi} from "../../../extra/Account/api";

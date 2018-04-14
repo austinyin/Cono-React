@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components'
-import {ComonCard} from "src/shared/styleJs/common/commonStyle";
+import {ComonCard} from "src/shared/styleJs/commonStyle";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
 export const TweetFullCardTag = styled.section`

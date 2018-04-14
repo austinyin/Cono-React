@@ -1,25 +1,24 @@
 /**
  * 评论组件
- * 这个组件中还需要改进,本来是想当傀儡组件的,但是后面发现改动越来越多,让传入参数过多，看起来比较臃肿。
+ * 包括评论的展示，添加(文字和@好友)和删除功能，
+ * 待解决: 这个组件中还需要改进,本来是想当傀儡组件的,但是后面发现改动越来越多,让传入参数过多，看起来比较臃肿。
  */
 import React from 'react'
 import PropTypes from 'prop-types';
 
 import {TweetRelationType} from "src/extra/Relation/model";
-import {TweetFullCardType} from "src/components/TweetFullCard/model";
 import MultiSelect from "src/components/MultiSelect";
 import {getMultiSelectValue, pubTimeCalc} from "src/shared/js/commonUtil";
 import Link from "react-router-dom/es/Link";
-import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/common/componentStyle";
+import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/componentStyle";
 import {CommentCardTag, SignIcon} from "src/components/TweetFullCard/CommentCard/Style";
-import {ButtonIconTag} from "src/shared/styleJs/common/IconsStyle";
+import {ButtonIconTag} from "src/shared/styleJs/iconsStyle";
 import closeIcon16 from 'src/shared/assets/img/icon/close_black_16.png'
 import UserMultiSelectHOC from "src/shared/HOC/UserMultiSelectHOC";
 import withRouter from "react-router-dom/es/withRouter";
+import {TweetFullCardType} from "src/components/TweetFullCard/model";
 
 const FriendMultiSelect = UserMultiSelectHOC(MultiSelect)
-
-
 
 
 class CommentCard extends React.Component {
@@ -84,13 +83,16 @@ class CommentCard extends React.Component {
     }
 
     render() {
-        const {type, loginUser, comments, relations,pubTime,
-            author, totalLike, signList, getMoreCommentFunc} = this.props
+        const {
+            tweetType, loginUser, comments, relations, pubTime,
+            author, totalLike, signList, getMoreCommentFunc
+        } = this.props
         const {showSign} = this.state
+        console.log('ha',tweetType);
         return (
             <CommentCardTag
                 id="commentCard"
-                type={type}
+                type={tweetType}
             >
                 <header className="c-header">
                     <div className="c-header-top">
@@ -139,7 +141,7 @@ class CommentCard extends React.Component {
 
                             </span>
                         </li>
-                        {comments.hasNext &&(
+                        {comments.hasNext && (
                             <li className="show-more-content">
                                 <a onClick={getMoreCommentFunc}>显示更多</a>
                             </li>

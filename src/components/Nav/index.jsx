@@ -1,3 +1,7 @@
+/**
+ * 顶部导航组件
+ * 包括左侧logo,中间的搜索框,右侧的发现按钮，最近消息按钮，个人中心按钮，发布按钮
+ */
 import React from 'react'
 import Link from "react-router-dom/es/Link";
 import {LoginState} from "src/extra/Account/constants";
@@ -7,13 +11,13 @@ import {bindActionCreators} from "redux";
 import SimpleUserCard from 'src/components/SimpleUserCard'
 import Notices from 'components/Nav/Notices'
 
+
 import * as DialogActions from "src/components/Dialog/actions";
 import * as SearchActions from "src/extra/Search/actions";
 import {NavTag} from "src/components/Nav/style.jsx";
 import {RefreshState} from "src/extra/Relation/model";
-import {CommonInputTag} from "src/shared/styleJs/common/componentStyle";
+import {CommonInputTag} from "src/shared/styleJs/componentStyle";
 import {SearchResultTag} from "src/components/Nav/style";
-import {PositionIconTag} from "src/shared/styleJs/common/IconsStyle";
 
 
 class Nav extends React.Component {
@@ -44,30 +48,34 @@ class Nav extends React.Component {
     }
 
     handleScroll() {
-        if(this.nowState === RefreshState.agitate){
+        if (this.nowState === RefreshState.agitate) {
             return
         }
         const nowIsTop = this.state.isTop
         const scrollTop = document.documentElement.scrollTop
         const navElemHeight = this.navElem.clientHeight
-        if(scrollTop > navElemHeight && nowIsTop) {
+        if (scrollTop > navElemHeight && nowIsTop) {
             this.nowState = RefreshState.agitate
             this.setState({
                 isTop: false
-            },()=> {
+            }, () => {
                 this.nowState = RefreshState.calm
             })
         }
-        if(scrollTop< navElemHeight && !nowIsTop){
+        if (scrollTop < navElemHeight && !nowIsTop) {
             this.nowState = RefreshState.agitate
             this.setState({
                 isTop: true
-            },()=> {
+            }, () => {
                 this.nowState = RefreshState.calm
             })
         }
     }
 
+    /**
+     * 人物搜索逻辑
+     * 通过reducer来筛选redux中缓存的数据
+     */
     searchChangeHandle(e) {
         if (e.target.value) {
             this.props.userSearchGet(e.target.value);
@@ -78,12 +86,18 @@ class Nav extends React.Component {
         }
     }
 
+    /**
+     * 显示最近消息
+     */
     toggleNoticeHandle() {
         this.setState({
             showNotice: !this.state.showNotice
         })
     }
 
+    /**
+     * 显示发布弹窗
+     */
     showPub() {
         this.props.dialogDisplaySet({
             pubCard: true
@@ -93,7 +107,7 @@ class Nav extends React.Component {
 
     render() {
         const account = this.props.account
-        const {searchUserList,showNotice} = this.state // 搜索结果和是否显示最新消息
+        const {searchUserList, showNotice} = this.state // 搜索结果和是否显示最新消息
 
         let NoticesElem
         let SelfCenterIconElem
@@ -126,10 +140,10 @@ class Nav extends React.Component {
                             <div className="input-con">
                                 <CommonInputTag onChange={this.searchChangeHandle} type="text" placeholder="search"/>
                                 <SearchResultTag
-                                    hide={searchUserList.length<1}
+                                    hide={searchUserList.length < 1}
                                 >
                                     {searchUserList.map((user, k) => {
-                                        return (account.user.id!==user.id)&&(
+                                        return (account.user.id !== user.id) && (
                                             <li>
                                                 <SimpleUserCard user={user}
                                                                 showSubtitle={true}
@@ -146,7 +160,7 @@ class Nav extends React.Component {
                                 <Link to="/explore" className="nr-icon explore-icon"/>
                                 <span className="notices-icon">
                                     <a onClick={this.toggleNoticeHandle}
-                                       className={showNotice?"nr-icon recent-icon-active":"nr-icon recent-icon"}
+                                       className={showNotice ? "nr-icon recent-icon-active" : "nr-icon recent-icon"}
                                     />
                                     {NoticesElem}
                                 </span>

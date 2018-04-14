@@ -1,7 +1,7 @@
 import styled,{css} from 'styled-components'
-import {AbsoluteCenter, AbsoluteFill} from "src/shared/styleJs/common/commonStyle";
+import {AbsoluteCenter, AbsoluteFill} from "src/shared/styleJs/commonStyle";
 import {TweetFullCardType} from "src/components/TweetFullCard/model";
-import {Col_10, Col_12, Col_8} from "src/shared/styleJs/common/bootstrapStyle";
+import {Col_10, Col_12, Col_8} from "src/shared/styleJs/bootstrapStyle";
 
 export const DialogTag = styled.div`
   position: fixed;

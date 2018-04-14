@@ -76,8 +76,7 @@ render(
                 <App/>
             </BrowserRouter>
         </CookiesProvider>
-    </Provider>
-,
+    </Provider>,
     document.getElementById('root')
 );
 

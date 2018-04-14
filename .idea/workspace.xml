@@ -2,36 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6eb7671-99d2-4b68-b1f7-f041e1479d21" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/extra/Animations/Loading/index.jsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/extra/Animations/Loading/style.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/extra/Animations/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/extra/Animations/style.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/shared/assets/img/animation/loading.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/shared/assets/img/avatar/default_avatar.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/shared/assets/img/icon/camera.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/shared/assets/img/icon/dv.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/shared/styleJs/animationStyle.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx" afterPath="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/style.js" afterPath="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/style.js" />
       <change beforePath="$PROJECT_DIR$/src/Main/Explore/index.jsx" afterPath="$PROJECT_DIR$/src/Main/Explore/index.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Explore/saga.js" afterPath="$PROJECT_DIR$/src/Main/Explore/saga.js" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Home/HomeRightBar/HomeRightBar.jsx" afterPath="$PROJECT_DIR$/src/Main/Home/HomeRightBar/HomeRightBar.jsx" />
       <change beforePath="$PROJECT_DIR$/src/Main/Home/index.jsx" afterPath="$PROJECT_DIR$/src/Main/Home/index.jsx" />
       <change beforePath="$PROJECT_DIR$/src/Main/SettingCenter/Edit/index.jsx" afterPath="$PROJECT_DIR$/src/Main/SettingCenter/Edit/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/Main/SettingCenter/PasswordSetting/index.jsx" afterPath="$PROJECT_DIR$/src/Main/SettingCenter/PasswordSetting/index.jsx" />
       <change beforePath="$PROJECT_DIR$/src/Main/SettingCenter/index.jsx" afterPath="$PROJECT_DIR$/src/Main/SettingCenter/index.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Tweet/index.jsx" afterPath="$PROJECT_DIR$/src/Main/Tweet/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/Main/SettingCenter/style.js" afterPath="$PROJECT_DIR$/src/Main/SettingCenter/style.js" />
       <change beforePath="$PROJECT_DIR$/src/Main/UserCenter/index.jsx" afterPath="$PROJECT_DIR$/src/Main/UserCenter/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/Main/UserCenter/style.js" afterPath="$PROJECT_DIR$/src/Main/UserCenter/style.js" />
       <change beforePath="$PROJECT_DIR$/src/Main/index.jsx" afterPath="$PROJECT_DIR$/src/Main/index.jsx" />
       <change beforePath="$PROJECT_DIR$/src/Main/router.jsx" afterPath="$PROJECT_DIR$/src/Main/router.jsx" />
       <change beforePath="$PROJECT_DIR$/src/Main/style.js" afterPath="$PROJECT_DIR$/src/Main/style.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialog/PubCard/style.js" afterPath="$PROJECT_DIR$/src/components/Dialog/PubCard/style.js" />
       <change beforePath="$PROJECT_DIR$/src/components/Dialog/index.jsx" afterPath="$PROJECT_DIR$/src/components/Dialog/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialog/saga.js" afterPath="$PROJECT_DIR$/src/components/Dialog/saga.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialog/style.js" afterPath="$PROJECT_DIR$/src/components/Dialog/style.js" />
       <change beforePath="$PROJECT_DIR$/src/components/LogInOut/index.jsx" afterPath="$PROJECT_DIR$/src/components/LogInOut/index.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change beforePath="$PROJECT_DIR$/src/shared/HOC/ArticleWithin.jsx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/shared/HOC/AvatarSetHOC.jsx" afterPath="$PROJECT_DIR$/src/shared/HOC/AvatarSetHOC.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/shared/HOC/RelationHOC.jsx" afterPath="$PROJECT_DIR$/src/shared/HOC/RelationHOC.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/shared/HOC/ResizeHoc.jsx" afterPath="$PROJECT_DIR$/src/shared/HOC/ResizeHoc.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/LogInOut/style.js" afterPath="$PROJECT_DIR$/src/components/LogInOut/style.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/Notices/index.jsx" afterPath="$PROJECT_DIR$/src/components/Nav/Notices/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/Notices/style.js" afterPath="$PROJECT_DIR$/src/components/Nav/Notices/style.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/index.jsx" afterPath="$PROJECT_DIR$/src/components/Nav/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/style.jsx" afterPath="$PROJECT_DIR$/src/components/Nav/style.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/SimpleUserCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/SimpleUserCard/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/SimpleUserCard/style.jsx" afterPath="$PROJECT_DIR$/src/components/SimpleUserCard/style.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/Slider/index.jsx" afterPath="$PROJECT_DIR$/src/components/Slider/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/Slider/style.jsx" afterPath="$PROJECT_DIR$/src/components/Slider/style.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/TweetCard/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetCard/style.jsx" afterPath="$PROJECT_DIR$/src/components/TweetCard/style.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/TweetFullCard/style.jsx" afterPath="$PROJECT_DIR$/src/components/TweetFullCard/style.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserHeader/index.jsx" afterPath="$PROJECT_DIR$/src/components/UserHeader/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoCard/index.jsx" afterPath="$PROJECT_DIR$/src/components/VideoCard/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoCard/style.js" afterPath="$PROJECT_DIR$/src/components/VideoCard/style.js" />
+      <change beforePath="$PROJECT_DIR$/src/extra/Account/index.jsx" afterPath="$PROJECT_DIR$/src/extra/Account/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/extra/Account/reducer.js" afterPath="$PROJECT_DIR$/src/extra/Account/reducer.js" />
+      <change beforePath="$PROJECT_DIR$/src/extra/Animations/actions.js" afterPath="$PROJECT_DIR$/src/extra/Animations/actions.js" />
+      <change beforePath="$PROJECT_DIR$/src/extra/Animations/api.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/extra/Animations/constants.js" afterPath="$PROJECT_DIR$/src/extra/Animations/constants.js" />
+      <change beforePath="$PROJECT_DIR$/src/extra/Animations/model.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/extra/Animations/reducer.js" afterPath="$PROJECT_DIR$/src/extra/Animations/reducer.js" />
+      <change beforePath="$PROJECT_DIR$/src/extra/Animations/saga.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/index.jsx" afterPath="$PROJECT_DIR$/src/index.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/rootReducer.js" afterPath="$PROJECT_DIR$/src/reducer/rootReducer.js" />
       <change beforePath="$PROJECT_DIR$/src/shared/HOC/ScrollHOC.jsx" afterPath="$PROJECT_DIR$/src/shared/HOC/ScrollHOC.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/shared/HOC/ScrollRelationHOC.jsx" afterPath="$PROJECT_DIR$/src/shared/HOC/ScrollRelationHOC.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/shared/HOC/TweetRelationHOC.jsx" afterPath="$PROJECT_DIR$/src/shared/HOC/TweetRelationHOC.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/shared/HOC/UserMultiSelectHOC.jsx" afterPath="$PROJECT_DIR$/src/shared/HOC/UserMultiSelectHOC.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/shared/api/index.js" afterPath="$PROJECT_DIR$/src/shared/api/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/shared/js/axiosUtil.js" afterPath="$PROJECT_DIR$/src/shared/js/axiosUtil.js" />
-      <change beforePath="$PROJECT_DIR$/src/shared/js/commonUtil.js" afterPath="$PROJECT_DIR$/src/shared/js/commonUtil.js" />
-      <change beforePath="$PROJECT_DIR$/src/shared/js/reducerUtils.js" afterPath="$PROJECT_DIR$/src/shared/js/reducerUtils.js" />
-      <change beforePath="$PROJECT_DIR$/src/shared/js/sleep.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styleJs/common/IconsStyle.jsx" afterPath="$PROJECT_DIR$/src/shared/styleJs/iconsStyle.js" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styleJs/common/bootstrapStyle.js" afterPath="$PROJECT_DIR$/src/shared/styleJs/bootstrapStyle.js" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styleJs/common/commonStyle.js" afterPath="$PROJECT_DIR$/src/shared/styleJs/commonStyle.js" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styleJs/common/componentStyle.js" afterPath="$PROJECT_DIR$/src/shared/styleJs/componentStyle.js" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styleJs/common/constantsStyle.js" afterPath="$PROJECT_DIR$/src/shared/styleJs/constantsStyle.js" />
+      <change beforePath="$PROJECT_DIR$/src/shared/styleJs/common/resetStyle.js" afterPath="$PROJECT_DIR$/src/shared/styleJs/resetStyle.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,61 +85,103 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main/Tweet/index.jsx">
+        <entry file="file://$PROJECT_DIR$/src/Main/Explore/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="11" />
+            <state relative-caret-position="188">
+              <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
+              <folding>
+                <element signature="e#33#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/SettingCenter/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#12#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main/UserCenter/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1071">
-              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-              <folding>
-                <element signature="e#53#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Dialog/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2397">
-              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-              <folding>
-                <element signature="e#57#95#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-464">
-              <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-              <folding>
-                <element signature="e#55#93#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/LogInOut/index.jsx">
+        <entry file="file://$PROJECT_DIR$/src/Main/UserCenter/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExlorePeople.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/Home/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#14#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScrollHOC.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shared/HOC/ScrollHOC.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="54" column="25" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configureStore.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding>
+                <element signature="e#144#182#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,44 +192,45 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsx File" />
         <option value="Sass" />
+        <option value="Jsx File" />
         <option value="JavaScript File" />
+        <option value="GraphQL Endpoint File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>HomeRightBar</find>
-      <find>takeEvery</find>
-      <find>import \{\s?takeEvery\s?\} from .*'</find>
-      <find>import .*?takeEvery.* from .*'</find>
-      <find>TweetFullCardType:\d? PropTypes.string.isRequired</find>
-      <find>TweetFullCardType</find>
-      <find>TweetFullCardType: \s?PropTypes.string</find>
-      <find>switch</find>
-      <find>import \{\s?takeEvery\s?\} from .*</find>
-      <find>Notices</find>
-      <find>UserCenter</find>
-      <find>fill</find>
-      <find>styled</find>
-      <find>styled.span</find>
-      <find>true</find>
-      <find>getBoundingClientRect</find>
-      <find>this.props.ci</find>
-      <find>ScrollRelationHOC</find>
-      <find>TweetCard</find>
-      <find>127.0.0.1</find>
-      <find>SERVER_ROOT</find>
-      <find>media</find>
-      <find>images</find>
-      <find>PubCard</find>
-      <find>.map</find>
-      <find>pub-medias</find>
-      <find>UserMultiSelectHOC</find>
-      <find>resizeScrollTopReciever</find>
-      <find>searchGetApi</find>
       <find>import Tweet</find>
+      <find>this.props.</find>
+      <find>/media</find>
+      <find>thumbnail</find>
+      <find>shared/stylejs</find>
+      <find>shared/stylejs/</find>
+      <find>shared/styleJs/common</find>
+      <find>prop-types</find>
+      <find>keyframes</find>
+      <find>animations</find>
+      <find>notices-con</find>
+      <find>width: 500px</find>
+      <find>import from</find>
+      <find>import .*?.png</find>
+      <find>pub-main-image</find>
+      <find>signHandle</find>
+      <find>pubCommitFunc</find>
+      <find>pubCard</find>
+      <find>history.push</find>
+      <find>tranfer</find>
+      <find>transferReset</find>
+      <find>dialogDisplay</find>
+      <find>getBoundingClientRect</find>
+      <find>VideoCard</find>
+      <find>scrollTop</find>
+      <find>this.documentElem.scrollTop</find>
+      <find>哈哈</find>
+      <find>haha</find>
+      <find>video</find>
+      <find>isUpdating</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -171,6 +250,7 @@
       <replace>TweetFullCardType: PropTypes.number.isRequired</replace>
       <replace>TweetFullCardType: PropTypes.number</replace>
       <replace>import {takeEvery} from 'redux-saga'</replace>
+      <replace>effcts</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Code\front-end\Cono\src\components\SimpleUserCard</dir>
@@ -187,8 +267,10 @@
       <dir>D:\Code\front-end\Cono\src\Main\UserCenter</dir>
       <dir>D:\Code\front-end\Cono\src</dir>
       <dir>D:\Develop\Code\FrontEnd\Cono\src\extra\Account</dir>
-      <dir>D:\Develop\Code\FrontEnd\Cono\src\Main</dir>
+      <dir>D:\Develop\Code\FrontEnd\Cono\src\components</dir>
       <dir>D:\Develop\Code\FrontEnd\Cono</dir>
+      <dir>D:\Develop\Code\FrontEnd\Cono\src\Main\Home</dir>
+      <dir>D:\Develop\Code\FrontEnd\Cono\src\Main</dir>
       <dir>D:\Develop\Code\FrontEnd\Cono\src</dir>
     </dirStrings>
   </component>
@@ -199,57 +281,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Nav/Notices/model.js" />
-        <option value="$PROJECT_DIR$/src/components/Nav/style.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Nav/Notices/style.js" />
-        <option value="$PROJECT_DIR$/src/shared/js/test.js" />
-        <option value="$PROJECT_DIR$/src/shared/styleJs/common/test.js" />
-        <option value="$PROJECT_DIR$/src/saga/rootSaga.js" />
-        <option value="$PROJECT_DIR$/src/saga/test.js" />
-        <option value="$PROJECT_DIR$/src/components/TweetCard/style.jsx" />
-        <option value="$PROJECT_DIR$/src/shared/assets/css/text.scss" />
-        <option value="$PROJECT_DIR$/src/shared/assets/css/index.scss" />
-        <option value="$PROJECT_DIR$/src/shared/assets/css/bootstrap-grid.css" />
-        <option value="$PROJECT_DIR$/src/shared/api/api.js" />
-        <option value="$PROJECT_DIR$/src/Main/Tweet/api.js" />
-        <option value="$PROJECT_DIR$/src/extra/Snapshot/index.jsx" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/Slider/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/Home/saga.js" />
-        <option value="$PROJECT_DIR$/src/components/Nav/Notices/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/TweetCard/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Dialog/PubCard/style.js" />
-        <option value="$PROJECT_DIR$/src/shared/js/reducerUtils.js" />
-        <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/index.jsx" />
-        <option value="$PROJECT_DIR$/src/store/configureStore.js" />
-        <option value="$PROJECT_DIR$/src/shared/api/index.js" />
-        <option value="$PROJECT_DIR$/src/shared/HOC/AvatarSetHOC.jsx" />
-        <option value="$PROJECT_DIR$/src/shared/HOC/ResizeHoc.jsx" />
-        <option value="$PROJECT_DIR$/src/shared/HOC/ScrollHOC.jsx" />
-        <option value="$PROJECT_DIR$/src/shared/HOC/ScrollRelationHOC.jsx" />
-        <option value="$PROJECT_DIR$/src/shared/HOC/RelationHOC.jsx" />
-        <option value="$PROJECT_DIR$/src/shared/HOC/TweetRelationHOC.jsx" />
         <option value="$PROJECT_DIR$/src/shared/HOC/UserMultiSelectHOC.jsx" />
         <option value="$PROJECT_DIR$/src/shared/js/axiosUtil.js" />
         <option value="$PROJECT_DIR$/src/shared/js/commonUtil.js" />
-        <option value="$PROJECT_DIR$/src/Main/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/Home/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/router.jsx" />
         <option value="$PROJECT_DIR$/src/Main/style.js" />
         <option value="$PROJECT_DIR$/src/Main/Home/HomeRightBar/HomeRightBar.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/Explore/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx" />
         <option value="$PROJECT_DIR$/src/Main/Explore/saga.js" />
         <option value="$PROJECT_DIR$/src/Main/SettingCenter/Edit/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/SettingCenter/index.jsx" />
         <option value="$PROJECT_DIR$/src/Main/Tweet/index.jsx" />
-        <option value="$PROJECT_DIR$/src/Main/UserCenter/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Dialog/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Slider/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/TweetCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/UserHeader/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/VideoCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/extra/Account/index.jsx" />
+        <option value="$PROJECT_DIR$/src/extra/Animation/index.js" />
+        <option value="$PROJECT_DIR$/src/extra/Animation/style.js" />
+        <option value="$PROJECT_DIR$/src/shared/styleJs/common/IconsStyle.jsx" />
+        <option value="$PROJECT_DIR$/src/shared/styleJs/animation.js" />
+        <option value="$PROJECT_DIR$/src/components/Nav/index.jsx" />
         <option value="$PROJECT_DIR$/src/components/LogInOut/index.jsx" />
+        <option value="$PROJECT_DIR$/src/extra/Account/reducer.js" />
+        <option value="$PROJECT_DIR$/src/extra/Animations/constants.js" />
+        <option value="$PROJECT_DIR$/src/extra/Animations/action.js" />
+        <option value="$PROJECT_DIR$/src/extra/Animations/actions.js" />
+        <option value="$PROJECT_DIR$/src/reducer/rootReducer.js" />
+        <option value="$PROJECT_DIR$/src/Main/index.jsx" />
+        <option value="$PROJECT_DIR$/src/index.jsx" />
+        <option value="$PROJECT_DIR$/src/extra/Animations/style.js" />
+        <option value="$PROJECT_DIR$/src/shared/styleJs/animationStyle.js" />
+        <option value="$PROJECT_DIR$/src/extra/Animations/Loading/style.js" />
+        <option value="$PROJECT_DIR$/src/extra/Animations/Loading/index.jsx" />
+        <option value="$PROJECT_DIR$/src/extra/Animations/index.js" />
+        <option value="$PROJECT_DIR$/src/extra/Animations/reducer.js" />
+        <option value="$PROJECT_DIR$/src/components/Nav/Notices/style.js" />
+        <option value="$PROJECT_DIR$/src/Main/router.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/PubCard/style.js" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Dialog/saga.js" />
+        <option value="$PROJECT_DIR$/src/components/SimpleUserCard/index.jsx" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/shared/HOC/ScrollHOC.jsx" />
+        <option value="$PROJECT_DIR$/src/store/configureStore.js" />
+        <option value="$PROJECT_DIR$/src/components/TweetFullCard/index.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Home/index.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/Explore/index.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/SettingCenter/index.jsx" />
+        <option value="$PROJECT_DIR$/src/Main/UserCenter/index.jsx" />
+        <option value="$PROJECT_DIR$/sds.graphqle" />
       </list>
     </option>
   </component>
@@ -271,12 +353,14 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="183" />
-    <option name="y" value="76" />
-    <option name="width" value="1564" />
-    <option name="height" value="930" />
+    <option name="x" value="138" />
+    <option name="y" value="124" />
+    <option name="width" value="1609" />
+    <option name="height" value="942" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -292,7 +376,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -309,55 +392,67 @@
               <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cono" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cono" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="LogInOut" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="UserCenter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cono" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="extra" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cono" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cono" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../node/graphql" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/node/node" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/components/Nav/index.jsx" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="SearchEverywhereHistoryKey" value="TweetC&#9;null&#9;null&#10;Notices&#9;null&#9;null&#10;util.js&#9;FILE&#9;file://D:/Develop/Code/FrontEnd/Cono/node_modules/redux-saga/es/utils.js&#10;util&#9;FILE&#9;file://D:/Develop/Code/FrontEnd/Cono/node_modules/babel-core/lib/util.js" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="editorconfig.notification" value="spaces" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Develop\Code\FrontEnd\Cono\src\shared\assets\img\avatar" />
+      <recent name="D:\Develop\Code\FrontEnd\Cono\src\shared\assets\img\icon" />
+      <recent name="D:\Develop\Code\FrontEnd\Cono\src\shared\assets\img\animation" />
+      <recent name="D:\Code\front-end\Cono\src\shared\assets\img\icon" />
+      <recent name="D:\Code\front-end\Cono\src\shared" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Develop\Code\FrontEnd\Cono\src\shared\styleJs" />
       <recent name="D:\Code\front-end\Cono\src\components\Nav" />
       <recent name="D:\Code\front-end\Cono\src\shared" />
       <recent name="D:\Code\front-end\Cono\src\assets\img" />
       <recent name="D:\Code\front-end\Cono\src\extra" />
-      <recent name="D:\Code\front-end\Cono\src\components\TweetFullCard" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Code\front-end\Cono\src\shared\assets\img\icon" />
-      <recent name="D:\Code\front-end\Cono\src\shared" />
-      <recent name="D:\Code\front-end\Cono\src\extra\Animation" />
-      <recent name="D:\Code\front-end\Cono\src\extra" />
-      <recent name="D:\Code\front-end\Cono\src\assets\img\icon" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -403,8 +498,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.ArticleWithin.jsx" />
-        <item index="1" class="java.lang.String" itemvalue="npm.start" />
+        <item index="0" class="java.lang.String" itemvalue="npm.start" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.ArticleWithin.jsx" />
         <item index="2" class="java.lang.String" itemvalue="npm.server" />
       </list>
     </recent_temporary>
@@ -517,7 +612,13 @@
       <workItem from="1522720521401" duration="10263000" />
       <workItem from="1522807554291" duration="621000" />
       <workItem from="1522851243099" duration="4056000" />
-      <workItem from="1522911838436" duration="3083000" />
+      <workItem from="1522911838436" duration="3120000" />
+      <workItem from="1522993554375" duration="796000" />
+      <workItem from="1523031129779" duration="1967000" />
+      <workItem from="1523115412017" duration="853000" />
+      <workItem from="1523423878728" duration="6544000" />
+      <workItem from="1523504589028" duration="8494000" />
+      <workItem from="1523698652338" duration="4347000" />
     </task>
     <task id="LOCAL-00001" summary="2/1 11:57">
       <created>1517457439855</created>
@@ -705,7 +806,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="710358000" />
+    <option name="totallyTimeSpent" value="733396000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -717,17 +818,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="183" y="76" width="1564" height="930" extended-state="0" />
+    <frame x="138" y="124" width="1609" height="942" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914573" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26441786" sideWeight="0.5089568" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967235" sideWeight="0.73111784" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.221942" sideWeight="0.4910432" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25758553" sideWeight="0.7411003" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21863355" sideWeight="0.4910432" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41831684" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912987" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24967235" sideWeight="0.2688822" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989025" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25693995" sideWeight="0.2588997" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32538736" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2494929" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -785,260 +887,420 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/common/componentStyle.js">
+    <entry file="file://$PROJECT_DIR$/src/components/LogInOut/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        <state relative-caret-position="85">
+          <caret line="5" column="80" lean-forward="false" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetCard/style.jsx">
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/componentStyle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="false" />
-            <marker date="1522648251078" expanded="true" signature="239:990" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="287:312" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="326:349" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="367:403" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="421:461" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="511:611" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="635:659" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="682:788" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="832:862" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="878:960" ph="{...}" />
-            <marker date="1522648251078" expanded="true" signature="1045:1096" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="226:298" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="345:575" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="1617:2190" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="2239:2654" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="2700:2997" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="2970:2996" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="3041:3331" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="3377:3416" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="3467:3809" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="3476:3524" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="3670:3808" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="3854:4035" ph="{...}" />
+            <marker date="1523445179780" expanded="true" signature="3973:4034" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Nav/Notices/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/constantsStyle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="42" column="78" lean-forward="false" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/iconsStyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/resetStyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/bootstrapStyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/commonStyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+            <marker date="1523445179566" expanded="true" signature="141:174" ph="{...}" />
+            <marker date="1523445179566" expanded="true" signature="207:285" ph="{...}" />
+            <marker date="1523445179566" expanded="true" signature="320:401" ph="{...}" />
+            <marker date="1523445179566" expanded="true" signature="437:500" ph="{...}" />
+            <marker date="1523445179566" expanded="true" signature="535:619" ph="{...}" />
+            <marker date="1523445179566" expanded="true" signature="656:738" ph="{...}" />
+            <marker date="1523445179566" expanded="true" signature="773:840" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Account/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Animations/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Animations/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Account/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Account/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="101" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx">
+    <entry file="file://$PROJECT_DIR$/node_modules/prop-types/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="175" column="49" lean-forward="false" selection-start-line="175" selection-start-column="49" selection-end-line="175" selection-end-column="49" />
+        <state relative-caret-position="153">
+          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="2453" column="8" lean-forward="false" selection-start-line="2453" selection-start-column="8" selection-end-line="2453" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Animations/Loading/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="56" lean-forward="false" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+            <marker date="1523505575580" expanded="true" signature="149:347" ph="{...}" />
+            <marker date="1523505575580" expanded="true" signature="205:224" ph="{...}" />
+            <marker date="1523505575580" expanded="true" signature="205:347" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Animations/Loading/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#25#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Animations/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="15" lean-forward="false" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+          <folding>
+            <marker date="1523505448076" expanded="true" signature="143:361" ph="{...}" />
+            <marker date="1523505448076" expanded="true" signature="268:360" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Search/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Animations/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/Animations/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Nav/style.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+          <folding>
+            <marker date="1523445179484" expanded="true" signature="317:1473" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="536:585" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="640:699" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="713:751" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="767:805" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="825:862" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="896:1167" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="1197:1316" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="1336:1370" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="1387:1467" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="1490:1520" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="1552:1620" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="1677:1717" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="1731:2344" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="1951:2004" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2024:2072" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2099:2152" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2177:2230" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2247:2342" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2426:2547" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2441:2471" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2490:2524" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2592:2895" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2740:2894" ph="{...}" />
+            <marker date="1523445179484" expanded="true" signature="2816:2850" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Nav/Notices/style.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/styleJs/animationStyle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/router.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/assets/img/icon/upload_remove_icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/style.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="663">
+          <caret line="39" column="52" lean-forward="false" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ArticleWithin.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/shared/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extra/Account/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/AvatarSetHOC.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="78" column="38" lean-forward="true" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#22#60#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ScrollHOC.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ResizeHoc.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#66#104#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ScrollRelationHOC.jsx">
+    <entry file="file://$PROJECT_DIR$/src/extra/Account/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/RelationHOC.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding>
-            <element signature="e#47#72#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="3536">
+          <caret line="228" column="20" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/TweetRelationHOC.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding>
-            <element signature="e#51#76#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/HOC/UserMultiSelectHOC.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="92" column="27" lean-forward="true" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
           <folding>
-            <element signature="e#21#59#0" expanded="false" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#104#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/js/reducerUtils.js">
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/style.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+            <marker date="1523445179520" expanded="true" signature="222:669" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="357:383" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="403:585" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="535:581" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="712:1161" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="813:861" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="882:1060" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="944:975" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="1000:1056" ph="{...}" />
+            <marker date="1523445179520" expanded="true" signature="1085:1156" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/js/sleep.js" />
-    <entry file="file://$PROJECT_DIR$/src/shared/js/axiosUtil.js">
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/CommentCard/Style.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="1496">
+          <caret line="91" column="1" lean-forward="true" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+            <marker date="1523526629408" expanded="true" signature="279:430" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="473:1777" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="473:1862" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="506:587" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="613:693" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="710:778" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="797:923" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="948:1080" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1108:1142" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1168:1194" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1227:1295" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1309:1352" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1386:1523" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1543:1572" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1594:1640" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1677:1732" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1750:1776" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1911:2184" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="1971:2029" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="2041:2078" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="2090:2128" ph="{...}" />
+            <marker date="1523526629408" expanded="true" signature="2144:2183" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/js/commonUtil.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Dialog/saga.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="731">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
+    <entry file="file://$PROJECT_DIR$/src/shared/assets/img/avatar/avatar.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/VideoCard/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dialog/actions.js">
+    <entry file="file://$PROJECT_DIR$/src/components/SimpleUserCard/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="561">
+          <caret line="64" column="53" lean-forward="true" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+          <folding>
+            <element signature="e#120#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducer/rootReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/router.jsx">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/style.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <marker date="1522913268842" expanded="true" signature="209:391" ph="{...}" />
-            <marker date="1522913268842" expanded="true" signature="237:256" ph="{...}" />
-            <marker date="1522913268842" expanded="true" signature="266:390" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/HomeRightBar/HomeRightBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#35#60#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/api.js">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1046,212 +1308,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/constants.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/reducer.js">
+    <entry file="file://$PROJECT_DIR$/src/shared/HOC/ScrollHOC.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="867">
+          <caret line="54" column="25" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/saga.js">
+    <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/style.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <marker date="1522648250013" expanded="true" signature="75:312" ph="{...}" />
-            <marker date="1522648250013" expanded="true" signature="81:109" ph="{...}" />
-            <marker date="1522648250013" expanded="true" signature="115:170" ph="{...}" />
-            <marker date="1522648250013" expanded="true" signature="177:201" ph="{...}" />
-            <marker date="1522648250013" expanded="true" signature="216:243" ph="{...}" />
-            <marker date="1522648250013" expanded="true" signature="259:311" ph="{...}" />
-            <marker date="1522648250013" expanded="true" signature="269:309" ph="{...}" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Home/style.scss">
+    <entry file="file://$PROJECT_DIR$/src/components/TweetFullCard/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="182">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
-            <element signature="e#0#46#0" expanded="false" />
+            <element signature="e#144#182#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/action.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="879">
-          <caret line="64" column="31" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Home/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="122" column="31" lean-forward="false" selection-start-line="122" selection-start-column="31" selection-end-line="122" selection-end-column="31" />
+        <state relative-caret-position="340">
+          <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#14#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/constants.js">
+    <entry file="file://$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Explore/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/ExlorePeople/ExlorePeople.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#17#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/saga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#52#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Explore/style.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1522648249954" expanded="true" signature="79:583" ph="{...}" />
-            <marker date="1522648249954" expanded="true" signature="95:144" ph="{...}" />
-            <marker date="1522648249954" expanded="true" signature="162:183" ph="{...}" />
-            <marker date="1522648249954" expanded="true" signature="202:238" ph="{...}" />
-            <marker date="1522648249954" expanded="true" signature="254:391" ph="{...}" />
-            <marker date="1522648249954" expanded="true" signature="439:477" ph="{...}" />
-            <marker date="1522648249954" expanded="true" signature="489:516" ph="{...}" />
-            <marker date="1522648249954" expanded="true" signature="525:553" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/SettingCenter/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="188">
+          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
           <folding>
             <element signature="e#33#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/SettingCenter/Edit/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Main/SettingCenter/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="50" column="54" lean-forward="false" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+        <state relative-caret-position="289">
+          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#11#36#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Tweet/index.jsx">
+    <entry file="file://$PROJECT_DIR$/sds.graphqle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#12#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/UserCenter/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1071">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="255">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
-            <element signature="e#53#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dialog/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2397">
-          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding>
-            <element signature="e#57#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dialog/PubCard/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-464">
-          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding>
-            <element signature="e#55#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LogInOut/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

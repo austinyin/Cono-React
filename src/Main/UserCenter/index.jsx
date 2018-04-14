@@ -19,11 +19,11 @@ import {PersonUserRelationType} from "src/extra/Relation/model";
 import {
     CommonButtonTag, CommonWrapperTag, TweetCardConTag,
     TweetItemsWrapperTag
-} from "src/shared/styleJs/common/componentStyle";
+} from "src/shared/styleJs/componentStyle";
 import {ChooseTag, UserCenterHeaderTag} from "src/Main/UserCenter/style";
 import Link from "react-router-dom/es/Link";
 import {CenterChooseType, ChooseTypeValueToIsEmptyKey, ChooseTypeValueToTweetKey} from "src/Main/UserCenter/model";
-import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/common/IconsStyle";
+import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/iconsStyle";
 
 class UserCenter extends React.Component {
     constructor(props) {
@@ -41,6 +41,10 @@ class UserCenter extends React.Component {
             username: props.match.params.user,
             nowTweetType: CenterChooseType.publish,
         }
+    }
+
+    componentWillMount(){
+        document.title = "Cono - 用户中心"
     }
 
     componentDidMount() {

@@ -29,7 +29,6 @@ export const PositionIconTag = styled.span`
   background-position: ${props => IconTypeToPosition[props.type].position};
   background-position: ${props => props.fill&&IconTypeToPosition[props.type].filledPosition};
   background-position: ${props => props.active&&IconTypeToPosition[props.type].actPosition};
-
 `
 
 

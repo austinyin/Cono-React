@@ -6,6 +6,7 @@ import Account from 'src/extra/Account/reducer'
 import Dialog from 'src/components/Dialog/reducer'
 import Relation from 'src/extra/Relation/reducer'
 import Search from 'src/extra/Search/reducer'
+import Animations from 'src/extra/Animations/reducer'
 
 export default combineReducers({
     TweetList,
@@ -14,5 +15,6 @@ export default combineReducers({
     Account,
     Dialog,
     Relation,
-    Search
+    Search,
+    Animations
 })

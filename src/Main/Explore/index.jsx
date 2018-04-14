@@ -11,7 +11,7 @@ import SimpleUserCard from "src/components/SimpleUserCard";
 import TweetCard from "src/components/TweetCard";
 import ScrollHOC from "src/shared/HOC/ScrollHOC";
 import Link from "react-router-dom/es/Link";
-import {CommonWrapperTag, TweetCardConTag, TweetItemsWrapperTag} from "src/shared/styleJs/common/componentStyle";
+import {CommonWrapperTag, TweetCardConTag, TweetItemsWrapperTag} from "src/shared/styleJs/componentStyle";
 import {ExploreTag} from "src/Main/Explore/style";
 
 class Explore extends React.Component {
@@ -20,24 +20,8 @@ class Explore extends React.Component {
         this.listUpdating = false;
     }
 
-
-    listUpdate() {
-        if (!this.props.isEmpty) {
-            this.listUpdating = true;
-            this.props.tweetNextPage()
-        }
-    }
-
-    receiveDistance(distance) {
-        if (this.listUpdating === false && distance > -70) {
-            this.listUpdate()
-        }
-    }
-
-
-    init() {
-        this.props.userGet();
-        this.props.tweetNextPage();
+    componentWillMount(){
+        document.title = "Cono - 发现"
     }
 
 
@@ -58,6 +42,27 @@ class Explore extends React.Component {
         this.props.resetAll();
     }
 
+    init() {
+        this.props.userGet();
+        this.props.tweetNextPage();
+    }
+
+    receiveDistance(distance) {
+        if (this.listUpdating === false && distance > -70) {
+            this.listUpdate()
+        }
+    }
+
+    listUpdate() {
+        if (!this.props.isEmpty) {
+            this.listUpdating = true;
+            this.props.tweetNextPage()
+        }
+    }
+
+
+
+
 
     render() {
         const {userList, tweetList, loginUser} = this.props
@@ -76,7 +81,7 @@ class Explore extends React.Component {
                             {userList.map((user, index) => {
                                 if (index < 3) {
                                     return (loginUser.id !== user.id) && (
-                                        <div className="user-card-con col-4">
+                                        <div className="user-card-con col-4" key={user.id}>
                                             <SimpleUserCard
                                                 imgWidth="78px"
                                                 imgHeight="78px"
@@ -84,7 +89,6 @@ class Explore extends React.Component {
                                                 followButton={true}
                                                 verticle={true}
                                                 user={user}
-                                                key={user.id}
                                             />
                                         </div>
                                     )
@@ -99,9 +103,9 @@ class Explore extends React.Component {
                         <TweetItemsWrapperTag className="row">
                             {tweetList.map((tweet) => {
                                 return (loginUser.id !== tweet.user.id) && (
-                                    <div className="col-4">
+                                    <div className="col-4" key={tweet.id}>
                                         <TweetCardConTag>
-                                            <TweetCard tweet={tweet} key={tweet.id}/>
+                                            <TweetCard tweet={tweet}/>
                                         </TweetCardConTag>
                                     </div>
                                 )

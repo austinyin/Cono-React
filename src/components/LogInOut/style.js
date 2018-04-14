@@ -1,5 +1,5 @@
 import styled,{css} from 'styled-components'
-import {BorderStyles, ColorStyles} from "src/shared/styleJs/common/constantsStyle";
+import {BorderStyles, ColorStyles} from "src/shared/styleJs/constantsStyle";
 
 
 export const LogInOutTag = styled.div`

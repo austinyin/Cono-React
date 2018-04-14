@@ -1,5 +1,7 @@
 /**
- * 这里的更多评论命名有点拗口，待解决
+ * 推文详细卡片，用于首页和推文详情页
+ * 包括推文发布用户展示(SimpleUserCard),媒体展示(图片用Slider，视频用VideoCard)，喜欢按钮，收藏按钮。 推文评论组件(CommentCard)
+ * 待解决:这里的更多评论命名有点拗口，待解决
  */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {BorderStyles} from "src/shared/styleJs/common/constantsStyle";
+import {BorderStyles} from "src/shared/styleJs/constantsStyle";
 import {CenterChooseType} from "src/Main/UserCenter/model";
 
 export const UserCenterHeaderTag = styled.header`

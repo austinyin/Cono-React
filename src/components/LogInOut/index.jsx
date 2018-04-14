@@ -3,7 +3,7 @@ import './style.scss'
 import {AccountForm, FormType, formType, loginType} from "src/extra/Account/constants";
 import {Link} from "react-router-dom";
 import {CommonFormWrapperTag, LogInOutTag} from "src/components/LogInOut/style";
-import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/common/IconsStyle";
+import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/iconsStyle";
 
 class LogInOut extends Component {
     constructor(props) {
@@ -37,9 +37,12 @@ class LogInOut extends Component {
 
     }
 
+    /**
+     * 登陆登出逻辑
+     * canSubmits 中所有对象均为True才满足条件， 否则睡眠循环调用自身
+     */
     logInOutHandle(e) {
         e.preventDefault();
-        // canSubmits 中多有对象均为True才满足条件， 否则睡眠循环调用自身
         const canSubmit = Object.keys(this.canSubmits).every(key => {
             return this.canSubmits[key] === true;
         });
@@ -61,7 +64,9 @@ class LogInOut extends Component {
         this.canSubmits[targetId] = true;
     }
 
-
+    /**
+     * 表单重置
+     */
     formReset() {
         Object.keys(this.state.form).map(key => {
             const elem = document.getElementById(key)

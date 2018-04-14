@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import {BorderStyles} from "src/shared/styleJs/common/constantsStyle";
-import {fixedTop} from "src/shared/styleJs/common/commonStyle";
+import {BorderStyles} from "src/shared/styleJs/constantsStyle";
+import {fixedTop} from "src/shared/styleJs/commonStyle";
 
 export const MainTag = styled.div`
 

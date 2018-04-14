@@ -6,7 +6,7 @@ import UserCenter from './UserCenter'
 import Explore from "src/Main/Explore";
 import ExlorePeople from "src/Main/Explore/ExlorePeople/ExlorePeople";
 import SettingCenter from "src/Main/SettingCenter";
-import MultiSelect from "src/components/MultiSelect";
+
 
 const MainRouter = () => (
     <Switch>
@@ -17,7 +17,6 @@ const MainRouter = () => (
         <Route path='/account' component={SettingCenter}/>
         <Route exact path="/user/:user" component={UserCenter}/>
     </Switch>
-
 )
 
 export default MainRouter

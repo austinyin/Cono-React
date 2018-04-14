@@ -1,8 +1,9 @@
 import styled,{css} from 'styled-components'
-import {BorderStyles, BoxShadowStyles} from "src/shared/styleJs/common/constantsStyle";
+import {BorderStyles, BoxShadowStyles} from "src/shared/styleJs/constantsStyle";
 
 export const NotecesTag = styled.div`
   width: 500px;
+  min-height: 360px;
   max-height: 360px;
   
   @media screen and (max-width: 576px) {

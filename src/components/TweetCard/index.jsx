@@ -1,11 +1,14 @@
-import React, {Component} from 'react'
+/**
+ * 推文卡片
+ * 显示推文媒体类型，略缩图，喜欢的人数和评论人数
+ */
+import React from 'react'
 import * as DialogActions from "../Dialog/actions";
 import {tweetFullCardElemSet} from "../Dialog/actions";
 import withRouter from "react-router-dom/es/withRouter";
 import {bindActionCreators} from "redux";
-import ScrollRelationHOC from "../../shared/HOC/ScrollRelationHOC";
 import connect from "react-redux/es/connect/connect";
-import {PositionIconTag, IconTypeToPosition} from "src/shared/styleJs/common/componentStyle";
+import {IconTypeToPosition, PositionIconTag} from "src/shared/styleJs/componentStyle";
 import {TweetCardTag, TweetTypeIcon} from "src/components/TweetCard/style";
 import RelationHOC from "src/shared/HOC/RelationHOC";
 
@@ -21,7 +24,7 @@ class TweetCard extends React.Component {
         this.props.dialogDisplaySet({tweetFullCard: true})
     }
 
-    componentDidMount(){
+    componentDidMount() {
     }
 
 
@@ -29,10 +32,10 @@ class TweetCard extends React.Component {
         const {tweet} = this.props
 
         let mediaType = null;
-        if(tweet.images.length>1){
+        if (tweet.images.length > 1) {
             mediaType = IconTypeToPosition.multiImages.type
         }
-        if(tweet.video){
+        if (tweet.video) {
             mediaType = IconTypeToPosition.camera.type
         }
 
@@ -41,7 +44,7 @@ class TweetCard extends React.Component {
                 <a className="tweet-card-wrapper">
                     <div className="img-con">
                         <img className="tweet-image" src={tweet.image_thumbnail.image} alt=""/>
-                        {mediaType&&(
+                        {mediaType && (
                             <TweetTypeIcon
                                 width="48px"
                                 height="48px"
@@ -64,7 +67,7 @@ class TweetCard extends React.Component {
                                     type={IconTypeToPosition.answer.type}
                                     fill={true.toString()}
                                 />
-                                <span className="tag-label">{tweet.comments.length||0}</span>
+                                <span className="tag-label">{tweet.comments.length || 0}</span>
                             </div>
                         </div>
                     </div>

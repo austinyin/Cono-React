@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {BorderStyles} from "../../../shared/styleJs/common/constantsStyle";
+import {BorderStyles} from "../../../shared/styleJs/constantsStyle";
 
 export const ExplorePeopleWrapperTag = styled.div`
   max-width: 600px;

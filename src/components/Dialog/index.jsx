@@ -14,11 +14,12 @@ import TweetFullCard from "../TweetFullCard";
 import {TweetFullCardType} from "../TweetFullCard/model";
 import PubCard from "src/components/Dialog/PubCard";
 import {MediaType} from "src/components/Dialog/constants";
-import {ButtonIconTag} from "src/shared/styleJs/common/IconsStyle";
+import {ButtonIconTag} from "src/shared/styleJs/iconsStyle";
 
 import closeIconWhite32 from 'src/shared/assets/img/icon/close_white_32.png'
 import {DialogButtonsTag, DialogTweetWrapperTag} from "src/components/Dialog/style";
 import ResizeHoc from "src/shared/HOC/ResizeHoc";
+import {withRouter} from "react-router-dom";
 
 
 class Dialog extends Component {
@@ -126,6 +127,9 @@ class Dialog extends Component {
      */
     pubCommitFuncHandl(data) {
         this.props.pubUpload(data)
+        this.dialogHideAll()
+        this.props.history.push(`/user/${this.props.loginUser.username}`)
+
     }
 
     /**
@@ -199,6 +203,7 @@ class Dialog extends Component {
 function mapStateToProps(state) {
     return {
         dialogObj: state.Dialog,
+        loginUser:state.Account.user
     }
 }
 
@@ -218,7 +223,7 @@ Dialog.childContextTypes = {
 }
 
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(ResizeHoc(Dialog))
+)(ResizeHoc(Dialog)))

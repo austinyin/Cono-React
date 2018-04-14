@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import {CommonFlex} from "src/shared/styleJs/common/commonStyle";
-import {hoverResetStyle} from "src/shared/styleJs/common/resetStyle";
+import {CommonFlex} from "src/shared/styleJs/commonStyle";
+import {hoverResetStyle} from "src/shared/styleJs/resetStyle";
 
 export const SimpleUserCardTag = styled.div`
     height: 100%;

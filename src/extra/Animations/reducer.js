@@ -1,27 +1,30 @@
 import * as actionTypes from "./constants";
-import {stateChildOperByKey} from "src/shared/js/reducerUtils";
-import {RefreshState, RefreshType} from "src/extra/Relation/model";
 
 const initialState = {
-    ribbon: {
-        show:false
+    effcts: {
+        loading: false
     },
+    isAnimating: false
 };
 
-export default function Relation(state = initialState, action) {
+export function animatingVerify(state) {
+    return Object.keys(state).some(key => key===true)
+}
+
+export default function Animations(state = initialState, action) {
     switch (action.type) {
         /**
-         * tweetRelation
+         * 加载动画
          */
-        case actionTypes.TWEET_RELATIONS_SET_SUCCEEDED:
-            return stateChildOperByKey(state, 'tweetRefreshObj', {
-                [action.data.tweet.id]: {
-                    state: RefreshState.agitate,
-                    tweet: action.data.tweet,
-                    comment: action.data.comment
-                }
-            })
+        case actionTypes.LOADING_SET:
+            var newState = Object.assign({},state)
+            newState.effcts.loading = action.loading
+            newState.isAnimating = animatingVerify(newState)
+            return newState
 
+        /**
+         *
+         */
         default:
             return state
     }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import commonIcon from 'src/shared/assets/img/common/icons2.png'
-import {BorderStyles, ColorStyles} from "src/shared/styleJs/common/constantsStyle";
+import {BorderStyles, ColorStyles} from "src/shared/styleJs/constantsStyle";
 
 export const ComonCardTag = styled.section`
   background: #fff;

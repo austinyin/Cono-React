@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import logo from 'src/shared/assets/img/common/icons.png'
 import icons from 'src/shared/assets/img/common/icons.png'
 import pubIcon from 'src/shared/assets/img/common/letpub.png'
-import {BorderStyles} from "src/shared/styleJs/common/constantsStyle";
+import {BorderStyles} from "src/shared/styleJs/constantsStyle";
 
 export const NavTag = styled.div`
     display: flex;

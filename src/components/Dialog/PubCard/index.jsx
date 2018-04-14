@@ -12,7 +12,7 @@ import MultiSelect from "src/components/MultiSelect";
 import {getMultiSelectValue} from "src/shared/js/commonUtil";
 import {PubCardTag} from "src/components/Dialog/PubCard/style";
 import {SignIcon} from "src/components/TweetFullCard/CommentCard/Style";
-import {ButtonIconTag} from "src/shared/styleJs/common/IconsStyle";
+import {ButtonIconTag} from "src/shared/styleJs/iconsStyle";
 
 import uploadRemoveIcon from 'src/shared/assets/img/icon/upload_remove_icon.png'
 import UserMultiSelectHOC from "src/shared/HOC/UserMultiSelectHOC";
@@ -83,7 +83,6 @@ class PubCard extends Component {
 
     render() {
         const pubCardObj = this.props.pubCardObj
-        console.log('pubCardObj', pubCardObj);
         const images = pubCardObj.transferObj.images
         const videoObj = pubCardObj.transferObj.video
 

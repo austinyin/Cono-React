@@ -5,7 +5,7 @@ import React from 'react'
 import {getNoticeDescByType} from "src/components/Nav/Notices/model";
 import connect from "react-redux/es/connect/connect";
 import {NotecesTag} from "src/components/Nav/Notices/style";
-import {CommonButtonTag} from "src/shared/styleJs/common/componentStyle";
+import {CommonButtonTag} from "src/shared/styleJs/componentStyle";
 import {PersonUserRelationType} from "src/extra/Relation/model";
 import RelationHOC from "src/shared/HOC/RelationHOC";
 

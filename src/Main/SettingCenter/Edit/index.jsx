@@ -9,7 +9,7 @@ import {
     SettingRightRowTag,
     SettingRightWrapperTag
 } from "src/Main/SettingCenter/style";
-import {CommonButtonTag} from "src/shared/styleJs/common/componentStyle";
+import {CommonButtonTag} from "src/shared/styleJs/componentStyle";
 import {bindActionCreators} from "redux";
 import {logout as logoutAction} from "src/extra/Account/actions";
 import withRouter from "react-router-dom/es/withRouter";

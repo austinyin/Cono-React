@@ -6,7 +6,7 @@ import React from 'react'
 
 import SettingCenterRouter from "src/Main/SettingCenter/router";
 import Link from "react-router-dom/es/Link";
-import {CommonWrapperTag} from "src/shared/styleJs/common/componentStyle";
+import {CommonWrapperTag} from "src/shared/styleJs/componentStyle";
 import {SettingCenterTag, SettingLeftElemTag} from "src/Main/SettingCenter/style";
 import {settingElemList} from "src/Main/SettingCenter/model";
 import withRouter from "react-router-dom/es/withRouter";
@@ -22,6 +22,7 @@ class SettingCenter extends React.Component {
     }
 
     componentWillMount() {
+        document.title = "Cono - 设置"
         this.onLocationChange()
     }
 
