@@ -13,15 +13,12 @@ function resolve(dir) {
 
 module.exports = {
     entry: ['babel-polyfill', path.resolve(__dirname,'./src/index.jsx')],
-    devtool: 'eval-source-map',
-    // entry : {
-    //     main : path.resolve(__dirname,'./src/index.jsx'),
-    // },
     output:{
         path: path.resolve(__dirname,'./public'),
         filename: 'bundle.js',
         publicPath: '/'
     },
+    devtool: process.env.NODE_ENV==='development'?'eval-source-map': false,
     devServer:{
         historyApiFallback: true,
         contentBase: "./public",
